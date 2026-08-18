@@ -1,0 +1,153 @@
+queue:
+  dev: datalake2-sb
+  test: datalake2-np
+  prod: datalake2
+
+env:
+  # Set TMS_PROJECT_NAME in the parent Makefile to keep Terraform and sync scripts aligned.
+  AWS_REGION: ap-southeast-2
+
+steps:
+  - step: terraform-plan
+    flavour: terraform-1-13
+    stage_name: 'DEV'
+    branches: "!master"
+    concurrency: 1
+    concurrency_group: buildkite/datalake2-sb/shared-terraform
+    properties:
+      env:
+        CONFIG: dev
+
+  - step: terraform-plan
+    flavour: terraform-1-13
+    stage_name: 'TEST'
+    branches: "!master"
+    concurrency: 1
+    concurrency_group: buildkite/datalake2-np/shared-terraform
+    properties:
+      env:
+        CONFIG: test
+
+  - wait
+
+  # ---------- DEV APPROVAL ----------
+  - block: "🚨 Approve DEV deployment"
+    branches: "!master"
+    prompt: |
+      You are about to deploy Terraform changes to DEV
+      - Confirm plan output is expected
+
+  - step: terraform-apply
+    key: apply-dev
+    flavour: terraform-1-13
+    stage_name: 'DEV'
+    branches: "!master"
+    concurrency: 1
+    concurrency_group: buildkite/datalake2-sb/shared-terraform
+    properties:
+      env:
+        CONFIG: dev
+
+  - label: ":key: CVM deployment DEV"
+    key: tms-repo-deployment-dev
+    branches: "!master"
+    depends_on:
+      - apply-dev
+    agents:
+      queue: datalake2-sb
+    env:
+      CONFIG: dev
+    command: |
+      apt-get update
+      apt-get install -y --no-install-recommends git make
+      make tms-repo-sync
+    plugins:
+      - docker#v5.0.0:
+          image: "python:3.12.10-slim"
+          propagate-environment: true
+          propagate-aws-auth-tokens: true
+
+  # ---------- TEST APPROVAL ----------
+  - block: "🚨 Approve TEST deployment"
+    branches: "!master"
+    prompt: |
+      You are about to deploy Terraform changes to TEST
+      - Confirm plan output is expected
+
+  - step: terraform-apply
+    key: apply-test
+    flavour: terraform-1-13
+    stage_name: 'TEST'
+    branches: "!master"
+    concurrency: 1
+    concurrency_group: buildkite/datalake2-np/shared-terraform
+    properties:
+      env:
+        CONFIG: test
+
+  - label: ":key: CVM deployment TEST"
+    key: tms-repo-deployment-test
+    branches: "!master"
+    depends_on:
+      - apply-test
+    agents:
+      queue: datalake2-np
+    env:
+      CONFIG: test
+    command: |
+      apt-get update
+      apt-get install -y --no-install-recommends git make
+      make tms-repo-sync
+    plugins:
+      - docker#v5.0.0:
+          image: "python:3.12.10-slim"
+          propagate-environment: true
+          propagate-aws-auth-tokens: true
+
+  - step: terraform-plan
+    flavour: terraform-1-13
+    stage_name: 'PROD'
+    branches: "master"
+    concurrency: 1
+    concurrency_group: buildkite/datalake2/shared-terraform
+    properties:
+      env:
+        CONFIG: prod
+
+  # ---------- PROD APPROVAL ----------
+  - block: "🚨 Approve PROD deployment"
+    prompt: |
+      You are about to deploy Terraform changes to PROD
+      - Ensure NONPROD applied successfully
+      - Confirm plan output is expected
+    branches: "master"
+
+  - step: terraform-apply
+    key: apply-prod
+    flavour: terraform-1-13
+    stage_name: 'PROD'
+    branches: "master"
+    concurrency: 1
+    concurrency_group: buildkite/datalake2/shared-terraform
+    properties:
+      env:
+        CONFIG: prod
+
+  - label: ":key: CVM deployment PROD"
+    key: tms-repo-deployment-prod
+    branches: "master"
+    depends_on:
+      - apply-prod
+    agents:
+      queue: datalake2
+    env:
+      CONFIG: prod
+    command: |
+      apt-get update
+      apt-get install -y --no-install-recommends git make
+      make tms-repo-sync
+    plugins:
+      - docker#v5.0.0:
+          image: "python:3.12.10-slim"
+          propagate-environment: true
+          propagate-aws-auth-tokens: true

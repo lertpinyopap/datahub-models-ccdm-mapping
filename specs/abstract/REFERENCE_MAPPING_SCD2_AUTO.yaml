@@ -1,0 +1,61 @@
+id: reference_mapping_scd2_auto
+description: Shared SCD2 auto pattern for mapping reference datasets loaded from CSV seed files.
+control_data:
+  materialisation_type: table
+  failure_mode: fail_load
+  change_type: scd2_auto
+  staging_schema: INTERMEDIATE
+  business_key:
+    fields:
+      - SOURCE_SYSTEM
+      - SOURCE_CODE
+  scd:
+    insert_time: '{{ var("insert_time") }}'
+    scd2_auto_from_sot: true
+    scd2_validation: continuous
+source:
+  format: csv
+  header: true
+  load_method: dbt_seed
+  delimiter: ","
+  quotechar: '"'
+  lineterminator: "\r\n"
+  quoting: minimal
+target:
+  id: reference_mapping_scd2
+  schema: MAPPING
+  fields:
+    - id: CHANGE_CONTROL
+      source:
+        column: CHANGE_CONTROL
+      data_type: varchar(255)
+      nullable: true
+    - id: SOURCE_SYSTEM
+      source:
+        column: SOURCE_SYSTEM
+      data_type: varchar(50)
+    - id: SOURCE_CODE
+      source:
+        column: SOURCE_CODE
+      data_type: varchar(50)
+    - id: SOURCE_DESCRIPTION
+      source:
+        column: SOURCE_DESCRIPTION
+      data_type: varchar(255)
+      nullable: true
+    - id: TARGET_SYSTEM
+      source:
+        column: TARGET_SYSTEM
+      data_type: varchar(255)
+      transforms:
+        - type: custom
+          macro: reference_macros.prefix_target_system
+    - id: TARGET_CODE
+      source:
+        column: TARGET_CODE
+      data_type: varchar(50)
+    - id: TARGET_DESCRIPTION
+      source:
+        column: TARGET_DESCRIPTION
+      data_type: varchar(255)
+      nullable: true
