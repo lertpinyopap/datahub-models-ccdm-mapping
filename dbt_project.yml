@@ -1,0 +1,14 @@
+name: datahub_models_ccdm_mapping
+version: "1.0.0"
+config-version: 2
+
+profile: default
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+
+# analysis-paths must be relative to the location of your dbt_project.yml file
+analysis-paths: ["analyses" ]
+snapshot-paths: ["snapshots"]

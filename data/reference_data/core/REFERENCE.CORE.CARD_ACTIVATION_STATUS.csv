@@ -1,0 +1,6 @@
+CARD_ACTIVATION_STATUS_CODE,CARD_ACTIVATION_STATUS_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
+ANED,Card activation is needed,Y,N,1900-01-01,9999-12-31
+ACMP,Card activation is completed,Y,N,1900-01-01,9999-12-31
+DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
+DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
+DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31

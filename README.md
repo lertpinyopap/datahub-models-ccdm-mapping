@@ -1,4 +1,4 @@
-# datahub-models-reference-data
+# datahub-models-ccdm-mapping
 
 Reference data loading is now managed through the Type Materialisation Specification (TMS) tool from:
 
@@ -23,44 +23,113 @@ Two SCD2 patterns are prepared:
   CSV inputs used by `source.load_method: dbt_seed`.
 - `macros/`
   Local Python macro objects referenced by TMS specs.
-- `scripts/`
-  Thin Python runner used by Airflow and local operators.
+- `datahub-tms-pipeline/`
+  Shared git submodule containing the Airflow DAG entrypoint, local runner, and
+  TMS loader helper.
+- `datahub-type-materialisation-specification/`
+  Optional local git submodule containing the TMS source used to build a local
+  `TMS_BIN` runtime for development.
 - `dags/config/`
   Environment-specific TMS job configs published by the shared TMS pipeline module.
 - `config/dbt/`
   Example dbt profile template for the required `datahub_type_materialisation` profile.
 
-## Git Submodule
+## Git Submodules
 
-This repo uses `datahub-tms-pipeline` as a git submodule for shared Airflow DAG
-and deployment logic.
+This repo uses shared repositories as git submodules:
 
-Add it to a fresh checkout with:
+- `datahub-tms-pipeline`: shared Airflow DAG and deployment logic.
+- `datahub-type-materialisation-specification`: TMS source used to build the
+  local `tms` executable for development.
+
+Add the pipeline module to a fresh checkout with:
 
 ```bash
 git submodule add -b features/tms-pipeline https://github.com/LatitudeFinancial/datahub-tms-pipeline.git datahub-tms-pipeline
 git submodule update --init --recursive
 ```
 
-If `.gitmodules` already exists but `git submodule status` shows nothing,
-register the submodule path with:
+Add the TMS source module with:
 
 ```bash
-git submodule add -b features/tms-pipeline https://github.com/LatitudeFinancial/datahub-tms-pipeline.git datahub-tms-pipeline
+git submodule add -b dev https://github.com/LatitudeFinancial/datahub-type-materialisation-specification.git datahub-type-materialisation-specification
+git submodule update --init --recursive
 ```
 
-After cloning this repo later, initialize the submodule with:
+If `.gitmodules` already exists but `git submodule status` shows a missing
+submodule, register the missing path with the relevant `git submodule add`
+command above.
+
+For the current feature branch, use:
+
+- `datahub-tms-pipeline`: `features/tms-pipeline`
+- `datahub-type-materialisation-specification`: `features/python1.12`
+
+After cloning this repo later, initialize all submodules with:
 
 ```bash
 git submodule update --init --recursive
 ```
 
-To update the submodule to the latest committed version from its configured
+To update a submodule to the latest committed version from its configured
 branch:
 
 ```bash
 git submodule update --remote datahub-tms-pipeline
+git submodule update --remote datahub-type-materialisation-specification
 ```
+
+Commit the submodule pointer update in this repo after testing.
+
+## Local TMS Runtime
+
+For local testing, build the TMS runtime from the TMS source submodule and place
+the generated runtime under this repo's ignored `libs/` folder.
+
+Install Python 3.12 first, then create and activate a local virtual environment
+from this repo root:
+
+```bash
+brew install python@3.12
+python3.12 --version
+python3.12 -m venv .venv
+source .venv/bin/activate
+
+```bash
+pip install dbt-snowflake==1.11.6
+dbt --version
+```
+
+If your shell does not resolve `python3.12`, add Homebrew's Python 3.12 path to
+`PATH`.
+
+With the virtual environment activated:
+
+```bash
+bash datahub-type-materialisation-specification/scripts/build_tms_package.sh \
+  --install-venv "$PWD/libs/tms-env" \
+  --archive "$PWD/libs/tms-env.tar.gz"
+```
+
+The build script installs the TMS runtime directly into `libs/tms-env` and also
+copies the required schema JSON files into that runtime.
+
+```bash
+export TMS_BIN="$PWD/libs/tms-env/bin/tms"
+```
+
+Verify:
+
+```bash
+"$TMS_BIN" --help
+```
+
+The `libs/` folder is local runtime output and should not be committed.
+
+If you only need the wheel artifact for Airflow installation, use the `.whl`
+created under `datahub-type-materialisation-specification/dist/`. If you need a
+portable local runtime for this repo, build it directly into `libs/tms-env` as
+shown above so the executable paths stay inside this repo.
 
 ## First Working Slice
 
@@ -100,38 +169,6 @@ Current validation status in this repo:
 - `datahub-tms-pipeline/dags/local_run_tms_loader.py`: shared local developer helper for manual testing
 - Remaining external prerequisite: a dbt profile named `datahub_type_materialisation`
 
-## Local TMS Runtime
-
-For local testing, build the TMS runtime from the TMS source repo and place the
-runtime under this repo's `libs/` folder.
-
-From this repo:
-
-```bash
-git clone https://github.com/LatitudeFinancial/datahub-type-materialisation-specification.git ../datahub-type-materialisation-specification
-cd ../datahub-type-materialisation-specification
-git checkout features/tms-pipeline
-bash scripts/build_tms_package.sh
-```
-
-Then install the built runtime into this repo:
-
-```bash
-cd ../datahub-models-reference-data
-mkdir -p libs
-rm -rf libs/tms-env
-tar -xzf ../datahub-type-materialisation-specification/dist/tms-env.tar.gz -C libs
-export TMS_BIN="$PWD/libs/tms-env/bin/tms"
-```
-
-Verify:
-
-```bash
-"$TMS_BIN" --help
-```
-
-The `libs/` folder is local runtime output and should not be committed.
-
 The local runner lives in the shared `datahub-tms-pipeline` module and calls the
 same `tms_loader.py` helper used by Airflow. Run it from this repo root so the
 default `--project-root` is this consumer repo.
@@ -143,7 +180,7 @@ Run all tasks from the local job config:
 ```bash
 export TMS_BIN="$PWD/libs/tms-env/bin/tms"
 python datahub-tms-pipeline/dags/local_run_tms_loader.py \
-  --job-config dags/config/tms_jobs.dev.json \
+  --job-config dags/config/tms_jobs.local.json \
   --target dev
 ```
 
@@ -152,8 +189,8 @@ Run one task from the job config:
 ```bash
 export TMS_BIN="$PWD/libs/tms-env/bin/tms"
 python datahub-tms-pipeline/dags/local_run_tms_loader.py \
-  --job-config dags/config/tms_jobs.dev.json \
-  --job reference_country_loader \
+  --job-config dags/config/tms_jobs.local.json \
+  --job reference_loader \
   --task load_core \
   --target dev
 ```
@@ -165,8 +202,16 @@ explicitly:
 export TMS_BIN="$PWD/libs/tms-env/bin/tms"
 python ../datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --project-root . \
-  --job-config dags/config/tms_jobs.dev.json \
-  --target dev
+  --job-config dags/config/tms_jobs.local.json \
+  --target dev \
+  --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
+
+python datahub-tms-pipeline/dags/local_run_tms_loader.py \
+  --job-config dags/config/tms_jobs.local.json \
+  --job ccdm_loader \
+  --task load_card_account \
+  --target dev \
+  --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
 ```
 
 The job config uses `target: MWAA` because it is the Airflow runtime target.
@@ -202,6 +247,25 @@ python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_", "tms_job_schema":"INTERMEDIATE"}'
 ```
 
+Run a source-to-target mapping spec locally:
+
+```bash
+export TMS_BIN="$PWD/libs/tms-env/bin/tms"
+python datahub-tms-pipeline/dags/local_run_tms_loader.py \
+  --spec specs/ccdm/card_customer/CARD_CUSTOMER.yaml \
+  --target dev \
+  --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE", "ENV_PREFIX":"NONPROD_"}'
+```
+
+Test the reference lookup macro:
+
+```bash
+dbt show --select full_reference_lookup_currency \
+  --vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE", "ENV_PREFIX":"NONPROD_"}' \
+  --output json
+```
+
+
 ## Airflow
 
 Airflow should use the shared DAG entrypoint from `datahub-tms-pipeline/dags/dags_tms_entrypoint.py`.
@@ -221,11 +285,13 @@ The DAG is driven by `dags/config/tms_jobs.<env>.json` and the shared `datahub-t
 - top-level `conn_id` holds the Airflow/Snowflake connection id
 - top-level `schedule` accepts a cron expression, `"once"`, or `null`/`"manual"` for manual-only execution
 - top-level `vars` holds dbt vars such as `ENV_PREFIX` and `tms_job_schema`
+- `vars.database`, when provided, is the exact physical output database name; the loader does not prepend `ENV_PREFIX`
+- use `ENV_PREFIX` separately inside specs or macros for source database names and target-system values that intentionally need an environment prefix
 - each `task_groups[].group_id` becomes one Airflow `TaskGroup`
 - each `task_groups[].tasks[]` item runs one TMS spec through the shared TMS loader
 - `task_groups[].tasks[].depends_on` controls ordering, such as `load_core` before `load_mapping`
 - task-level `profile_args` and `vars` can override the top-level defaults
-- at runtime, the DAG resolves `OVERRIDE_DB` from `profile_args.database` without adding `ENV_PREFIX`
+- at runtime, the DAG resolves `OVERRIDE_DB` from `vars.OVERRIDE_DB`, then `vars.database`, then `profile_args.database`, without adding `ENV_PREFIX`
 - if the Airflow environment already provides `OVERRIDE_DB`, that explicit value wins
 - `TMS_BIN` defaults to the Airflow-installed runtime at `/usr/local/airflow/python3-virtualenv/tms-env/bin/tms`
 

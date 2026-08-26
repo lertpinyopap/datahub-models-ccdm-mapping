@@ -1,0 +1,14 @@
+CARD_AMOUNT_TYPE_CODE,CARD_AMOUNT_TYPE_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
+CSBK,Cashback details for purchase with cashback transaction,Y,N,1900-01-01,9999-12-31
+FEES,Fees,Y,N,1900-01-01,9999-12-31
+SURF,Surcharge or rebate fees,Y,N,1900-01-01,9999-12-31
+ACTL,Actual amount,Y,N,1900-01-01,9999-12-31
+DFLT,Default amount,Y,N,1900-01-01,9999-12-31
+DPST,Deposit amount,Y,N,1900-01-01,9999-12-31
+ESTM,Estimated amount,Y,N,1900-01-01,9999-12-31
+MAXI,Maximum amount,Y,N,1900-01-01,9999-12-31
+PRXY,Substitute for an amount to be authorised,Y,N,1900-01-01,9999-12-31
+RESD,Reserved or updated reserved amount for reservation,Y,N,1900-01-01,9999-12-31
+DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
+DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
+DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31

@@ -1,0 +1,11 @@
+id: reference_mapping_currency
+extends: REFERENCE_MAPPING_SCD2_AUTO
+description: Maps reference currency mapping CSV data into the CURRENCY mapping table.
+source:
+  seed:
+    file: data/reference_data/mapping/REFERENCE.MAPPING.CURRENCY.csv
+    name: reference_mapping_currency_seed
+target:
+  id: CURRENCY
+  schema: MAPPING
+  table_name: CURRENCY

@@ -1,0 +1,11 @@
+id: source_to_target_scd1
+description: Shared SCD1 pattern for source-to-target table mappings generated from mapping workbooks.
+control_data:
+  materialisation_type: table
+  change_type: scd1
+  failure_mode: fail_load
+  staging_schema: INTERMEDIATE
+source:
+  format: table
+target:
+  schema: CORE

@@ -1,24 +1,18 @@
-id: reference_core_scd2_manual
-description: Shared manual SCD2 pattern for CORE reference datasets where the source CSV already provides history columns.
+id: source_to_target_scd2_manual
+description: Shared manual SCD2 pattern for source-to-target table mappings where the source query provides SCD2 control columns.
 control_data:
   materialisation_type: table
   change_type: scd2_manual
+  failure_mode: fail_load
+  staging_schema: INTERMEDIATE
   scd:
     update_mode: upsert
     update_key:
       fields:
         - VALID_FROM_DATETIME
-  failure_mode: fail_load
 source:
-  format: csv
-  header: true
-  load_method: dbt_seed
-  delimiter: ","
-  quotechar: '"'
-  lineterminator: "\r\n"
-  quoting: minimal
+  format: table
 target:
-  id: reference_core_manual_scd2
   schema: CORE
   fields:
     - id: IS_CURRENT_FLAG
@@ -33,6 +27,7 @@ target:
           values:
             - "Y"
             - "N"
+
     - id: IS_DELETED_FLAG
       source:
         column: IS_DELETED_FLAG
@@ -45,23 +40,15 @@ target:
           values:
             - "Y"
             - "N"
+
     - id: VALID_FROM_DATETIME
       source:
         column: VALID_FROM_DATETIME
       data_type: timestamp_tz
-      transforms:
-        - type: parse_timestamp
-          format: "%Y-%m-%d"
-          timezone_if_missing: UTC
-          time_if_missing: start_of_day
       nullable: false
+
     - id: VALID_TO_DATETIME
       source:
         column: VALID_TO_DATETIME
       data_type: timestamp_tz
-      transforms:
-        - type: parse_timestamp
-          format: "%Y-%m-%d"
-          timezone_if_missing: UTC
-          time_if_missing: end_of_day
       nullable: false

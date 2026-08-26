@@ -1,0 +1,11 @@
+id: reference_mapping_card_authorisation_request_status
+extends: REFERENCE_MAPPING_SCD2_AUTO
+description: Maps reference card authorisation request status mapping CSV data into the CARD_AUTHORISATION_REQUEST_STATUS mapping table.
+source:
+  seed:
+    file: data/reference_data/mapping/REFERENCE.MAPPING.CARD_AUTHORISATION_REQUEST_STATUS.csv
+    name: reference_mapping_card_authorisation_request_status_seed
+target:
+  id: CARD_AUTHORISATION_REQUEST_STATUS
+  schema: MAPPING
+  table_name: CARD_AUTHORISATION_REQUEST_STATUS

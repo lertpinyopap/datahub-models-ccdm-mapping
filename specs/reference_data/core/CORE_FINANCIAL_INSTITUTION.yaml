@@ -1,0 +1,49 @@
+id: reference_core_financial_institution
+extends: REFERENCE_CORE_SCD2_MANUAL
+description: Maps reference financial institution CSV data into a manual SCD2 financial institution table.
+control_data:
+  business_key:
+    fields:
+      - FINANCIAL_INSTITUTION_CODE
+source:
+  seed:
+    file: data/reference_data/core/REFERENCE.CORE.FINANCIAL_INSTITUTION.csv
+    name: reference_core_financial_institution_seed
+    schema: INTERMEDIATE
+target:
+  id: FINANCIAL_INSTITUTION
+  schema: CORE
+  table_name: FINANCIAL_INSTITUTION
+  fields:
+    - id: FINANCIAL_INSTITUTION_CODE
+      source:
+        pos: 0
+        column: FINANCIAL_INSTITUTION_CODE
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: FINANCIAL_INSTITUTION_ID
+      source:
+        pos: 1
+        column: FINANCIAL_INSTITUTION_ID
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: FINANCIAL_INSTITUTION_NAME
+      source:
+        pos: 2
+        column: FINANCIAL_INSTITUTION_NAME
+      data_type: varchar(255)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: COUNTRY_CODE
+      source:
+        pos: 3
+        column: COUNTRY_CODE
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false

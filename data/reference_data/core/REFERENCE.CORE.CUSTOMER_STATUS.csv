@@ -1,0 +1,9 @@
+CUSTOMER_STATUS_CODE,CUSTOMER_STATUS_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
+ENAB,Customer record is active and valid for business processing.,Y,N,1900-01-01,9999-12-31
+DISA,Customer record is temporarily inactive and excluded from business processing.,Y,N,1900-01-01,9999-12-31
+DELE,Customer record has been logically deleted and should not be used for new business activity.,Y,N,1900-01-01,9999-12-31
+PURG,Customer record has been permanently purged from the source system following retention policies.,Y,N,1900-01-01,9999-12-31
+PROF,Customer record is created but not fully activated or finalized yet.,Y,N,1900-01-01,9999-12-31
+DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
+DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
+DQNotApplicable,Source value not provided,Y,N,1900-01-01,9999-12-31

@@ -1,0 +1,11 @@
+id: reference_mapping_merchant_category
+extends: REFERENCE_MAPPING_SCD2_AUTO
+description: Maps reference merchant category mapping CSV data into the MERCHANT_CATEGORY mapping table.
+source:
+  seed:
+    file: data/reference_data/mapping/REFERENCE.MAPPING.MERCHANT_CATEGORY.csv
+    name: reference_mapping_merchant_category_seed
+target:
+  id: MERCHANT_CATEGORY
+  schema: MAPPING
+  table_name: MERCHANT_CATEGORY

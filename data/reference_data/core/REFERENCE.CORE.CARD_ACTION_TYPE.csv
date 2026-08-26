@@ -1,0 +1,17 @@
+CARD_ACTION_TYPE_CODE,CARD_ACTION_TYPE_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
+NEWC,New card issued,Y,N,1900-01-01,9999-12-31
+ADNL,Additional card requested or issued,Y,N,1900-01-01,9999-12-31
+REPL,Card replaced,Y,N,1900-01-01,9999-12-31
+REIS,Card reissued,Y,N,1900-01-01,9999-12-31
+LOST,Card reported lost,Y,N,1900-01-01,9999-12-31
+STLN,Card reported stolen,Y,N,1900-01-01,9999-12-31
+ACTV,Card activated,Y,N,1900-01-01,9999-12-31
+CHNG,Card PIN changed,Y,N,1900-01-01,9999-12-31
+BLCK,Card blocked,Y,N,1900-01-01,9999-12-31
+UPDT,Card details updated,Y,N,1900-01-01,9999-12-31
+IPTR,Invalid PIN attempt recorded and PIN reset attempted,Y,N,1900-01-01,9999-12-31
+CNTO,Contactless opt-out recorded,Y,N,1900-01-01,9999-12-31
+PTCR,Card PIN retry counter reset,Y,N,1900-01-01,9999-12-31
+DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
+DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
+DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31

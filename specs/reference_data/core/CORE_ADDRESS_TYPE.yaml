@@ -1,0 +1,33 @@
+id: reference_core_address_type
+extends: REFERENCE_CORE_SCD2_MANUAL
+description: Maps reference address type CSV data into a manual SCD2 address type table.
+control_data:
+  business_key:
+    fields:
+      - ADDRESS_TYPE_CODE
+source:
+  seed:
+    file: data/reference_data/core/REFERENCE.CORE.ADDRESS_TYPE.csv
+    name: reference_core_address_type_seed
+    schema: INTERMEDIATE
+target:
+  id: ADDRESS_TYPE
+  schema: CORE
+  table_name: ADDRESS_TYPE
+  fields:
+    - id: ADDRESS_TYPE_CODE
+      source:
+        pos: 0
+        column: ADDRESS_TYPE_CODE
+      data_type: varchar(50)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: ADDRESS_TYPE_DESCRIPTION
+      source:
+        pos: 1
+        column: ADDRESS_TYPE_DESCRIPTION
+      data_type: varchar(1000)
+      transforms:
+        - type: trim
+      nullable: false

@@ -1,4 +1,4 @@
-SERVICE_NAME=datahub-models-reference-data
+SERVICE_NAME=datahub-models-ccdm-mapping
 export TMS_PROJECT_NAME ?= $(SERVICE_NAME)
 TF_config_path := datahub-tms-pipeline/terraform
 

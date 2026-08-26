@@ -1,0 +1,993 @@
+MERCHANT_CATEGORY_CODE,MERCHANT_CATEGORY_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
+0011,Reserved or Network-Specific Merchant Category Code,Y,N,1900-01-01,9999-12-31
+0701,Reserved or Network-Specific Merchant Category Code,Y,N,1900-01-01,9999-12-31
+0742,Veterinary Services,Y,N,1900-01-01,9999-12-31
+0763,Agricultural Co-Operatives,Y,N,1900-01-01,9999-12-31
+0780,Landscaping and Horticultural Services,Y,N,1900-01-01,9999-12-31
+1520,General Contractors – Residential and Commercial,Y,N,1900-01-01,9999-12-31
+1711,"Heating, Plumbing, and Air Conditioning Contractors",Y,N,1900-01-01,9999-12-31
+1731,Electrical Contractors,Y,N,1900-01-01,9999-12-31
+1740,"Masonry, Stonework, Tile Setting, Plastering and Insulation Contractors",Y,N,1900-01-01,9999-12-31
+1750,Carpentry Contractors,Y,N,1900-01-01,9999-12-31
+1761,"Roofing, Siding, and Sheet Metal Work Contractors",Y,N,1900-01-01,9999-12-31
+1771,Concrete Work Contractors,Y,N,1900-01-01,9999-12-31
+1799,Special Trade Contractors (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+2741,Miscellaneous Publishing and Printing,Y,N,1900-01-01,9999-12-31
+2791,"Typesetting, Plate Making and Related Services",Y,N,1900-01-01,9999-12-31
+2842,"Specialty Cleaning, Polishing and Sanitation Preparations",Y,N,1900-01-01,9999-12-31
+3000,United Airlines United Air,Y,N,1900-01-01,9999-12-31
+3001,American Airlines American Air,Y,N,1900-01-01,9999-12-31
+3002,Pan American Pan Am Air,Y,N,1900-01-01,9999-12-31
+3003,Eurofly Airlines Eurofly Air,Y,N,1900-01-01,9999-12-31
+3004,Dragon Airlines Dragonair,Y,N,1900-01-01,9999-12-31
+3005,British Airways British Awys,Y,N,1900-01-01,9999-12-31
+3006,Japan Airlines Jal Airline,Y,N,1900-01-01,9999-12-31
+3007,Air France Air France,Y,N,1900-01-01,9999-12-31
+3008,Lufthansa Lufthansa,Y,N,1900-01-01,9999-12-31
+3009,Air Canada Air Canada,Y,N,1900-01-01,9999-12-31
+3010,Klm (Royal Dutch Airlines) Klm Airline,Y,N,1900-01-01,9999-12-31
+3011,Aeroflot Aeroflot,Y,N,1900-01-01,9999-12-31
+3012,Qantas Qantas Air,Y,N,1900-01-01,9999-12-31
+3013,Ita Airways (Formerly Alitalia) Ita Airways (Formerly Alitalia),Y,N,1900-01-01,9999-12-31
+3014,Saudi Arabian Airlines Saudia Air,Y,N,1900-01-01,9999-12-31
+3015,Swiss International Airlines Swissintair,Y,N,1900-01-01,9999-12-31
+3016,Sas Sas,Y,N,1900-01-01,9999-12-31
+3017,South African Airways Saa Airways,Y,N,1900-01-01,9999-12-31
+3018,Varig (Brazil) Varig,Y,N,1900-01-01,9999-12-31
+3019,Eastern Airlines Eastern Air,Y,N,1900-01-01,9999-12-31
+3020,Air-India Air-India,Y,N,1900-01-01,9999-12-31
+3021,Air Algerie Air Algerie,Y,N,1900-01-01,9999-12-31
+3022,Philippine Airlines Pal Air,Y,N,1900-01-01,9999-12-31
+3023,Mexicana Mexicana,Y,N,1900-01-01,9999-12-31
+3024,Pakistan International Pakistan Air,Y,N,1900-01-01,9999-12-31
+3025,Air New Zealand Air Nz,Y,N,1900-01-01,9999-12-31
+3026,Emirates Airlines Emirates,Y,N,1900-01-01,9999-12-31
+3027,Uta/interair Uta Airline,Y,N,1900-01-01,9999-12-31
+3028,Km Malta Airlines (Formerly Air Malta) Kmma (Formerly Air Malta),Y,N,1900-01-01,9999-12-31
+3029,Sn Brussels Airlines Snbrsslsair,Y,N,1900-01-01,9999-12-31
+3030,Aerolineas Argentinas Aero Argent,Y,N,1900-01-01,9999-12-31
+3031,Olympic Airways Olympic Air,Y,N,1900-01-01,9999-12-31
+3032,El Al El Al,Y,N,1900-01-01,9999-12-31
+3033,Ansett Airlines Ansett Air,Y,N,1900-01-01,9999-12-31
+3034,Etihad Airways Etihadair,Y,N,1900-01-01,9999-12-31
+3035,Tap (Portugal) Tap Air,Y,N,1900-01-01,9999-12-31
+3036,Vasp (Brazil) Vasp Air,Y,N,1900-01-01,9999-12-31
+3037,Egyptair Egyptair,Y,N,1900-01-01,9999-12-31
+3038,Kuwait Airways Kuwait Air,Y,N,1900-01-01,9999-12-31
+3039,Avianca Avianca,Y,N,1900-01-01,9999-12-31
+3040,Gulf Air (Bahrain) Gulf Air,Y,N,1900-01-01,9999-12-31
+3041,Balkan-Bulgarian Airlines Balkan Air,Y,N,1900-01-01,9999-12-31
+3042,Finnair Finnair,Y,N,1900-01-01,9999-12-31
+3043,Aer Lingus Aer Lingus,Y,N,1900-01-01,9999-12-31
+3044,Air Lanka Air Lanka,Y,N,1900-01-01,9999-12-31
+3045,Nigeria Airways Nigeria Air,Y,N,1900-01-01,9999-12-31
+3046,Cruzeiro Do Sul (Brazil) Cruzeiro Air,Y,N,1900-01-01,9999-12-31
+3047,Turkish Airlines Turkish Airlines,Y,N,1900-01-01,9999-12-31
+3048,Royal Air Maroc Air Maroc,Y,N,1900-01-01,9999-12-31
+3049,Tunis Air Tunis Air,Y,N,1900-01-01,9999-12-31
+3050,Icelandair Icelandair,Y,N,1900-01-01,9999-12-31
+3051,Austrian Airlines Austrian Air,Y,N,1900-01-01,9999-12-31
+3052,Lan Airlines Lan Air,Y,N,1900-01-01,9999-12-31
+3053,Aviaco (Spain) Aviaco Air,Y,N,1900-01-01,9999-12-31
+3054,Ladeco (Chile) Ladeco Air,Y,N,1900-01-01,9999-12-31
+3055,Lab (Bolivia) Lab Air,Y,N,1900-01-01,9999-12-31
+3056,Jet Airways Jet Air,Y,N,1900-01-01,9999-12-31
+3057,Virgin America Vir Amer,Y,N,1900-01-01,9999-12-31
+3058,Delta Delta Air,Y,N,1900-01-01,9999-12-31
+3059,Dba Airlines Dba Air,Y,N,1900-01-01,9999-12-31
+3060,Northwest Nwa Air,Y,N,1900-01-01,9999-12-31
+3061,Continental Continental,Y,N,1900-01-01,9999-12-31
+3062,Hapag-Lloyd Express Airlines Hlx Air,Y,N,1900-01-01,9999-12-31
+3063,Us Airways Usairways,Y,N,1900-01-01,9999-12-31
+3064,Adria Airways Adria Air,Y,N,1900-01-01,9999-12-31
+3065,Airinter Airinter,Y,N,1900-01-01,9999-12-31
+3066,Southwest Southwestair,Y,N,1900-01-01,9999-12-31
+3067,Vanguard Airlines Vanguard Air,Y,N,1900-01-01,9999-12-31
+3068,Air Astana Air Astana,Y,N,1900-01-01,9999-12-31
+3069,Sun Country Airlines Suncntryair,Y,N,1900-01-01,9999-12-31
+3070,Flydubai Flydubai,Y,N,1900-01-01,9999-12-31
+3071,Air British Columbia Air Bc,Y,N,1900-01-01,9999-12-31
+3072,Cebu Pacific Airlines Cebu Pac,Y,N,1900-01-01,9999-12-31
+3073,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3075,Singapore Airlines Singaporeair,Y,N,1900-01-01,9999-12-31
+3076,Aeromexico Aeromexico,Y,N,1900-01-01,9999-12-31
+3077,Thai Airways Thai Airways,Y,N,1900-01-01,9999-12-31
+3078,China Airlines China Air,Y,N,1900-01-01,9999-12-31
+3079,Jetstar Airways Jetstar Air,Y,N,1900-01-01,9999-12-31
+3080,Swoop Inc Flyswoop,Y,N,1900-01-01,9999-12-31
+3081,Xiamen Airlines Xiamen Air,Y,N,1900-01-01,9999-12-31
+3082,Korean Airlines Korean Air,Y,N,1900-01-01,9999-12-31
+3083,Air Afrique Air Afrique,Y,N,1900-01-01,9999-12-31
+3084,Eva Airways Eva Air,Y,N,1900-01-01,9999-12-31
+3085,Midwest Express Airlines Midwest Exp,Y,N,1900-01-01,9999-12-31
+3086,Carnival Airlines Carnival Air,Y,N,1900-01-01,9999-12-31
+3087,Metro Airlines Metro Air,Y,N,1900-01-01,9999-12-31
+3088,Croatia Airlines Croatia Air,Y,N,1900-01-01,9999-12-31
+3089,Transaero Transaero,Y,N,1900-01-01,9999-12-31
+3090,Uni Airways Corporation Uniair,Y,N,1900-01-01,9999-12-31
+3092,Xiamen Airlines,Y,N,1900-01-01,9999-12-31
+3094,Zambia Airways Zambia Air,Y,N,1900-01-01,9999-12-31
+3095,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3096,Air Zimbabwe Air Zimbabwe,Y,N,1900-01-01,9999-12-31
+3097,Spanair Spanair,Y,N,1900-01-01,9999-12-31
+3098,Asiana Airlines Asiana Air,Y,N,1900-01-01,9999-12-31
+3099,Cathay Pacific Cathaypacair,Y,N,1900-01-01,9999-12-31
+3100,Malaysian Airline System Malay Air,Y,N,1900-01-01,9999-12-31
+3101,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3102,Iberia Iberia Air,Y,N,1900-01-01,9999-12-31
+3103,Garuda (Indonesia) Garuda Air,Y,N,1900-01-01,9999-12-31
+3105,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3106,Braathens S.a.f.e. (Norway) Braathens,Y,N,1900-01-01,9999-12-31
+3108,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3110,Wings Airways Wings Air,Y,N,1900-01-01,9999-12-31
+3111,British Midland Brmidlandair,Y,N,1900-01-01,9999-12-31
+3112,Windward Island Windwrdisair,Y,N,1900-01-01,9999-12-31
+3115,Tower Air Towerair,Y,N,1900-01-01,9999-12-31
+3117,Viasa Viasa,Y,N,1900-01-01,9999-12-31
+3118,Valley Airlines Valley Air,Y,N,1900-01-01,9999-12-31
+3125,Tan Tan Air,Y,N,1900-01-01,9999-12-31
+3126,Talair Talair,Y,N,1900-01-01,9999-12-31
+3127,Taca International Tacaintl Air,Y,N,1900-01-01,9999-12-31
+3129,Surinam Airways Surinam Air,Y,N,1900-01-01,9999-12-31
+3130,Sunworld International Sunworld Air,Y,N,1900-01-01,9999-12-31
+3131,Vlm Airlines Vlm Air,Y,N,1900-01-01,9999-12-31
+3132,Frontier Airlines Frontier Air,Y,N,1900-01-01,9999-12-31
+3133,Sunbelt Airlines Sunbelt Air,Y,N,1900-01-01,9999-12-31
+3135,Sudan Airways Sudan Air,Y,N,1900-01-01,9999-12-31
+3136,Qatar Airways Qatar Air,Y,N,1900-01-01,9999-12-31
+3137,Singleton Singletonair,Y,N,1900-01-01,9999-12-31
+3138,Simmons Airlines Simmons Air,Y,N,1900-01-01,9999-12-31
+3141,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3143,Scenic Airlines Scenic Air,Y,N,1900-01-01,9999-12-31
+3144,Virgin Atlantic Virginatlair,Y,N,1900-01-01,9999-12-31
+3145,San Juan Airlines San Juan Air,Y,N,1900-01-01,9999-12-31
+3146,Luxair Luxair,Y,N,1900-01-01,9999-12-31
+3148,Air Littoral Sa Airlittoral,Y,N,1900-01-01,9999-12-31
+3151,Air Zaire Air Zaire,Y,N,1900-01-01,9999-12-31
+3154,Princeville Princvlleair,Y,N,1900-01-01,9999-12-31
+3156,Go Fly Ltd Gofly,Y,N,1900-01-01,9999-12-31
+3159,Pba Pba Airline,Y,N,1900-01-01,9999-12-31
+3161,All Nippon Airways Ana Air,Y,N,1900-01-01,9999-12-31
+3164,Norontair Norontair,Y,N,1900-01-01,9999-12-31
+3165,New York Helicopter Ny Heli,Y,N,1900-01-01,9999-12-31
+3167,Aerocontinente Aerocontinen,Y,N,1900-01-01,9999-12-31
+3168,Hainan Airlines Hainanair,Y,N,1900-01-01,9999-12-31
+3169,Riyadh Air Riyadhair,Y,N,1900-01-01,9999-12-31
+3170,Mount Cook Mt Cook Air,Y,N,1900-01-01,9999-12-31
+3171,Canadian Airlines International Canadian Air,Y,N,1900-01-01,9999-12-31
+3172,Nationair Nationair,Y,N,1900-01-01,9999-12-31
+3174,Jetblue Airways Jetblue,Y,N,1900-01-01,9999-12-31
+3175,Middle East Air Mideast Air,Y,N,1900-01-01,9999-12-31
+3176,Metroflight Airlines Metroflt Air,Y,N,1900-01-01,9999-12-31
+3177,Airtran Airways Airtranair,Y,N,1900-01-01,9999-12-31
+3178,Mesa Air Mesa Air,Y,N,1900-01-01,9999-12-31
+3180,Westjet Airlines Westjetair,Y,N,1900-01-01,9999-12-31
+3181,Malev Malev Air,Y,N,1900-01-01,9999-12-31
+3182,Lot (Poland) Lot Air,Y,N,1900-01-01,9999-12-31
+3183,Oman Aviation Services Omanair,Y,N,1900-01-01,9999-12-31
+3184,Liat Liat Airline,Y,N,1900-01-01,9999-12-31
+3185,Lav (Venezuela) Lav Air,Y,N,1900-01-01,9999-12-31
+3186,Lap (Paraguay) Lap Air,Y,N,1900-01-01,9999-12-31
+3187,Lacsa (Costa Rica) Lacsa Air,Y,N,1900-01-01,9999-12-31
+3188,Virgin Express Virginexpair,Y,N,1900-01-01,9999-12-31
+3190,Jugoslav Air Jugoslav Air,Y,N,1900-01-01,9999-12-31
+3191,Island Airlines Island Air,Y,N,1900-01-01,9999-12-31
+3192,Iran Air,Y,N,1900-01-01,9999-12-31
+3193,Indian Airlines Indian Air,Y,N,1900-01-01,9999-12-31
+3195,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3196,Hawaiian Air Hawaiian Air,Y,N,1900-01-01,9999-12-31
+3197,Havasu Airlines Havasu Air,Y,N,1900-01-01,9999-12-31
+3198,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3199,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3200,Guyana Airways Guyana Air,Y,N,1900-01-01,9999-12-31
+3203,Golden Pacific Air Goldpac Air,Y,N,1900-01-01,9999-12-31
+3204,Freedom Air Freedom Air,Y,N,1900-01-01,9999-12-31
+3206,China Eastern Airlines Chineastair,Y,N,1900-01-01,9999-12-31
+3207,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3211,Norwegian Air Shuttle Norwegianair,Y,N,1900-01-01,9999-12-31
+3212,Dominicana Dominica Air,Y,N,1900-01-01,9999-12-31
+3213,Braathens Regional Airlines Braathens Regional Air,Y,N,1900-01-01,9999-12-31
+3215,Dan Air Services Danairserv,Y,N,1900-01-01,9999-12-31
+3216,Cumberland Airlines Cumberlndair,Y,N,1900-01-01,9999-12-31
+3217,Csa Csa Airline,Y,N,1900-01-01,9999-12-31
+3218,Crown Air Crown Air,Y,N,1900-01-01,9999-12-31
+3219,Copa Copa Air,Y,N,1900-01-01,9999-12-31
+3220,Compania Faucett Comp Fau Air,Y,N,1900-01-01,9999-12-31
+3221,Tame Airline,Y,N,1900-01-01,9999-12-31
+3222,Command Airways Command Air,Y,N,1900-01-01,9999-12-31
+3223,Comair Comair,Y,N,1900-01-01,9999-12-31
+3226,Skyways Air Skyways Air,Y,N,1900-01-01,9999-12-31
+3228,Cayman Airways Caymanair,Y,N,1900-01-01,9999-12-31
+3229,Saeta Air,Y,N,1900-01-01,9999-12-31
+3231,Sahsa – Servicio Aereo De Honduras Sahsa Air,Y,N,1900-01-01,9999-12-31
+3233,Capitol Air Capitol Air,Y,N,1900-01-01,9999-12-31
+3234,Caribbean Airlines Caribbeanair,Y,N,1900-01-01,9999-12-31
+3235,Brockway Air Brockway Air,Y,N,1900-01-01,9999-12-31
+3236,Air Arabia Airline Air Arabia,Y,N,1900-01-01,9999-12-31
+3238,Bemidji Airlines Bemidji Air,Y,N,1900-01-01,9999-12-31
+3239,Bar Harbor Airlines Barharborair,Y,N,1900-01-01,9999-12-31
+3240,Bahamasair Bahamasair,Y,N,1900-01-01,9999-12-31
+3241,Aviateca (Guatemala) Aviateca Air,Y,N,1900-01-01,9999-12-31
+3242,Avensa Avensa Air,Y,N,1900-01-01,9999-12-31
+3243,Austrian Air Service Aust Airserv,Y,N,1900-01-01,9999-12-31
+3245,Easyjet Airlines Easyjet Air,Y,N,1900-01-01,9999-12-31
+3246,Ryanair Ryanair,Y,N,1900-01-01,9999-12-31
+3247,Gol Airlines Gol Air,Y,N,1900-01-01,9999-12-31
+3248,Tam Airlines Tam Air,Y,N,1900-01-01,9999-12-31
+3251,Aloha Airlines Aloha Air,Y,N,1900-01-01,9999-12-31
+3252,Alm Alm Airline,Y,N,1900-01-01,9999-12-31
+3253,America West Airlines,Y,N,1900-01-01,9999-12-31
+3254,Us Air Shuttle Usairshutl,Y,N,1900-01-01,9999-12-31
+3256,Alaska Airlines Alaska Air,Y,N,1900-01-01,9999-12-31
+3259,American Trans Air Ata Air,Y,N,1900-01-01,9999-12-31
+3260,Spirit Airlines Spirit Air,Y,N,1900-01-01,9999-12-31
+3261,Air China Air China,Y,N,1900-01-01,9999-12-31
+3262,"Reno Air, Inc. Reno Air",Y,N,1900-01-01,9999-12-31
+3263,Aero Servico Carabobo Asc Airline,Y,N,1900-01-01,9999-12-31
+3266,Air Seychelles Air Seych,Y,N,1900-01-01,9999-12-31
+3267,Air Panama Air Panama,Y,N,1900-01-01,9999-12-31
+3268,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3273,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3274,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3275,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3276,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3277,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3279,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3280,Air Jamaica Air Jamaica,Y,N,1900-01-01,9999-12-31
+3281,Airline Carrier - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3282,Air Djibouti Air Djibouti,Y,N,1900-01-01,9999-12-31
+3284,Aero Virgin Islands Aervirginis,Y,N,1900-01-01,9999-12-31
+3285,Aeroperu Aeroperu,Y,N,1900-01-01,9999-12-31
+3286,Aerolineas Nicaraguensis Aeronicarag,Y,N,1900-01-01,9999-12-31
+3287,Aero Coach Aviation Aerocoach Av,Y,N,1900-01-01,9999-12-31
+3291,Ariana Afghan Airlines,Y,N,1900-01-01,9999-12-31
+3292,Cyprus Airways Cyprus Air,Y,N,1900-01-01,9999-12-31
+3293,Ecuatoriana Ecuatoriana,Y,N,1900-01-01,9999-12-31
+3294,Ethiopian Airlines Ethiopian Air,Y,N,1900-01-01,9999-12-31
+3295,Kenya Airways Kenya Air,Y,N,1900-01-01,9999-12-31
+3296,Air Berlin Air Berlin,Y,N,1900-01-01,9999-12-31
+3297,Tarom Romanian Air Transport Tarom Air,Y,N,1900-01-01,9999-12-31
+3298,Air Mauritius Airmauritius,Y,N,1900-01-01,9999-12-31
+3299,Wideroe’s Flyveselskap Wideroes,Y,N,1900-01-01,9999-12-31
+3300,Azul Air Azul Air,Y,N,1900-01-01,9999-12-31
+3301,Wizz Air Wizz Air,Y,N,1900-01-01,9999-12-31
+3302,Flybe Ltd Flybeair,Y,N,1900-01-01,9999-12-31
+3303,Tigerair Tigerair,Y,N,1900-01-01,9999-12-31
+3304,Air Baltic Airbaltic,Y,N,1900-01-01,9999-12-31
+3308,China Southern Airlines China Southern,Y,N,1900-01-01,9999-12-31
+3351,Affiliated Auto Rental,Y,N,1900-01-01,9999-12-31
+3352,American Intl Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3353,Brooks Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3354,Action Auto Rental,Y,N,1900-01-01,9999-12-31
+3355,Sixt Car Rental,Y,N,1900-01-01,9999-12-31
+3357,Hertz,Y,N,1900-01-01,9999-12-31
+3359,Payless Car Rental,Y,N,1900-01-01,9999-12-31
+3360,Snappy Car Rental,Y,N,1900-01-01,9999-12-31
+3361,Airways Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3362,Altra Auto Rental,Y,N,1900-01-01,9999-12-31
+3364,Agency Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3366,Budget Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3368,Holiday Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3370,Rent-A-Wreck,Y,N,1900-01-01,9999-12-31
+3374,Accent Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3376,Ajax Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3380,Triangle Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3381,Europ Car,Y,N,1900-01-01,9999-12-31
+3385,Tropical Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3386,Showcase Rental Cars,Y,N,1900-01-01,9999-12-31
+3387,Alamo Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3388,Merchants Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3389,Avis Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3390,Dollar Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3391,Europe By Car,Y,N,1900-01-01,9999-12-31
+3393,National Car Rental,Y,N,1900-01-01,9999-12-31
+3394,Kemwell Group Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3395,Thrifty Car Rental,Y,N,1900-01-01,9999-12-31
+3396,Tilden Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3398,Econo-Car Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3399,Car Rental Agency - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3400,Auto Host Car Rentals,Y,N,1900-01-01,9999-12-31
+3405,Enterprise Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3409,General Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3411,Car Rental Agency - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3412,A-1 Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3414,Godfrey Natl Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3419,Alpha Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3420,Ansa Intl Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3421,Allstate Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3423,Avcar Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3425,Automate Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3427,Avon Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3428,Carey Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3429,Insurance Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3430,Major Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3431,Replacement Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3432,Reserve Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3433,Ugly Duckling Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3434,Usa Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3435,Value Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3436,Autohansa Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3437,Cite Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3438,Interent Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3439,Milleville Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3440,Car Rental Agency - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3441,Advantage Rent-A-Car,Y,N,1900-01-01,9999-12-31
+3501,Holiday Inns,Y,N,1900-01-01,9999-12-31
+3502,Best Western Hotels,Y,N,1900-01-01,9999-12-31
+3503,Sheraton,Y,N,1900-01-01,9999-12-31
+3504,Hilton Hotels,Y,N,1900-01-01,9999-12-31
+3505,Forte Hotels,Y,N,1900-01-01,9999-12-31
+3506,Golden Tulip Hotels,Y,N,1900-01-01,9999-12-31
+3507,Friendship Inns,Y,N,1900-01-01,9999-12-31
+3508,Quality Inns,Y,N,1900-01-01,9999-12-31
+3509,Marriott,Y,N,1900-01-01,9999-12-31
+3510,Days Inns,Y,N,1900-01-01,9999-12-31
+3511,Arabella Hotels,Y,N,1900-01-01,9999-12-31
+3512,Inter-Continental Hotels,Y,N,1900-01-01,9999-12-31
+3513,Westin,Y,N,1900-01-01,9999-12-31
+3514,Amerisuites,Y,N,1900-01-01,9999-12-31
+3515,Rodeway Inns,Y,N,1900-01-01,9999-12-31
+3516,La Quinta Inn and Suites,Y,N,1900-01-01,9999-12-31
+3517,Americana Hotels,Y,N,1900-01-01,9999-12-31
+3518,Sol Hotels,Y,N,1900-01-01,9999-12-31
+3519,Pullman International Hotels,Y,N,1900-01-01,9999-12-31
+3520,Meridien Hotels,Y,N,1900-01-01,9999-12-31
+3521,Royal Lahaina Resorts,Y,N,1900-01-01,9999-12-31
+3522,Tokyo Hotel,Y,N,1900-01-01,9999-12-31
+3523,Peninsula Hotel,Y,N,1900-01-01,9999-12-31
+3524,Welcomgroup Hotels,Y,N,1900-01-01,9999-12-31
+3525,Dunfey Hotels,Y,N,1900-01-01,9999-12-31
+3526,Prince Hotels,Y,N,1900-01-01,9999-12-31
+3527,Downtowner-Passport Hotel,Y,N,1900-01-01,9999-12-31
+3528,Red Lion Inns,Y,N,1900-01-01,9999-12-31
+3529,Cp Hotels,Y,N,1900-01-01,9999-12-31
+3530,Renaissance Hotels,Y,N,1900-01-01,9999-12-31
+3531,Kauai Coconut Beach Resort,Y,N,1900-01-01,9999-12-31
+3532,Royal Kona Resort,Y,N,1900-01-01,9999-12-31
+3533,Hotel Ibis,Y,N,1900-01-01,9999-12-31
+3534,Southern Pacific Hotels,Y,N,1900-01-01,9999-12-31
+3535,Hilton Internationals,Y,N,1900-01-01,9999-12-31
+3536,Amfac Hotels,Y,N,1900-01-01,9999-12-31
+3537,Ana Hotel,Y,N,1900-01-01,9999-12-31
+3538,Concorde Hotels,Y,N,1900-01-01,9999-12-31
+3539,Summerfield Suites Hotels,Y,N,1900-01-01,9999-12-31
+3540,Iberotel Hotels,Y,N,1900-01-01,9999-12-31
+3541,Hotel Okura,Y,N,1900-01-01,9999-12-31
+3542,Royal Hotels,Y,N,1900-01-01,9999-12-31
+3543,Four Seasons Hotels,Y,N,1900-01-01,9999-12-31
+3544,Ciga Hotels,Y,N,1900-01-01,9999-12-31
+3545,Shangri-La International,Y,N,1900-01-01,9999-12-31
+3546,Hotel Sierra,Y,N,1900-01-01,9999-12-31
+3547,Breakers Resort,Y,N,1900-01-01,9999-12-31
+3548,Hoteles Melia,Y,N,1900-01-01,9999-12-31
+3549,Auberge Des Governeurs,Y,N,1900-01-01,9999-12-31
+3550,Regal 8 Inns,Y,N,1900-01-01,9999-12-31
+3551,Mirage Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3552,Coast Hotels,Y,N,1900-01-01,9999-12-31
+3553,Park Inns International,Y,N,1900-01-01,9999-12-31
+3554,Pinehurst Resort,Y,N,1900-01-01,9999-12-31
+3555,Treasure Island Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3556,Barton Creek Resort,Y,N,1900-01-01,9999-12-31
+3557,Manhattan East Suite Hotels,Y,N,1900-01-01,9999-12-31
+3558,Jolly Hotels,Y,N,1900-01-01,9999-12-31
+3559,Candlewood Suites,Y,N,1900-01-01,9999-12-31
+3560,Aladdin Resort and Casino,Y,N,1900-01-01,9999-12-31
+3561,Golden Nugget,Y,N,1900-01-01,9999-12-31
+3562,Comfort Inns,Y,N,1900-01-01,9999-12-31
+3563,Journey’s End Motels,Y,N,1900-01-01,9999-12-31
+3564,Sam’s Town Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3565,Relax Inns,Y,N,1900-01-01,9999-12-31
+3566,Garden Place Hotel,Y,N,1900-01-01,9999-12-31
+3567,Soho Grand Hotel,Y,N,1900-01-01,9999-12-31
+3568,Ladbroke Hotels,Y,N,1900-01-01,9999-12-31
+3569,Tribeca Grand Hotel,Y,N,1900-01-01,9999-12-31
+3570,Forum Hotels,Y,N,1900-01-01,9999-12-31
+3571,Grand Wailea Resort,Y,N,1900-01-01,9999-12-31
+3572,Miyako Hotels,Y,N,1900-01-01,9999-12-31
+3573,Sandman Hotels,Y,N,1900-01-01,9999-12-31
+3574,Venture Inns,Y,N,1900-01-01,9999-12-31
+3575,Vagabond Hotels,Y,N,1900-01-01,9999-12-31
+3576,La Quinta Resort,Y,N,1900-01-01,9999-12-31
+3577,Mandarin Oriental Hotel,Y,N,1900-01-01,9999-12-31
+3578,Frankenmuth Bavarian,Y,N,1900-01-01,9999-12-31
+3579,Hotel Mercure,Y,N,1900-01-01,9999-12-31
+3580,Hotel Del Coronado,Y,N,1900-01-01,9999-12-31
+3581,Delta Hotel,Y,N,1900-01-01,9999-12-31
+3582,California Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3583,Radisson Blu,Y,N,1900-01-01,9999-12-31
+3584,Princess Hotels International,Y,N,1900-01-01,9999-12-31
+3585,Hungar Hotels,Y,N,1900-01-01,9999-12-31
+3586,Sokos Hotels,Y,N,1900-01-01,9999-12-31
+3587,Doral Hotels,Y,N,1900-01-01,9999-12-31
+3588,Helmsley Hotels,Y,N,1900-01-01,9999-12-31
+3589,Doral Golf Resort,Y,N,1900-01-01,9999-12-31
+3590,Fairmont Hotels,Y,N,1900-01-01,9999-12-31
+3591,Sonesta Hotels,Y,N,1900-01-01,9999-12-31
+3592,Omni Hotels,Y,N,1900-01-01,9999-12-31
+3593,Cunard Hotels,Y,N,1900-01-01,9999-12-31
+3594,Arizona Biltmore,Y,N,1900-01-01,9999-12-31
+3595,Hospitality Inns,Y,N,1900-01-01,9999-12-31
+3596,Wynn Las Vegas,Y,N,1900-01-01,9999-12-31
+3597,Riverside Resort Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3598,Regent International Hotels,Y,N,1900-01-01,9999-12-31
+3599,Pannonia Hotels,Y,N,1900-01-01,9999-12-31
+3600,Saddlebrook Resort Tampa,Y,N,1900-01-01,9999-12-31
+3601,Tradewinds Resorts,Y,N,1900-01-01,9999-12-31
+3602,Hudson Hotel,Y,N,1900-01-01,9999-12-31
+3603,Noah’s Hotels,Y,N,1900-01-01,9999-12-31
+3604,Hilton Garden Inn,Y,N,1900-01-01,9999-12-31
+3605,Jurys Doyle Hotel Group,Y,N,1900-01-01,9999-12-31
+3606,Jefferson Hotel,Y,N,1900-01-01,9999-12-31
+3607,Fontainebleau Resorts,Y,N,1900-01-01,9999-12-31
+3608,Gaylord Opryland,Y,N,1900-01-01,9999-12-31
+3609,Gaylord Palms,Y,N,1900-01-01,9999-12-31
+3610,Gaylord Texan,Y,N,1900-01-01,9999-12-31
+3611,Lodging Establishment - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3612,Moevenpick Hotels,Y,N,1900-01-01,9999-12-31
+3613,Microtel Inns & Suites,Y,N,1900-01-01,9999-12-31
+3614,Americinn,Y,N,1900-01-01,9999-12-31
+3615,Travelodge,Y,N,1900-01-01,9999-12-31
+3616,Hermitage Hotel,Y,N,1900-01-01,9999-12-31
+3617,America’s Best Value Inn,Y,N,1900-01-01,9999-12-31
+3618,Great Wolf,Y,N,1900-01-01,9999-12-31
+3619,Aloft,Y,N,1900-01-01,9999-12-31
+3620,Binion’s Horseshoe Club,Y,N,1900-01-01,9999-12-31
+3621,Extended Stay,Y,N,1900-01-01,9999-12-31
+3622,Merlin Hotels,Y,N,1900-01-01,9999-12-31
+3623,Dorint Hotels,Y,N,1900-01-01,9999-12-31
+3624,Lady Luck Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3625,Hotel Universale,Y,N,1900-01-01,9999-12-31
+3626,Studio Plus,Y,N,1900-01-01,9999-12-31
+3627,Extended Stay America,Y,N,1900-01-01,9999-12-31
+3628,Excalibur Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3629,Dan Hotels,Y,N,1900-01-01,9999-12-31
+3630,Tokyu Hotels,Y,N,1900-01-01,9999-12-31
+3631,Sleep Inn,Y,N,1900-01-01,9999-12-31
+3632,The Phoenician,Y,N,1900-01-01,9999-12-31
+3633,Rank Hotels,Y,N,1900-01-01,9999-12-31
+3634,Swissotel,Y,N,1900-01-01,9999-12-31
+3635,Reso Hotels,Y,N,1900-01-01,9999-12-31
+3636,Sarova Hotels,Y,N,1900-01-01,9999-12-31
+3637,Ramada Inns,Y,N,1900-01-01,9999-12-31
+3638,Howard Johnson,Y,N,1900-01-01,9999-12-31
+3639,Mount Charlotte Thistle,Y,N,1900-01-01,9999-12-31
+3640,Hyatt Hotels,Y,N,1900-01-01,9999-12-31
+3641,Sofitel Hotels,Y,N,1900-01-01,9999-12-31
+3642,Novotel Hotels,Y,N,1900-01-01,9999-12-31
+3643,Steigenberger Hotels,Y,N,1900-01-01,9999-12-31
+3644,Econo Lodges,Y,N,1900-01-01,9999-12-31
+3645,Queens Moat Houses,Y,N,1900-01-01,9999-12-31
+3646,Swallow Hotels,Y,N,1900-01-01,9999-12-31
+3647,Husa Hotels,Y,N,1900-01-01,9999-12-31
+3648,De Vere Hotels,Y,N,1900-01-01,9999-12-31
+3649,Radisson Hotels,Y,N,1900-01-01,9999-12-31
+3650,Red Roof Inns,Y,N,1900-01-01,9999-12-31
+3651,Imperial London Hotel,Y,N,1900-01-01,9999-12-31
+3652,Embassy Hotels,Y,N,1900-01-01,9999-12-31
+3653,Penta Hotels,Y,N,1900-01-01,9999-12-31
+3654,Loews Hotels,Y,N,1900-01-01,9999-12-31
+3655,Scandic Hotels,Y,N,1900-01-01,9999-12-31
+3656,Sara Hotels,Y,N,1900-01-01,9999-12-31
+3657,Oberoi Hotels,Y,N,1900-01-01,9999-12-31
+3658,New Otani Hotels,Y,N,1900-01-01,9999-12-31
+3659,Taj Hotels International,Y,N,1900-01-01,9999-12-31
+3660,Knights Inns,Y,N,1900-01-01,9999-12-31
+3661,Metropole Hotels,Y,N,1900-01-01,9999-12-31
+3662,Circus Circus Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3663,Hoteles El Presidente,Y,N,1900-01-01,9999-12-31
+3664,Flag Inn,Y,N,1900-01-01,9999-12-31
+3665,Hampton Inns,Y,N,1900-01-01,9999-12-31
+3666,Stakis Hotels,Y,N,1900-01-01,9999-12-31
+3667,Luxor Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3668,Maritim Hotels,Y,N,1900-01-01,9999-12-31
+3669,Eldorado Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3670,Arcade Hotels,Y,N,1900-01-01,9999-12-31
+3671,Arctia Hotels,Y,N,1900-01-01,9999-12-31
+3672,Campanile Hotels,Y,N,1900-01-01,9999-12-31
+3673,Ibusz Hotels,Y,N,1900-01-01,9999-12-31
+3674,Rantasipi Hotels,Y,N,1900-01-01,9999-12-31
+3675,Interhotel Cedok,Y,N,1900-01-01,9999-12-31
+3676,Monte Carlo Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3677,Climat De France Hotels,Y,N,1900-01-01,9999-12-31
+3678,Cumulus Hotels,Y,N,1900-01-01,9999-12-31
+3679,Silver Legacy Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3680,Hoteis Othan,Y,N,1900-01-01,9999-12-31
+3681,Adams Mark Hotels,Y,N,1900-01-01,9999-12-31
+3682,Sahara Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3683,Bradbury Suites,Y,N,1900-01-01,9999-12-31
+3684,Budget Host Inns,Y,N,1900-01-01,9999-12-31
+3685,Budgetel Inns,Y,N,1900-01-01,9999-12-31
+3686,Susse Chalet,Y,N,1900-01-01,9999-12-31
+3687,Clarion Hotels,Y,N,1900-01-01,9999-12-31
+3688,Compri Hotels,Y,N,1900-01-01,9999-12-31
+3689,Consort Hotels,Y,N,1900-01-01,9999-12-31
+3690,Courtyard By Marriott,Y,N,1900-01-01,9999-12-31
+3691,Dillon Inns,Y,N,1900-01-01,9999-12-31
+3692,Doubletree Hotels,Y,N,1900-01-01,9999-12-31
+3693,Drury Inns,Y,N,1900-01-01,9999-12-31
+3694,Economy Inns of America,Y,N,1900-01-01,9999-12-31
+3695,Embassy Suites,Y,N,1900-01-01,9999-12-31
+3696,Exel Inns,Y,N,1900-01-01,9999-12-31
+3697,Fairfield Hotels,Y,N,1900-01-01,9999-12-31
+3698,Harley Hotels,Y,N,1900-01-01,9999-12-31
+3699,Midway Motor Lodge,Y,N,1900-01-01,9999-12-31
+3700,Motel 6,Y,N,1900-01-01,9999-12-31
+3701,La Mansion Del Rio,Y,N,1900-01-01,9999-12-31
+3702,The Registry Hotels,Y,N,1900-01-01,9999-12-31
+3703,Residence Inns,Y,N,1900-01-01,9999-12-31
+3704,Royce Hotels,Y,N,1900-01-01,9999-12-31
+3705,Sandman Inns,Y,N,1900-01-01,9999-12-31
+3706,Shilo Inns,Y,N,1900-01-01,9999-12-31
+3707,Shoney’s Inns,Y,N,1900-01-01,9999-12-31
+3708,Virgin River Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3709,Super 8 Motels,Y,N,1900-01-01,9999-12-31
+3710,The Ritz-Carlton,Y,N,1900-01-01,9999-12-31
+3711,Flag Inns (Australia),Y,N,1900-01-01,9999-12-31
+3712,Buffalo Bill’s Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3713,Quality Pacific Hotel,Y,N,1900-01-01,9999-12-31
+3714,Four Seasons Hotel (Australia),Y,N,1900-01-01,9999-12-31
+3715,Fairfield Inn,Y,N,1900-01-01,9999-12-31
+3716,Carlton Hotels,Y,N,1900-01-01,9999-12-31
+3717,City Lodge Hotels,Y,N,1900-01-01,9999-12-31
+3718,Karos Hotels,Y,N,1900-01-01,9999-12-31
+3719,Protea Hotels,Y,N,1900-01-01,9999-12-31
+3720,Southern Sun Hotels,Y,N,1900-01-01,9999-12-31
+3721,Hilton Conrad,Y,N,1900-01-01,9999-12-31
+3722,Wyndham,Y,N,1900-01-01,9999-12-31
+3723,Rica Hotels,Y,N,1900-01-01,9999-12-31
+3724,Inter Nor Hotels,Y,N,1900-01-01,9999-12-31
+3725,Sea Pines Resort,Y,N,1900-01-01,9999-12-31
+3726,Rio Suites,Y,N,1900-01-01,9999-12-31
+3727,Broadmoor Hotel,Y,N,1900-01-01,9999-12-31
+3728,Bally’s Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3729,John Ascuaga’s Nugget,Y,N,1900-01-01,9999-12-31
+3730,Mgm Grand Hotel,Y,N,1900-01-01,9999-12-31
+3731,Harrah’s Hotels and Casinos,Y,N,1900-01-01,9999-12-31
+3732,Opryland Hotel,Y,N,1900-01-01,9999-12-31
+3733,Boca Raton Resort,Y,N,1900-01-01,9999-12-31
+3734,Harvey/bristol Hotels,Y,N,1900-01-01,9999-12-31
+3735,Masters Economy Inns,Y,N,1900-01-01,9999-12-31
+3736,Colorado Belle/edgewater Resort,Y,N,1900-01-01,9999-12-31
+3737,Riviera Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3738,Tropicana Resort & Casino,Y,N,1900-01-01,9999-12-31
+3739,Woodside Hotels & Resorts,Y,N,1900-01-01,9999-12-31
+3740,Towneplace Suites,Y,N,1900-01-01,9999-12-31
+3741,Millennium Hotels,Y,N,1900-01-01,9999-12-31
+3742,Club Med,Y,N,1900-01-01,9999-12-31
+3743,Biltmore Hotel & Suites,Y,N,1900-01-01,9999-12-31
+3744,Carefree Resorts,Y,N,1900-01-01,9999-12-31
+3745,St. Regis Hotel,Y,N,1900-01-01,9999-12-31
+3746,The Eliot Hotel,Y,N,1900-01-01,9999-12-31
+3747,Clubcorp/clubresorts,Y,N,1900-01-01,9999-12-31
+3748,Wellesley Inns,Y,N,1900-01-01,9999-12-31
+3749,The Beverly Hills Hotel,Y,N,1900-01-01,9999-12-31
+3750,Crowne Plaza Hotels,Y,N,1900-01-01,9999-12-31
+3751,Homewood Suites,Y,N,1900-01-01,9999-12-31
+3752,Peabody Hotels,Y,N,1900-01-01,9999-12-31
+3753,Greenbriar Resorts,Y,N,1900-01-01,9999-12-31
+3754,Amelia Island Plantation,Y,N,1900-01-01,9999-12-31
+3755,The Homestead,Y,N,1900-01-01,9999-12-31
+3756,Toyoko Inn,Y,N,1900-01-01,9999-12-31
+3757,Canyon Ranch,Y,N,1900-01-01,9999-12-31
+3758,Kahala Mandarin Oriental Hotel,Y,N,1900-01-01,9999-12-31
+3759,The Orchid At Mauna Lani,Y,N,1900-01-01,9999-12-31
+3760,Halekulani Hotel/waikiki Parc,Y,N,1900-01-01,9999-12-31
+3761,Primadonna Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3762,Whiskey Pete’s Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3763,Chateau Elan Winery and Resort,Y,N,1900-01-01,9999-12-31
+3764,Beau Rivage Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3765,Bellagio,Y,N,1900-01-01,9999-12-31
+3766,Fremont Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3767,Main Street Station Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3768,Silver Star Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3769,Stratosphere Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3770,Springhill Suites,Y,N,1900-01-01,9999-12-31
+3771,Caesar’s Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3772,Nemacolin Woodlands,Y,N,1900-01-01,9999-12-31
+3773,The Venetian Resort Hotel Casino,Y,N,1900-01-01,9999-12-31
+3774,New York-New York Hotel and Casino,Y,N,1900-01-01,9999-12-31
+3775,Sands Resort,Y,N,1900-01-01,9999-12-31
+3776,Nevele Grand Resort and Country Club,Y,N,1900-01-01,9999-12-31
+3777,Mandalay Bay Resort,Y,N,1900-01-01,9999-12-31
+3778,Four Points Hotels,Y,N,1900-01-01,9999-12-31
+3779,W Hotels,Y,N,1900-01-01,9999-12-31
+3780,Disney Resorts,Y,N,1900-01-01,9999-12-31
+3781,Patricia Grand Resort Hotels,Y,N,1900-01-01,9999-12-31
+3782,Rosen Hotels and Resorts,Y,N,1900-01-01,9999-12-31
+3783,Town and Country Resort & Convention Center,Y,N,1900-01-01,9999-12-31
+3784,First Hospitality Hotels,Y,N,1900-01-01,9999-12-31
+3785,Outrigger Hotels and Resorts,Y,N,1900-01-01,9999-12-31
+3786,Ohana Hotels of Hawaii,Y,N,1900-01-01,9999-12-31
+3787,Caribe Royale Resorts,Y,N,1900-01-01,9999-12-31
+3788,Ala Moana Hotel,Y,N,1900-01-01,9999-12-31
+3789,Smuggler’s Notch Resort,Y,N,1900-01-01,9999-12-31
+3790,Raffles Hotels,Y,N,1900-01-01,9999-12-31
+3791,Staybridge Suites,Y,N,1900-01-01,9999-12-31
+3792,Claridge Casino Hotel,Y,N,1900-01-01,9999-12-31
+3793,Flamingo Hotels,Y,N,1900-01-01,9999-12-31
+3794,Grand Casino Hotels,Y,N,1900-01-01,9999-12-31
+3795,Paris Las Vegas Hotel,Y,N,1900-01-01,9999-12-31
+3796,Peppermill Hotel Casino,Y,N,1900-01-01,9999-12-31
+3797,Atlantic City Hilton Resorts,Y,N,1900-01-01,9999-12-31
+3798,Embassy Vacation Resort,Y,N,1900-01-01,9999-12-31
+3799,Hale Koa Hotel,Y,N,1900-01-01,9999-12-31
+3800,Homestead Suites,Y,N,1900-01-01,9999-12-31
+3801,Wilderness Hotel and Resort,Y,N,1900-01-01,9999-12-31
+3802,The Palace Hotel,Y,N,1900-01-01,9999-12-31
+3803,Lodging Establishment - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3804,Lodging Establishment - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3805,The Atlantic,Y,N,1900-01-01,9999-12-31
+3806,Lodging Establishment - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3807,Element,Y,N,1900-01-01,9999-12-31
+3808,Lxr,Y,N,1900-01-01,9999-12-31
+3809,Lodging Establishment - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3810,La Costa Resort,Y,N,1900-01-01,9999-12-31
+3811,Premier Inn,Y,N,1900-01-01,9999-12-31
+3812,Hyatt Place,Y,N,1900-01-01,9999-12-31
+3813,Hotel Indigo,Y,N,1900-01-01,9999-12-31
+3814,The Roosevelt Hotel Ny,Y,N,1900-01-01,9999-12-31
+3815,Nickelodeon Family Suites By Holiday Inn,Y,N,1900-01-01,9999-12-31
+3816,Home2suites,Y,N,1900-01-01,9999-12-31
+3817,Lodging Establishment - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+3818,Mainstay Suites,Y,N,1900-01-01,9999-12-31
+3819,Oxford Suites,Y,N,1900-01-01,9999-12-31
+3820,Jumeirah Essex House,Y,N,1900-01-01,9999-12-31
+3821,Caribe Royale,Y,N,1900-01-01,9999-12-31
+3822,Crossland,Y,N,1900-01-01,9999-12-31
+3823,Grand Sierra Resort,Y,N,1900-01-01,9999-12-31
+3824,Aria,Y,N,1900-01-01,9999-12-31
+3825,Vdara,Y,N,1900-01-01,9999-12-31
+3826,Autograph,Y,N,1900-01-01,9999-12-31
+3827,Galt House,Y,N,1900-01-01,9999-12-31
+3828,Cosmopolitan of Las Vegas,Y,N,1900-01-01,9999-12-31
+3829,Country Inn By Radisson,Y,N,1900-01-01,9999-12-31
+3830,Park Plaza Hotel,Y,N,1900-01-01,9999-12-31
+3831,Waldorf,Y,N,1900-01-01,9999-12-31
+3832,Curio Hotels,Y,N,1900-01-01,9999-12-31
+3833,Canopy,Y,N,1900-01-01,9999-12-31
+3834,Baymont Inn & Suites,Y,N,1900-01-01,9999-12-31
+3835,Dolce Hotels and Resorts,Y,N,1900-01-01,9999-12-31
+3836,Hawthorn By Wyndham,Y,N,1900-01-01,9999-12-31
+3837,Hoshino Resorts,Y,N,1900-01-01,9999-12-31
+3838,Kimpton Hotels,Y,N,1900-01-01,9999-12-31
+3839,Kyoritsu Hotels,Y,N,1900-01-01,9999-12-31
+3840,Rio Hotels,Y,N,1900-01-01,9999-12-31
+3841,Tribute Portfolio,Y,N,1900-01-01,9999-12-31
+3842,Marriot Executive Apartments,Y,N,1900-01-01,9999-12-31
+3843,Moxy,Y,N,1900-01-01,9999-12-31
+3844,Ac Hotels,Y,N,1900-01-01,9999-12-31
+3845,Bulgari,Y,N,1900-01-01,9999-12-31
+3846,The Luxury Collection,Y,N,1900-01-01,9999-12-31
+3847,JW Marriot,Y,N,1900-01-01,9999-12-31
+3848,Edition,Y,N,1900-01-01,9999-12-31
+3849,Minacia,Y,N,1900-01-01,9999-12-31
+3850,Breezbay Group,Y,N,1900-01-01,9999-12-31
+3851,Candeo Hotels,Y,N,1900-01-01,9999-12-31
+3852,Core Global Management Hotels and Resorts,Y,N,1900-01-01,9999-12-31
+3853,Granbell Hotels and Resorts,Y,N,1900-01-01,9999-12-31
+4011,Railroads,Y,N,1900-01-01,9999-12-31
+4111,"Local and Suburban Commuter Passenger Transportation, including Ferries",Y,N,1900-01-01,9999-12-31
+4112,Passenger Railways,Y,N,1900-01-01,9999-12-31
+4119,Ambulance Services,Y,N,1900-01-01,9999-12-31
+4121,Taxicabs and Limousines,Y,N,1900-01-01,9999-12-31
+4131,Bus Lines,Y,N,1900-01-01,9999-12-31
+4214,"Motor Freight Carriers and Trucking – Local and Long Distance, Moving and Storage Companies, and Local Delivery",Y,N,1900-01-01,9999-12-31
+4215,"Courier Services – Air and Ground, and Freight Forwarders",Y,N,1900-01-01,9999-12-31
+4225,"Public Warehousing and Storage – Farm Products, Refrigerated Goods, Household Goods, and Storage",Y,N,1900-01-01,9999-12-31
+4411,Steamship and Cruise Lines,Y,N,1900-01-01,9999-12-31
+4457,Boat Rentals and Leasing,Y,N,1900-01-01,9999-12-31
+4468,"Marinas, Marine Service, and Supplies",Y,N,1900-01-01,9999-12-31
+4511,Airlines and Air Carriers (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+4582,"Airports, Flying Fields, and Airport Terminals",Y,N,1900-01-01,9999-12-31
+4722,Travel Agencies and Tour Operators,Y,N,1900-01-01,9999-12-31
+4723,Package Tour Operators – Germany Only,Y,N,1900-01-01,9999-12-31
+4761,Telemarketing of Travel-Related Services and Vitamins,Y,N,1900-01-01,9999-12-31
+4784,Tolls and Bridge Fees,Y,N,1900-01-01,9999-12-31
+4789,Transportation Services (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+4812,Telecommunication Equipment and Telephone Sales,Y,N,1900-01-01,9999-12-31
+4813,Key-Entry Telecom Merchant Providing Single Local and Long-Distance Phone Calls using a Central Access Number,Y,N,1900-01-01,9999-12-31
+4814,"Telecommunication Services, including Local and Long-Distance Calls, Credit Card Calls, Calls Through Use of Magnetic-",Y,N,1900-01-01,9999-12-31
+4815,Telecommunication Services - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+4816,Computer Network/information Services,Y,N,1900-01-01,9999-12-31
+4821,Telegraph Services,Y,N,1900-01-01,9999-12-31
+4829,Money Transfer,Y,N,1900-01-01,9999-12-31
+4899,"Cable, Satellite and Other Pay Television/radio/streaming Services",Y,N,1900-01-01,9999-12-31
+4900,"Utilities – Electric, Gas, Water, and Sanitary",Y,N,1900-01-01,9999-12-31
+5013,Motor Vehicle Supplies and New Parts,Y,N,1900-01-01,9999-12-31
+5021,Office and Commercial Furniture,Y,N,1900-01-01,9999-12-31
+5039,Construction Materials (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+5044,"Photographic, Photocopy, Microfilm Equipment and Supplies",Y,N,1900-01-01,9999-12-31
+5045,Computers and Computer Peripheral Equipment and Software,Y,N,1900-01-01,9999-12-31
+5046,Commercial Equipment (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+5047,"Medical, Dental, Ophthalmic and Hospital Equipment and Supplies",Y,N,1900-01-01,9999-12-31
+5051,Metal Service Centers and Offices,Y,N,1900-01-01,9999-12-31
+5065,Electrical Parts and Equipment,Y,N,1900-01-01,9999-12-31
+5072,"Hardware, Equipment and Supplies",Y,N,1900-01-01,9999-12-31
+5074,Plumbing and Heating Equipment and Supplies,Y,N,1900-01-01,9999-12-31
+5085,Industrial Supplies (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+5094,"Precious Stones and Metals, Watches and Jewelry",Y,N,1900-01-01,9999-12-31
+5099,Durable Goods (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+5111,"Stationery, Office Supplies, Printing and Writing Paper",Y,N,1900-01-01,9999-12-31
+5122,"Drugs, Drug Proprietaries, and Druggist Sundries",Y,N,1900-01-01,9999-12-31
+5131,"Piece Goods, Notions, and Other Dry Goods",Y,N,1900-01-01,9999-12-31
+5137,"Men’s, Women’s, and Children’s Uniforms and Commercial Clothing",Y,N,1900-01-01,9999-12-31
+5139,Commercial Footwear,Y,N,1900-01-01,9999-12-31
+5169,Chemicals and Allied Products (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+5172,Petroleum and Petroleum Products,Y,N,1900-01-01,9999-12-31
+5192,"Books, Periodicals and Newspapers",Y,N,1900-01-01,9999-12-31
+5193,"Florists Supplies, Nursery Stock and Flowers",Y,N,1900-01-01,9999-12-31
+5198,"Paints, Varnishes and Supplies",Y,N,1900-01-01,9999-12-31
+5199,Nondurable Goods (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+5200,Home Supply Warehouse Stores,Y,N,1900-01-01,9999-12-31
+5211,Lumber and Building Materials Stores,Y,N,1900-01-01,9999-12-31
+5231,"Glass, Paint, and Wallpaper Stores",Y,N,1900-01-01,9999-12-31
+5251,Hardware Stores,Y,N,1900-01-01,9999-12-31
+5261,Nurseries and Lawn and Garden Supply Stores,Y,N,1900-01-01,9999-12-31
+5262,Marketplaces,Y,N,1900-01-01,9999-12-31
+5271,Mobile Home Dealers,Y,N,1900-01-01,9999-12-31
+5299,Warehouse Club Gas,Y,N,1900-01-01,9999-12-31
+5300,Wholesale Clubs,Y,N,1900-01-01,9999-12-31
+5309,Duty Free Stores,Y,N,1900-01-01,9999-12-31
+5310,Discount Stores,Y,N,1900-01-01,9999-12-31
+5311,Department Stores,Y,N,1900-01-01,9999-12-31
+5331,Variety Stores,Y,N,1900-01-01,9999-12-31
+5399,Miscellaneous General Merchandise,Y,N,1900-01-01,9999-12-31
+5411,Grocery Stores and Supermarkets,Y,N,1900-01-01,9999-12-31
+5422,Freezer and Locker Meat Provisioners,Y,N,1900-01-01,9999-12-31
+5441,"Candy, Nut, and Confectionery Stores",Y,N,1900-01-01,9999-12-31
+5451,Dairy Products Stores,Y,N,1900-01-01,9999-12-31
+5462,Bakeries,Y,N,1900-01-01,9999-12-31
+5499,Miscellaneous Food Stores – Convenience Stores and Specialty Markets,Y,N,1900-01-01,9999-12-31
+5511,"Car and Truck Dealers (New and Used) Sales, Service, Repairs, Parts, and Leasing",Y,N,1900-01-01,9999-12-31
+5521,"Car and Truck Dealers (Used Only) Sales, Service, Repairs, Parts, and Leasing",Y,N,1900-01-01,9999-12-31
+5531,Auto and Home Supply Stores,Y,N,1900-01-01,9999-12-31
+5532,Automotive Tire Stores,Y,N,1900-01-01,9999-12-31
+5533,Automotive Parts and Accessories Stores,Y,N,1900-01-01,9999-12-31
+5541,Service Stations (with or without Ancillary Services),Y,N,1900-01-01,9999-12-31
+5542,Automated Fuel Dispensers,Y,N,1900-01-01,9999-12-31
+5551,Boat Dealers,Y,N,1900-01-01,9999-12-31
+5552,Electric Vehicle Charging,Y,N,1900-01-01,9999-12-31
+5561,"Camper, Recreational and Utility Trailer Dealers",Y,N,1900-01-01,9999-12-31
+5571,Motorcycle Shops and Dealers,Y,N,1900-01-01,9999-12-31
+5592,Motor Homes Dealers,Y,N,1900-01-01,9999-12-31
+5598,Snowmobile Dealers,Y,N,1900-01-01,9999-12-31
+5599,"Miscellaneous Automotive, Aircraft, and Farm Equipment Dealers (not elsewhere Classified)",Y,N,1900-01-01,9999-12-31
+5611,Men’s and Boys’ Clothing and Accessories Stores,Y,N,1900-01-01,9999-12-31
+5621,Women’s Ready-To-Wear Stores,Y,N,1900-01-01,9999-12-31
+5631,Women’s Accessory and Specialty Shops,Y,N,1900-01-01,9999-12-31
+5641,Children’s and Infants’ Wear Stores,Y,N,1900-01-01,9999-12-31
+5651,Family Clothing Stores,Y,N,1900-01-01,9999-12-31
+5655,Sports and Riding Apparel Stores,Y,N,1900-01-01,9999-12-31
+5661,Shoe Stores,Y,N,1900-01-01,9999-12-31
+5681,Furriers and Fur Shops,Y,N,1900-01-01,9999-12-31
+5691,Men’s and Women’s Clothing Stores,Y,N,1900-01-01,9999-12-31
+5697,"Tailors, Seamstresses, Mending, and Alterations",Y,N,1900-01-01,9999-12-31
+5698,Wig and Toupee Stores,Y,N,1900-01-01,9999-12-31
+5699,Miscellaneous Apparel and Accessory Shops,Y,N,1900-01-01,9999-12-31
+5712,"Furniture, Home Furnishings, and Equipment Stores, Except Appliances",Y,N,1900-01-01,9999-12-31
+5713,Floor Covering Stores,Y,N,1900-01-01,9999-12-31
+5714,"Drapery, Window Covering, and Upholstery Stores",Y,N,1900-01-01,9999-12-31
+5715,Household Furnishings - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+5718,"Fireplace, Fireplace Screens and Accessories Stores",Y,N,1900-01-01,9999-12-31
+5719,Miscellaneous Home Furnishing Specialty Stores,Y,N,1900-01-01,9999-12-31
+5722,Household Appliance Stores,Y,N,1900-01-01,9999-12-31
+5723,Guns and Ammunition Shops,Y,N,1900-01-01,9999-12-31
+5732,Electronics Stores,Y,N,1900-01-01,9999-12-31
+5733,"Music Stores – Musical Instruments, Pianos, and Sheet Music",Y,N,1900-01-01,9999-12-31
+5734,Computer Software Stores,Y,N,1900-01-01,9999-12-31
+5735,Record Stores,Y,N,1900-01-01,9999-12-31
+5811,Caterers,Y,N,1900-01-01,9999-12-31
+5812,Eating Places and Restaurants,Y,N,1900-01-01,9999-12-31
+5813,"Drinking Places (Alcoholic Beverages) – Bars, Taverns, Nightclubs, Cocktail Lounges, and Discotheques",Y,N,1900-01-01,9999-12-31
+5814,Fast Food Restaurants,Y,N,1900-01-01,9999-12-31
+5815,"Digital Goods Media – Books, Movies, Digital Artwork/images, Music",Y,N,1900-01-01,9999-12-31
+5816,Digital Goods – Games,Y,N,1900-01-01,9999-12-31
+5817,Digital Goods – Applications (Excludes Games),Y,N,1900-01-01,9999-12-31
+5818,Digital Goods – Large Digital Goods Merchant,Y,N,1900-01-01,9999-12-31
+5912,Drug Stores and Pharmacies,Y,N,1900-01-01,9999-12-31
+5921,"Package Stores – Beer, Wine, and Liquor",Y,N,1900-01-01,9999-12-31
+5931,Used Merchandise and Secondhand Stores,Y,N,1900-01-01,9999-12-31
+5932,"Antique Shops – Sales, Repairs, and Restoration Services",Y,N,1900-01-01,9999-12-31
+5933,Pawn Shops,Y,N,1900-01-01,9999-12-31
+5935,Wrecking and Salvage Yards,Y,N,1900-01-01,9999-12-31
+5937,Antique Reproductions,Y,N,1900-01-01,9999-12-31
+5940,Bicycle Shops – Sales and Service,Y,N,1900-01-01,9999-12-31
+5941,Sporting Goods Stores,Y,N,1900-01-01,9999-12-31
+5942,Book Stores,Y,N,1900-01-01,9999-12-31
+5943,"Stationery Stores, Office and School Supply Stores",Y,N,1900-01-01,9999-12-31
+5944,"Jewelry Stores, Watches, Clocks, and Silverware Stores",Y,N,1900-01-01,9999-12-31
+5945,"Hobby, Toy, and Game Shops",Y,N,1900-01-01,9999-12-31
+5946,Camera and Photographic Supply Stores,Y,N,1900-01-01,9999-12-31
+5947,"Gift, Card, Novelty and Souvenir Shops",Y,N,1900-01-01,9999-12-31
+5948,Luggage and Leather Goods Stores,Y,N,1900-01-01,9999-12-31
+5949,"Sewing, Needlework, Fabric and Piece Goods Stores",Y,N,1900-01-01,9999-12-31
+5950,Glassware/crystal Stores,Y,N,1900-01-01,9999-12-31
+5960,Direct Marketing – Insurance Services,Y,N,1900-01-01,9999-12-31
+5961,Mail Order Houses including Catalogue Order Stores,Y,N,1900-01-01,9999-12-31
+5962,Direct Marketing – Travel-Related Arrangement Services,Y,N,1900-01-01,9999-12-31
+5963,Door-To-Door Sales,Y,N,1900-01-01,9999-12-31
+5964,Direct Marketing – Catalog Merchant,Y,N,1900-01-01,9999-12-31
+5965,Direct Marketing – Combination Catalog and Retail Merchant,Y,N,1900-01-01,9999-12-31
+5966,Direct Marketing – Outbound Telemarketing Merchant,Y,N,1900-01-01,9999-12-31
+5967,Adult Content and Services,Y,N,1900-01-01,9999-12-31
+5968,Direct Marketing – Continuity/subscription Merchant,Y,N,1900-01-01,9999-12-31
+5969,Direct Marketing – Other Direct Marketers (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+5970,Artists’ Supply and Craft Shops,Y,N,1900-01-01,9999-12-31
+5971,Art Dealers and Galleries,Y,N,1900-01-01,9999-12-31
+5972,Stamp and Coin Stores,Y,N,1900-01-01,9999-12-31
+5973,Religious Goods Stores,Y,N,1900-01-01,9999-12-31
+5974,Rubber Stamp Stores,Y,N,1900-01-01,9999-12-31
+5975,"Hearing Aids – Sales, Service, and Supply",Y,N,1900-01-01,9999-12-31
+5976,Orthopedic Goods – Prosthetic Devices,Y,N,1900-01-01,9999-12-31
+5977,Cosmetic Stores,Y,N,1900-01-01,9999-12-31
+5978,"Typewriter Stores – Sales, Rentals, and Service",Y,N,1900-01-01,9999-12-31
+5983,"Fuel Dealers – Fuel Oil, Wood, Coal, and Liquefied Petroleum",Y,N,1900-01-01,9999-12-31
+5992,Florists,Y,N,1900-01-01,9999-12-31
+5993,Cigar Stores and Stands,Y,N,1900-01-01,9999-12-31
+5994,News Dealers and Newsstands,Y,N,1900-01-01,9999-12-31
+5995,"Pet Shops, Pet Foods and Supplies Stores",Y,N,1900-01-01,9999-12-31
+5996,Swimming Pools – Sales and Service,Y,N,1900-01-01,9999-12-31
+5997,Electric Razor Stores – Sales and Service,Y,N,1900-01-01,9999-12-31
+5998,Tent and Awning Shops,Y,N,1900-01-01,9999-12-31
+5999,Miscellaneous and Specialty Retail Shops,Y,N,1900-01-01,9999-12-31
+6010,Financial Institutions – Manual Cash Disbursements,Y,N,1900-01-01,9999-12-31
+6011,Financial Institutions – Automated Cash Disbursements,Y,N,1900-01-01,9999-12-31
+6012,"Financial Institutions – Merchandise, Services, and Debt Repayment",Y,N,1900-01-01,9999-12-31
+6050,Quasi Cash - Member Financial Institution,Y,N,1900-01-01,9999-12-31
+6051,"Non-Financial Institutions – Foreign Currency, Liquid and Cryptocurrency Assets (for Example: Cryptocurrency), Money",Y,N,1900-01-01,9999-12-31
+6211,Security Brokers/dealers,Y,N,1900-01-01,9999-12-31
+6236,Financial Services - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+6300,"Insurance Sales, Underwriting, and Premiums",Y,N,1900-01-01,9999-12-31
+6381,Insurance Premiums,Y,N,1900-01-01,9999-12-31
+6399,Insurance - not elsewhere Classified,Y,N,1900-01-01,9999-12-31
+6513,Real Estate Agents and Managers,Y,N,1900-01-01,9999-12-31
+6529,Remote Stored Value Load - Merchant,Y,N,1900-01-01,9999-12-31
+6530,Remote Stored Value Load - Member Financial Institution,Y,N,1900-01-01,9999-12-31
+6531,Payment Service Provider - Money Transfer for a Purchase,Y,N,1900-01-01,9999-12-31
+6532,Payment Transaction - Member Financial Institution,Y,N,1900-01-01,9999-12-31
+6533,Payment Transaction - Merchant,Y,N,1900-01-01,9999-12-31
+6534,Money Transfer - Member Financial Institution,Y,N,1900-01-01,9999-12-31
+6535,Value Purchase - Member Financial Institution,Y,N,1900-01-01,9999-12-31
+6536,MoneySend Intracountry,Y,N,1900-01-01,9999-12-31
+6537,MoneySend Intercountry,Y,N,1900-01-01,9999-12-31
+6538,MoneySend Funding,Y,N,1900-01-01,9999-12-31
+6539,Funding Transaction - Excluding MoneySend,Y,N,1900-01-01,9999-12-31
+6540,Non-Financial Institutions – Stored Value Card Purchase/load,Y,N,1900-01-01,9999-12-31
+6555,Mastercard-Initiated Rebate and Rewards,Y,N,1900-01-01,9999-12-31
+6611,Financial Services - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+6760,Savings Bonds,Y,N,1900-01-01,9999-12-31
+7011,"Lodging – Hotels, Motels, Resorts, Central Reservation Services (not elsewhere Classified)",Y,N,1900-01-01,9999-12-31
+7012,Timeshares,Y,N,1900-01-01,9999-12-31
+7032,Sporting and Recreational Camps,Y,N,1900-01-01,9999-12-31
+7033,Trailer Parks and Campgrounds,Y,N,1900-01-01,9999-12-31
+7210,"Laundry, Cleaning, and Garment Services",Y,N,1900-01-01,9999-12-31
+7211,Laundries – Family and Commercial,Y,N,1900-01-01,9999-12-31
+7216,Dry Cleaners,Y,N,1900-01-01,9999-12-31
+7217,Carpet and Upholstery Cleaning,Y,N,1900-01-01,9999-12-31
+7221,Photographic Studios,Y,N,1900-01-01,9999-12-31
+7230,Beauty and Barber Shops,Y,N,1900-01-01,9999-12-31
+7251,"Shoe Repair Shops, Shoeshine Parlors, and Hat Cleaning Shops",Y,N,1900-01-01,9999-12-31
+7261,Funeral Services and Crematories,Y,N,1900-01-01,9999-12-31
+7272,Escort Services,Y,N,1900-01-01,9999-12-31
+7273,Dating Services,Y,N,1900-01-01,9999-12-31
+7276,Tax Preparation Services,Y,N,1900-01-01,9999-12-31
+7277,"Counseling Services – Debt, Marriage, and Personal",Y,N,1900-01-01,9999-12-31
+7278,Buying and Shopping Services and Clubs,Y,N,1900-01-01,9999-12-31
+7280,Personal Services - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+7295,Babysitting Services,Y,N,1900-01-01,9999-12-31
+7296,"Clothing Rental – Costumes, Uniforms, Formal Wear",Y,N,1900-01-01,9999-12-31
+7297,Massage Parlors,Y,N,1900-01-01,9999-12-31
+7298,Health and Beauty Spas,Y,N,1900-01-01,9999-12-31
+7299,Miscellaneous Personal Services (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+7311,Advertising Services,Y,N,1900-01-01,9999-12-31
+7321,Consumer Credit Reporting Agencies,Y,N,1900-01-01,9999-12-31
+7322,Collection Agencies,Y,N,1900-01-01,9999-12-31
+7332,Blueprinting and Photocopying Services,Y,N,1900-01-01,9999-12-31
+7333,"Commercial Photography, Art, and Graphics",Y,N,1900-01-01,9999-12-31
+7338,"Quick Copy, Reproduction, and Blueprinting Services",Y,N,1900-01-01,9999-12-31
+7339,Stenographic and Secretarial Support,Y,N,1900-01-01,9999-12-31
+7341,Window Cleaning Services,Y,N,1900-01-01,9999-12-31
+7342,Exterminating and Disinfecting Services,Y,N,1900-01-01,9999-12-31
+7349,"Cleaning, Maintenance, and Janitorial Services",Y,N,1900-01-01,9999-12-31
+7361,Employment Agencies and Temporary Help Services,Y,N,1900-01-01,9999-12-31
+7372,"Computer Programming, Data Processing, and Integrated Systems Design Services",Y,N,1900-01-01,9999-12-31
+7375,Information Retrieval Services,Y,N,1900-01-01,9999-12-31
+7379,"Computer Maintenance, Repair and Services (not elsewhere Classified)",Y,N,1900-01-01,9999-12-31
+7392,"Management, Consulting, and Public Relations Services",Y,N,1900-01-01,9999-12-31
+7393,"Detective Agencies, Protective Services, and Security Services, including Armored Cars, and Guard Dogs",Y,N,1900-01-01,9999-12-31
+7394,"Equipment, Tool, Furniture, and Appliance Rental and Leasing",Y,N,1900-01-01,9999-12-31
+7395,Photofinishing Laboratories and Photo Developing,Y,N,1900-01-01,9999-12-31
+7399,Business Services (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+7511,Truck Stop,Y,N,1900-01-01,9999-12-31
+7512,Automobile Rental Agency,Y,N,1900-01-01,9999-12-31
+7513,Truck and Utility Trailer Rentals,Y,N,1900-01-01,9999-12-31
+7519,Motor Home and Recreational Vehicle Rentals,Y,N,1900-01-01,9999-12-31
+7523,"Parking Lots, Parking Meters and Garages",Y,N,1900-01-01,9999-12-31
+7524,Parking Meters,Y,N,1900-01-01,9999-12-31
+7531,Automotive Body Repair Shops,Y,N,1900-01-01,9999-12-31
+7534,Tire Retreading and Repair Shops,Y,N,1900-01-01,9999-12-31
+7535,Automotive Paint Shops,Y,N,1900-01-01,9999-12-31
+7538,Automotive Service Shops (Non-Dealer),Y,N,1900-01-01,9999-12-31
+7542,Car Washes,Y,N,1900-01-01,9999-12-31
+7549,Towing Services,Y,N,1900-01-01,9999-12-31
+7622,Electronics Repair Shops,Y,N,1900-01-01,9999-12-31
+7623,Air Conditioning and Refrigeration Repair Shops,Y,N,1900-01-01,9999-12-31
+7629,Electrical and Small Appliance Repair Shops,Y,N,1900-01-01,9999-12-31
+7631,"Watch, Clock and Jewelry Repair",Y,N,1900-01-01,9999-12-31
+7641,"Furniture – Reupholstery, Repair, and Refinishing",Y,N,1900-01-01,9999-12-31
+7692,Welding Services,Y,N,1900-01-01,9999-12-31
+7699,Miscellaneous Repair Shops and Related Services,Y,N,1900-01-01,9999-12-31
+7800,Government-Owned Lotteries (Us Region Only),Y,N,1900-01-01,9999-12-31
+7801,Government Licensed On-Line Casinos (On-Line Gambling) (Us Region Only),Y,N,1900-01-01,9999-12-31
+7802,Government-Licensed Horse/dog Racing (Us Region Only),Y,N,1900-01-01,9999-12-31
+7829,Motion Picture and Video Tape Production and Distribution,Y,N,1900-01-01,9999-12-31
+7832,Motion Picture Theaters,Y,N,1900-01-01,9999-12-31
+7833,Motion Picture Theatres,Y,N,1900-01-01,9999-12-31
+7841,Dvd/video Tape Rental Stores,Y,N,1900-01-01,9999-12-31
+7911,"Dance Halls, Studios and Schools",Y,N,1900-01-01,9999-12-31
+7922,Ticket Agencies and Theatrical Producers (Except Motion Pictures),Y,N,1900-01-01,9999-12-31
+7929,"Bands, Orchestras, and Miscellaneous Entertainers (not elsewhere Classified)",Y,N,1900-01-01,9999-12-31
+7932,Billiard and Pool Establishments,Y,N,1900-01-01,9999-12-31
+7933,Bowling Alleys,Y,N,1900-01-01,9999-12-31
+7941,"Commercial Sports, Professional Sports Clubs, Athletic Fields, and Sports Promoters",Y,N,1900-01-01,9999-12-31
+7991,Tourist Attractions and Exhibits,Y,N,1900-01-01,9999-12-31
+7992,Public Golf Courses,Y,N,1900-01-01,9999-12-31
+7993,Video Amusement Game Supplies,Y,N,1900-01-01,9999-12-31
+7994,Video Game Arcades/establishments,Y,N,1900-01-01,9999-12-31
+7995,"Betting, including Lottery Tickets, Casino Gaming Chips, Off-Track Betting, Wagers At Race Tracks and Games of Chance to",Y,N,1900-01-01,9999-12-31
+7996,"Amusement Parks, Circuses, Carnivals, and Fortune Tellers",Y,N,1900-01-01,9999-12-31
+7997,"Membership Clubs (Sports, Recreation, Athletic), Country Clubs, and Private Golf Courses",Y,N,1900-01-01,9999-12-31
+7998,"Aquariums, Seaquariums, Dolphinariums, and Zoos",Y,N,1900-01-01,9999-12-31
+7999,Recreation Services (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+8011,Doctors and Physicians (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+8021,Dentists and Orthodontists,Y,N,1900-01-01,9999-12-31
+8031,Osteopaths,Y,N,1900-01-01,9999-12-31
+8041,Chiropractors,Y,N,1900-01-01,9999-12-31
+8042,Optometrists and Ophthalmologists,Y,N,1900-01-01,9999-12-31
+8043,"Opticians, Optical Goods, and Eyeglasses",Y,N,1900-01-01,9999-12-31
+8044,"Opticians, Optical Goods and Eyeglasses",Y,N,1900-01-01,9999-12-31
+8049,Podiatrists and Chiropodists,Y,N,1900-01-01,9999-12-31
+8050,"Nursing, Home Healthcare and Personal Care Facilities",Y,N,1900-01-01,9999-12-31
+8062,Hospitals,Y,N,1900-01-01,9999-12-31
+8071,Medical and Dental Laboratories,Y,N,1900-01-01,9999-12-31
+8099,Medical Services and Health Practitioners (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+8111,Legal Services and Attorneys,Y,N,1900-01-01,9999-12-31
+8211,Elementary and Secondary Schools,Y,N,1900-01-01,9999-12-31
+8220,"Colleges, Universities, Professional Schools, and Junior Colleges",Y,N,1900-01-01,9999-12-31
+8241,Correspondence Schools,Y,N,1900-01-01,9999-12-31
+8244,Business and Secretarial Schools,Y,N,1900-01-01,9999-12-31
+8249,Vocational and Trade Schools,Y,N,1900-01-01,9999-12-31
+8299,Schools and Educational Services (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+8351,Child Care Services,Y,N,1900-01-01,9999-12-31
+8398,Charitable Social Service Organizations,Y,N,1900-01-01,9999-12-31
+8641,"Civic, Social, and Fraternal Associations",Y,N,1900-01-01,9999-12-31
+8651,Political Organizations,Y,N,1900-01-01,9999-12-31
+8661,Religious Organizations,Y,N,1900-01-01,9999-12-31
+8675,Automobile Associations,Y,N,1900-01-01,9999-12-31
+8699,Membership Organizations (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+8734,Testing Laboratories (Non-Medical Testing),Y,N,1900-01-01,9999-12-31
+8911,"Architectural, Engineering, and Surveying Services",Y,N,1900-01-01,9999-12-31
+8931,"Accounting, Auditing, and Bookkeeping Services",Y,N,1900-01-01,9999-12-31
+8999,Professional Services (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+9034,Government Services - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+9211,"Court Costs, including Alimony and Child Support",Y,N,1900-01-01,9999-12-31
+9222,Fines,Y,N,1900-01-01,9999-12-31
+9223,Bail and Bond Payments,Y,N,1900-01-01,9999-12-31
+9311,Tax Payments,Y,N,1900-01-01,9999-12-31
+9399,Government Services (not elsewhere Classified),Y,N,1900-01-01,9999-12-31
+9401,Government Services - Network-Specific Assignment,Y,N,1900-01-01,9999-12-31
+9402,Postal Services – Government Only,Y,N,1900-01-01,9999-12-31
+9405,U.s. Federal Government Agencies or Departments,Y,N,1900-01-01,9999-12-31
+9406,Government-Owned Lotteries (Non-U.s. Region),Y,N,1900-01-01,9999-12-31
+9411,Government Loan Payments,Y,N,1900-01-01,9999-12-31
+9700,Automated Referral Service,Y,N,1900-01-01,9999-12-31
+9701,Visa Credential Server,Y,N,1900-01-01,9999-12-31
+9702,Emergency Services (Gcas) (Visa Use Only),Y,N,1900-01-01,9999-12-31
+9751,United Kingdom Supermarkets - Electronic Hot File,Y,N,1900-01-01,9999-12-31
+9752,United Kingdom Petrol Stations - Electronic Hot File,Y,N,1900-01-01,9999-12-31
+9754,"Gambling - Horse Racing, Dog Racing and State Lottery",Y,N,1900-01-01,9999-12-31
+9950,Intra-Company Purchases,Y,N,1900-01-01,9999-12-31
+9999,Test or Network-Specific Merchant Category Code,Y,N,1900-01-01,9999-12-31
+DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
+DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
+DQNotApplicable,Source value not provided,Y,N,1900-01-01,9999-12-31

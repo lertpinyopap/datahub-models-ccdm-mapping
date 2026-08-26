@@ -2,3 +2,7 @@
 	path = datahub-tms-pipeline
 	url = https://github.com/LatitudeFinancial/datahub-tms-pipeline.git
 	branch = features/tms-pipeline
+[submodule "datahub-type-materialisation-specification"]
+	path = datahub-type-materialisation-specification
+	url = https://github.com/LatitudeFinancial/datahub-type-materialisation-specification.git
+	branch = dev

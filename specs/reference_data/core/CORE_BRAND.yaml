@@ -1,0 +1,49 @@
+id: reference_core_brand
+extends: REFERENCE_CORE_SCD2_MANUAL
+description: Maps reference brand CSV data into a manual SCD2 brand table.
+control_data:
+  business_key:
+    fields:
+      - BRAND_CODE
+source:
+  seed:
+    file: data/reference_data/core/REFERENCE.CORE.BRAND.csv
+    name: reference_core_brand_seed
+    schema: INTERMEDIATE
+target:
+  id: BRAND
+  schema: CORE
+  table_name: BRAND
+  fields:
+    - id: BRAND_CODE
+      source:
+        pos: 0
+        column: BRAND_CODE
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: BRAND_ID
+      source:
+        pos: 1
+        column: BRAND_ID
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: BRAND_NAME
+      source:
+        pos: 2
+        column: BRAND_NAME
+      data_type: varchar(255)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: FINANCIAL_INSTITUTION_CODE
+      source:
+        pos: 3
+        column: FINANCIAL_INSTITUTION_CODE
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false
