@@ -1,0 +1,173 @@
+id: card_customer
+description: Maps V10 customer source data into PAY.CORE.CARD_CUSTOMER.
+control_data:
+  materialisation_type: table
+  change_type: scd2_derived
+  failure_mode: fail_load
+  staging_schema: INTERMEDIATE
+  business_key:
+    fields:
+      - CUSTOMER_ID
+  business_data_hash:
+    business_data_hash_mode: include
+    fields:
+      - CUSTOMER_STATUS_KEY
+      - CLV_ID
+      - TITLE
+      - FIRST_NAME
+      - MIDDLE_NAME
+      - SURNAME
+      - DATE_OF_BIRTH
+      - EXTERNAL_ID
+      - EXTERNAL_IDENTIFICATION_TYPE
+      - CREATED_DATETIME
+      - UPDATED_DATETIME
+      - IS_ACTIVE_IN_SOURCE_FLAG
+      - AUDIT_CREATED_SOURCE
+      - AUDIT_LAST_CHANGED_SOURCE
+  scd:
+    derivation_scope: affected_keys
+    validation_scope: affected_window
+    window_strategy: previous_and_next
+    valid_from_datetime:
+      expression: coalesce(UPDATED_DATETIME, CREATED_DATETIME)
+    valid_to_datetime:
+      mode: next_valid_from
+      offset:
+        unit: nanosecond
+        value: -1
+      end_of_time: "9999-12-31 23:59:59 +00:00"
+    current_flag:
+      mode: latest_per_business_key
+    deleted_flag:
+      mode: fixed
+      value: "N"
+    deduplicate:
+      partition_by:
+        - CUSTOMER_ID
+        - VALID_FROM_DATETIME
+      order_by:
+        - column: UPDATED_DATETIME
+          direction: desc
+          nulls: last
+        - column: CREATED_DATETIME
+          direction: desc
+          nulls: last
+source:
+  format: table
+  query: |
+    select
+        C.AMNA_ADD_STATUS,
+        C.AMNA_STATUS,
+        C.AMNA_ACCT as CUSTOMER_ID,
+        C.AMNA_TITLE_01 as TITLE,
+        C.AMNA_FIRST_NAME_01 as FIRST_NAME,
+        C.AMNA_MIDDLE_NAME_01 as MIDDLE_NAME,
+        C.AMNA_LAST_NAME_01 as SURNAME,
+        C.AMNA_DOB_01 as DATE_OF_BIRTH,
+        ABS.AMBS_DATE_OPENED as CREATED_DATETIME,
+        C.AMNA_DATE_LAST_MAINT as UPDATED_DATETIME,
+        case
+            when ABS.AMBS_INT_STATUS = 'A' then 'Y'
+            else 'N'
+        end as IS_ACTIVE_IN_SOURCE_FLAG
+    from DATAOPS_HUB_SHARE_VISION_PROD.RAW.CUSTOMER as C
+    join DATAOPS_HUB_SHARE_VISION_PROD.RAW.CUSTOMER_ACCOUNT as CA
+        on C.AMNA_ACCT = CA.AMBX_NA_ACCT
+       and C.AMNA_ORG = try_to_number(CA.AMBX_NA_ORG)
+    join DATAOPS_HUB_SHARE_VISION_PROD.RAW.ACCOUNT_BASE_SEGMENT as ABS
+        on CA.AMBX_BS_ACCT = ABS.AMBS_ACCT
+       and CA.AMBX_BS_ORG = ABS.AMBS_ORG
+target:
+  id: CARD_CUSTOMER
+  schema: CORE
+  fields:
+    - id: CUSTOMER_STATUS_KEY
+      source:
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
+        args:
+          reference_type: CUSTOMER_STATUS
+          source_system: V10
+          source_code_expression: |
+            case
+            when source_query.AMNA_ADD_STATUS != 99 then '9999'
+            when source_query.AMNA_STATUS = 0 then '0'
+            when source_query.AMNA_STATUS = 1 then '1'
+            when source_query.AMNA_STATUS = 2 then '2'
+            else 'DQMapping'
+            end
+          required: true
+      data_type: varchar(64)
+      nullable: false
+
+    - id: CUSTOMER_ID
+      source:
+        column: CUSTOMER_ID
+      data_type: varchar(20)
+      nullable: false
+
+    - id: CLV_ID
+      source:
+        default_from_field: CUSTOMER_ID
+      data_type: varchar(20)
+      nullable: false
+
+    - id: TITLE
+      source:
+        column: TITLE
+      data_type: varchar(50)
+      nullable: true
+
+    - id: FIRST_NAME
+      source:
+        column: FIRST_NAME
+      data_type: varchar(50)
+      nullable: true
+
+    - id: MIDDLE_NAME
+      source:
+        column: MIDDLE_NAME
+      data_type: varchar(50)
+      nullable: true
+
+    - id: SURNAME
+      source:
+        column: SURNAME
+      data_type: varchar(255)
+      nullable: true
+
+    - id: DATE_OF_BIRTH
+      source:
+        column: DATE_OF_BIRTH
+      data_type: date
+      nullable: true
+
+    - id: EXTERNAL_ID
+      source:
+        fixed_value: null
+      data_type: varchar(255)
+      nullable: true
+
+    - id: EXTERNAL_IDENTIFICATION_TYPE
+      source:
+        default_value: "AMID"
+      data_type: varchar(255)
+      nullable: true
+
+    - id: CREATED_DATETIME
+      source:
+        column: CREATED_DATETIME
+      data_type: timestamp_tz
+      nullable: true
+
+    - id: UPDATED_DATETIME
+      source:
+        column: UPDATED_DATETIME
+      data_type: timestamp_tz
+      nullable: true
+
+    - id: IS_ACTIVE_IN_SOURCE_FLAG
+      source:
+        column: IS_ACTIVE_IN_SOURCE_FLAG
+      data_type: varchar(1)
+      nullable: true

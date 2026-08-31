@@ -1,0 +1,4 @@
+CHANNEL_CODE,CHANNEL_DESCRIPTION,CHANNEL_TYPE_CODE,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
+DQMapping,Source value cannot be mapped,DQMapping,Y,N,1900-01-01,9999-12-31
+DQMissing,Source value not provided,DQMissing,Y,N,1900-01-01,9999-12-31
+DQNotApplicable,Source value not required,DQNotApplicable,Y,N,1900-01-01,9999-12-31

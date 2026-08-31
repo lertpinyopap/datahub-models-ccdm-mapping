@@ -27,12 +27,12 @@ class PrefixTargetSystem(TypeMaterialisationMacro):
 prefix_target_system = PrefixTargetSystem()
 
 
-class ReferenceLookupSpecBridge(TypeMaterialisationMacro):
+class ReferenceLookupMappingSpecBridge(TypeMaterialisationMacro):
     """Thin TMS bridge that forwards the spec macro call to the repo dbt runtime macro."""
 
     def generate_dbt_macro(self) -> str:
         return """
-{% macro reference_lookup_bridge(
+{% macro reference_lookup_mapping_bridge(
     reference_type,
     source_system,
     ref_alias,
@@ -47,7 +47,7 @@ class ReferenceLookupSpecBridge(TypeMaterialisationMacro):
     case_insensitive_match=false,
     required=false
 ) %}
-    {{ reference_lookup(
+    {{ reference_lookup_mapping(
         reference_type=reference_type,
         source_system=source_system,
         ref_alias=ref_alias,
@@ -66,7 +66,4 @@ class ReferenceLookupSpecBridge(TypeMaterialisationMacro):
 """.strip()
 
 
-reference_lookup_bridge = ReferenceLookupSpecBridge()
-# Backwards compatibility for deployed specs that still reference
-# `reference_macros.reference_lookup`; new specs should use reference_lookup_bridge.
-reference_lookup = reference_lookup_bridge
+reference_lookup_mapping_bridge = ReferenceLookupMappingSpecBridge()

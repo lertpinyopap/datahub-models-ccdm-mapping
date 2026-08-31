@@ -27,7 +27,7 @@ target:
       source:
         pos: 1
         column: CURRENCY_DESCRIPTION
-      data_type: varchar(255)
+      data_type: varchar(16777216)
       transforms:
         - type: trim
       nullable: false

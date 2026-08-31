@@ -1,18 +1,18 @@
-{% macro _reference_lookup_reference_name(reference_type) -%}
+{% macro _reference_lookup_mapping_reference_name(reference_type) -%}
     {% set normalized_type = reference_type | trim %}
 
     {% if normalized_type == '' %}
-        {{ exceptions.raise_compiler_error("reference_type is required for reference_lookup") }}
+        {{ exceptions.raise_compiler_error("reference_type is required for reference_lookup_mapping") }}
     {% endif %}
 
     {{ return(normalized_type | upper) }}
 {%- endmacro %}
 
-{% macro _reference_lookup_database() -%}
+{% macro _reference_lookup_mapping_database() -%}
     {{ return(var('OVERRIDE_DB', var('ENV_PREFIX', '') ~ 'REFERENCE')) }}
 {%- endmacro %}
 
-{% macro _reference_lookup_equals(left_sql, right_sql, case_insensitive_match=false) -%}
+{% macro _reference_lookup_mapping_equals(left_sql, right_sql, case_insensitive_match=false) -%}
     {% if case_insensitive_match %}
         upper(trim(cast({{ left_sql }} as varchar))) = upper(trim(cast({{ right_sql }} as varchar)))
     {% else %}
@@ -20,7 +20,7 @@
     {% endif %}
 {%- endmacro %}
 
-{% macro reference_lookup(
+{% macro reference_lookup_mapping(
     reference_type,
     source_system,
     ref_alias,
@@ -35,18 +35,18 @@
     case_insensitive_match=false,
     required=false
 ) -%}
-    {# Runtime dbt lookup logic called by the TMS bridge macro in reference_macros.py. #}
-    {% set reference_name = _reference_lookup_reference_name(reference_type) %}
+    {# Runtime dbt lookup logic called by the TMS bridge macro in reference_lookup_mapping_macros.py. #}
+    {% set reference_name = _reference_lookup_mapping_reference_name(reference_type) %}
     {% if source_code_expression is none and source_code_column is none %}
         {{ exceptions.raise_compiler_error(
-            "reference_lookup requires source_code_column or source_code_expression"
+            "reference_lookup_mapping requires source_code_column or source_code_expression"
         ) }}
     {% endif %}
     {% set resolved_source_code_expression = source_code_expression %}
     {% if resolved_source_code_expression is none %}
         {% set resolved_source_code_expression = "source_query." ~ adapter.quote(source_code_column) %}
     {% endif %}
-    {% set reference_database = _reference_lookup_database() %}
+    {% set reference_database = _reference_lookup_mapping_database() %}
     {% set mapping_relation = mapping_table if mapping_table is not none else reference_database ~ '.MAPPING.' ~ reference_name %}
     {% set code_relation = code_table if code_table is not none else reference_database ~ '.CORE.' ~ reference_name %}
     {% set resolved_code_column = code_column if code_column is not none else reference_name ~ '_CODE' %}
@@ -63,7 +63,7 @@
             {%- endif %}
         from {{ mapping_relation }} as mapping
         inner join {{ code_relation }} as code
-            on {{ _reference_lookup_equals(
+            on {{ _reference_lookup_mapping_equals(
                 'mapping.TARGET_CODE',
                 'code.' ~ adapter.quote(resolved_code_column),
                 case_insensitive_match
@@ -97,12 +97,12 @@
                 cast(code.VALID_FROM_DATETIME as timestamp_ntz) desc nulls last
         ) = 1
     ) as {{ ref_alias }}
-      on {{ _reference_lookup_equals(
+      on {{ _reference_lookup_mapping_equals(
             ref_alias ~ '._REFERENCE_SOURCE_SYSTEM',
             "'" ~ source_system ~ "'",
             case_insensitive_match
          ) }}
-     and {{ _reference_lookup_equals(
+     and {{ _reference_lookup_mapping_equals(
             ref_alias ~ '._REFERENCE_SOURCE_CODE',
             '(' ~ resolved_source_code_expression ~ ')',
             case_insensitive_match

@@ -1,0 +1,33 @@
+id: reference_core_customer_business_status
+extends: REFERENCE_CORE_SCD2_MANUAL
+description: Maps reference customer business status CSV data into a manual SCD2 customer business status table.
+control_data:
+  business_key:
+    fields:
+      - CUSTOMER_BUSINESS_STATUS_CODE
+source:
+  seed:
+    file: data/reference_data/core/REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS.csv
+    name: reference_core_customer_business_status_seed
+    schema: INTERMEDIATE
+target:
+  id: CUSTOMER_BUSINESS_STATUS
+  schema: CORE
+  table_name: CUSTOMER_BUSINESS_STATUS
+  fields:
+    - id: CUSTOMER_BUSINESS_STATUS_CODE
+      source:
+        pos: 0
+        column: CUSTOMER_BUSINESS_STATUS_CODE
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: CUSTOMER_BUSINESS_STATUS_DESCRIPTION
+      source:
+        pos: 1
+        column: CUSTOMER_BUSINESS_STATUS_DESCRIPTION
+      data_type: varchar(16777216)
+      transforms:
+        - type: trim
+      nullable: false

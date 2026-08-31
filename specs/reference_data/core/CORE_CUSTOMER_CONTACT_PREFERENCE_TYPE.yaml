@@ -4,7 +4,7 @@ description: Maps reference customer contact preference type CSV data into a man
 control_data:
   business_key:
     fields:
-      - CUSTOMER_CONTACT_PREFERENCE_CODE
+      - CUSTOMER_CONTACT_PREFERENCE_TYPE_CODE
 source:
   seed:
     file: data/reference_data/core/REFERENCE.CORE.CUSTOMER_CONTACT_PREFERENCE_TYPE.csv
@@ -15,19 +15,19 @@ target:
   schema: CORE
   table_name: CUSTOMER_CONTACT_PREFERENCE_TYPE
   fields:
-    - id: CUSTOMER_CONTACT_PREFERENCE_CODE
+    - id: CUSTOMER_CONTACT_PREFERENCE_TYPE_CODE
       source:
         pos: 0
         column: CUSTOMER_CONTACT_PREFERENCE_CODE
-      data_type: varchar(100)
+      data_type: varchar(20)
       transforms:
         - type: trim
       nullable: false
-    - id: CUSTOMER_CONTACT_PREFERENCE_DESCRIPTION
+    - id: CUSTOMER_CONTACT_PREFERENCE_TYPE_DESCRIPTION
       source:
         pos: 1
         column: CUSTOMER_CONTACT_PREFERENCE_DESCRIPTION
-      data_type: varchar(1000)
+      data_type: varchar(16777216)
       transforms:
         - type: trim
       nullable: false

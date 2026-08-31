@@ -1,11 +1,11 @@
-CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
-,V10,NEW_CUSTOMER,New customer record is created,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,NEW_CUSTOMER,New customer record is created
-,V10,CUSTOMER_UPDATED,Existing customer record is modified,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,CUSTOMER_UPDATED,Existing customer record is modified
-,V10,ADDR,Customer address is updated,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,ADDR,Customer address is updated
-,V10,CONT,Customer contact details are updated,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,CONT,Customer contact details are updated
-,V10,LETR,System-generated letter is sent to customer,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,LETR,System-generated letter is sent to customer
-,V10,B2FM,Customer record is migrated from legacy system to V10 platform,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,B2FM,Customer record is migrated from legacy system to V10 platform
-,V10,NADD,New (Additional) address is added to customer profile,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,NADD,New/Additional address is added to customer profile
-,V10,ANEX,Historical non-monetary note is migrated from legacy AMEX system,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,ANEX,Historical non-monetary note is migrated from legacy AMEX system
-,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,DQMapping,Source value cannot be mapped
-,V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,DQMissing,Source value not provided
+SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+V10,NEW_CUSTOMER,New customer record is created,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,NEW_CUSTOMER,New customer record is created
+V10,CUSTOMER_UPDATED,Existing customer record is modified,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,CUSTOMER_UPDATED,Existing customer record is modified
+V10,ADDR,Customer address is updated,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,ADDR,Customer address is updated
+V10,CONT,Customer contact details are updated,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,CONT,Customer contact details are updated
+V10,LETR,System-generated letter is sent to customer,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,LETR,System-generated letter is sent to customer
+V10,B2FM,Customer record is migrated from legacy system to V10 platform,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,B2FM,Customer record is migrated from legacy system to V10 platform
+V10,NADD,New (Additional) address is added to customer profile,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,NADD,New/Additional address is added to customer profile
+V10,ANEX,Historical non-monetary note is migrated from legacy AMEX system,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,ANEX,Historical non-monetary note is migrated from legacy AMEX system
+V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,DQMapping,Source value cannot be mapped
+V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_CUSTOMER_EVENT_TYPE,DQMissing,Source value not provided

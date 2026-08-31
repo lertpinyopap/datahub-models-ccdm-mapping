@@ -12,6 +12,9 @@ UPDT,Card details updated,Y,N,1900-01-01,9999-12-31
 IPTR,Invalid PIN attempt recorded and PIN reset attempted,Y,N,1900-01-01,9999-12-31
 CNTO,Contactless opt-out recorded,Y,N,1900-01-01,9999-12-31
 PTCR,Card PIN retry counter reset,Y,N,1900-01-01,9999-12-31
+NONE,No action recorded on the card,Y,N,1900-01-01,9999-12-31
+PINR,Card PIN requested,Y,N,1900-01-01,9999-12-31
+RETN,Card returned,Y,N,1900-01-01,9999-12-31
 DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
 DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
 DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31

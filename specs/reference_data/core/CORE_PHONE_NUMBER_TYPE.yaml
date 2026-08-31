@@ -19,7 +19,7 @@ target:
       source:
         pos: 0
         column: PHONE_NUMBER_TYPE_CODE
-      data_type: varchar(100)
+      data_type: varchar(20)
       transforms:
         - type: trim
       nullable: false
@@ -27,7 +27,7 @@ target:
       source:
         pos: 1
         column: PHONE_NUMBER_TYPE_DESCRIPTION
-      data_type: varchar(1000)
+      data_type: varchar(16777216)
       transforms:
         - type: trim
       nullable: false

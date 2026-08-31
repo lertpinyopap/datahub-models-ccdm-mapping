@@ -1,0 +1,53 @@
+SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+V10,C,C (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,TRDPTY,3rd Party (AU)
+V10,K,K (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,ASTAPP,Partner Hub Assisted Application
+V10,N,N (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,TKEONE,Take One (AU)
+V10,T,T (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,EAPOFF,Eapps-Staff Offline (AU)
+V10,B,B (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,LOCAPP,Latitude Checkout Online
+V10,P,P (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,ASTAPP,Partner Hub Assisted Application
+V10,X,X (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,QRIAPP,In-Store Application via QR Code
+V10,V,V (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,DQMissing,Source value not provided
+V10,M,M (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,MLXFAX,Mail/Fax (AU) / Mail (NZ)
+V10,L,L (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,PONAPP,Partner Online Application
+V10,D,D (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,ONLAPP,Direct Online Application
+V10,7,7 (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,LSCCLS,Credit Limit Split via LSC
+V10,Y,Y (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,DQMissing,Source value not provided
+V10,W,W (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,DQMissing,Source value not provided
+V10,8,8 (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,BLKTFR,Bulk Account Transfer
+V10,.,. (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,DQMissing,Source value not provided
+V10,J,J (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,LOCAPP,Latitude Checkout Online
+V10,G,G (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,IVRCLI,Credit Limit Increase via OTP/IVR
+V10,F,F (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,LSCCLI,Credit Limit Increase via LSC
+V10,E,E (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,ONLAPP,Direct Online Application
+V10,U,U (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,ASTAPP,Partner Hub Assisted Application
+V10,A,A (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,XSLACT,XSell Active (AU)
+V10,O,O (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,PSTFAC,Partner Staff Account (NZ)
+V10,S,S (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,EAPSTF,Eapps-Staff (AU) / GE Staff Account (NZ)
+V10,I,I (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,EAPLEG,E-Apps (AU) / eApps Online Scheme (NZ)
+V10,Q,Q (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,LSCACH,Additional Cardholder via LSC
+V10,9,9 (SOL middle byte),REFERENCE.CORE.CARD_CHANNEL,MIGRAT,Account Migration
+V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_CHANNEL,DQMapping,Source value cannot be mapped
+V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_CHANNEL,DQMissing,Source value not provided
+V10,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_CHANNEL,DQNotApplicable,Source value not required
+VN,LOCAPP,Latitude Checkout Online,REFERENCE.CORE.CARD_CHANNEL,LOCAPP,Latitude Checkout Online
+VN,ONLAPP,Direct Online Application,REFERENCE.CORE.CARD_CHANNEL,ONLAPP,Direct Online Application
+VN,LSCCLI,Credit Limit Increase via LSC,REFERENCE.CORE.CARD_CHANNEL,LSCCLI,Credit Limit Increase via LSC
+VN,IVRCLI,Credit Limit Increase via OTP/IVR,REFERENCE.CORE.CARD_CHANNEL,IVRCLI,Credit Limit Increase via OTP/IVR
+VN,INSCLI,Credit Limit Increase In-Store,REFERENCE.CORE.CARD_CHANNEL,INSCLI,Credit Limit Increase In-Store
+VN,ASTAPP,Partner Hub Assisted Application,REFERENCE.CORE.CARD_CHANNEL,ASTAPP,Partner Hub Assisted Application
+VN,PONAPP,Partner Online/Website Application,REFERENCE.CORE.CARD_CHANNEL,PONAPP,Partner Online/Website Application
+VN,LSCACH,Additional Cardholder via LSC,REFERENCE.CORE.CARD_CHANNEL,LSCACH,Additional Cardholder via LSC
+VN,APPACH,Additional Cardholder via Apply Online,REFERENCE.CORE.CARD_CHANNEL,APPACH,Additional Cardholder via Apply Online
+VN,QRIAPP,In-Store Application via QR Code,REFERENCE.CORE.CARD_CHANNEL,QRIAPP,In-Store Application via QR Code
+VN,LSCCLS,Credit Limit Split via LSC,REFERENCE.CORE.CARD_CHANNEL,LSCCLS,Credit Limit Split via LSC
+VN,BLKTFR,Bulk Account Transfer,REFERENCE.CORE.CARD_CHANNEL,BLKTFR,Bulk Account Transfer
+VN,MIGRAT,Account Migration,REFERENCE.CORE.CARD_CHANNEL,MIGRAT,Account Migration
+VN,QROAPP,Online Application via QR Code,REFERENCE.CORE.CARD_CHANNEL,QROAPP,Online Application via QR Code
+VN,SMSAPP,Application via SMS Link,REFERENCE.CORE.CARD_CHANNEL,SMSAPP,Application via SMS Link
+VN,AFFAPP,Partner Affiliates Application,REFERENCE.CORE.CARD_CHANNEL,AFFAPP,Partner Affiliates Application
+VN,MOBACH,Additional Cardholder via Mobile App,REFERENCE.CORE.CARD_CHANNEL,MOBACH,Additional Cardholder via Mobile App
+VN,MOBCLI,Credit Limit Increase via Mobile App,REFERENCE.CORE.CARD_CHANNEL,MOBCLI,Credit Limit Increase via Mobile App
+VN,MOBCLS,Credit Limit Split via Mobile App,REFERENCE.CORE.CARD_CHANNEL,MOBCLS,Credit Limit Split via Mobile App
+VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_CHANNEL,DQMapping,Source value cannot be mapped
+VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_CHANNEL,DQMissing,Source value not provided
+VN,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_CHANNEL,DQNotApplicable,Source value not required

@@ -1,0 +1,33 @@
+id: reference_core_card_processing_method
+extends: REFERENCE_CORE_SCD2_MANUAL
+description: Maps reference card processing method CSV data into a manual SCD2 card processing method table.
+control_data:
+  business_key:
+    fields:
+      - CARD_PROCESSING_METHOD_CODE
+source:
+  seed:
+    file: data/reference_data/core/REFERENCE.CORE.CARD_PROCESSING_METHOD.csv
+    name: reference_core_card_processing_method_seed
+    schema: INTERMEDIATE
+target:
+  id: CARD_PROCESSING_METHOD
+  schema: CORE
+  table_name: CARD_PROCESSING_METHOD
+  fields:
+    - id: CARD_PROCESSING_METHOD_CODE
+      source:
+        pos: 0
+        column: CARD_PROCESSING_METHOD_CODE
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: CARD_PROCESSING_METHOD_DESCRIPTION
+      source:
+        pos: 1
+        column: CARD_PROCESSING_METHOD_DESCRIPTION
+      data_type: varchar(16777216)
+      transforms:
+        - type: trim
+      nullable: false

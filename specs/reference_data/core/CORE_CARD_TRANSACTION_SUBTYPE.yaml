@@ -1,0 +1,33 @@
+id: reference_core_card_transaction_subtype
+extends: REFERENCE_CORE_SCD2_MANUAL
+description: Maps reference card transaction subtype CSV data into a manual SCD2 card transaction subtype table.
+control_data:
+  business_key:
+    fields:
+      - CARD_TRANSACTION_SUBTYPE_CODE
+source:
+  seed:
+    file: data/reference_data/core/REFERENCE.CORE.CARD_TRANSACTION_SUBTYPE.csv
+    name: reference_core_card_transaction_subtype_seed
+    schema: INTERMEDIATE
+target:
+  id: CARD_TRANSACTION_SUBTYPE
+  schema: CORE
+  table_name: CARD_TRANSACTION_SUBTYPE
+  fields:
+    - id: CARD_TRANSACTION_SUBTYPE_CODE
+      source:
+        pos: 0
+        column: CARD_TRANSACTION_SUBTYPE_CODE
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: CARD_TRANSACTION_SUBTYPE_DESCRIPTION
+      source:
+        pos: 1
+        column: CARD_TRANSACTION_SUBTYPE_DESCRIPTION
+      data_type: varchar(16777216)
+      transforms:
+        - type: trim
+      nullable: false

@@ -30,7 +30,7 @@ target:
       source:
         pos: 1
         column: COUNTRY_DESCRIPTION
-      data_type: varchar(255)
+      data_type: varchar(16777216)
       transforms:
         - type: trim
       nullable: false
@@ -46,10 +46,7 @@ target:
       source:
         pos: 3
         column: COUNTRY_CODE_ISO_NNN
-      data_type: varchar(3)
+      data_type: varchar(20)
       transforms:
         - type: trim
       nullable: false
-      validations:
-        - type: regex
-          pattern: "^([0-9]{3}|NA)$"

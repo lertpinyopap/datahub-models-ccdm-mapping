@@ -1,0 +1,31 @@
+CARD_BLOCKED_REASON_CODE,CARD_BLOCKED_REASON_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
+DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
+DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
+DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31
+SPACE,No block - card is active,Y,N,1900-01-01,9999-12-31
+A,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
+B,Bankrupt / other system-specific block reason,Y,N,1900-01-01,9999-12-31
+C,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
+D,Deceased / other system-specific block reason,Y,N,1900-01-01,9999-12-31
+E,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
+F,Stolen,Y,N,1900-01-01,9999-12-31
+G,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
+H,Hold,Y,N,1900-01-01,9999-12-31
+I,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
+J,Transfer out,Y,N,1900-01-01,9999-12-31
+K,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
+L,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
+M,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
+N,New card not activated,Y,N,1900-01-01,9999-12-31
+O,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
+P,Pickup / Confiscate,Y,N,1900-01-01,9999-12-31
+Q,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
+R,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
+S,Stolen / Lost - source conflict between model and issued-device mapping,Y,N,1900-01-01,9999-12-31
+T,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
+U,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
+V,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
+W,Written off,Y,N,1900-01-01,9999-12-31
+X,Lost and replaced / Cancelled,Y,N,1900-01-01,9999-12-31
+Y,Fraud block,Y,N,1900-01-01,9999-12-31
+Z,Other system-specific block reason,Y,N,1900-01-01,9999-12-31

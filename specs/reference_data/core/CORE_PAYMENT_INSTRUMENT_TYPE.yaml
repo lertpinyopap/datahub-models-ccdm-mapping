@@ -1,0 +1,33 @@
+id: reference_core_payment_instrument_type
+extends: REFERENCE_CORE_SCD2_MANUAL
+description: Maps reference payment instrument type CSV data into a manual SCD2 payment instrument type table.
+control_data:
+  business_key:
+    fields:
+      - PAYMENT_INSTRUMENT_TYPE_CODE
+source:
+  seed:
+    file: data/reference_data/core/REFERENCE.CORE.PAYMENT_INSTRUMENT_TYPE.csv
+    name: reference_core_payment_instrument_type_seed
+    schema: INTERMEDIATE
+target:
+  id: PAYMENT_INSTRUMENT_TYPE
+  schema: CORE
+  table_name: PAYMENT_INSTRUMENT_TYPE
+  fields:
+    - id: PAYMENT_INSTRUMENT_TYPE_CODE
+      source:
+        pos: 0
+        column: PAYMENT_INSTRUMENT_TYPE_CODE
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: PAYMENT_INSTRUMENT_TYPE_DESCRIPTION
+      source:
+        pos: 1
+        column: PAYMENT_INSTRUMENT_TYPE_DESCRIPTION
+      data_type: varchar(16777216)
+      transforms:
+        - type: trim
+      nullable: false

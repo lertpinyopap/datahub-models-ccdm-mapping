@@ -27,7 +27,7 @@ target:
       source:
         pos: 1
         column: CUSTOMER_STATUS_DESCRIPTION
-      data_type: varchar(1000)
+      data_type: varchar(16777216)
       transforms:
         - type: trim
       nullable: false

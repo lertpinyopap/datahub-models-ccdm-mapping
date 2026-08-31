@@ -1,0 +1,7 @@
+FRAUD_REFER_STATUS_CODE,FRAUD_REFER_STATUS_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
+NONE,No referral or anti-referral is assigned,Y,N,1900-01-01,9999-12-31
+REFE,All authorizations are referred,Y,N,1900-01-01,9999-12-31
+ANTI,No authorizations are referred (anti-refer),Y,N,1900-01-01,9999-12-31
+DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
+DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
+DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31

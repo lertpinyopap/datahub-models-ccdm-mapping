@@ -1,0 +1,11 @@
+PHYSICAL_CARD_TECHNOLOGY_TYPE_CODE,PHYSICAL_CARD_TECHNOLOGY_TYPE_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
+MGST,Magnetic stripe only,Y,N,1900-01-01,9999-12-31
+CTCP,Contact chip (smart card),Y,N,1900-01-01,9999-12-31
+CLMS,Contactless with magnetic stripe,Y,N,1900-01-01,9999-12-31
+CLCP,Contactless chip,Y,N,1900-01-01,9999-12-31
+MCLM,Mobile contactless with magnetic stripe,Y,N,1900-01-01,9999-12-31
+MCLC,Mobile contactless chip,Y,N,1900-01-01,9999-12-31
+NPHY,No physical card technology,Y,N,1900-01-01,9999-12-31
+DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
+DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
+DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31

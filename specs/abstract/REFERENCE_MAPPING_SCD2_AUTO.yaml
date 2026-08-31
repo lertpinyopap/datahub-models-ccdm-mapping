@@ -25,11 +25,6 @@ target:
   id: reference_mapping_scd2
   schema: MAPPING
   fields:
-    - id: CHANGE_CONTROL
-      source:
-        column: CHANGE_CONTROL
-      data_type: varchar(255)
-      nullable: true
     - id: SOURCE_SYSTEM
       source:
         column: SOURCE_SYSTEM
@@ -49,7 +44,7 @@ target:
       data_type: varchar(255)
       transforms:
         - type: custom
-          macro: reference_macros.prefix_target_system
+          macro: reference_lookup_mapping_macros.prefix_target_system
     - id: TARGET_CODE
       source:
         column: TARGET_CODE
@@ -59,3 +54,13 @@ target:
         column: TARGET_DESCRIPTION
       data_type: varchar(255)
       nullable: true
+    - id: AUDIT_CREATED_SOURCE
+      source:
+        fixed_value: DBT
+      data_type: varchar(16777216)
+      nullable: false
+    - id: AUDIT_LAST_CHANGED_SOURCE
+      source:
+        fixed_value: DBT
+      data_type: varchar(16777216)
+      nullable: false

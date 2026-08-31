@@ -1,0 +1,33 @@
+id: reference_core_card_waiver_type
+extends: REFERENCE_CORE_SCD2_MANUAL
+description: Maps reference card waiver type CSV data into a manual SCD2 card waiver type table.
+control_data:
+  business_key:
+    fields:
+      - CARD_WAIVER_TYPE_CODE
+source:
+  seed:
+    file: data/reference_data/core/REFERENCE.CORE.CARD_WAIVER_TYPE.csv
+    name: reference_core_card_waiver_type_seed
+    schema: INTERMEDIATE
+target:
+  id: CARD_WAIVER_TYPE
+  schema: CORE
+  table_name: CARD_WAIVER_TYPE
+  fields:
+    - id: CARD_WAIVER_TYPE_CODE
+      source:
+        pos: 0
+        column: CARD_WAIVER_TYPE_CODE
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: CARD_WAIVER_TYPE_DESCRIPTION
+      source:
+        pos: 1
+        column: CARD_WAIVER_TYPE_DESCRIPTION
+      data_type: varchar(16777216)
+      transforms:
+        - type: trim
+      nullable: false

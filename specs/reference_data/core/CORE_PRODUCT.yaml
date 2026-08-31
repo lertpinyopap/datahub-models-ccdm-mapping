@@ -19,7 +19,7 @@ target:
       source:
         pos: 0
         column: PRODUCT_CODE
-      data_type: varchar(50)
+      data_type: varchar(16777216)
       transforms:
         - type: trim
       nullable: false
@@ -27,15 +27,31 @@ target:
       source:
         pos: 1
         column: PRODUCT_NAME
-      data_type: varchar(255)
+      data_type: varchar(16777216)
       transforms:
         - type: trim
       nullable: false
-    - id: BRAND_CODE
+    - id: BRAND_KEY
       source:
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
         pos: 2
         column: BRAND_CODE
-      data_type: varchar(20)
-      transforms:
-        - type: trim
+        args:
+          reference_type: BRAND
+          source_code_column: BRAND_CODE
+          value_column: BRAND_KEY
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: BRAND_BUSINESS_KEY
+      source:
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        pos: 2
+        column: BRAND_CODE
+        args:
+          reference_type: BRAND
+          source_code_column: BRAND_CODE
+          value_column: BRAND_BUSINESS_KEY
+          required: true
+      data_type: varchar(64)
       nullable: false

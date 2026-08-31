@@ -65,3 +65,13 @@ target:
           timezone_if_missing: UTC
           time_if_missing: end_of_day
       nullable: false
+    - id: AUDIT_CREATED_SOURCE
+      source:
+        fixed_value: DBT
+      data_type: varchar(16777216)
+      nullable: false
+    - id: AUDIT_LAST_CHANGED_SOURCE
+      source:
+        fixed_value: DBT
+      data_type: varchar(16777216)
+      nullable: false

@@ -181,6 +181,7 @@ Run all tasks from the local job config:
 export TMS_BIN="$PWD/libs/tms-env/bin/tms"
 python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --job-config dags/config/tms_jobs.local.json \
+  --keep-generated-project
   --target dev
 ```
 
@@ -192,6 +193,7 @@ python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --job-config dags/config/tms_jobs.local.json \
   --job reference_loader \
   --task load_core \
+  --keep-generated-project
   --target dev
 ```
 
@@ -204,6 +206,7 @@ python ../datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --project-root . \
   --job-config dags/config/tms_jobs.local.json \
   --target dev \
+  --keep-generated-project
   --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
 
 python datahub-tms-pipeline/dags/local_run_tms_loader.py \
@@ -211,6 +214,7 @@ python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --job ccdm_loader \
   --task load_card_account \
   --target dev \
+  --keep-generated-project  
   --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
 ```
 
@@ -225,6 +229,7 @@ export TMS_BIN="$PWD/libs/tms-env/bin/tms"
 python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --spec specs/reference_data/core/CORE_COUNTRY.yaml \
   --target dev \
+  --keep-generated-project 
   --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
 ```
 
@@ -233,6 +238,7 @@ export TMS_BIN="$PWD/libs/tms-env/bin/tms"
 python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --spec specs/reference_data/mapping/MAPPING_COUNTRY.yaml \
   --target dev \
+  --keep-generated-project 
   --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_", "tms_job_schema":"INTERMEDIATE"}'
 ```
 
@@ -243,6 +249,7 @@ export TMS_BIN="$PWD/libs/tms-env/bin/tms"
 python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --spec specs/reference_data/mapping/MAPPING_COUNTRY.yaml \
   --target dev \
+  --keep-generated-project
   --full-refresh \
   --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_", "tms_job_schema":"INTERMEDIATE"}'
 ```
@@ -254,14 +261,15 @@ export TMS_BIN="$PWD/libs/tms-env/bin/tms"
 python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --spec specs/ccdm/card_customer/CARD_CUSTOMER.yaml \
   --target dev \
+  --keep-generated-project
   --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE", "ENV_PREFIX":"NONPROD_"}'
 ```
 
 Test the reference lookup macro:
 
 ```bash
-dbt show --select full_reference_lookup_currency \
-  --vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE", "ENV_PREFIX":"NONPROD_"}' \
+dbt show --select full_reference_lookup_core_currency \
+  --vars '{"OVERRIDE_DB":"NONPROD_REFERENCE", "ENV_PREFIX":"NONPROD_"}' \
   --output json
 ```
 

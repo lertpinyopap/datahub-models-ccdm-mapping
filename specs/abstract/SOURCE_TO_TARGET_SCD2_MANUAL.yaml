@@ -52,3 +52,16 @@ target:
         column: VALID_TO_DATETIME
       data_type: timestamp_tz
       nullable: false
+
+
+    - id: AUDIT_CREATED_SOURCE
+      source:
+        fixed_value: DBT
+      data_type: varchar(16777216)
+      nullable: false
+
+    - id: AUDIT_LAST_CHANGED_SOURCE
+      source:
+        fixed_value: DBT
+      data_type: varchar(16777216)
+      nullable: false

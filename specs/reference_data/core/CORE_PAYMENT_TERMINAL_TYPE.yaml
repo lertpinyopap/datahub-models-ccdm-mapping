@@ -1,0 +1,33 @@
+id: reference_core_payment_terminal_type
+extends: REFERENCE_CORE_SCD2_MANUAL
+description: Maps reference payment terminal type CSV data into a manual SCD2 payment terminal type table.
+control_data:
+  business_key:
+    fields:
+      - PAYMENT_TERMINAL_TYPE_CODE
+source:
+  seed:
+    file: data/reference_data/core/REFERENCE.CORE.PAYMENT_TERMINAL_TYPE.csv
+    name: reference_core_payment_terminal_type_seed
+    schema: INTERMEDIATE
+target:
+  id: PAYMENT_TERMINAL_TYPE
+  schema: CORE
+  table_name: PAYMENT_TERMINAL_TYPE
+  fields:
+    - id: PAYMENT_TERMINAL_TYPE_CODE
+      source:
+        pos: 0
+        column: PAYMENT_TERMINAL_TYPE_CODE
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: PAYMENT_TERMINAL_TYPE_DESCRIPTION
+      source:
+        pos: 1
+        column: PAYMENT_TERMINAL_TYPE_DESCRIPTION
+      data_type: varchar(16777216)
+      transforms:
+        - type: trim
+      nullable: false
