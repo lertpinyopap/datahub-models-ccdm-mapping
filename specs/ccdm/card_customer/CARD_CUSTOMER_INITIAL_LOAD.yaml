@@ -1,6 +1,6 @@
-id: card_customer
+id: card_customer_initial_load
 extends: SOURCE_TO_TARGET_SCD2_DERIVED
-description: Maps V10 customer source data into PAY.CORE.CARD_CUSTOMER.
+description: Initial CARD_CUSTOMER load using the oldest available source record per customer.
 control_data:
   business_key:
     fields:
@@ -25,7 +25,7 @@ control_data:
     validation_scope: affected_window
     window_strategy: previous_and_next
     valid_from_datetime:
-      expression: coalesce(UPDATED_DATETIME, CREATED_DATETIME)
+      expression: CREATED_DATETIME
     valid_to_datetime:
       mode: next_valid_from
       offset:
@@ -46,7 +46,7 @@ control_data:
           direction: desc
           nulls: last
         - column: CREATED_DATETIME
-          direction: desc
+          direction: asc
           nulls: last
         - column: IS_ACTIVE_IN_SOURCE_FLAG
           direction: desc
@@ -57,11 +57,10 @@ control_data:
 source:
   format: table
   query: |
-    with joined_customer_rows as (
+    with ranked as (
         select
             C.AMNA_ADD_STATUS,
             C.AMNA_STATUS,
-            C.AMNA_ORG as CUSTOMER_ORG,
             C.AMNA_ACCT as CUSTOMER_ID,
             C.AMNA_TITLE_01 as TITLE,
             C.AMNA_FIRST_NAME_01 as FIRST_NAME,
@@ -71,45 +70,29 @@ source:
             ABS.AMBS_DATE_OPENED as CREATED_DATETIME,
             C.AMNA_DATE_LAST_MAINT as UPDATED_DATETIME,
             case
-                when max(case when ABS.AMBS_INT_STATUS = 'A' then 1 else 0 end)
-                    over (partition by C.AMNA_ORG, C.AMNA_ACCT) = 1 then 'Y'
+                when ABS.AMBS_INT_STATUS = 'A' then 'Y'
                 else 'N'
             end as IS_ACTIVE_IN_SOURCE_FLAG,
-    
-            ABS.AMBS_ACCT as _ACCOUNT_NUMBER,
-            ABS.AMBS_ORG as _ACCOUNT_ORG
-        from (
-            select *
-            from (
-                select *,
-                    row_number() over (
-                        partition by AMNA_ORG, AMNA_ACCT
-                        order by
-                            AIRFLOW_DAG_TIME desc,
-                            AMNA_DATE_LAST_MAINT desc nulls last,
-                            AMNA_ADD_STATUS desc nulls last,
-                            AMNA_STATUS desc nulls last,
-                            AMNA_TITLE_01 desc nulls last,
-                            AMNA_FIRST_NAME_01 desc nulls last,
-                            AMNA_MIDDLE_NAME_01 desc nulls last,
-                            AMNA_LAST_NAME_01 desc nulls last,
-                            AMNA_DOB_01 desc nulls last
-                    ) as row_num
-                from DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.CUSTOMER
-            )
-            where row_num = 1
-        ) as C
-        join DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.CUSTOMER_ACCOUNT as CA
+            row_number() over (
+                partition by C.AMNA_ACCT
+                order by
+                    ABS.AMBS_DATE_OPENED asc nulls last,
+                    C.AMNA_DATE_LAST_MAINT asc nulls last,
+                    C.AMNA_ORG,
+                    ABS.AMBS_ORG,
+                    ABS.AMBS_ACCT
+            ) as rn
+        from DATAOPS_HUB_SHARE_VISION_NONPROD.ODS.CUSTOMER as C
+        join DATAOPS_HUB_SHARE_VISION_NONPROD.ODS.CUSTOMER_ACCOUNT as CA
             on C.AMNA_ACCT = CA.AMBX_NA_ACCT
            and C.AMNA_ORG = try_to_number(CA.AMBX_NA_ORG)
-        join DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.ACCOUNT_BASE_SEGMENT as ABS
+        join DATAOPS_HUB_SHARE_VISION_NONPROD.ODS.ACCOUNT_BASE_SEGMENT as ABS
             on CA.AMBX_BS_ACCT = ABS.AMBS_ACCT
            and CA.AMBX_BS_ORG = ABS.AMBS_ORG
     )
     select
         AMNA_ADD_STATUS,
         AMNA_STATUS,
-        CUSTOMER_ORG,
         CUSTOMER_ID,
         TITLE,
         FIRST_NAME,
@@ -119,17 +102,8 @@ source:
         CREATED_DATETIME,
         UPDATED_DATETIME,
         IS_ACTIVE_IN_SOURCE_FLAG
-    from joined_customer_rows
-    qualify row_number() over (
-        partition by CUSTOMER_ID
-        order by
-            UPDATED_DATETIME desc nulls last,
-            CREATED_DATETIME desc nulls last,
-            IS_ACTIVE_IN_SOURCE_FLAG desc nulls last,
-            _ACCOUNT_NUMBER,
-            _ACCOUNT_ORG
-    ) = 1
-
+    from ranked
+    where rn = 1
 target:
   id: CARD_CUSTOMER
   schema: CORE
@@ -151,37 +125,31 @@ target:
           required: true
       data_type: varchar(64)
       nullable: false
-
     - id: CUSTOMER_ID
       source:
         column: CUSTOMER_ID
       data_type: varchar(20)
       nullable: false
-
     - id: CLV_ID
       source:
         default_from_field: CUSTOMER_ID
       data_type: varchar(20)
       nullable: false
-
     - id: TITLE
       source:
         column: TITLE
       data_type: varchar(50)
       nullable: true
-
     - id: FIRST_NAME
       source:
         column: FIRST_NAME
       data_type: varchar(50)
       nullable: true
-
     - id: MIDDLE_NAME
       source:
         column: MIDDLE_NAME
       data_type: varchar(50)
       nullable: true
-
     - id: SURNAME
       source:
         column: SURNAME
@@ -189,37 +157,31 @@ target:
       nullable: true
       tags:
         SAS_MIGRATION_WORKSPACE.TAGS.PII_CATEGORY: IDENTIFIER
-
     - id: DATE_OF_BIRTH
       source:
         column: DATE_OF_BIRTH
       data_type: date
       nullable: true
-
     - id: EXTERNAL_ID
       source:
         fixed_value: null
       data_type: varchar(255)
       nullable: true
-
     - id: EXTERNAL_IDENTIFICATION_TYPE
       source:
         default_value: "AMID"
       data_type: varchar(255)
       nullable: true
-
     - id: CREATED_DATETIME
       source:
         column: CREATED_DATETIME
       data_type: timestamp_tz
       nullable: true
-
     - id: UPDATED_DATETIME
       source:
         column: UPDATED_DATETIME
       data_type: timestamp_tz
       nullable: true
-
     - id: IS_ACTIVE_IN_SOURCE_FLAG
       source:
         column: IS_ACTIVE_IN_SOURCE_FLAG

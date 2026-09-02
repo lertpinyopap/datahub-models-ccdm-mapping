@@ -8,8 +8,8 @@
     {{ return(normalized_type | upper) }}
 {%- endmacro %}
 
-{% macro _reference_lookup_mapping_database() -%}
-    {{ return(var('OVERRIDE_DB', var('ENV_PREFIX', '') ~ 'REFERENCE')) }}
+{% macro _reference_lookup_mapping_database(reference_database=none) -%}
+    {{ return(reference_database if reference_database is not none else var('ENV_PREFIX', '') ~ 'REFERENCE') }}
 {%- endmacro %}
 
 {% macro _reference_lookup_mapping_equals(left_sql, right_sql, case_insensitive_match=false) -%}
@@ -29,6 +29,7 @@
     source_code_column=none,
     mapping_table=none,
     code_table=none,
+    reference_database=none,
     code_column=none,
     key_column=none,
     as_of_date_expr=none,
@@ -46,9 +47,9 @@
     {% if resolved_source_code_expression is none %}
         {% set resolved_source_code_expression = "source_query." ~ adapter.quote(source_code_column) %}
     {% endif %}
-    {% set reference_database = _reference_lookup_mapping_database() %}
-    {% set mapping_relation = mapping_table if mapping_table is not none else reference_database ~ '.MAPPING.' ~ reference_name %}
-    {% set code_relation = code_table if code_table is not none else reference_database ~ '.CORE.' ~ reference_name %}
+    {% set resolved_reference_database = _reference_lookup_mapping_database(reference_database) %}
+    {% set mapping_relation = mapping_table if mapping_table is not none else resolved_reference_database ~ '.MAPPING.' ~ reference_name %}
+    {% set code_relation = code_table if code_table is not none else resolved_reference_database ~ '.CORE.' ~ reference_name %}
     {% set resolved_code_column = code_column if code_column is not none else reference_name ~ '_CODE' %}
     {% set resolved_key_column = key_column if key_column is not none else reference_name ~ '_KEY' %}
     {% set resolved_as_of_date_expr = as_of_date_expr if as_of_date_expr is not none else 'current_timestamp()' %}

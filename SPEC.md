@@ -127,14 +127,14 @@ control_data:
 
 - TMS supports optional Snowflake tags at target-table and target-column level.
 - Tags classify raw business data for downstream masking/governance. They do not control generated key/hash behavior.
+- Use `tags` for governance classifications such as `PII_CATEGORY` and `PCI_CATEGORY`. Tag names may be simple, schema-qualified, or fully qualified Snowflake tag names.
+- Values are passed through as provided and are not restricted by TMS; Snowflake allowed values remain controlled by the tag definition.
 - Example:
 
 ```yaml
 target:
   id: CARD_CUSTOMER
   schema: CORE
-  tags:
-    DATA_CLASSIFICATION: PII
   fields:
     - id: EMAIL_ADDRESS
       source:
@@ -142,8 +142,8 @@ target:
       data_type: varchar(1024)
       nullable: false
       tags:
-        DATA_CLASSIFICATION: PII
-        DATA_CATEGORY: IDENTIFIER
+        PII_CATEGORY: IDENTIFIER
+        PCI_CATEGORY: PCI
 ```
 
 ## Validation Expectations

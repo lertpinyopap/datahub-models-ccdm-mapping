@@ -193,7 +193,7 @@ python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --job-config dags/config/tms_jobs.local.json \
   --job reference_loader \
   --task load_core \
-  --keep-generated-project
+  --keep-generated-project \
   --target dev
 ```
 
@@ -206,7 +206,7 @@ python ../datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --project-root . \
   --job-config dags/config/tms_jobs.local.json \
   --target dev \
-  --keep-generated-project
+  --keep-generated-project \
   --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
 
 python datahub-tms-pipeline/dags/local_run_tms_loader.py \
@@ -216,7 +216,80 @@ python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --target dev \
   --keep-generated-project  
   --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
+  
+python datahub-tms-pipeline/dags/local_run_tms_loader.py \
+  --job-config dags/config/tms_jobs.dev.json \
+  --job datahub-models-ccdm-mapping-ccdm_loader \
+  --task load_card_customer \
+  --target dev \
+  --keep-generated-project \
+  --dbt-vars '{"OVERRIDE_DB":"NONPROD_REFERENCE"}'
+
 ```
+
+## Repo Tests
+
+This repo includes local-only Python unit tests for the sample reference lookup
+macros. They are kept outside dbt's `tests/` path, so they do not run in dbt
+or Airflow.
+
+Install `pytest` in this repo virtual environment:
+
+```bash
+.venv/bin/python -m pip install pytest
+```
+
+Run all local unit tests:
+
+```bash
+python -m pytest
+```
+
+Run only the reference lookup macro tests:
+
+```bash
+python -m pytest unit_tests/test_reference_lookup_macros.py
+```
+
+`unittest` is still available if you want the built-in runner:
+
+```bash
+python -m unittest unit_tests.test_reference_lookup_macros
+```
+
+Preview one example lookup against Snowflake without materializing a model:
+
+```bash
+dbt show \
+  --project-dir . \
+  --target dev \
+  --vars '{"ENV_PREFIX":"NONPROD_"}' \
+  --output json \
+  --inline "$(cat unit_tests/examples/reference_lookup/sample_reference_lookup_mapping_country.sql)"
+```
+
+To run all example reference models lookup
+```bash
+for sql_file in unit_tests/examples/reference_lookup/*.sql; do
+  echo "=== $sql_file ==="
+    dbt show \
+    --project-dir . \
+    --target dev \
+    --vars '{"ENV_PREFIX":"NONPROD_"}' \
+    --output json \
+    --inline "$(cat "$sql_file")"
+done
+```
+
+The tests live in:
+
+- `unit_tests/test_reference_lookup_macros.py`
+
+They verify:
+
+- `reference_lookup_mapping` contains mapping-to-core resolution logic
+- `reference_lookup_core` contains current effective core-row lookup logic
+- example SQL under `unit_tests/examples/reference_lookup/` use the macros consistently
 
 The job config uses `target: MWAA` because it is the Airflow runtime target.
 For local testing, pass `--target dev` unless your local
@@ -265,15 +338,6 @@ python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE", "ENV_PREFIX":"NONPROD_"}'
 ```
 
-Test the reference lookup macro:
-
-```bash
-dbt show --select full_reference_lookup_core_currency \
-  --vars '{"OVERRIDE_DB":"NONPROD_REFERENCE", "ENV_PREFIX":"NONPROD_"}' \
-  --output json
-```
-
-
 ## Airflow
 
 Airflow should use the shared DAG entrypoint from `datahub-tms-pipeline/dags/dags_tms_entrypoint.py`.
@@ -301,6 +365,8 @@ The DAG is driven by `dags/config/tms_jobs.<env>.json` and the shared `datahub-t
 - task-level `profile_args` and `vars` can override the top-level defaults
 - at runtime, the DAG resolves `OVERRIDE_DB` from `vars.OVERRIDE_DB`, then `vars.database`, then `profile_args.database`, without adding `ENV_PREFIX`
 - if the Airflow environment already provides `OVERRIDE_DB`, that explicit value wins
+- reference lookup macros use `<ENV_PREFIX>REFERENCE`; this is independent of the target database selected by `OVERRIDE_DB`
+- pass `reference_database='OTHER_DB'` to a lookup macro only when a specific lookup database is required
 - `TMS_BIN` defaults to the Airflow-installed runtime at `/usr/local/airflow/python3-virtualenv/tms-env/bin/tms`
 
 Example:

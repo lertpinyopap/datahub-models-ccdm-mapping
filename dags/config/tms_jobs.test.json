@@ -273,24 +273,6 @@
           ]
         },
         {
-          "group_id": "reference_email_type",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_EMAIL_TYPE.yaml",
-              "full_refresh": false
-            },
-            {
-              "task_id": "load_mapping",
-              "spec": "specs/reference_data/mapping/MAPPING_EMAIL_TYPE.yaml",
-              "full_refresh": false,
-              "depends_on": [
-                "load_core"
-              ]
-            }
-          ]
-        },
-        {
           "group_id": "reference_financial_institution",
           "tasks": [
             {
@@ -685,6 +667,14 @@
               "task_id": "load_core",
               "spec": "specs/reference_data/core/CORE_EMAIL_ADDRESS_TYPE.yaml",
               "full_refresh": false
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_EMAIL_ADDRESS_TYPE.yaml",
+              "full_refresh": false,
+              "depends_on": [
+                "load_core"
+              ]
             }
           ]
         },
@@ -803,6 +793,58 @@
               "task_id": "load_card_account",
               "spec": "specs/ccdm/card_account/CARD_ACCOUNT.yaml",
               "full_refresh": false
+            }
+          ]
+        },
+        {
+          "group_id": "card_customer_address",
+          "tasks": [
+            {
+              "task_id": "load_card_customer_address",
+              "spec": "specs/ccdm/card_customer_address/CARD_CUSTOMER_ADDRESS.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "card_customer.load_card_customer"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "card_customer_email_address",
+          "tasks": [
+            {
+              "task_id": "load_card_customer_email_address",
+              "spec": "specs/ccdm/card_customer_email_address/CARD_CUSTOMER_EMAIL_ADDRESS.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "card_customer.load_card_customer"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "card_customer_phone",
+          "tasks": [
+            {
+              "task_id": "load_card_customer_phone",
+              "spec": "specs/ccdm/card_customer_phone/CARD_CUSTOMER_PHONE.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "card_customer.load_card_customer"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "card_customer_event",
+          "tasks": [
+            {
+              "task_id": "load_card_customer_event",
+              "spec": "specs/ccdm/card_customer_event/CARD_CUSTOMER_EVENT.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "card_customer.load_card_customer"
+              ]
             }
           ]
         }

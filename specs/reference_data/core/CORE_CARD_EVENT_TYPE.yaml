@@ -19,7 +19,7 @@ target:
       source:
         pos: 0
         column: CARD_EVENT_TYPE_CODE
-      data_type: varchar(20)
+      data_type: varchar(64)
       transforms:
         - type: trim
       nullable: false
