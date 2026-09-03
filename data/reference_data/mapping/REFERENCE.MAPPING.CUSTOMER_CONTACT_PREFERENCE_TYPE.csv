@@ -4,3 +4,4 @@ V10,PREFERRED,Use this for contacting customer.,REFERENCE.CORE.CUSTOMER_CONTACT_
 V10,UNDEC,Do not use for contacting customer.,REFERENCE.CORE.CUSTOMER_CONTACT_PREFERENCE_TYPE,UNDEC,Do not use for contacting customer.
 V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CUSTOMER_CONTACT_PREFERENCE_TYPE,DQMapping,Source value cannot be mapped
 V10,DQMissing,Source value not provided,REFERENCE.CORE.CUSTOMER_CONTACT_PREFERENCE_TYPE,DQMissing,Source value not provided
+V10,DQNotApplicable,Source value not applicable,REFERENCE.CORE.CUSTOMER_CONTACT_PREFERENCE_TYPE,DQNotApplicable,Source value not applicable

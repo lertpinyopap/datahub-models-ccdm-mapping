@@ -84,7 +84,7 @@ source:
                 cast(nullif(A.AMBS_DATE_OPENED, to_date('1901-01-01')) as timestamp_tz),
                 cast('1901-01-01' as timestamp_tz)
             ) as SOURCE_EFFECTIVE_FROM_DATETIME
-        from DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.ACCOUNT_BASE_SEGMENT as A
+        from DATAOPS_HUB_SHARE_VISION_NONPROD.ODS.ACCOUNT_BASE_SEGMENT as A
     ),
     card_customer_lookup as (
         select CUSTOMER_ID, CARD_CUSTOMER_KEY, CARD_CUSTOMER_BUSINESS_KEY

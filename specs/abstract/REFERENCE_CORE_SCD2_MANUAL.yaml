@@ -3,6 +3,7 @@ description: Shared manual SCD2 pattern for CORE reference datasets where the so
 control_data:
   materialisation_type: table
   change_type: scd2_manual
+  validation_enabled: true
   scd:
     update_mode: upsert
     update_key:

@@ -32,6 +32,14 @@
               "task_id": "load_core",
               "spec": "specs/reference_data/core/CORE_ADDRESS_TYPE.yaml",
               "full_refresh": false
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_ADDRESS_TYPE.yaml",
+              "full_refresh": false,
+              "depends_on": [
+                "load_core"
+              ]
             }
           ]
         },
@@ -387,6 +395,14 @@
               "task_id": "load_core",
               "spec": "specs/reference_data/core/CORE_CARD_BLOCKED_REASON.yaml",
               "full_refresh": false
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_BLOCKED_REASON.yaml",
+              "full_refresh": false,
+              "depends_on": [
+                "load_core"
+              ]
             }
           ]
         },

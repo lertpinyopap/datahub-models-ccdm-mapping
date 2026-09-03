@@ -3,8 +3,12 @@ description: Shared derived SCD2 pattern for source-to-target table mappings whe
 control_data:
   materialisation_type: table
   change_type: scd2_derived
+  validation_enabled: true
   failure_mode: fail_load
   staging_schema: INTERMEDIATE
+  scd:
+    scd2_validation_enabled: true
+    scd2_validation: continuous
 source:
   format: table
 target:

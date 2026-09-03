@@ -1,44 +1,42 @@
 CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
-,VN,card_authentication_data_ready,Card authentication data ready,REFERENCE.CORE.CARD_EVENT_TYPE,card_authentication_data_ready,Card authentication data ready
-,VN,digital_card_ready_to_use,Digital card ready to use,REFERENCE.CORE.CARD_EVENT_TYPE,digital_card_ready_to_use,Digital card ready to use
-,VN,card_activated,Card activated,REFERENCE.CORE.CARD_EVENT_TYPE,card_activated,Card activated
-,VN,card_lost,Card lost,REFERENCE.CORE.CARD_EVENT_TYPE,card_lost,Card lost
-,VN,card_stolen,Card stolen,REFERENCE.CORE.CARD_EVENT_TYPE,card_stolen,Card stolen
-,VN,card_reissued,Card reissued,REFERENCE.CORE.CARD_EVENT_TYPE,card_reissued,Card reissued
-,VN,card_blocked,Card blocked,REFERENCE.CORE.CARD_EVENT_TYPE,card_blocked,Card blocked
-,VN,card_unblocked,Card unblocked,REFERENCE.CORE.CARD_EVENT_TYPE,card_unblocked,Card unblocked
-,VN,card_cancelled,Card cancelled,REFERENCE.CORE.CARD_EVENT_TYPE,card_cancelled,Card cancelled
-,VN,card_replaced,Card replaced,REFERENCE.CORE.CARD_EVENT_TYPE,card_replaced,Card replaced
-,VN,card_confirmed_fraud,Card confirmed fraud,REFERENCE.CORE.CARD_EVENT_TYPE,card_confirmed_fraud,Card confirmed fraud
-,VN,card_fraud_status_removed,Card fraud status removed,REFERENCE.CORE.CARD_EVENT_TYPE,card_fraud_status_removed,Card fraud status removed
-,VN,card_personalisation_tracking,Card personalisation tracking,REFERENCE.CORE.CARD_EVENT_TYPE,card_personalisation_tracking,Card personalisation tracking
-,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_EVENT_TYPE,DQMapping,Source value cannot be mapped
-,VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_EVENT_TYPE,DQMissing,Source value not provided
-,V10,ACTV,CARD ACTIVATION,REFERENCE.CORE.CARD_EVENT_TYPE,card_activated,Card activated
-,V10,AFRC,AMEX FRAUD CREDIT,REFERENCE.CORE.CARD_EVENT_TYPE,card_confirmed_fraud,Card confirmed fraud
-,V10,BNMI,ACC BLOCK CODE,REFERENCE.CORE.CARD_EVENT_TYPE,card_blocked,Card blocked
-,V10,BPCQ,SP- CUST REQ CANCEL,REFERENCE.CORE.CARD_EVENT_TYPE,card_cancelled,Card cancelled
-,V10,CDBK,CARD LEVEL BLOCK,REFERENCE.CORE.CARD_EVENT_TYPE,card_blocked,Card blocked
-,V10,CLIC,CREDIT LIMIT INCREAS,REFERENCE.CORE.CARD_EVENT_TYPE,card_cancelled,Card cancelled
-,V10,CRPC,CARD REPLACE FEE REV,REFERENCE.CORE.CARD_EVENT_TYPE,card_replaced,Card replaced
-,V10,CRPD,CARD REPLACEMENT FEE,REFERENCE.CORE.CARD_EVENT_TYPE,card_replaced,Card replaced
-,V10,DDCN,DIRECT DEBIT CANCEL,REFERENCE.CORE.CARD_EVENT_TYPE,card_cancelled,Card cancelled
-,V10,FNIC,FRAUD NO VALIDATE CR,REFERENCE.CORE.CARD_EVENT_TYPE,card_confirmed_fraud,Card confirmed fraud
-,V10,FNID,FRAUD NO VALIDATE DR,REFERENCE.CORE.CARD_EVENT_TYPE,card_confirmed_fraud,Card confirmed fraud
-,V10,FRDA,APPLICATION FRAUD,REFERENCE.CORE.CARD_EVENT_TYPE,card_confirmed_fraud,Card confirmed fraud
-,V10,FRDT,TRANSACTION FRAUD,REFERENCE.CORE.CARD_EVENT_TYPE,card_confirmed_fraud,Card confirmed fraud
-,V10,FRUD,FRAUD,REFERENCE.CORE.CARD_EVENT_TYPE,card_confirmed_fraud,Card confirmed fraud
-,V10,FSCC,SCAM FRAUD CR,REFERENCE.CORE.CARD_EVENT_TYPE,card_confirmed_fraud,Card confirmed fraud
-,V10,FSCD,SCAM FRAUD DR,REFERENCE.CORE.CARD_EVENT_TYPE,card_confirmed_fraud,Card confirmed fraud
-,V10,FWIL,FRAUD WRITE-OFF,REFERENCE.CORE.CARD_EVENT_TYPE,card_confirmed_fraud,Card confirmed fraud
-,V10,FWLR,FRAUD WRITE OFF REV,REFERENCE.CORE.CARD_EVENT_TYPE,card_fraud_status_removed,Card fraud status removed
-,V10,INMC,MANUAL CANCEL OF INS,REFERENCE.CORE.CARD_EVENT_TYPE,card_cancelled,Card cancelled
-,V10,MIAC,ACTIVATE CARD,REFERENCE.CORE.CARD_EVENT_TYPE,card_activated,Card activated
-,V10,MISS,MISS LOST CARD,REFERENCE.CORE.CARD_EVENT_TYPE,card_lost,Card lost
-,V10,NEWC,NEW CARD ISSUED,REFERENCE.CORE.CARD_EVENT_TYPE,card_replaced,Card replaced
-,V10,REIS,REISSUE CARD,REFERENCE.CORE.CARD_EVENT_TYPE,card_reissued,Card reissued
-,V10,SCLY,CLIM-CANCELLED,REFERENCE.CORE.CARD_EVENT_TYPE,card_cancelled,Card cancelled
-,V10,SDDC,DD DISHONOUR CANCEL,REFERENCE.CORE.CARD_EVENT_TYPE,card_cancelled,Card cancelled
-,V10,TKNE,TOKEN ACTIVATED,REFERENCE.CORE.CARD_EVENT_TYPE,digital_card_ready_to_use,Digital card ready to use
+,VN,AUTHRD,Card authentication data ready,REFERENCE.CORE.CARD_EVENT_TYPE,AUTHRD,Card authentication data ready
+,VN,CRRDYU,Digital card ready to use,REFERENCE.CORE.CARD_EVENT_TYPE,CRRDYU,Digital card ready to use
+,VN,CRACTV,Card activated,REFERENCE.CORE.CARD_EVENT_TYPE,CRACTV,Card activated
+,VN,CRLOST,Card lost,REFERENCE.CORE.CARD_EVENT_TYPE,CRLOST,Card lost
+,VN,CRSTLN,Card stolen,REFERENCE.CORE.CARD_EVENT_TYPE,CRSTLN,Card stolen
+,VN,CRRISS,Card reissued,REFERENCE.CORE.CARD_EVENT_TYPE,CRRISS,Card reissued
+,VN,CRBLCK,Card blocked,REFERENCE.CORE.CARD_EVENT_TYPE,CRBLCK,Card blocked
+,VN,CRUNBK,Card unblocked,REFERENCE.CORE.CARD_EVENT_TYPE,CRUNBK,Card unblocked
+,VN,CRCANC,Card cancelled,REFERENCE.CORE.CARD_EVENT_TYPE,CRCANC,Card cancelled
+,VN,CRREPL,Card replaced,REFERENCE.CORE.CARD_EVENT_TYPE,CRREPL,Card replaced
+,VN,CRCNFR,Card confirmed fraud,REFERENCE.CORE.CARD_EVENT_TYPE,CRCNFR,Card confirmed fraud
+,VN,CRRMFR,Card fraud status removed,REFERENCE.CORE.CARD_EVENT_TYPE,CRRMFR,Card fraud status removed
+,VN,CRPTRK,Card personalisation tracking,REFERENCE.CORE.CARD_EVENT_TYPE,CRPTRK,Card personalisation tracking
+,V10,ACTV,CARD ACTIVATION,REFERENCE.CORE.CARD_EVENT_TYPE,CRACTV,Card activated
+,V10,AFRC,AMEX FRAUD CREDIT,REFERENCE.CORE.CARD_EVENT_TYPE,CRCNFR,Card confirmed fraud
+,V10,BNMI,ACC BLOCK CODE,REFERENCE.CORE.CARD_EVENT_TYPE,CRBLCK,Card blocked
+,V10,BPCQ,SP- CUST REQ CANCEL,REFERENCE.CORE.CARD_EVENT_TYPE,CRCANC,Card cancelled
+,V10,CDBK,CARD LEVEL BLOCK,REFERENCE.CORE.CARD_EVENT_TYPE,CRBLCK,Card blocked
+,V10,CLIC,CREDIT LIMIT INCREAS,REFERENCE.CORE.CARD_EVENT_TYPE,CRCANC,Card cancelled
+,V10,CRPC,CARD REPLACE FEE REV,REFERENCE.CORE.CARD_EVENT_TYPE,CRREPL,Card replaced
+,V10,CRPD,CARD REPLACEMENT FEE,REFERENCE.CORE.CARD_EVENT_TYPE,CRREPL,Card replaced
+,V10,DDCN,DIRECT DEBIT CANCEL,REFERENCE.CORE.CARD_EVENT_TYPE,CRCANC,Card cancelled
+,V10,FNIC,FRAUD NO VALIDATE CR,REFERENCE.CORE.CARD_EVENT_TYPE,CRCNFR,Card confirmed fraud
+,V10,FNID,FRAUD NO VALIDATE DR,REFERENCE.CORE.CARD_EVENT_TYPE,CRCNFR,Card confirmed fraud
+,V10,FRDA,APPLICATION FRAUD,REFERENCE.CORE.CARD_EVENT_TYPE,CRCNFR,Card confirmed fraud
+,V10,FRDT,TRANSACTION FRAUD,REFERENCE.CORE.CARD_EVENT_TYPE,CRCNFR,Card confirmed fraud
+,V10,FRUD,FRAUD,REFERENCE.CORE.CARD_EVENT_TYPE,CRCNFR,Card confirmed fraud
+,V10,FSCC,SCAM FRAUD CR,REFERENCE.CORE.CARD_EVENT_TYPE,CRCNFR,Card confirmed fraud
+,V10,FSCD,SCAM FRAUD DR,REFERENCE.CORE.CARD_EVENT_TYPE,CRCNFR,Card confirmed fraud
+,V10,FWIL,FRAUD WRITE-OFF,REFERENCE.CORE.CARD_EVENT_TYPE,CRCNFR,Card confirmed fraud
+,V10,FWLR,FRAUD WRITE OFF REV,REFERENCE.CORE.CARD_EVENT_TYPE,CRRMFR,Card fraud status removed
+,V10,INMC,MANUAL CANCEL OF INS,REFERENCE.CORE.CARD_EVENT_TYPE,CRCANC,Card cancelled
+,V10,MIAC,ACTIVATE CARD,REFERENCE.CORE.CARD_EVENT_TYPE,CRACTV,Card activated
+,V10,MISS,MISS LOST CARD,REFERENCE.CORE.CARD_EVENT_TYPE,CRLOST,Card lost
+,V10,NEWC,NEW CARD ISSUED,REFERENCE.CORE.CARD_EVENT_TYPE,CRREPL,Card replaced
+,V10,REIS,REISSUE CARD,REFERENCE.CORE.CARD_EVENT_TYPE,CRRISS,Card reissued
+,V10,SCLY,CLIM-CANCELLED,REFERENCE.CORE.CARD_EVENT_TYPE,CRCANC,Card cancelled
+,V10,SDDC,DD DISHONOUR CANCEL,REFERENCE.CORE.CARD_EVENT_TYPE,CRCANC,Card cancelled
+,V10,TKNE,TOKEN ACTIVATED,REFERENCE.CORE.CARD_EVENT_TYPE,CRRDYU,Digital card ready to use
 ,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_EVENT_TYPE,DQMapping,Source value cannot be mapped
 ,V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_EVENT_TYPE,DQMissing,Source value not provided

@@ -140,7 +140,9 @@ source:
         address_rows.POSTAL_CODE,
         address_rows.SOURCE_EFFECTIVE_FROM_DATETIME
     from address_rows
-    left join card_customer_lookup on card_customer_lookup.CUSTOMER_ID = address_rows.CUSTOMER_ID
+    -- left join card_customer_lookup on card_customer_lookup.CUSTOMER_ID = address_rows.CUSTOMER_ID
+    inner join card_customer_lookup on card_customer_lookup.CUSTOMER_ID = address_rows.CUSTOMER_ID
+
 target:
   id: CARD_CUSTOMER_ADDRESS
   schema: CORE

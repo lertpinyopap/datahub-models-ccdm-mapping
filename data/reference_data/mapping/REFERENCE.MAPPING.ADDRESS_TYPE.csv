@@ -1,0 +1,29 @@
+SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+VN,HOME,Current Residential Address,REFERENCE.CORE.ADDRESS_TYPE,HOME,Current Residential Address
+VN,BIZZ,Business Address,REFERENCE.CORE.ADDRESS_TYPE,BIZZ,Business Address
+VN,REGR,Registered Residential Address,REFERENCE.CORE.ADDRESS_TYPE,REGR,Registered Residential Address
+VN,LEGL,Legal Address,REFERENCE.CORE.ADDRESS_TYPE,LEGL,Legal Address
+VN,MAIL,Mailing Address,REFERENCE.CORE.ADDRESS_TYPE,MAIL,Mailing Address
+VN,TRAD,Trading Address,REFERENCE.CORE.ADDRESS_TYPE,TRAD,Trading Address
+VN,RELA,Relatives Address,REFERENCE.CORE.ADDRESS_TYPE,RELA,Relatives Address
+VN,APPR,Appropriate Address,REFERENCE.CORE.ADDRESS_TYPE,APPR,Appropriate Address
+VN,GARG,Garaged Address,REFERENCE.CORE.ADDRESS_TYPE,GARG,Garaged Address
+VN,RGOF,Registered Office,REFERENCE.CORE.ADDRESS_TYPE,RGOF,Registered Office
+VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.ADDRESS_TYPE,DQMapping,Source value cannot be mapped
+VN,DQMissing,Source value not provided,REFERENCE.CORE.ADDRESS_TYPE,DQMissing,Source value not provided
+VN,DQNotApplicable,Source value not required,REFERENCE.CORE.ADDRESS_TYPE,DQNotApplicable,Source value not required
+V10,BIZZ,Employer/business address fields populated,REFERENCE.CORE.ADDRESS_TYPE,HOME,Current Residential Address
+V10,HOME,Residential address fields populated,REFERENCE.CORE.ADDRESS_TYPE,HOME,Current Residential Address
+V10,DQMissing,Source value not provided,REFERENCE.CORE.ADDRESS_TYPE,DQMissing,Source value not provided
+V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.ADDRESS_TYPE,DQMapping,Source value cannot be mapped
+V10,DQNotApplicable,Source value not required,REFERENCE.CORE.ADDRESS_TYPE,DQNotApplicable,Source value not required
+V8,DQMissing,Source value not provided,REFERENCE.CORE.ADDRESS_TYPE,DQMissing,Source value not provided
+V8,DQMapping,Source value cannot be mapped,REFERENCE.CORE.ADDRESS_TYPE,DQMapping,Source value cannot be mapped
+V2,DQMissing,Source value not provided,REFERENCE.CORE.ADDRESS_TYPE,DQMissing,Source value not provided
+V2,DQMapping,Source value cannot be mapped,REFERENCE.CORE.ADDRESS_TYPE,DQMapping,Source value cannot be mapped
+V2,DQNotApplicable,Source value not required,REFERENCE.CORE.ADDRESS_TYPE,DQNotApplicable,Source value not required
+V8,DQNotApplicable,Source value not required,REFERENCE.CORE.ADDRESS_TYPE,DQNotApplicable,Source value not required
+V8,BIZZ,Employer/business address fields populated,REFERENCE.CORE.ADDRESS_TYPE,HOME,Current Residential Address
+V8,HOME,Residential address fields populated,REFERENCE.CORE.ADDRESS_TYPE,HOME,Current Residential Address
+V2,BIZZ,Employer/business address fields populated,REFERENCE.CORE.ADDRESS_TYPE,HOME,Current Residential Address
+V2,HOME,Residential address fields populated,REFERENCE.CORE.ADDRESS_TYPE,HOME,Current Residential Address
