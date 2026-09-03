@@ -3,6 +3,7 @@ description: Shared manual SCD2 pattern for source-to-target table mappings wher
 control_data:
   materialisation_type: table
   change_type: scd2_manual
+  validation_enabled: true
   failure_mode: fail_load
   staging_schema: INTERMEDIATE
   scd:

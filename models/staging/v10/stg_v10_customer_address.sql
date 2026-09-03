@@ -1,0 +1,19 @@
+{{ config(materialized='view', schema='INTERMEDIATE', alias='STG_V10_CUSTOMER_ADDRESS', tags=['v10_mapping_staging']) }}
+
+select AMNA_ACCT CUSTOMER_ID, 'HOME' ADDRESS_TYPE_CODE, AMNA_CNTRY_CD_01 ADDRESS_COUNTRY_SOURCE_CODE, 'PREFERRED' CUSTOMER_CONTACT_PREFERENCE_TYPE_CODE,
+    AMNA_HOUSE_NUMBER_01 BUILDING_NUMBER, AMNA_HOUSE_NAME_01 BUILDING_NAME, cast(null as varchar) STREET_NAME,
+    AMNA_ADDR_1_01 ADDRESS_LINE1, AMNA_ADDR_2_01 ADDRESS_LINE2, AMNA_ADDR_3_01 ADDRESS_LINE3, AMNA_ADDR_4_01 ADDRESS_LINE4,
+    AMNA_CITY_STATE_01 TOWN_NAME, AMNA_STATE_01 REGION, AMNA_PSTL_CD_01 POSTAL_CODE, AMNA_DATE_LAST_MAINT SOURCE_EFFECTIVE_FROM_DATETIME
+from DATAOPS_HUB_SHARE_VISION_NONPROD.ODS.CUSTOMER
+union all
+select AMNA_ACCT, 'HOME', AMNA_CNTRY_CD_02, 'PREFERRED', AMNA_HOUSE_NUMBER_02, AMNA_HOUSE_NAME_02, cast(null as varchar),
+    AMNA_ADDR_1_02, AMNA_ADDR_2_02, AMNA_ADDR_3_02, AMNA_ADDR_4_02, AMNA_CITY_STATE_02, AMNA_STATE_02, AMNA_PSTL_CD_02, AMNA_DATE_LAST_MAINT
+from DATAOPS_HUB_SHARE_VISION_NONPROD.ODS.CUSTOMER
+union all
+select AMNA_ACCT, 'BIZZ', null, 'NOCTCT', cast(null as varchar), cast(null as varchar), cast(null as varchar),
+    AMNA_EMPLOYER_ADDR_1_01, AMNA_EMPLOYER_ADDR_2_01, cast(null as varchar), cast(null as varchar), cast(null as varchar), cast(null as varchar), cast(null as varchar), AMNA_DATE_LAST_MAINT
+from DATAOPS_HUB_SHARE_VISION_NONPROD.ODS.CUSTOMER
+union all
+select AMNA_ACCT, 'BIZZ', null, 'NOCTCT', cast(null as varchar), cast(null as varchar), cast(null as varchar),
+    AMNA_EMPLOYER_ADDR_1_02, AMNA_EMPLOYER_ADDR_2_02, cast(null as varchar), cast(null as varchar), cast(null as varchar), cast(null as varchar), cast(null as varchar), AMNA_DATE_LAST_MAINT
+from DATAOPS_HUB_SHARE_VISION_NONPROD.ODS.CUSTOMER

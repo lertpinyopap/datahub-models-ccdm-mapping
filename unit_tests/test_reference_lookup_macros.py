@@ -31,6 +31,7 @@ class ReferenceLookupMacroTests(unittest.TestCase):
             "code.*",
             "VALID_FROM_DATETIME",
             "VALID_TO_DATETIME",
+            "timestamp_ltz",
             "IS_CURRENT_FLAG",
             "IS_DELETED_FLAG",
             "current_timestamp()",
@@ -49,6 +50,7 @@ class ReferenceLookupMacroTests(unittest.TestCase):
             "resolved_value_column",
             "VALID_FROM_DATETIME",
             "VALID_TO_DATETIME",
+            "timestamp_ltz",
             "IS_CURRENT_FLAG",
             "IS_DELETED_FLAG",
             "current_timestamp()",
@@ -68,45 +70,45 @@ def _add_example_test(method_name: str, example_name: str, *expected_fragments: 
 
 
 _add_example_test(
-    "test_core_country_input_v10_au_expected_country_key",
+    "test_core_country_input_au_expected_country_key",
     "sample_reference_lookup_core_country.sql",
-    "select 'V10' as source_system, 'AU' as source_code",
+    "select 'AU' as source_code",
     "ref.*",
     "{{ reference_lookup_core(",
     "reference_type='COUNTRY'",
     "output_column='COUNTRY_KEY'",
 )
 _add_example_test(
-    "test_core_currency_input_v10_aud_expected_currency_key",
+    "test_core_currency_input_aud_expected_currency_key",
     "sample_reference_lookup_core_currency.sql",
-    "select 'V10' as source_system, 'AUD' as source_code",
+    "select 'AUD' as source_code",
     "ref.*",
     "{{ reference_lookup_core(",
     "reference_type='CURRENCY'",
     "output_column='CURRENCY_KEY'",
 )
 _add_example_test(
-    "test_core_financial_institution_input_v10_lfsau_expected_financial_institution_key",
+    "test_core_financial_institution_input_lfsau_expected_financial_institution_key",
     "sample_reference_lookup_core_financial_institution.sql",
-    "select 'V10' as source_system, 'LFSAU' as source_code",
+    "select 'LFSAU' as source_code",
     "ref.*",
     "{{ reference_lookup_core(",
     "reference_type='FINANCIAL_INSTITUTION'",
     "output_column='FINANCIAL_INSTITUTION_KEY'",
 )
 _add_example_test(
-    "test_core_brand_input_v10_lfsau_expected_brand_key",
+    "test_core_brand_input_lfsau_expected_brand_key",
     "sample_reference_lookup_core_brand.sql",
-    "select 'V10' as source_system, 'LFSAU' as source_code",
+    "select 'LFSAU' as source_code",
     "ref.*",
     "{{ reference_lookup_core(",
     "reference_type='BRAND'",
     "output_column='BRAND_KEY'",
 )
 _add_example_test(
-    "test_core_product_input_v10_ccaugem_expected_product_key",
+    "test_core_product_input_ccaugem_expected_product_key",
     "sample_reference_lookup_core_product.sql",
-    "select 'V10' as source_system, 'CCAUGEM' as source_code",
+    "select 'CCAUGEM' as source_code",
     "ref.*",
     "{{ reference_lookup_core(",
     "reference_type='PRODUCT'",

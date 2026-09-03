@@ -1,31 +1,30 @@
 CARD_BLOCKED_REASON_CODE,CARD_BLOCKED_REASON_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
+A,Hardship arrangement - always paired with I block,Y,N,1900-01-01,9999-12-31
+B,Bankrupt,Y,N,1900-01-01,9999-12-31
+C,Charged off,Y,N,1900-01-01,9999-12-31
+D,Deceased,Y,N,1900-01-01,9999-12-31
+E,AU: Refundable credit balance (not used) / NZ: Not used,Y,N,1900-01-01,9999-12-31
+F,Fraudulent,Y,N,1900-01-01,9999-12-31
+G,AU: Cancel deferments / NZ: Governed credit limit increase,Y,N,1900-01-01,9999-12-31
+H,AU: Insurance claim / NZ: Not used (insurance claim),Y,N,1900-01-01,9999-12-31
+I,No interest - interest blocked or suppressed,Y,N,1900-01-01,9999-12-31
+J,AU Acct: David Jones DDO / NZ: Creditors proposal / AU Card: Supp card IDV (legacy),Y,N,1900-01-01,9999-12-31
+K,AU: Section 88 issued / NZ: 6-month temp block arrears demand,Y,N,1900-01-01,9999-12-31
+L,Acct: Permanent block 90+ DPD AU litigation / Card: Lost (rarely used),Y,N,1900-01-01,9999-12-31
+M,Moratorium on payments - hardship arrangement,Y,N,1900-01-01,9999-12-31
+N,Acct: Hardship or fraud block / Card: No shopping,Y,N,1900-01-01,9999-12-31
+O,AU: Administrator or guardian appointed / NZ: Pioneer insurance,Y,N,1900-01-01,9999-12-31
+P,AU: FTRA block legacy not used / NZ: Not used,Y,N,1900-01-01,9999-12-31
+Q,Query - multipurpose,Y,N,1900-01-01,9999-12-31
+R,Refer to fraud - transaction fraud,Y,N,1900-01-01,9999-12-31
+S,Stolen or lost card,Y,N,1900-01-01,9999-12-31
+T,Trace,Y,N,1900-01-01,9999-12-31
+U,Dishonour cheque or direct debit,Y,N,1900-01-01,9999-12-31
+V,VIP customer,Y,N,1900-01-01,9999-12-31
+W,AU: No re-issue card migration / NZ: Dormant account over 1 year / Card: Suppress reissue,Y,N,1900-01-01,9999-12-31
+X,Account closed,Y,N,1900-01-01,9999-12-31
+Y,Transferred - temp block during product transfer,Y,N,1900-01-01,9999-12-31
+Z,AU: New account retail no reissue / NZ: No compliant application from merchant,Y,N,1900-01-01,9999-12-31
 DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
 DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
 DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31
-SPACE,No block - card is active,Y,N,1900-01-01,9999-12-31
-A,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
-B,Bankrupt / other system-specific block reason,Y,N,1900-01-01,9999-12-31
-C,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
-D,Deceased / other system-specific block reason,Y,N,1900-01-01,9999-12-31
-E,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
-F,Stolen,Y,N,1900-01-01,9999-12-31
-G,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
-H,Hold,Y,N,1900-01-01,9999-12-31
-I,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
-J,Transfer out,Y,N,1900-01-01,9999-12-31
-K,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
-L,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
-M,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
-N,New card not activated,Y,N,1900-01-01,9999-12-31
-O,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
-P,Pickup / Confiscate,Y,N,1900-01-01,9999-12-31
-Q,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
-R,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
-S,Stolen / Lost - source conflict between model and issued-device mapping,Y,N,1900-01-01,9999-12-31
-T,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
-U,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
-V,Other system-specific block reason,Y,N,1900-01-01,9999-12-31
-W,Written off,Y,N,1900-01-01,9999-12-31
-X,Lost and replaced / Cancelled,Y,N,1900-01-01,9999-12-31
-Y,Fraud block,Y,N,1900-01-01,9999-12-31
-Z,Other system-specific block reason,Y,N,1900-01-01,9999-12-31

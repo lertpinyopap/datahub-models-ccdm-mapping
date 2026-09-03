@@ -1,9 +1,8 @@
 select
-    src.source_system,
     src.source_code,
     ref.*
 from (
-    select 'V10' as source_system, 'AUD' as source_code
+    select 'AUD' as source_code
 ) as src
 {{ reference_lookup_core(
     reference_type='CURRENCY',

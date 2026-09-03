@@ -1,5 +1,5 @@
 id: card_customer_event
-extends: SOURCE_TO_TARGET_SCD1
+extends: SOURCE_TO_TARGET_SCD2_DERIVED
 description: Maps V10 non-monetary customer events into PAY.CORE.CARD_CUSTOMER_EVENT.
 control_data:
   business_key:
@@ -7,6 +7,30 @@ control_data:
       - CARD_CUSTOMER_KEY
       - CARD_CUSTOMER_BUSINESS_KEY
       - EVENT_ID
+  business_data_hash:
+    business_data_hash_mode: include
+    fields:
+      - CARD_CUSTOMER_EVENT_TYPE_KEY
+      - EVENT_ID
+      - EVENT_DESCRIPTION
+      - EVENT_CREATION_DATETIME
+  scd:
+    derivation_scope: affected_keys
+    validation_scope: affected_window
+    window_strategy: previous_and_next
+    valid_from_datetime:
+      expression: EVENT_CREATION_DATETIME
+    valid_to_datetime:
+      mode: next_valid_from
+      offset:
+        unit: nanosecond
+        value: -1
+      end_of_time: "9999-12-31 23:59:59 +00:00"
+    current_flag:
+      mode: latest_per_business_key
+    deleted_flag:
+      mode: fixed
+      value: "N"
 source:
   format: table
   query: |
@@ -43,7 +67,7 @@ source:
             CUSTOMER_ID,
             CARD_CUSTOMER_KEY,
             CARD_CUSTOMER_BUSINESS_KEY
-        from SAS_MIGRATION_WORKSPACE.CORE.CARD_CUSTOMER
+        from {{ var("database") }}.CORE.{{ var("card_customer_table", "CARD_CUSTOMER") }}
         where IS_CURRENT_FLAG = 'Y'
         qualify row_number() over (
             partition by CUSTOMER_ID

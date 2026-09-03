@@ -4,6 +4,7 @@ control_data:
   materialisation_type: table
   failure_mode: fail_load
   change_type: scd2_auto
+  validation_enabled: true
   staging_schema: INTERMEDIATE
   business_key:
     fields:
@@ -12,6 +13,7 @@ control_data:
   scd:
     insert_time: '{{ var("insert_time") }}'
     scd2_auto_from_sot: true
+    scd2_validation_enabled: true
     scd2_validation: continuous
 source:
   format: csv
