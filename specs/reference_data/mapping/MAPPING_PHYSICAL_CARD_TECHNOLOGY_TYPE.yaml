@@ -1,0 +1,11 @@
+id: reference_mapping_physical_card_technology_type
+extends: REFERENCE_MAPPING_SCD2_AUTO
+description: Maps reference physical card technology type mapping CSV data into the PHYSICAL_CARD_TECHNOLOGY_TYPE mapping table.
+source:
+  seed:
+    file: data/reference_data/mapping/REFERENCE.MAPPING.PHYSICAL_CARD_TECHNOLOGY_TYPE.csv
+    name: reference_mapping_physical_card_technology_type_seed
+target:
+  id: PHYSICAL_CARD_TECHNOLOGY_TYPE
+  schema: MAPPING
+  table_name: PHYSICAL_CARD_TECHNOLOGY_TYPE

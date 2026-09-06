@@ -207,7 +207,7 @@ python ../datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --job-config dags/config/tms_jobs.local.json \
   --target dev \
   --keep-generated-project \
-  --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
+  --dbt-vars '{"database":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
 
 python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --job-config dags/config/tms_jobs.local.json \
@@ -215,7 +215,7 @@ python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --task load_card_account \
   --target dev \
   --keep-generated-project  
-  --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
+  --dbt-vars '{"database":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
   
 python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --job-config dags/config/tms_jobs.dev.json \
@@ -223,7 +223,7 @@ python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --task load_card_customer \
   --target dev \
   --keep-generated-project \
-  --dbt-vars '{"OVERRIDE_DB":"NONPROD_REFERENCE"}'
+  --dbt-vars '{"database":"NONPROD_REFERENCE"}'
 
 ```
 
@@ -303,7 +303,7 @@ python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --spec specs/reference_data/core/CORE_COUNTRY.yaml \
   --target dev \
   --keep-generated-project 
-  --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
+  --dbt-vars '{"database":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
 ```
 
 ```bash
@@ -312,7 +312,7 @@ python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --spec specs/reference_data/mapping/MAPPING_COUNTRY.yaml \
   --target dev \
   --keep-generated-project 
-  --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_", "tms_job_schema":"INTERMEDIATE"}'
+  --dbt-vars '{"database":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_", "tms_job_schema":"INTERMEDIATE"}'
 ```
 
 First migration load for an existing table shape:
@@ -324,7 +324,7 @@ python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --target dev \
   --keep-generated-project
   --full-refresh \
-  --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_", "tms_job_schema":"INTERMEDIATE"}'
+  --dbt-vars '{"database":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_", "tms_job_schema":"INTERMEDIATE"}'
 ```
 
 Run a source-to-target mapping spec locally:
@@ -335,7 +335,7 @@ python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --spec specs/ccdm/card_customer/CARD_CUSTOMER.yaml \
   --target dev \
   --keep-generated-project
-  --dbt-vars '{"OVERRIDE_DB":"SAS_MIGRATION_WORKSPACE", "ENV_PREFIX":"NONPROD_"}'
+  --dbt-vars '{"database":"SAS_MIGRATION_WORKSPACE", "ENV_PREFIX":"NONPROD_"}'
 ```
 
 ## Airflow
@@ -363,9 +363,8 @@ The DAG is driven by `dags/config/tms_jobs.<env>.json` and the shared `datahub-t
 - each `task_groups[].tasks[]` item runs one TMS spec through the shared TMS loader
 - `task_groups[].tasks[].depends_on` controls ordering, such as `load_core` before `load_mapping`
 - task-level `profile_args` and `vars` can override the top-level defaults
-- at runtime, the DAG resolves `OVERRIDE_DB` from `vars.OVERRIDE_DB`, then `vars.database`, then `profile_args.database`, without adding `ENV_PREFIX`
-- if the Airflow environment already provides `OVERRIDE_DB`, that explicit value wins
-- reference lookup macros use `<ENV_PREFIX>REFERENCE`; this is independent of the target database selected by `OVERRIDE_DB`
+- at runtime, the DAG resolves `database` from `vars.database`, then `profile_args.database`, without adding `ENV_PREFIX`
+- reference lookup macros use `<ENV_PREFIX>REFERENCE`; this is independent of the target database selected by `database`
 - pass `reference_database='OTHER_DB'` to a lookup macro only when a specific lookup database is required
 - `TMS_BIN` defaults to the Airflow-installed runtime at `/usr/local/airflow/python3-virtualenv/tms-env/bin/tms`
 

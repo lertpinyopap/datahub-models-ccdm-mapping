@@ -83,6 +83,22 @@
           ]
         },
         {
+          "group_id": "reference_card_channel",
+          "tasks": [
+            {
+              "task_id": "load_core",
+              "spec": "specs/reference_data/core/CORE_CARD_CHANNEL.yaml",
+              "full_refresh": false
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_CHANNEL.yaml",
+              "full_refresh": false,
+              "depends_on": ["load_core"]
+            }
+          ]
+        },
+        {
           "group_id": "reference_card_activation_status",
           "tasks": [
             {
@@ -263,6 +279,16 @@
           ]
         },
         {
+          "group_id": "reference_customer_contact_preference",
+          "tasks": [
+            {
+              "task_id": "load_core",
+              "spec": "specs/reference_data/core/CORE_CUSTOMER_CONTACT_PREFERENCE.yaml",
+              "full_refresh": false
+            }
+          ]
+        },
+        {
           "group_id": "reference_customer_status",
           "tasks": [
             {
@@ -359,36 +385,6 @@
           ]
         },
         {
-          "group_id": "reference_block_code",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_BLOCK_CODE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_additional_amount_category",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_ADDITIONAL_AMOUNT_CATEGORY.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_additional_amount_sub_category",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_ADDITIONAL_AMOUNT_SUB_CATEGORY.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
           "group_id": "reference_card_blocked_reason",
           "tasks": [
             {
@@ -407,42 +403,18 @@
           ]
         },
         {
-          "group_id": "reference_card_channel",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_CHANNEL.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_fee_type",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_FEE_TYPE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
           "group_id": "reference_card_fee_waiver_type",
           "tasks": [
             {
               "task_id": "load_core",
               "spec": "specs/reference_data/core/CORE_CARD_FEE_WAIVER_TYPE.yaml",
               "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_holder_not_present_type",
-          "tasks": [
+            },
             {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_HOLDER_NOT_PRESENT_TYPE.yaml",
-              "full_refresh": false
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_FEE_WAIVER_TYPE.yaml",
+              "full_refresh": false,
+              "depends_on": ["load_core"]
             }
           ]
         },
@@ -453,216 +425,12 @@
               "task_id": "load_core",
               "spec": "specs/reference_data/core/CORE_CARD_HOLDER_TYPE.yaml",
               "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_processing_method",
-          "tasks": [
+            },
             {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_PROCESSING_METHOD.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_repayment_mode",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_REPAYMENT_MODE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_scheme",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_SCHEME.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_transaction_booking_type",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_TRANSACTION_BOOKING_TYPE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_transaction_clearing_type",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_TRANSACTION_CLEARING_TYPE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_transaction_data_entry_mode",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_TRANSACTION_DATA_ENTRY_MODE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_transaction_financial_stage",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_TRANSACTION_FINANCIAL_STAGE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_transaction_initiator",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_TRANSACTION_INITIATOR.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_transaction_message_function",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_TRANSACTION_MESSAGE_FUNCTION.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_transaction_message_type",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_TRANSACTION_MESSAGE_TYPE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_transaction_reject_reason",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_TRANSACTION_REJECT_REASON.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_transaction_subtype",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_TRANSACTION_SUBTYPE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_transaction_type",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_TRANSACTION_TYPE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_card_waiver_type",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_WAIVER_TYPE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_channel",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CHANNEL.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_channel_status",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CHANNEL_STATUS.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_channel_type",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CHANNEL_TYPE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_customer_business_status",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CUSTOMER_BUSINESS_STATUS.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_customer_business_status_scope",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CUSTOMER_BUSINESS_STATUS_SCOPE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_customer_contact_preference",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CUSTOMER_CONTACT_PREFERENCE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_dealer",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_DEALER.yaml",
-              "full_refresh": false
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_HOLDER_TYPE.yaml",
+              "full_refresh": false,
+              "depends_on": ["load_core"]
             }
           ]
         },
@@ -695,61 +463,11 @@
           ]
         },
         {
-          "group_id": "reference_fraud_monitor_status",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_FRAUD_MONITOR_STATUS.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_fraud_refer_status",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_FRAUD_REFER_STATUS.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_partner",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_PARTNER.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
           "group_id": "reference_payment_instrument_type",
           "tasks": [
             {
               "task_id": "load_core",
               "spec": "specs/reference_data/core/CORE_PAYMENT_INSTRUMENT_TYPE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_payment_terminal_technology_type",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_PAYMENT_TERMINAL_TECHNOLOGY_TYPE.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_payment_terminal_type",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_PAYMENT_TERMINAL_TYPE.yaml",
               "full_refresh": false
             }
           ]
@@ -761,16 +479,14 @@
               "task_id": "load_core",
               "spec": "specs/reference_data/core/CORE_PHYSICAL_CARD_TECHNOLOGY_TYPE.yaml",
               "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "reference_product_channel",
-          "tasks": [
+            },
             {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_PRODUCT_CHANNEL.yaml",
-              "full_refresh": false
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_PHYSICAL_CARD_TECHNOLOGY_TYPE.yaml",
+              "full_refresh": false,
+              "depends_on": [
+                "load_core"
+              ]
             }
           ]
         }

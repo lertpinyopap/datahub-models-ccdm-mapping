@@ -67,7 +67,7 @@ source:
             CUSTOMER_ID,
             CARD_CUSTOMER_KEY,
             CARD_CUSTOMER_BUSINESS_KEY
-        from SAS_MIGRATION_WORKSPACE.CORE.CARD_CUSTOMER
+        from {{ var("database") }}.CORE.{{ var("card_customer_table", "CARD_CUSTOMER") }}
         where IS_CURRENT_FLAG = 'Y'
         qualify row_number() over (
             partition by CUSTOMER_ID

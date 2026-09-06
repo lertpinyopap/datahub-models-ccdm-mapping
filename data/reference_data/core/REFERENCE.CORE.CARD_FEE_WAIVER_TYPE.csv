@@ -1,4 +1,7 @@
 CARD_FEE_WAIVER_TYPE_CODE,CARD_FEE_WAIVER_TYPE_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
+PERM,Permanent fee waiver.,Y,N,1900-01-01,9999-12-31
+ONCE,One-time fee waiver.,Y,N,1900-01-01,9999-12-31
+NONE,No fee waiver applied.,Y,N,1900-01-01,9999-12-31
 DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
 DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
 DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31

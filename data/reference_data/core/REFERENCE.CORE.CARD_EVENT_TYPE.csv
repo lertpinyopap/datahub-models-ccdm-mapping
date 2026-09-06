@@ -1,17 +1,17 @@
 CARD_EVENT_TYPE_CODE,CARD_EVENT_TYPE_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
-AUTHRD,Card authentication data ready,Y,N,1/01/1900,31/12/9999
-CRRDYU,Digital card ready to use,Y,N,1/01/1900,31/12/9999
-CRACTV,Card activated,Y,N,1/01/1900,31/12/9999
-CRLOST,Card lost,Y,N,1/01/1900,31/12/9999
-CRSTLN,Card stolen,Y,N,1/01/1900,31/12/9999
-CRRISS,Card reissued,Y,N,1/01/1900,31/12/9999
-CRBLCK,Card blocked,Y,N,1/01/1900,31/12/9999
-CRUNBK,Card unblocked,Y,N,1/01/1900,31/12/9999
-CRCANC,Card cancelled,Y,N,1/01/1900,31/12/9999
-CRREPL,Card replaced,Y,N,1/01/1900,31/12/9999
-CRCNFR,Card confirmed fraud,Y,N,1/01/1900,31/12/9999
-CRRMFR,Card fraud status removed,Y,N,1/01/1900,31/12/9999
-CRPTRK,Card personalisation tracking,Y,N,1/01/1900,31/12/9999
-DQMapping,Source value cannot be mapped,Y,N,1/01/1900,31/12/9999
-DQMissing,Source value not provided,Y,N,1/01/1900,31/12/9999
-DQNotApplicable,Source value not required,Y,N,1/01/1900,31/12/9999
+AUTHRD,Card authentication data ready,Y,N,1900-01-01,9999-12-31
+CRRDYU,Digital card ready to use,Y,N,1900-01-01,9999-12-31
+CRACTV,Card activated,Y,N,1900-01-01,9999-12-31
+CRLOST,Card lost,Y,N,1900-01-01,9999-12-31
+CRSTLN,Card stolen,Y,N,1900-01-01,9999-12-31
+CRRISS,Card reissued,Y,N,1900-01-01,9999-12-31
+CRBLCK,Card blocked,Y,N,1900-01-01,9999-12-31
+CRUNBK,Card unblocked,Y,N,1900-01-01,9999-12-31
+CRCANC,Card cancelled,Y,N,1900-01-01,9999-12-31
+CRREPL,Card replaced,Y,N,1900-01-01,9999-12-31
+CRCNFR,Card confirmed fraud,Y,N,1900-01-01,9999-12-31
+CRRMFR,Card fraud status removed,Y,N,1900-01-01,9999-12-31
+CRPTRK,Card personalisation tracking,Y,N,1900-01-01,9999-12-31
+DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
+DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
+DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31

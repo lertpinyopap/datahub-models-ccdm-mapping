@@ -83,7 +83,7 @@ CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET
 - `TMS_BIN` should point to `libs/tms-env/bin/tms`.
 - `DBT_EXECUTABLE_PATH` should point to `.venv/bin/dbt` for local runs.
 - `ENV_PREFIX` is used to prefix target-system values at runtime.
-- `OVERRIDE_DB` can be passed to direct the load into a specific Snowflake database.
+- `database` selects the Snowflake database for the load.
 - `tms_job_schema` is used for staging schema control, typically `INTERMEDIATE`.
 
 ## Load Behavior
