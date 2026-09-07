@@ -248,7 +248,7 @@ python -m pytest
 Run only the reference lookup macro tests:
 
 ```bash
-python -m pytest unit_tests/test_reference_lookup_macros.py
+x
 ```
 
 `unittest` is still available if you want the built-in runner:
