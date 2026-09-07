@@ -1,0 +1,23 @@
+{{ config(enabled=not var('enable_card_customer_initial_load', false), materialized='incremental', incremental_strategy='delete+insert', unique_key='CARD_CUSTOMER_ADDRESS_BUSINESS_KEY', schema='CORE', alias='CARD_CUSTOMER_ADDRESS_DBT', on_schema_change='sync_all_columns', tags=['v10_mapping_target']) }}
+
+-- depends_on: {{ ref('card_customer_scd2') }}
+
+with source_query as (
+    select customer.CARD_CUSTOMER_KEY,customer.CARD_CUSTOMER_BUSINESS_KEY,address.*
+    from {{ ref('stg_v10_customer_address') }} address
+    inner join {{ v10_card_customer_lookup() }} customer on customer.CUSTOMER_ID=address.CUSTOMER_ID
+),
+typed_source_rows as (
+    select cast(uuid_string() as varchar(64)) CARD_CUSTOMER_ADDRESS_KEY,
+        cast(sha2(concat_ws('|',coalesce(cast(CARD_CUSTOMER_KEY as varchar),''),coalesce(cast(CARD_CUSTOMER_BUSINESS_KEY as varchar),''),coalesce(cast(address_type.ADDRESS_TYPE_KEY as varchar),''),coalesce(cast(preference.CUSTOMER_CONTACT_PREFERENCE_TYPE_KEY as varchar),''),coalesce(cast(country.COUNTRY_KEY as varchar),''),coalesce(cast(BUILDING_NUMBER as varchar),''),coalesce(cast(BUILDING_NAME as varchar),''),coalesce(cast(ADDRESS_LINE1 as varchar),''),coalesce(cast(ADDRESS_LINE2 as varchar),''),coalesce(cast(ADDRESS_LINE3 as varchar),''),coalesce(cast(ADDRESS_LINE4 as varchar),''),coalesce(cast(TOWN_NAME as varchar),''),coalesce(cast(REGION as varchar),''),coalesce(cast(POSTAL_CODE as varchar),'')),256) as varchar(64)) CARD_CUSTOMER_ADDRESS_BUSINESS_KEY,
+        CARD_CUSTOMER_KEY,CARD_CUSTOMER_BUSINESS_KEY,address_type.ADDRESS_TYPE_KEY,country.COUNTRY_KEY ADDRESS_COUNTRY_KEY,preference.CUSTOMER_CONTACT_PREFERENCE_TYPE_KEY,
+        cast(BUILDING_NUMBER as varchar(100)) BUILDING_NUMBER,cast(BUILDING_NAME as varchar(100)) BUILDING_NAME,cast(STREET_NAME as varchar(100)) STREET_NAME,cast(ADDRESS_LINE1 as varchar(100)) ADDRESS_LINE1,cast(ADDRESS_LINE2 as varchar(100)) ADDRESS_LINE2,cast(ADDRESS_LINE3 as varchar(100)) ADDRESS_LINE3,cast(ADDRESS_LINE4 as varchar(100)) ADDRESS_LINE4,cast(TOWN_NAME as varchar(100)) TOWN_NAME,cast(REGION as varchar(100)) REGION,cast(POSTAL_CODE as varchar(100)) POSTAL_CODE,
+        cast(SOURCE_EFFECTIVE_FROM_DATETIME as timestamp_tz) VALID_FROM_DATETIME,cast('N' as varchar(1)) IS_DELETED_FLAG,
+        cast(sha2(concat_ws('|',coalesce(cast(CARD_CUSTOMER_KEY as varchar),''),coalesce(cast(CARD_CUSTOMER_BUSINESS_KEY as varchar),''),coalesce(cast(address_type.ADDRESS_TYPE_KEY as varchar),''),coalesce(cast(country.COUNTRY_KEY as varchar),''),coalesce(cast(preference.CUSTOMER_CONTACT_PREFERENCE_TYPE_KEY as varchar),''),coalesce(cast(BUILDING_NUMBER as varchar),''),coalesce(cast(BUILDING_NAME as varchar),''),coalesce(cast(STREET_NAME as varchar),''),coalesce(cast(ADDRESS_LINE1 as varchar),''),coalesce(cast(ADDRESS_LINE2 as varchar),''),coalesce(cast(ADDRESS_LINE3 as varchar),''),coalesce(cast(ADDRESS_LINE4 as varchar),''),coalesce(cast(TOWN_NAME as varchar),''),coalesce(cast(REGION as varchar),''),coalesce(cast(POSTAL_CODE as varchar),'')),256) as varchar(64)) BUSINESS_DATA_HASH
+    from source_query
+    {{ reference_lookup_mapping(reference_type='ADDRESS_TYPE',source_system='V10',ref_alias='address_type',output_column='ADDRESS_TYPE_KEY',source_code_column='ADDRESS_TYPE_CODE',required=true) }}
+    {{ reference_lookup_mapping(reference_type='CUSTOMER_CONTACT_PREFERENCE_TYPE',source_system='V10',ref_alias='preference',output_column='CUSTOMER_CONTACT_PREFERENCE_TYPE_KEY',source_code_column='CUSTOMER_CONTACT_PREFERENCE_TYPE_CODE',required=true) }}
+    {{ reference_lookup_core(reference_type='COUNTRY',ref_alias='country',output_column='COUNTRY_KEY',source_code_expression="case when trim(source_query.ADDRESS_COUNTRY_SOURCE_CODE) is null or trim(source_query.ADDRESS_COUNTRY_SOURCE_CODE) = '' then 'DQMissing' else trim(source_query.ADDRESS_COUNTRY_SOURCE_CODE) end",code_column='COUNTRY_CODE',value_column='COUNTRY_KEY',required=true) }}
+    where address_type.ADDRESS_TYPE_KEY is not null and preference.CUSTOMER_CONTACT_PREFERENCE_TYPE_KEY is not null and SOURCE_EFFECTIVE_FROM_DATETIME is not null
+),
+{{ v10_scd2(columns=['CARD_CUSTOMER_ADDRESS_KEY','CARD_CUSTOMER_ADDRESS_BUSINESS_KEY','CARD_CUSTOMER_KEY','CARD_CUSTOMER_BUSINESS_KEY','ADDRESS_TYPE_KEY','ADDRESS_COUNTRY_KEY','CUSTOMER_CONTACT_PREFERENCE_TYPE_KEY','BUILDING_NUMBER','BUILDING_NAME','STREET_NAME','ADDRESS_LINE1','ADDRESS_LINE2','ADDRESS_LINE3','ADDRESS_LINE4','TOWN_NAME','REGION','POSTAL_CODE'],business_key_columns=['CARD_CUSTOMER_ADDRESS_BUSINESS_KEY'],dedup_partition_columns=['CARD_CUSTOMER_ADDRESS_BUSINESS_KEY','VALID_FROM_DATETIME'],dedup_order_by='ADDRESS_LINE1 desc',model_name='card_customer_address_scd2') }}
