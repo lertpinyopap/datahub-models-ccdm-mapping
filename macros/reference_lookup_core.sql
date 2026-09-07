@@ -61,18 +61,18 @@
         where coalesce(trim(code.IS_DELETED_FLAG), 'N') <> 'Y'
           and (
                 code.VALID_FROM_DATETIME is null
-                or cast(code.VALID_FROM_DATETIME as timestamp_ntz) <= {{ resolved_as_of_date_expr }}
+                or cast(code.VALID_FROM_DATETIME as timestamp_ltz) <= cast({{ resolved_as_of_date_expr }} as timestamp_ltz)
           )
           and (
                 code.VALID_TO_DATETIME is null
-                or cast(code.VALID_TO_DATETIME as timestamp_ntz) >= {{ resolved_as_of_date_expr }}
+                or cast(code.VALID_TO_DATETIME as timestamp_ltz) >= cast({{ resolved_as_of_date_expr }} as timestamp_ltz)
           )
         qualify row_number() over (
             partition by code.{{ adapter.quote(resolved_code_column) }}
             order by
                 case when upper(coalesce(trim(code.IS_CURRENT_FLAG), 'N')) = 'Y' then 0 else 1 end,
-                cast(code.VALID_TO_DATETIME as timestamp_ntz) desc nulls last,
-                cast(code.VALID_FROM_DATETIME as timestamp_ntz) desc nulls last
+                cast(code.VALID_TO_DATETIME as timestamp_ltz) desc nulls last,
+                cast(code.VALID_FROM_DATETIME as timestamp_ltz) desc nulls last
         ) = 1
     ) as {{ ref_alias }}
       on {{ _reference_lookup_core_equals(
