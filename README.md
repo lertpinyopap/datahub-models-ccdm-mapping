@@ -181,7 +181,7 @@ Run all tasks from the local job config:
 export TMS_BIN="$PWD/libs/tms-env/bin/tms"
 python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --job-config dags/config/tms_jobs.local.json \
-  --keep-generated-project
+  --keep-generated-project \
   --target dev
 ```
 
@@ -191,10 +191,11 @@ Run one task from the job config:
 export TMS_BIN="$PWD/libs/tms-env/bin/tms"
 python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --job-config dags/config/tms_jobs.local.json \
-  --job reference_loader \
+  --job datahub-models-ccdm-mapping-reference_loader \
   --task load_core \
   --keep-generated-project \
-  --target dev
+  --target dev \
+  --dbt-vars '{"database":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
 ```
 
 If you run the shared script from outside this repo, pass the consumer repo root
@@ -208,23 +209,6 @@ python ../datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --target dev \
   --keep-generated-project \
   --dbt-vars '{"database":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
-
-python datahub-tms-pipeline/dags/local_run_tms_loader.py \
-  --job-config dags/config/tms_jobs.local.json \
-  --job ccdm_loader \
-  --task load_card_account \
-  --target dev \
-  --keep-generated-project  
-  --dbt-vars '{"database":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_","tms_job_schema":"INTERMEDIATE"}'
-  
-python datahub-tms-pipeline/dags/local_run_tms_loader.py \
-  --job-config dags/config/tms_jobs.dev.json \
-  --job datahub-models-ccdm-mapping-ccdm_loader \
-  --task load_card_customer \
-  --target dev \
-  --keep-generated-project \
-  --dbt-vars '{"database":"NONPROD_REFERENCE"}'
-
 ```
 
 ## Repo Tests
@@ -257,7 +241,8 @@ x
 python -m unittest unit_tests.test_reference_lookup_macros
 ```
 
-Preview one example lookup against Snowflake without materializing a model:
+Preview one example lookup against Snowflake without materializing a model.
+By default, the reference macro lookups against <ENV_PREFIX)REFERENCE database.
 
 ```bash
 dbt show \
@@ -387,8 +372,8 @@ Example:
   },
   "jobs": [
     {
-      "dag_id": "reference_data_loader",
-      "target": "MWAA",
+      "dag_id": "datahub-models-ccdm-mapping-reference_loader",
+      "target": "test",
       "tags": ["reference-data", "tms"],
       "schedule": "once",
       "task_groups": [
@@ -431,8 +416,8 @@ To register multiple Airflow DAGs from the same `tms_jobs.<env>.json`, add more 
   },
   "jobs": [
     {
-      "dag_id": "reference_core_loader",
-      "target": "MWAA",
+      "dag_id": "datahub-models-ccdm-mapping-reference_loader",
+      "target": "test",
       "tags": ["reference-data", "tms"],
       "schedule": "once",
       "task_groups": [
@@ -440,7 +425,7 @@ To register multiple Airflow DAGs from the same `tms_jobs.<env>.json`, add more 
           "group_id": "country",
           "tasks": [
             {
-              "task_id": "load_core_country",
+              "task_id": "load_core",
               "spec": "specs/reference_data/core/CORE_COUNTRY.yaml"
             }
           ]
@@ -449,7 +434,7 @@ To register multiple Airflow DAGs from the same `tms_jobs.<env>.json`, add more 
     },
     {
       "dag_id": "reference_mapping_loader",
-      "target": "MWAA",
+      "target": "test",
       "tags": ["reference-data", "tms"],
       "schedule": "0 6 * * *",
       "task_groups": [
@@ -457,7 +442,7 @@ To register multiple Airflow DAGs from the same `tms_jobs.<env>.json`, add more 
           "group_id": "country",
           "tasks": [
             {
-              "task_id": "load_mapping_country",
+              "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_COUNTRY.yaml"
             }
           ]

@@ -1,6 +1,6 @@
-id: card_customer_initial_load
+id: card_customer_latest_incremental
 extends: SOURCE_TO_TARGET_SCD2_DERIVED
-description: Initial CARD_CUSTOMER load using the oldest available source record per customer.
+description: Incremental CARD_CUSTOMER load using the latest source record per customer.
 control_data:
   business_key:
     fields:
@@ -17,15 +17,15 @@ control_data:
       - DATE_OF_BIRTH
       - EXTERNAL_ID
       - EXTERNAL_IDENTIFICATION_TYPE
-      - CREATED_DATETIME
       - UPDATED_DATETIME
       - IS_ACTIVE_IN_SOURCE_FLAG
+      # CREATED_DATETIME is Type 0 and must not create a new SCD2 version.
   scd:
     derivation_scope: affected_keys
     validation_scope: affected_window
     window_strategy: previous_and_next
     valid_from_datetime:
-      expression: CREATED_DATETIME
+      source_column: SOURCE_EFFECTIVE_FROM_DATETIME
     valid_to_datetime:
       mode: next_valid_from
       offset:
@@ -57,7 +57,26 @@ control_data:
 source:
   format: table
   query: |
-    with ranked as (
+    with ambs_acct as (
+        select
+            AMBS_CUST_NBR,
+            min(AMBS_DATE_OPENED) as AMBS_DATE_OPENED
+        from DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.ACCOUNT_BASE_SEGMENT
+        group by AMBS_CUST_NBR
+    ),
+    current_card_customer as (
+        select
+            CUSTOMER_ID,
+            CREATED_DATETIME
+        from {{ var("database") }}.CORE.{{ var("card_customer_table", "CARD_CUSTOMER") }}
+        where IS_CURRENT_FLAG = 'Y'
+          and coalesce(IS_DELETED_FLAG, 'N') <> 'Y'
+        qualify row_number() over (
+            partition by CUSTOMER_ID
+            order by VALID_FROM_DATETIME desc, AUDIT_LAST_CHANGED_DATETIME desc
+        ) = 1
+    ),
+    ranked_customer as (
         select
             C.AMNA_ADD_STATUS,
             C.AMNA_STATUS,
@@ -67,43 +86,54 @@ source:
             C.AMNA_MIDDLE_NAME_01 as MIDDLE_NAME,
             C.AMNA_LAST_NAME_01 as SURNAME,
             C.AMNA_DOB_01 as DATE_OF_BIRTH,
-            ABS.AMBS_DATE_OPENED as CREATED_DATETIME,
             C.AMNA_DATE_LAST_MAINT as UPDATED_DATETIME,
-            case
-                when ABS.AMBS_INT_STATUS = 'A' then 'Y'
-                else 'N'
-            end as IS_ACTIVE_IN_SOURCE_FLAG,
+            coalesce(current_card_customer.CREATED_DATETIME, A.AMBS_DATE_OPENED)
+                as CREATED_DATETIME,
             row_number() over (
                 partition by C.AMNA_ACCT
                 order by
-                    ABS.AMBS_DATE_OPENED asc nulls last,
-                    C.AMNA_DATE_LAST_MAINT asc nulls last,
-                    C.AMNA_ORG,
-                    ABS.AMBS_ORG,
-                    ABS.AMBS_ACCT
-            ) as rn
-        from DATAOPS_HUB_SHARE_VISION_NONPROD.ODS.CUSTOMER as C
-        join DATAOPS_HUB_SHARE_VISION_NONPROD.ODS.CUSTOMER_ACCOUNT as CA
-            on C.AMNA_ACCT = CA.AMBX_NA_ACCT
-           and C.AMNA_ORG = try_to_number(CA.AMBX_NA_ORG)
-        join DATAOPS_HUB_SHARE_VISION_NONPROD.ODS.ACCOUNT_BASE_SEGMENT as ABS
-            on CA.AMBX_BS_ACCT = ABS.AMBS_ACCT
-           and CA.AMBX_BS_ORG = ABS.AMBS_ORG
+                    C.AMNA_DATE_LAST_MAINT desc nulls last,
+                    C.AMNA_ORG desc nulls last,
+                    C.AMNA_ADD_STATUS desc nulls last,
+                    C.AMNA_STATUS desc nulls last,
+                    C.AMNA_TITLE_01 desc nulls last,
+                    C.AMNA_FIRST_NAME_01 desc nulls last,
+                    C.AMNA_MIDDLE_NAME_01 desc nulls last,
+                    C.AMNA_LAST_NAME_01 desc nulls last,
+                    C.AMNA_DOB_01 desc nulls last
+            ) as SOURCE_ROW_NUMBER
+        from DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.CUSTOMER as C
+        left join ambs_acct as A
+            on C.AMNA_ACCT = A.AMBS_CUST_NBR
+        left join current_card_customer
+            on C.AMNA_ACCT = current_card_customer.CUSTOMER_ID
+        where C.AMNA_EMAIL_01 not like '%TEST%'
+          and A.AMBS_DATE_OPENED is not null
     )
     select
         AMNA_ADD_STATUS,
         AMNA_STATUS,
+        case
+            when AMNA_ADD_STATUS = 99
+             and AMNA_STATUS = 0 then 'Y'
+            else 'N'
+        end as IS_ACTIVE_IN_SOURCE_FLAG,
         CUSTOMER_ID,
         TITLE,
         FIRST_NAME,
         MIDDLE_NAME,
         SURNAME,
         DATE_OF_BIRTH,
-        CREATED_DATETIME,
         UPDATED_DATETIME,
-        IS_ACTIVE_IN_SOURCE_FLAG
-    from ranked
-    where rn = 1
+        CREATED_DATETIME,
+        case
+            when UPDATED_DATETIME is null
+              or UPDATED_DATETIME < CREATED_DATETIME
+                then CREATED_DATETIME
+            else UPDATED_DATETIME
+        end as SOURCE_EFFECTIVE_FROM_DATETIME
+    from ranked_customer
+    where SOURCE_ROW_NUMBER = 1
 target:
   id: CARD_CUSTOMER
   schema: CORE

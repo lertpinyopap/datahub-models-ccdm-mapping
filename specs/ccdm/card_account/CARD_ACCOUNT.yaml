@@ -78,13 +78,21 @@ source:
                     then cast(A.AMBS_DATE_CLOSED as timestamp_tz)
                 else null
             end as CLOSING_DATETIME,
-            case when A.AMBS_INT_STATUS in ('A', 'N') then 'Y' else 'N' end as IS_ACTIVE_IN_SOURCE_FLAG,
+            case
+                when A.AMBS_DATE_CLOSED is null
+                  or cast(A.AMBS_DATE_CLOSED as varchar) like '%1901%'
+                    then 'Y'
+                else 'N'
+            end as IS_ACTIVE_IN_SOURCE_FLAG,
             coalesce(
                 cast(nullif(A.AMBS_DATE_LAST_MAINT, to_date('1901-01-01')) as timestamp_tz),
                 cast(nullif(A.AMBS_DATE_OPENED, to_date('1901-01-01')) as timestamp_tz),
                 cast('1901-01-01' as timestamp_tz)
             ) as SOURCE_EFFECTIVE_FROM_DATETIME
-        from DATAOPS_HUB_SHARE_VISION_NONPROD.ODS.ACCOUNT_BASE_SEGMENT as A
+        from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.ACCOUNT_BASE_SEGMENT A
+        -- Temporary test filter: exclude invalid V10 currency code 000.
+        where A.AMBS_CURR_CODE is null
+           or lpad(cast(A.AMBS_CURR_CODE as varchar), 3, '0') <> '000'
     ),
     card_customer_lookup as (
         select CUSTOMER_ID, CARD_CUSTOMER_KEY, CARD_CUSTOMER_BUSINESS_KEY
@@ -108,13 +116,23 @@ source:
         account_rows.IS_ACTIVE_IN_SOURCE_FLAG,
         account_rows.SOURCE_EFFECTIVE_FROM_DATETIME
     from account_rows
-    left join card_customer_lookup on card_customer_lookup.CUSTOMER_ID = account_rows.CUSTOMER_ID
-    -- inner join card_customer_lookup on card_customer_lookup.CUSTOMER_ID = account_rows.CUSTOMER_ID
+    --left join card_customer_lookup on card_customer_lookup.CUSTOMER_ID = account_rows.CUSTOMER_ID
+    inner join card_customer_lookup on card_customer_lookup.CUSTOMER_ID = account_rows.CUSTOMER_ID
 
 target:
   id: CARD_ACCOUNT
   schema: CORE
   fields:
+    - id: CARD_CHANNEL_KEY
+      source:
+        fixed_value: null
+      data_type: varchar(64)
+      nullable: true
+    - id: CARD_CHANNEL_BUSINESS_KEY
+      source:
+        fixed_value: null
+      data_type: varchar(64)
+      nullable: true
     - id: CARD_CUSTOMER_KEY
       source:
         column: CARD_CUSTOMER_KEY
@@ -177,7 +195,7 @@ target:
             lpad(cast(source_query.CURRENCY_SOURCE_CODE as varchar), 3, '0')
           required: true
       data_type: varchar(64)
-      nullable: true
+      nullable: false
     - id: BALANCE_TRANSFER_LIMIT_AMOUNT
       source:
         column: BALANCE_TRANSFER_LIMIT_AMOUNT
@@ -203,7 +221,7 @@ target:
             lpad(cast(source_query.CURRENCY_SOURCE_CODE as varchar), 3, '0')
           required: true
       data_type: varchar(64)
-      nullable: true
+      nullable: false
     - id: MONEY_TRANSFER_LIMIT_AMOUNT
       source:
         column: MONEY_TRANSFER_LIMIT_AMOUNT
@@ -224,13 +242,13 @@ target:
         column: CLOSING_DATETIME
       data_type: timestamp_tz
       nullable: true
-    - id: IS_ACTIVE_IN_SOURCE_FLAG
-      source:
-        column: IS_ACTIVE_IN_SOURCE_FLAG
-      data_type: varchar(1)
-      nullable: true
     - id: MESSAGE_TRACE_ID
       source:
         fixed_value: null
       data_type: varchar(16777216)
+      nullable: true
+    - id: IS_ACTIVE_IN_SOURCE_FLAG
+      source:
+        column: IS_ACTIVE_IN_SOURCE_FLAG
+      data_type: varchar(1)
       nullable: true

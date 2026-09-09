@@ -1,0 +1,116 @@
+id: card_customer_created_datetime_type0
+control_data:
+  materialisation_type: table
+  change_type: scd2_derived
+  business_key:
+    fields:
+      - CUSTOMER_ID
+  business_data_hash:
+    business_data_hash_mode: include
+    fields:
+      - CUSTOMER_STATUS_CODE
+      - CUSTOMER_NAME
+      - UPDATED_DATETIME
+      # CREATED_DATETIME is Type 0 and is deliberately excluded.
+  scd:
+    derivation_scope: affected_keys
+    validation_scope: affected_window
+    window_strategy: previous_and_next
+    valid_from_datetime:
+      source_column: SOURCE_EFFECTIVE_FROM_DATETIME
+    valid_to_datetime:
+      mode: next_valid_from
+      offset:
+        unit: nanosecond
+        value: -1
+      end_of_time: "9999-12-31 23:59:59 +00:00"
+    current_flag:
+      mode: latest_per_business_key
+    deleted_flag:
+      mode: fixed
+      value: "N"
+    deduplicate:
+      partition_by:
+        - CUSTOMER_ID
+        - VALID_FROM_DATETIME
+      order_by:
+        - column: UPDATED_DATETIME
+          direction: desc
+          nulls: last
+        - column: CUSTOMER_STATUS_CODE
+          direction: desc
+          nulls: last
+        - column: CUSTOMER_NAME
+          direction: desc
+          nulls: last
+source:
+  format: table
+  schema: TMP
+  table: card_customer_type0_source
+  query: |
+    with current_card_customer as (
+        select
+            CUSTOMER_ID,
+            CREATED_DATETIME
+        from {{ var('target_schema', 'TMP') }}.{{ var('card_customer_type0_target') }}
+        where IS_CURRENT_FLAG = 'Y'
+          and coalesce(IS_DELETED_FLAG, 'N') = 'N'
+        qualify row_number() over (
+            partition by CUSTOMER_ID
+            order by VALID_FROM_DATETIME desc, AUDIT_LAST_CHANGED_DATETIME desc
+        ) = 1
+    )
+    select
+        source.CUSTOMER_ID,
+        source.CUSTOMER_STATUS_CODE,
+        source.CUSTOMER_NAME,
+        coalesce(
+            current_card_customer.CREATED_DATETIME,
+            try_to_timestamp_tz(source.CREATED_DATETIME)
+        ) as CREATED_DATETIME,
+        try_to_timestamp_tz(source.UPDATED_DATETIME) as UPDATED_DATETIME,
+        case
+            when try_to_timestamp_tz(source.UPDATED_DATETIME) is null
+              or try_to_timestamp_tz(source.UPDATED_DATETIME)
+                    < coalesce(
+                        current_card_customer.CREATED_DATETIME,
+                        try_to_timestamp_tz(source.CREATED_DATETIME)
+                    )
+                then coalesce(
+                    current_card_customer.CREATED_DATETIME,
+                    try_to_timestamp_tz(source.CREATED_DATETIME)
+                )
+            else try_to_timestamp_tz(source.UPDATED_DATETIME)
+        end as SOURCE_EFFECTIVE_FROM_DATETIME
+    from TMP.card_customer_type0_source as source
+    left join current_card_customer
+        on source.CUSTOMER_ID = current_card_customer.CUSTOMER_ID
+target:
+  id: CARD_CUSTOMER_TYPE0
+  schema: CORE
+  fields:
+    - id: CUSTOMER_ID
+      source:
+        column: CUSTOMER_ID
+      data_type: varchar(20)
+      nullable: false
+    - id: CUSTOMER_STATUS_CODE
+      source:
+        column: CUSTOMER_STATUS_CODE
+      data_type: varchar(20)
+      nullable: false
+    - id: CUSTOMER_NAME
+      source:
+        column: CUSTOMER_NAME
+      data_type: varchar(100)
+      nullable: false
+    - id: CREATED_DATETIME
+      source:
+        column: CREATED_DATETIME
+      data_type: timestamp_tz
+      nullable: false
+    - id: UPDATED_DATETIME
+      source:
+        column: UPDATED_DATETIME
+      data_type: timestamp_tz
+      nullable: true

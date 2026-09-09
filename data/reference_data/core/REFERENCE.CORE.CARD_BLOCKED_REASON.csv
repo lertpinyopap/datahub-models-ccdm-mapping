@@ -4,7 +4,7 @@ B,Bankrupt,Y,N,1900-01-01,9999-12-31
 C,Charged off,Y,N,1900-01-01,9999-12-31
 D,Deceased,Y,N,1900-01-01,9999-12-31
 E,AU: Refundable credit balance (not used) / NZ: Not used,Y,N,1900-01-01,9999-12-31
-F,Fraudulent,Y,N,1900-01-01,9999-12-31
+F,Stolen,Y,N,1900-01-01,9999-12-31
 G,AU: Cancel deferments / NZ: Governed credit limit increase,Y,N,1900-01-01,9999-12-31
 H,AU: Insurance claim / NZ: Not used (insurance claim),Y,N,1900-01-01,9999-12-31
 I,No interest - interest blocked or suppressed,Y,N,1900-01-01,9999-12-31
@@ -25,6 +25,7 @@ W,AU: No re-issue card migration / NZ: Dormant account over 1 year / Card: Suppr
 X,Account closed,Y,N,1900-01-01,9999-12-31
 Y,Transferred - temp block during product transfer,Y,N,1900-01-01,9999-12-31
 Z,AU: New account retail no reissue / NZ: No compliant application from merchant,Y,N,1900-01-01,9999-12-31
+NBLCK,Card not blocked,Y,N,1900-01-01,9999-12-31
 DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
 DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
 DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31

@@ -1,0 +1,45 @@
+name: card_customer_created_datetime_type0
+description: CARD_CUSTOMER preserves CREATED_DATETIME as Type 0 while deriving SCD2 history.
+spec: spec/card_customer_type0.yaml
+initial_target: data/initial_target.csv
+target:
+  expected_columns:
+    - CUSTOMER_ID
+    - CUSTOMER_STATUS_CODE
+    - CUSTOMER_NAME
+    - CREATED_DATETIME
+    - UPDATED_DATETIME
+    - VALID_FROM_DATETIME
+    - VALID_TO_DATETIME
+    - IS_CURRENT_FLAG
+    - IS_DELETED_FLAG
+  order_by:
+    - CUSTOMER_ID
+    - VALID_FROM_DATETIME
+checks:
+  - Load 001 inserts the first customer version with its source CREATED_DATETIME.
+  - Load 002 changes only the source CREATED_DATETIME and creates no new SCD2 version.
+  - Load 003 changes customer business data and creates a new SCD2 version.
+  - Load 003 carries the original CREATED_DATETIME into the new version.
+  - Load 004 is unchanged and creates no duplicate SCD2 version.
+loads:
+  - name: load_001_initial
+    source_csv: data/load_001_initial.csv
+    expected_target: data/expected_after_load_001.csv
+    dbt_vars:
+      card_customer_type0_target: TMS_INT__CARD_CUSTOMER_TYPE0
+  - name: load_002_created_datetime_only_change
+    source_csv: data/load_002_created_datetime_only_change.csv
+    expected_target: data/expected_after_load_002.csv
+    dbt_vars:
+      card_customer_type0_target: TMS_INT__CARD_CUSTOMER_TYPE0
+  - name: load_003_business_change
+    source_csv: data/load_003_business_change.csv
+    expected_target: data/expected_after_load_003.csv
+    dbt_vars:
+      card_customer_type0_target: TMS_INT__CARD_CUSTOMER_TYPE0
+  - name: load_004_unchanged_rerun
+    source_csv: data/load_003_business_change.csv
+    expected_target: data/expected_after_load_004.csv
+    dbt_vars:
+      card_customer_type0_target: TMS_INT__CARD_CUSTOMER_TYPE0

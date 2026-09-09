@@ -10,6 +10,7 @@
   },
   "vars": {
     "ENV_PREFIX": "PROD_",
+    "DATAOPS_ENV_SUFFIX": "_PROD",
     "tms_job_schema": "INTERMEDIATE"
   },
   "jobs": [
@@ -17,7 +18,7 @@
       "dag_id": "datahub-models-ccdm-mapping-reference_loader",
       "target": "prod",
       "vars": {
-        "database": "SAS_MIGRATION_WORKSPACE"
+        "database": "REFERENCE"
       },
       "tags": [
         "reference-data",
@@ -30,13 +31,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_ADDRESS_TYPE.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_ADDRESS_TYPE.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_ADDRESS_TYPE.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -49,7 +48,6 @@
             {
               "task_id": "load_core",
               "spec": "specs/reference_data/core/CORE_BRAND.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "reference_financial_institution.load_core"
               ]
@@ -57,7 +55,6 @@
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_BRAND.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -69,13 +66,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_ACTION_TYPE.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CARD_ACTION_TYPE.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CARD_ACTION_TYPE.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -87,13 +82,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_CHANNEL.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CARD_CHANNEL.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CARD_CHANNEL.yaml",
-              "full_refresh": false,
               "depends_on": ["load_core"]
             }
           ]
@@ -103,13 +96,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_ACTIVATION_STATUS.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CARD_ACTIVATION_STATUS.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CARD_ACTIVATION_STATUS.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -121,13 +112,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_ADDITIONAL_SERVICE_TYPE.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CARD_ADDITIONAL_SERVICE_TYPE.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CARD_ADDITIONAL_SERVICE_TYPE.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -139,13 +128,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_AMOUNT_TYPE.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CARD_AMOUNT_TYPE.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CARD_AMOUNT_TYPE.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -157,13 +144,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_AUTHORISATION_REQUEST_STATUS.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CARD_AUTHORISATION_REQUEST_STATUS.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CARD_AUTHORISATION_REQUEST_STATUS.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -175,13 +160,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_CUSTOMER_EVENT_TYPE.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CARD_CUSTOMER_EVENT_TYPE.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CARD_CUSTOMER_EVENT_TYPE.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -193,13 +176,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_EVENT_TYPE.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CARD_EVENT_TYPE.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CARD_EVENT_TYPE.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -211,13 +192,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_FRAUD_STATUS.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CARD_FRAUD_STATUS.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CARD_FRAUD_STATUS.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -229,13 +208,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_COUNTRY.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_COUNTRY.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_COUNTRY.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -247,13 +224,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CURRENCY.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CURRENCY.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CURRENCY.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -265,13 +240,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CUSTOMER_CONTACT_PREFERENCE_TYPE.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CUSTOMER_CONTACT_PREFERENCE_TYPE.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CUSTOMER_CONTACT_PREFERENCE_TYPE.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -283,8 +256,7 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CUSTOMER_CONTACT_PREFERENCE.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CUSTOMER_CONTACT_PREFERENCE.yaml"
             }
           ]
         },
@@ -293,13 +265,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CUSTOMER_STATUS.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CUSTOMER_STATUS.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CUSTOMER_STATUS.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -312,7 +282,6 @@
             {
               "task_id": "load_core",
               "spec": "specs/reference_data/core/CORE_FINANCIAL_INSTITUTION.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "reference_country.load_core"
               ]
@@ -320,7 +289,6 @@
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_FINANCIAL_INSTITUTION.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -332,13 +300,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_MERCHANT_CATEGORY.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_MERCHANT_CATEGORY.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_MERCHANT_CATEGORY.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -350,13 +316,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_PHONE_NUMBER_TYPE.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_PHONE_NUMBER_TYPE.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_PHONE_NUMBER_TYPE.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -369,7 +333,6 @@
             {
               "task_id": "load_core",
               "spec": "specs/reference_data/core/CORE_PRODUCT.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "reference_brand.load_core"
               ]
@@ -377,7 +340,6 @@
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_PRODUCT.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -389,13 +351,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_BLOCKED_REASON.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CARD_BLOCKED_REASON.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CARD_BLOCKED_REASON.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -407,13 +367,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_FEE_WAIVER_TYPE.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CARD_FEE_WAIVER_TYPE.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CARD_FEE_WAIVER_TYPE.yaml",
-              "full_refresh": false,
               "depends_on": ["load_core"]
             }
           ]
@@ -423,13 +381,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CARD_HOLDER_TYPE.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_CARD_HOLDER_TYPE.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CARD_HOLDER_TYPE.yaml",
-              "full_refresh": false,
               "depends_on": ["load_core"]
             }
           ]
@@ -439,8 +395,7 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_DIGITAL_CARD_TYPE.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_DIGITAL_CARD_TYPE.yaml"
             }
           ]
         },
@@ -449,13 +404,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_EMAIL_ADDRESS_TYPE.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_EMAIL_ADDRESS_TYPE.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_EMAIL_ADDRESS_TYPE.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -467,8 +420,7 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_PAYMENT_INSTRUMENT_TYPE.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_PAYMENT_INSTRUMENT_TYPE.yaml"
             }
           ]
         },
@@ -477,13 +429,11 @@
           "tasks": [
             {
               "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_PHYSICAL_CARD_TECHNOLOGY_TYPE.yaml",
-              "full_refresh": false
+              "spec": "specs/reference_data/core/CORE_PHYSICAL_CARD_TECHNOLOGY_TYPE.yaml"
             },
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_PHYSICAL_CARD_TECHNOLOGY_TYPE.yaml",
-              "full_refresh": false,
               "depends_on": [
                 "load_core"
               ]
@@ -493,87 +443,52 @@
       ]
     },
     {
-      "dag_id": "datahub-models-ccdm-mapping-ccdm_loader",
-      "target": "dev",
+      "dag_id": "datahub-models-ccdm-mapping-card-customer-historical_loader",
+      "target": "prod",
       "tags": [
         "ccdm",
         "card-customer",
+        "historical",
         "tms"
       ],
       "schedule": "manual",
       "vars": {
-        "database": "SAS_MIGRATION_WORKSPACE"
+        "database": "SAS_MIGRATION_WORKSPACE",
+        "schema": "CORE"
       },
       "task_groups": [
         {
-          "group_id": "card_customer",
+          "group_id": "card_customer_historical",
           "tasks": [
             {
-              "task_id": "load_card_customer",
-              "spec": "specs/ccdm/card_customer/CARD_CUSTOMER.yaml",
-              "full_refresh": false
+              "task_id": "load_card_customer_historical",
+              "spec": "specs/ccdm/card_customer/CARD_CUSTOMER_HISTORICAL_INITIAL_LOAD.yaml"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "dag_id": "datahub-models-ccdm-mapping-card-customer-incremental_loader",
+      "target": "prod",
+      "tags": [
+        "ccdm",
+        "card-customer",
+        "incremental",
+        "tms"
+      ],
+      "schedule": "manual",
+      "vars": {
+        "database": "SAS_MIGRATION_WORKSPACE",
+        "schema": "CORE"
+      },
+      "task_groups": [
         {
-          "group_id": "card_account",
+          "group_id": "card_customer_incremental",
           "tasks": [
             {
-              "task_id": "load_card_account",
-              "spec": "specs/ccdm/card_account/CARD_ACCOUNT.yaml",
-              "full_refresh": false
-            }
-          ]
-        },
-        {
-          "group_id": "card_customer_address",
-          "tasks": [
-            {
-              "task_id": "load_card_customer_address",
-              "spec": "specs/ccdm/card_customer_address/CARD_CUSTOMER_ADDRESS.yaml",
-              "full_refresh": false,
-              "depends_on": [
-                "card_customer.load_card_customer"
-              ]
-            }
-          ]
-        },
-        {
-          "group_id": "card_customer_email_address",
-          "tasks": [
-            {
-              "task_id": "load_card_customer_email_address",
-              "spec": "specs/ccdm/card_customer_email_address/CARD_CUSTOMER_EMAIL_ADDRESS.yaml",
-              "full_refresh": false,
-              "depends_on": [
-                "card_customer.load_card_customer"
-              ]
-            }
-          ]
-        },
-        {
-          "group_id": "card_customer_phone",
-          "tasks": [
-            {
-              "task_id": "load_card_customer_phone",
-              "spec": "specs/ccdm/card_customer_phone/CARD_CUSTOMER_PHONE.yaml",
-              "full_refresh": false,
-              "depends_on": [
-                "card_customer.load_card_customer"
-              ]
-            }
-          ]
-        },
-        {
-          "group_id": "card_customer_event",
-          "tasks": [
-            {
-              "task_id": "load_card_customer_event",
-              "spec": "specs/ccdm/card_customer_event/CARD_CUSTOMER_EVENT.yaml",
-              "full_refresh": false,
-              "depends_on": [
-                "card_customer.load_card_customer"
-              ]
+              "task_id": "load_card_customer_incremental",
+              "spec": "specs/ccdm/card_customer/CARD_CUSTOMER_INCREMENTAL.yaml"
             }
           ]
         }
