@@ -1,0 +1,65 @@
+id: reference_core_brand
+extends: REFERENCE_CORE_SCD2_MANUAL
+description: Maps reference brand CSV data into a manual SCD2 brand table.
+control_data:
+  business_key:
+    fields:
+      - BRAND_CODE
+source:
+  seed:
+    file: data/reference_data/core/REFERENCE.CORE.BRAND.csv
+    name: reference_core_brand_seed
+    schema: INTERMEDIATE
+target:
+  id: BRAND
+  schema: CORE
+  table_name: BRAND
+  fields:
+    - id: BRAND_CODE
+      source:
+        pos: 0
+        column: BRAND_CODE
+      data_type: varchar(16777216)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: BRAND_ID
+      source:
+        pos: 1
+        column: BRAND_ID
+      data_type: varchar(16777216)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: BRAND_NAME
+      source:
+        pos: 2
+        column: BRAND_NAME
+      data_type: varchar(120)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: FINANCIAL_INSTITUTION_KEY
+      source:
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        pos: 3
+        column: FINANCIAL_INSTITUTION_CODE
+        args:
+          reference_type: FINANCIAL_INSTITUTION
+          source_code_column: FINANCIAL_INSTITUTION_CODE
+          value_column: FINANCIAL_INSTITUTION_KEY
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: FINANCIAL_INSTITUTION_BUSINESS_KEY
+      source:
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        pos: 3
+        column: FINANCIAL_INSTITUTION_CODE
+        args:
+          reference_type: FINANCIAL_INSTITUTION
+          source_code_column: FINANCIAL_INSTITUTION_CODE
+          value_column: FINANCIAL_INSTITUTION_BUSINESS_KEY
+          required: true
+      data_type: varchar(64)
+      nullable: false

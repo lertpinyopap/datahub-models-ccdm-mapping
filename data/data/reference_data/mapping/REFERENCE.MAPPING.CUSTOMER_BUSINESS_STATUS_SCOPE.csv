@@ -1,0 +1,10 @@
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,VN,OWAC,Own accounts,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS_SCOPE,OWAC,Own accounts
+,VN,ALAC,All accounts,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS_SCOPE,ALAC,All accounts
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS_SCOPE,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS_SCOPE,DQMissing,Source value not provided
+,VN,DQNotApplicable,Source value not provided,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS_SCOPE,DQNotApplicable,Source value not provided
+,V10,OWAC,Own accounts,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS_SCOPE,OWAC,Own accounts
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS_SCOPE,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS_SCOPE,DQMissing,Source value not provided
+,V10,DQNotApplicable,Source value not provided,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS_SCOPE,DQNotApplicable,Source value not provided

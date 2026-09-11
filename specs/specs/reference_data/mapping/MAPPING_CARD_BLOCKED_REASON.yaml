@@ -1,0 +1,11 @@
+id: reference_mapping_card_blocked_reason
+extends: REFERENCE_MAPPING_SCD2_AUTO
+description: Maps reference card blocked reason mapping CSV data into the CARD_BLOCKED_REASON mapping table.
+source:
+  seed:
+    file: data/reference_data/mapping/REFERENCE.MAPPING.CARD_BLOCKED_REASON.csv
+    name: reference_mapping_card_blocked_reason_seed
+target:
+  id: CARD_BLOCKED_REASON
+  schema: MAPPING
+  table_name: CARD_BLOCKED_REASON

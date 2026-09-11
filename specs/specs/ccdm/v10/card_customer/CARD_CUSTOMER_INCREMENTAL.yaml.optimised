@@ -20,12 +20,11 @@ source:
             C.AMNA_DATE_LAST_MAINT as UPDATED_DATETIME
         from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.CUSTOMER as C
         where C.AMNA_EMAIL_01 not like '%TEST%'
-          and {{
-              tms_incremental_bookmark_predicate(
-                  'C.AIRFLOW_DAG_TIME',
-                  "AMNA_EMAIL_01 NOT LIKE '%TEST%'"
-              )
-          }}
+          and C.AIRFLOW_DAG_TIME = (
+              select max(AIRFLOW_DAG_TIME)
+              from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.CUSTOMER
+              where AMNA_EMAIL_01 not like '%TEST%'
+          )
     ),
     incoming_customer_ids as (
         select distinct CUSTOMER_ID
@@ -83,3 +82,4 @@ source:
         on C.CUSTOMER_ID = A.AMBS_CUST_NBR
     left join current_card_customer
         on C.CUSTOMER_ID = current_card_customer.CUSTOMER_ID
+      

@@ -1,0 +1,33 @@
+id: reference_core_physical_card_technology_type
+extends: REFERENCE_CORE_SCD2_MANUAL
+description: Maps reference physical card technology type CSV data into a manual SCD2 physical card technology type table.
+control_data:
+  business_key:
+    fields:
+      - PHYSICAL_CARD_TECHNOLOGY_TYPE_CODE
+source:
+  seed:
+    file: data/reference_data/core/REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE.csv
+    name: reference_core_physical_card_technology_type_seed
+    schema: INTERMEDIATE
+target:
+  id: PHYSICAL_CARD_TECHNOLOGY_TYPE
+  schema: CORE
+  table_name: PHYSICAL_CARD_TECHNOLOGY_TYPE
+  fields:
+    - id: PHYSICAL_CARD_TECHNOLOGY_TYPE_CODE
+      source:
+        pos: 0
+        column: PHYSICAL_CARD_TECHNOLOGY_TYPE_CODE
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: PHYSICAL_CARD_TECHNOLOGY_TYPE_DESCRIPTION
+      source:
+        pos: 1
+        column: PHYSICAL_CARD_TECHNOLOGY_TYPE_DESCRIPTION
+      data_type: varchar(16777216)
+      transforms:
+        - type: trim
+      nullable: false

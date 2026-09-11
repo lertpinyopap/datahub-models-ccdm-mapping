@@ -1,0 +1,167 @@
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,VN,801,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,VN,802,Latitude Financial Services Limited,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSNZ,Latitude Financial Services Limited
+,V10,101,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V10,141,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V10,151,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V10,161,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V10,162,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V10,216,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V10,226,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V10,227,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V10,228,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V10,300,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V10,301,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V10,400,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V10,450,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V10,998,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V10,500,Latitude Financial Services Limited,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSNZ,Latitude Financial Services Limited
+,V10,526,Latitude Financial Services Limited,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSNZ,Latitude Financial Services Limited
+,V10,527,Latitude Financial Services Limited,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSNZ,Latitude Financial Services Limited
+,V10,528,Latitude Financial Services Limited,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSNZ,Latitude Financial Services Limited
+,V10,529,Latitude Financial Services Limited,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSNZ,Latitude Financial Services Limited
+,V10,530,Latitude Financial Services Limited,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSNZ,Latitude Financial Services Limited
+,V10,550,Latitude Financial Services Limited,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSNZ,Latitude Financial Services Limited
+,V2,000,#NA,REFERENCE.CORE.FINANCIAL_INSTITUTION,DQMapping,Source value cannot be mapped	N.A.
+,V2,001,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,002,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,003,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,004,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,006,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,007,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,008,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,011,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,012,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,013,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,014,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,015,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,016,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,017,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,018,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,019,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,020,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,022,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,023,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,024,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,025,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,026,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,027,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,028,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,029,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,030,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,031,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,033,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,035,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,040,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,041,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,043,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,049,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,051,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,053,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,059,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,060,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,061,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,062,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,063,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,064,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,065,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,066,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,072,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,077,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,078,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,083,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,089,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,090,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,093,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,096,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,098,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,101,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,110,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,111,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,114,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,121,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,125,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,126,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,140,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,141,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,151,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,160,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,161,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,162,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,163,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,200,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,201,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,216,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,221,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,226,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,227,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,228,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,241,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,250,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,300,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,301,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,302,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,303,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,304,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,305,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,306,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,307,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,308,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,309,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,310,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,311,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,312,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,313,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,314,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,315,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,316,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,317,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,318,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,319,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,324,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,325,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,326,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,330,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,331,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,332,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,333,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,401,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,404,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,405,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,504,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,506,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,507,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,508,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,510,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,512,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,513,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,514,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,515,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,521,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,570,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,600,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,601,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,611,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V2,500,Latitude Financial Services Limited,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSNZ,Latitude Financial Services Limited
+,V2,526,Latitude Financial Services Limited,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSNZ,Latitude Financial Services Limited
+,V2,527,Latitude Financial Services Limited,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSNZ,Latitude Financial Services Limited
+,V2,530,Latitude Financial Services Limited,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSNZ,Latitude Financial Services Limited
+,V8,000,#NA,REFERENCE.CORE.FINANCIAL_INSTITUTION,DQMapping,Source value cannot be mapped	N.A.
+,V8,100,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V8,200,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V8,400,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V8,450,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V8,701,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V8,998,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V8,500,Latitude Financial Services Limited,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSNZ,Latitude Financial Services Limited
+,V8,550,Latitude Financial Services Limited,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSNZ,Latitude Financial Services Limited
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.FINANCIAL_INSTITUTION,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.FINANCIAL_INSTITUTION,DQMissing,Source value not provided
+,V2,DQMapping,Source value cannot be mapped,REFERENCE.CORE.FINANCIAL_INSTITUTION,DQMapping,Source value cannot be mapped
+,V2,DQMissing,Source value not provided,REFERENCE.CORE.FINANCIAL_INSTITUTION,DQMissing,Source value not provided
+,V8,DQMapping,Source value cannot be mapped,REFERENCE.CORE.FINANCIAL_INSTITUTION,DQMapping,Source value cannot be mapped
+,V8,DQMissing,Source value not provided,REFERENCE.CORE.FINANCIAL_INSTITUTION,DQMissing,Source value not provided
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.FINANCIAL_INSTITUTION,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.FINANCIAL_INSTITUTION,DQMissing,Source value not provided
+,V10,100,Latitude Finance Australia,REFERENCE.CORE.FINANCIAL_INSTITUTION,LFSAU,Latitude Finance Australia
+,V10,DQNotApplicable,Source value not required,REFERENCE.CORE.FINANCIAL_INSTITUTION,DQNotApplicable,Source value not required

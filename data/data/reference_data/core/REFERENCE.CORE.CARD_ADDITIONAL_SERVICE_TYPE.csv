@@ -1,0 +1,14 @@
+CARD_ADDITIONAL_SERVICE_TYPE_CODE,CARD_ADDITIONAL_SERVICE_TYPE_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
+CACT,Card activation,Y,N,1900-01-01,9999-12-31
+CSHB,Purchase of goods or services with cashback,Y,N,1900-01-01,9999-12-31
+DCCV,Dynamic Currency Conversion (DCC),Y,N,1900-01-01,9999-12-31
+INTP,Instant payment from a cardholder account to an acceptor account,Y,N,1900-01-01,9999-12-31
+INTT,Instant transfer of funds from a payer account to a payee account,Y,N,1900-01-01,9999-12-31
+LOYT,Loyalty services,Y,N,1900-01-01,9999-12-31
+OTHN,Other type of additional service at national level,Y,N,1900-01-01,9999-12-31
+OTHP,Other type of additional service at private level,Y,N,1900-01-01,9999-12-31
+PRST,Withdrawal transaction pre-authorised by another channel,Y,N,1900-01-01,9999-12-31
+BALC,Return the account balance with the transaction,Y,N,1900-01-01,9999-12-31
+DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
+DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
+DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31

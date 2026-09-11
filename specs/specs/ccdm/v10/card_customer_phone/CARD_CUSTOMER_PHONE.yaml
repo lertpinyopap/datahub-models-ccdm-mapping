@@ -1,0 +1,209 @@
+id: card_customer_phone
+extends: SOURCE_TO_TARGET_SCD2_DERIVED
+description: Maps V10 customer phone numbers into PAY.CORE.CARD_CUSTOMER_PHONE.
+control_data:
+  business_key:
+    fields:
+      - CARD_CUSTOMER_KEY
+      - CARD_CUSTOMER_BUSINESS_KEY
+      - PHONE_NUMBER_TYPE_KEY
+      - PHONE_NUMBER
+  business_data_hash:
+    business_data_hash_mode: include
+    fields:
+      - PHONE_NUMBER_TYPE_KEY
+      - CARD_CUSTOMER_KEY
+      - CARD_CUSTOMER_BUSINESS_KEY
+      - PHONE_CUSTOMER_CONTACT_PREFERENCE_TYPE_KEY
+      - SMS_CUSTOMER_CONTACT_PREFERENCE_TYPE_KEY
+      - PHONE_NUMBER
+      - EXTENSION
+  scd:
+    derivation_scope: affected_keys
+    validation_scope: affected_window
+    window_strategy: previous_and_next
+    valid_from_datetime:
+      expression: SOURCE_EFFECTIVE_FROM_DATETIME
+    valid_to_datetime:
+      mode: next_valid_from
+      offset:
+        unit: nanosecond
+        value: -1
+      end_of_time: "9999-12-31 23:59:59 +00:00"
+    current_flag:
+      mode: latest_per_business_key
+    deleted_flag:
+      mode: fixed
+      value: "N"
+    deduplicate:
+      partition_by:
+        - CARD_CUSTOMER_KEY
+        - CARD_CUSTOMER_BUSINESS_KEY
+        - PHONE_NUMBER_TYPE_KEY
+        - PHONE_NUMBER
+        - VALID_FROM_DATETIME
+      order_by:
+        - column: SOURCE_EFFECTIVE_FROM_DATETIME
+          direction: desc
+          nulls: last
+source:
+  format: table
+  query: |
+    with latest_customer as (
+        select *
+        from (
+            select
+                C.*,
+                row_number() over (
+                    partition by C.AMNA_ORG, C.AMNA_ACCT
+                    order by
+                        C.AMNA_DATE_LAST_MAINT desc nulls last,
+                        C.AMNA_HOME_PHONE_FLAG_01 desc nulls last,
+                        C.AMNA_MOBILE_PHONE_FLAG_01 desc nulls last,
+                        C.AMNA_PHONE_FLAG_01 desc nulls last
+                ) as SOURCE_ROW_NUMBER
+            from DATAOPS_HUB_SHARE_VISION_NONPROD.ODS.CUSTOMER as C
+        )
+        where SOURCE_ROW_NUMBER = 1
+    ),
+    phone_rows as (
+        select C.AMNA_ACCT as CUSTOMER_ID, 'PHON' as PHONE_TYPE_CODE,
+            C.AMNA_HOME_PHONE_FLAG_01 as PHONE_CONTACT_PREFERENCE_FLAG,
+            null as SMS_CONTACT_PREFERENCE_FLAG,
+            trim(C.AMNA_HOME_PHONE_01) as PHONE_NUMBER, cast(null as varchar) as EXTENSION,
+            C.AMNA_DATE_LAST_MAINT as SOURCE_EFFECTIVE_FROM_DATETIME,
+            1 as PHONE_SLOT
+        from latest_customer as C
+        union all
+        select C.AMNA_ACCT, 'MOBL',
+            C.AMNA_MOBILE_PHONE_FLAG_01,
+            C.AMNA_SMS_FLAG_01,
+            trim(C.AMNA_MOBILE_PHONE_01), cast(null as varchar), C.AMNA_DATE_LAST_MAINT, 2
+        from latest_customer as C
+        union all
+        select C.AMNA_ACCT, 'WORK',
+            C.AMNA_PHONE_FLAG_01,
+            null, trim(C.AMNA_EMP_PHONE_01), trim(C.AMNA_EMP_PHONE_EXTN_01), C.AMNA_DATE_LAST_MAINT, 3
+        from latest_customer as C
+        union all
+        select C.AMNA_ACCT, 'FAX', null, null, trim(C.AMNA_FAX_PHONE_01), cast(null as varchar), C.AMNA_DATE_LAST_MAINT, 4
+        from latest_customer as C
+        union all
+        select C.AMNA_ACCT, 'PHON',
+            C.AMNA_HOME_PHONE_FLAG_02,
+            null, trim(C.AMNA_HOME_PHONE_02), cast(null as varchar), C.AMNA_DATE_LAST_MAINT, 5
+        from latest_customer as C
+        union all
+        select C.AMNA_ACCT, 'MOBL',
+            C.AMNA_MOBILE_PHONE_FLAG_02,
+            C.AMNA_SMS_FLAG_02,
+            trim(C.AMNA_MOBILE_PHONE_02), cast(null as varchar), C.AMNA_DATE_LAST_MAINT, 6
+        from latest_customer as C
+        union all
+        select C.AMNA_ACCT, 'WORK',
+            C.AMNA_PHONE_FLAG_02,
+            null, trim(C.AMNA_EMP_PHONE_02), trim(C.AMNA_EMP_PHONE_EXTN_02), C.AMNA_DATE_LAST_MAINT, 7
+        from latest_customer as C
+        union all
+        select C.AMNA_ACCT, 'FAX', null, null, trim(C.AMNA_FAX_PHONE_02), cast(null as varchar), C.AMNA_DATE_LAST_MAINT, 8
+        from latest_customer as C
+    ),
+    deduplicated_phone_rows as (
+        select *
+        from phone_rows
+        where PHONE_NUMBER is not null
+          and trim(PHONE_NUMBER) <> ''
+        qualify row_number() over (
+            partition by CUSTOMER_ID, PHONE_TYPE_CODE, PHONE_NUMBER
+            order by
+                SOURCE_EFFECTIVE_FROM_DATETIME desc nulls last,
+                PHONE_CONTACT_PREFERENCE_FLAG desc nulls last,
+                SMS_CONTACT_PREFERENCE_FLAG desc nulls last,
+                EXTENSION desc nulls last,
+                PHONE_SLOT asc
+        ) = 1
+    ),
+    card_customer_lookup as (
+        select CUSTOMER_ID, CARD_CUSTOMER_KEY, CARD_CUSTOMER_BUSINESS_KEY
+        from {{ var("database") }}.CORE.{{ var("card_customer_table", "CARD_CUSTOMER") }}
+        where IS_CURRENT_FLAG = 'Y'
+        qualify row_number() over (partition by CUSTOMER_ID order by AUDIT_LAST_CHANGED_DATETIME desc nulls last, AUDIT_CREATED_DATETIME desc nulls last) = 1
+    )
+    select
+        card_customer_lookup.CARD_CUSTOMER_KEY,
+        card_customer_lookup.CARD_CUSTOMER_BUSINESS_KEY,
+        phone_rows.PHONE_TYPE_CODE,
+        phone_rows.PHONE_CONTACT_PREFERENCE_FLAG,
+        phone_rows.SMS_CONTACT_PREFERENCE_FLAG,
+        phone_rows.PHONE_NUMBER,
+        phone_rows.EXTENSION,
+        phone_rows.SOURCE_EFFECTIVE_FROM_DATETIME
+    from deduplicated_phone_rows as phone_rows
+    inner join card_customer_lookup on card_customer_lookup.CUSTOMER_ID = phone_rows.CUSTOMER_ID
+
+target:
+  id: CARD_CUSTOMER_PHONE
+  schema: CORE
+  fields:
+    - id: PHONE_NUMBER_TYPE_KEY
+      source:
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
+        args:
+          reference_type: PHONE_NUMBER_TYPE
+          source_system: V10
+          source_code_column: PHONE_TYPE_CODE
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: CARD_CUSTOMER_KEY
+      source:
+        column: CARD_CUSTOMER_KEY
+      data_type: varchar(64)
+      nullable: false
+    - id: CARD_CUSTOMER_BUSINESS_KEY
+      source:
+        column: CARD_CUSTOMER_BUSINESS_KEY
+      data_type: varchar(64)
+      nullable: false
+    - id: PHONE_CUSTOMER_CONTACT_PREFERENCE_TYPE_KEY
+      source:
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
+        args:
+          reference_type: CUSTOMER_CONTACT_PREFERENCE_TYPE
+          source_system: V10
+          source_code_expression: |
+            case
+              when source_query.PHONE_CONTACT_PREFERENCE_FLAG = 2 then 'PREFERRED'
+              when source_query.PHONE_CONTACT_PREFERENCE_FLAG = 1 then 'UNDEC'
+              when source_query.PHONE_CONTACT_PREFERENCE_FLAG = 0 then 'NOCTCT'
+              else 'NOCTCT'
+            end
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: SMS_CUSTOMER_CONTACT_PREFERENCE_TYPE_KEY
+      source:
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
+        args:
+          reference_type: CUSTOMER_CONTACT_PREFERENCE_TYPE
+          source_system: V10
+          source_code_expression: |
+            case
+              when source_query.SMS_CONTACT_PREFERENCE_FLAG = 2 then 'PREFERRED'
+              when source_query.SMS_CONTACT_PREFERENCE_FLAG = 1 then 'UNDEC'
+              when source_query.SMS_CONTACT_PREFERENCE_FLAG = 0 then 'NOCTCT'
+              else 'DQNotApplicable'
+            end
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: PHONE_NUMBER
+      source:
+        column: PHONE_NUMBER
+      data_type: varchar(40)
+      nullable: false
+    - id: EXTENSION
+      source:
+        column: EXTENSION
+      data_type: varchar(40)
+      nullable: true

@@ -1,0 +1,33 @@
+id: reference_core_card_additional_service_type
+extends: REFERENCE_CORE_SCD2_MANUAL
+description: Maps reference card additional service type CSV data into a manual SCD2 card additional service type table.
+control_data:
+  business_key:
+    fields:
+      - CARD_ADDITIONAL_SERVICE_TYPE_CODE
+source:
+  seed:
+    file: data/reference_data/core/REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE.csv
+    name: reference_core_card_additional_service_type_seed
+    schema: INTERMEDIATE
+target:
+  id: CARD_ADDITIONAL_SERVICE_TYPE
+  schema: CORE
+  table_name: CARD_ADDITIONAL_SERVICE_TYPE
+  fields:
+    - id: CARD_ADDITIONAL_SERVICE_TYPE_CODE
+      source:
+        pos: 0
+        column: CARD_ADDITIONAL_SERVICE_TYPE_CODE
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: CARD_ADDITIONAL_SERVICE_TYPE_DESCRIPTION
+      source:
+        pos: 1
+        column: CARD_ADDITIONAL_SERVICE_TYPE_DESCRIPTION
+      data_type: varchar(16777216)
+      transforms:
+        - type: trim
+      nullable: false

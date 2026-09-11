@@ -1,0 +1,218 @@
+id: card_customer_email_address
+extends: SOURCE_TO_TARGET_SCD2_DERIVED
+description: Maps V10 customer email addresses into PAY.CORE.CARD_CUSTOMER_EMAIL_ADDRESS.
+control_data:
+  # The workbook does not mark Is_Business_Key. Include the customer, email
+  # type, and normalized address so both email slots can coexist per customer.
+  business_key:
+    fields:
+      - CARD_CUSTOMER_KEY
+      - CARD_CUSTOMER_BUSINESS_KEY
+      - EMAIL_ADDRESS_TYPE_KEY
+      - EMAIL_ADDRESS
+  business_data_hash:
+    business_data_hash_mode: include
+    fields:
+      - EMAIL_ADDRESS_TYPE_KEY
+      - CARD_CUSTOMER_KEY
+      - CARD_CUSTOMER_BUSINESS_KEY
+      - CUSTOMER_CONTACT_PREFERENCE_TYPE_KEY
+      - EMAIL_ADDRESS
+      - EMAIL_ADDRESS_LOCAL_PART
+      - EMAIL_ADDRESS_SUBADDRESS_TAG
+      - EMAIL_ADDRESS_DOMAIN
+  scd:
+    derivation_scope: affected_keys
+    validation_scope: affected_window
+    window_strategy: previous_and_next
+    valid_from_datetime:
+      expression: SOURCE_EFFECTIVE_FROM_DATETIME
+    valid_to_datetime:
+      mode: next_valid_from
+      offset:
+        unit: nanosecond
+        value: -1
+      end_of_time: "9999-12-31 23:59:59 +00:00"
+    current_flag:
+      mode: latest_per_business_key
+    deleted_flag:
+      mode: fixed
+      value: "N"
+    deduplicate:
+      partition_by:
+        - CARD_CUSTOMER_KEY
+        - CARD_CUSTOMER_BUSINESS_KEY
+        - EMAIL_ADDRESS_TYPE_KEY
+        - EMAIL_ADDRESS
+        - VALID_FROM_DATETIME
+      order_by:
+        - column: SOURCE_EFFECTIVE_FROM_DATETIME
+          direction: desc
+          nulls: last
+source:
+  format: table
+  query: |
+    with latest_customer as (
+        select *
+        from (
+            select
+                C.*,
+                row_number() over (
+                    partition by C.AMNA_ORG, C.AMNA_ACCT
+                    order by
+                        C.AIRFLOW_DAG_TIME desc,
+                        C.AMNA_DATE_LAST_MAINT desc nulls last,
+                        C.AMNA_EMAIL_FLAG_01 desc nulls last,
+                        C.AMNA_EMAIL_FLAG_02 desc nulls last
+                ) as SOURCE_ROW_NUMBER
+            from DATAOPS_HUB_SHARE_VISION_NONPROD.ODS.CUSTOMER as C
+        )
+        where SOURCE_ROW_NUMBER = 1
+    ),
+    email_rows as (
+        select
+            C.AMNA_ACCT as CUSTOMER_ID,
+            'PERS' as EMAIL_TYPE_CODE,
+            C.AMNA_EMAIL_FLAG_01 as CUSTOMER_CONTACT_PREFERENCE_TYPE_FLAG,
+            C.AMNA_DATE_LAST_MAINT as SOURCE_EFFECTIVE_FROM_DATETIME,
+            C.AIRFLOW_DAG_TIME as SOURCE_SNAPSHOT_DATETIME,
+            1 as EMAIL_SLOT,
+            lower(trim(C.AMNA_EMAIL_01)) as EMAIL_ADDRESS,
+            split_part(split_part(trim(C.AMNA_EMAIL_01), '@', 1), '+', 1) as EMAIL_ADDRESS_LOCAL_PART,
+            case
+                when split_part(split_part(trim(C.AMNA_EMAIL_01), '@', 1), '+', 2) <> ''
+                    then split_part(split_part(trim(C.AMNA_EMAIL_01), '@', 1), '+', 2)
+                else null
+            end as EMAIL_ADDRESS_SUBADDRESS_TAG,
+            split_part(lower(trim(C.AMNA_EMAIL_01)), '@', 2) as EMAIL_ADDRESS_DOMAIN
+        from latest_customer as C
+        where nullif(trim(C.AMNA_EMAIL_01), '') is not null
+
+        union all
+
+        select
+            C.AMNA_ACCT as CUSTOMER_ID,
+            'PERS' as EMAIL_TYPE_CODE,
+            C.AMNA_EMAIL_FLAG_02 as CUSTOMER_CONTACT_PREFERENCE_TYPE_FLAG,
+            C.AMNA_DATE_LAST_MAINT as SOURCE_EFFECTIVE_FROM_DATETIME,
+            C.AIRFLOW_DAG_TIME as SOURCE_SNAPSHOT_DATETIME,
+            2 as EMAIL_SLOT,
+            lower(trim(C.AMNA_EMAIL_02)) as EMAIL_ADDRESS,
+            split_part(split_part(trim(C.AMNA_EMAIL_02), '@', 1), '+', 1) as EMAIL_ADDRESS_LOCAL_PART,
+            case
+                when split_part(split_part(trim(C.AMNA_EMAIL_02), '@', 1), '+', 2) <> ''
+                    then split_part(split_part(trim(C.AMNA_EMAIL_02), '@', 1), '+', 2)
+                else null
+            end as EMAIL_ADDRESS_SUBADDRESS_TAG,
+            split_part(lower(trim(C.AMNA_EMAIL_02)), '@', 2) as EMAIL_ADDRESS_DOMAIN
+        from latest_customer as C
+        where nullif(trim(C.AMNA_EMAIL_02), '') is not null
+    ),
+    deduplicated_email_rows as (
+        select *
+        from email_rows
+        qualify row_number() over (
+            partition by CUSTOMER_ID, EMAIL_TYPE_CODE, EMAIL_ADDRESS
+            order by
+                SOURCE_SNAPSHOT_DATETIME desc nulls last,
+                SOURCE_EFFECTIVE_FROM_DATETIME desc nulls last,
+                CUSTOMER_CONTACT_PREFERENCE_TYPE_FLAG desc nulls last,
+                EMAIL_SLOT asc
+        ) = 1
+    ),
+    card_customer_lookup as (
+        select
+            CUSTOMER_ID,
+            CARD_CUSTOMER_KEY,
+            CARD_CUSTOMER_BUSINESS_KEY
+        from {{ var("database") }}.CORE.{{ var("card_customer_table", "CARD_CUSTOMER") }}
+        where IS_CURRENT_FLAG = 'Y'
+        qualify row_number() over (
+            partition by CUSTOMER_ID
+            order by
+                AUDIT_LAST_CHANGED_DATETIME desc nulls last,
+                AUDIT_CREATED_DATETIME desc nulls last
+        ) = 1
+    )
+    select
+        card_customer_lookup.CARD_CUSTOMER_KEY,
+        card_customer_lookup.CARD_CUSTOMER_BUSINESS_KEY,
+        email_rows.EMAIL_TYPE_CODE,
+        email_rows.CUSTOMER_CONTACT_PREFERENCE_TYPE_FLAG,
+        email_rows.SOURCE_EFFECTIVE_FROM_DATETIME,
+        email_rows.EMAIL_ADDRESS,
+        email_rows.EMAIL_ADDRESS_LOCAL_PART,
+        email_rows.EMAIL_ADDRESS_SUBADDRESS_TAG,
+        email_rows.EMAIL_ADDRESS_DOMAIN
+    from deduplicated_email_rows as email_rows
+    -- left join card_customer_lookup
+    inner join card_customer_lookup
+        on card_customer_lookup.CUSTOMER_ID = email_rows.CUSTOMER_ID
+target:
+  id: CARD_CUSTOMER_EMAIL_ADDRESS
+  schema: CORE
+  fields:
+    - id: EMAIL_ADDRESS_TYPE_KEY
+      source:
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
+        args:
+          reference_type: EMAIL_ADDRESS_TYPE
+          source_system: V10
+          source_code_column: EMAIL_TYPE_CODE
+          required: true
+      data_type: varchar(64)
+      nullable: false
+
+    - id: CARD_CUSTOMER_KEY
+      source:
+        column: CARD_CUSTOMER_KEY
+      data_type: varchar(64)
+      nullable: false
+
+    - id: CARD_CUSTOMER_BUSINESS_KEY
+      source:
+        column: CARD_CUSTOMER_BUSINESS_KEY
+      data_type: varchar(64)
+      nullable: false
+
+    - id: CUSTOMER_CONTACT_PREFERENCE_TYPE_KEY
+      source:
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
+        args:
+          reference_type: CUSTOMER_CONTACT_PREFERENCE_TYPE
+          source_system: V10
+          source_code_expression: |
+            case
+              when source_query.CUSTOMER_CONTACT_PREFERENCE_TYPE_FLAG is null then 'DQMissing'
+              when source_query.CUSTOMER_CONTACT_PREFERENCE_TYPE_FLAG = 2 then 'PREFERRED'
+              when source_query.CUSTOMER_CONTACT_PREFERENCE_TYPE_FLAG = 1 then 'UNDEC'
+              when source_query.CUSTOMER_CONTACT_PREFERENCE_TYPE_FLAG = 0 then 'NOCTCT'
+              else 'DQMapping'
+            end
+          required: true
+      data_type: varchar(64)
+      nullable: false
+
+    - id: EMAIL_ADDRESS
+      source:
+        column: EMAIL_ADDRESS
+      data_type: varchar(1024)
+      nullable: false
+
+    - id: EMAIL_ADDRESS_LOCAL_PART
+      source:
+        column: EMAIL_ADDRESS_LOCAL_PART
+      data_type: varchar(1024)
+      nullable: false
+
+    - id: EMAIL_ADDRESS_SUBADDRESS_TAG
+      source:
+        column: EMAIL_ADDRESS_SUBADDRESS_TAG
+      data_type: varchar(1024)
+      nullable: true
+
+    - id: EMAIL_ADDRESS_DOMAIN
+      source:
+        column: EMAIL_ADDRESS_DOMAIN
+      data_type: varchar(1024)
+      nullable: false

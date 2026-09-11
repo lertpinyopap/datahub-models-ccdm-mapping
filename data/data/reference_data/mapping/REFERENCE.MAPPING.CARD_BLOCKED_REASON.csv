@@ -1,0 +1,60 @@
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,V10,F,Fraudulent,REFERENCE.CORE.CARD_BLOCKED_REASON,F,Stolen
+,V10,V,VIP customer,REFERENCE.CORE.CARD_BLOCKED_REASON,V,VIP customer
+,V10,E,AU: Refundable credit balance (not used) / NZ: Not used,REFERENCE.CORE.CARD_BLOCKED_REASON,E,AU: Refundable credit balance (not used) / NZ: Not used
+,V10,D,Deceased,REFERENCE.CORE.CARD_BLOCKED_REASON,D,Deceased
+,V10,T,Trace,REFERENCE.CORE.CARD_BLOCKED_REASON,T,Trace
+,V10,H,AU: Insurance claim / NZ: Not used (insurance claim),REFERENCE.CORE.CARD_BLOCKED_REASON,H,AU: Insurance claim / NZ: Not used (insurance claim)
+,V10,,Blank,REFERENCE.CORE.CARD_BLOCKED_REASON,DQNotApplicable,Source value not required
+,V10,W,AU: No re-issue card migration / NZ: Dormant account over 1 year / Card: Suppress reissue,REFERENCE.CORE.CARD_BLOCKED_REASON,W,AU: No re-issue card migration / NZ: Dormant account over 1 year / Card: Suppress reissue
+,V10,Y,Transferred - temp block during product transfer,REFERENCE.CORE.CARD_BLOCKED_REASON,Y,Transferred - temp block during product transfer
+,V10,S,Stolen or lost card,REFERENCE.CORE.CARD_BLOCKED_REASON,S,Stolen or lost card
+,V10,B,Bankrupt,REFERENCE.CORE.CARD_BLOCKED_REASON,B,Bankrupt
+,V10,U,Dishonour cheque or direct debit,REFERENCE.CORE.CARD_BLOCKED_REASON,U,Dishonour cheque or direct debit
+,V10,J,AU Acct: David Jones DDO / NZ: Creditors proposal / AU Card: Supp card IDV (legacy),REFERENCE.CORE.CARD_BLOCKED_REASON,J,AU Acct: David Jones DDO / NZ: Creditors proposal / AU Card: Supp card IDV (legacy)
+,V10,Z,AU: New account retail no reissue / NZ: No compliant application from merchant,REFERENCE.CORE.CARD_BLOCKED_REASON,Z,AU: New account retail no reissue / NZ: No compliant application from merchant
+,V10,L,Acct: Permanent block 90+ DPD AU litigation / Card: Lost (rarely used),REFERENCE.CORE.CARD_BLOCKED_REASON,L,Acct: Permanent block 90+ DPD AU litigation / Card: Lost (rarely used)
+,V10,M,Moratorium on payments - hardship arrangement,REFERENCE.CORE.CARD_BLOCKED_REASON,M,Moratorium on payments - hardship arrangement
+,V10,P,AU: FTRA block legacy not used / NZ: Not used,REFERENCE.CORE.CARD_BLOCKED_REASON,P,AU: FTRA block legacy not used / NZ: Not used
+,V10,X,Account closed,REFERENCE.CORE.CARD_BLOCKED_REASON,X,Account closed
+,V10,G,AU: Cancel deferments / NZ: Governed credit limit increase,REFERENCE.CORE.CARD_BLOCKED_REASON,G,AU: Cancel deferments / NZ: Governed credit limit increase
+,V10,A,Hardship arrangement - always paired with I block,REFERENCE.CORE.CARD_BLOCKED_REASON,A,Hardship arrangement - always paired with I block
+,V10,Q,Query - multipurpose,REFERENCE.CORE.CARD_BLOCKED_REASON,Q,Query - multipurpose
+,V10,N,Acct: Hardship or fraud block / Card: No shopping,REFERENCE.CORE.CARD_BLOCKED_REASON,N,Acct: Hardship or fraud block / Card: No shopping
+,V10,R,Refer to fraud - transaction fraud,REFERENCE.CORE.CARD_BLOCKED_REASON,R,Refer to fraud - transaction fraud
+,V10,K,AU: Section 88 issued / NZ: 6-month temp block arrears demand,REFERENCE.CORE.CARD_BLOCKED_REASON,K,AU: Section 88 issued / NZ: 6-month temp block arrears demand
+,V10,C,Charged off,REFERENCE.CORE.CARD_BLOCKED_REASON,C,Charged off
+,V10,O,AU: Administrator or guardian appointed / NZ: Pioneer insurance,REFERENCE.CORE.CARD_BLOCKED_REASON,O,AU: Administrator or guardian appointed / NZ: Pioneer insurance
+,VN,N,Acct: Hardship or fraud block / Card: No shopping,REFERENCE.CORE.CARD_BLOCKED_REASON,N,Acct: Hardship or fraud block / Card: No shopping
+,VN,A,Hardship arrangement - always paired with I block,REFERENCE.CORE.CARD_BLOCKED_REASON,A,Hardship arrangement - always paired with I block
+,VN,L,Acct: Permanent block 90+ DPD AU litigation / Card: Lost (rarely used),REFERENCE.CORE.CARD_BLOCKED_REASON,L,Acct: Permanent block 90+ DPD AU litigation / Card: Lost (rarely used)
+,VN,O,AU: Administrator or guardian appointed / NZ: Pioneer insurance,REFERENCE.CORE.CARD_BLOCKED_REASON,O,AU: Administrator or guardian appointed / NZ: Pioneer insurance
+,VN,K,AU: Section 88 issued / NZ: 6-month temp block arrears demand,REFERENCE.CORE.CARD_BLOCKED_REASON,K,AU: Section 88 issued / NZ: 6-month temp block arrears demand
+,VN,J,AU Acct: David Jones DDO / NZ: Creditors proposal / AU Card: Supp card IDV (legacy),REFERENCE.CORE.CARD_BLOCKED_REASON,J,AU Acct: David Jones DDO / NZ: Creditors proposal / AU Card: Supp card IDV (legacy)
+,VN,P,AU: FTRA block legacy not used / NZ: Not used,REFERENCE.CORE.CARD_BLOCKED_REASON,P,AU: FTRA block legacy not used / NZ: Not used
+,VN,Q,Query - multipurpose,REFERENCE.CORE.CARD_BLOCKED_REASON,Q,Query - multipurpose
+,VN,R,Refer to fraud - transaction fraud,REFERENCE.CORE.CARD_BLOCKED_REASON,R,Refer to fraud - transaction fraud
+,VN,S,Stolen or lost card,REFERENCE.CORE.CARD_BLOCKED_REASON,S,Stolen or lost card
+,VN,I,No interest - interest blocked or suppressed,REFERENCE.CORE.CARD_BLOCKED_REASON,I,No interest - interest blocked or suppressed
+,VN,T,Trace,REFERENCE.CORE.CARD_BLOCKED_REASON,T,Trace
+,VN,H,AU: Insurance claim / NZ: Not used (insurance claim),REFERENCE.CORE.CARD_BLOCKED_REASON,H,AU: Insurance claim / NZ: Not used (insurance claim)
+,VN,G,AU: Cancel deferments / NZ: Governed credit limit increase,REFERENCE.CORE.CARD_BLOCKED_REASON,G,AU: Cancel deferments / NZ: Governed credit limit increase
+,VN,U,Dishonour cheque or direct debit,REFERENCE.CORE.CARD_BLOCKED_REASON,U,Dishonour cheque or direct debit
+,VN,F,Fraudulent,REFERENCE.CORE.CARD_BLOCKED_REASON,F,Stolen
+,VN,E,AU: Refundable credit balance (not used) / NZ: Not used,REFERENCE.CORE.CARD_BLOCKED_REASON,E,AU: Refundable credit balance (not used) / NZ: Not used
+,VN,V,VIP customer,REFERENCE.CORE.CARD_BLOCKED_REASON,V,VIP customer
+,VN,W,AU: No re-issue card migration / NZ: Dormant account over 1 year / Card: Suppress reissue,REFERENCE.CORE.CARD_BLOCKED_REASON,W,AU: No re-issue card migration / NZ: Dormant account over 1 year / Card: Suppress reissue
+,VN,X,Account closed,REFERENCE.CORE.CARD_BLOCKED_REASON,X,Account closed
+,VN,Y,Transferred - temp block during product transfer,REFERENCE.CORE.CARD_BLOCKED_REASON,Y,Transferred - temp block during product transfer
+,VN,Z,AU: New account retail no reissue / NZ: No compliant application from merchant,REFERENCE.CORE.CARD_BLOCKED_REASON,Z,AU: New account retail no reissue / NZ: No compliant application from merchant
+,VN,D,Deceased,REFERENCE.CORE.CARD_BLOCKED_REASON,D,Deceased
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_BLOCKED_REASON,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_BLOCKED_REASON,DQMissing,Source value not provided
+,VN,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_BLOCKED_REASON,DQNotApplicable,Source value not required
+,VN,C,Charged off,REFERENCE.CORE.CARD_BLOCKED_REASON,C,Charged off
+,VN,B,Bankrupt,REFERENCE.CORE.CARD_BLOCKED_REASON,B,Bankrupt
+,VN,M,Moratorium on payments - hardship arrangement,REFERENCE.CORE.CARD_BLOCKED_REASON,M,Moratorium on payments - hardship arrangement
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_BLOCKED_REASON,DQMissing,Source value not provided
+,V10,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_BLOCKED_REASON,DQNotApplicable,Source value not required
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_BLOCKED_REASON,DQMapping,Source value cannot be mapped
+,V10,NBLCK,Card not blocked,REFERENCE.CORE.CARD_BLOCKED_REASON,NBLCK,Card not blocked

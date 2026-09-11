@@ -1,0 +1,14 @@
+ADDRESS_TYPE_CODE,ADDRESS_TYPE_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
+HOME,Current Residential Address,Y,N,1900-01-01,9999-12-31
+BIZZ,Business Address,Y,N,1900-01-01,9999-12-31
+REGR,Registered Residential Address,Y,N,1900-01-01,9999-12-31
+LEGL,Legal Address,Y,N,1900-01-01,9999-12-31
+MAIL,Mailing Address,Y,N,1900-01-01,9999-12-31
+TRAD,Trading Address,Y,N,1900-01-01,9999-12-31
+RELA,Relatives Address,Y,N,1900-01-01,9999-12-31
+APPR,Appropriate Address,Y,N,1900-01-01,9999-12-31
+GARG,Garaged Address,Y,N,1900-01-01,9999-12-31
+RGOF,Registered Office,Y,N,1900-01-01,9999-12-31
+DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
+DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
+DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31

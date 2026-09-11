@@ -1,0 +1,11 @@
+id: reference_mapping_country
+extends: REFERENCE_MAPPING_SCD2_AUTO
+description: Maps reference country mapping CSV data into the COUNTRY mapping table.
+source:
+  seed:
+    file: data/reference_data/mapping/REFERENCE.MAPPING.COUNTRY.csv
+    name: reference_mapping_country_seed
+target:
+  id: COUNTRY
+  schema: MAPPING
+  table_name: COUNTRY

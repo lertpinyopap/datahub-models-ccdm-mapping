@@ -1,0 +1,11 @@
+id: reference_mapping_card_holder_type
+extends: REFERENCE_MAPPING_SCD2_AUTO
+description: Maps reference card holder type mapping CSV data into the CARD_HOLDER_TYPE mapping table.
+source:
+  seed:
+    file: data/reference_data/mapping/REFERENCE.MAPPING.CARD_HOLDER_TYPE.csv
+    name: reference_mapping_card_holder_type_seed
+target:
+  id: CARD_HOLDER_TYPE
+  schema: MAPPING
+  table_name: CARD_HOLDER_TYPE

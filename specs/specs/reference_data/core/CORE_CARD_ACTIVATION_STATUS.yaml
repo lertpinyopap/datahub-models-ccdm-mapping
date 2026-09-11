@@ -1,0 +1,33 @@
+id: reference_core_card_activation_status
+extends: REFERENCE_CORE_SCD2_MANUAL
+description: Maps reference card activation status CSV data into a manual SCD2 card activation status table.
+control_data:
+  business_key:
+    fields:
+      - CARD_ACTIVATION_STATUS_CODE
+source:
+  seed:
+    file: data/reference_data/core/REFERENCE.CORE.CARD_ACTIVATION_STATUS.csv
+    name: reference_core_card_activation_status_seed
+    schema: INTERMEDIATE
+target:
+  id: CARD_ACTIVATION_STATUS
+  schema: CORE
+  table_name: CARD_ACTIVATION_STATUS
+  fields:
+    - id: CARD_ACTIVATION_STATUS_CODE
+      source:
+        pos: 0
+        column: CARD_ACTIVATION_STATUS_CODE
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: CARD_ACTIVATION_STATUS_DESCRIPTION
+      source:
+        pos: 1
+        column: CARD_ACTIVATION_STATUS_DESCRIPTION
+      data_type: varchar(16777216)
+      transforms:
+        - type: trim
+      nullable: false

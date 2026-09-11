@@ -1,0 +1,1000 @@
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,V10,',Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,'.',Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,0,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,00,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,000,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,001,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,01,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,02,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,04,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,061,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,083,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,088,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,0S,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,1,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,121,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,128,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,155,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,200,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,201,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,202,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,206,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,207,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,209,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,21,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,211,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,213,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,215,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,216,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,217,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,219,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,220,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,221,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,223,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,225,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,227,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,228,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,229,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,230,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,244,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,247,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,251,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,253,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,255,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,256,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,257,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,261,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,264,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,265,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,274,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,277,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,278,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,279,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,280,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,283,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,287,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,290,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,291,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,301,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,302,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,303,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,305,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,306,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,307,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,309,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,310,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,313,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,314,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,315,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,317,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,318,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,319,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,321,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,322,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,335,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,342,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,346,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,355,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,362,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,367,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,375,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,381,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,382,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,386,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,391,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,393,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,397,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,401,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,402,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,403,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,405,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,406,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,407,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,411,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,412,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,415,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,416,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,420,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,421,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,427,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,435,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,451,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,452,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,455,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,456,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,457,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,463,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,467,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,481,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,486,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,487,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,501,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,502,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,503,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,505,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,506,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,507,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,509,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,510,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,511,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,515,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,525,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,529,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,545,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,551,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,560,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,564,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,601,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,602,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,603,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,605,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,606,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,607,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,610,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,611,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,614,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,615,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,617,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,621,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,622,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,623,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,633,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,696,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,699,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,700,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,701,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,725,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,730,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,733,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,750,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,995,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,A,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,a,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,AC,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,ACT,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,AH,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,AIS,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,AN,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,ANT,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,AQU,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,ASU,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,ASY,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,AUA,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,AUC,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,AUD,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,AUW,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,AUZ,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,AY,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,AYS,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,B,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,CE,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,D,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,DG,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,DS,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,E,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,EA,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,EI,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,EK,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,EL,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,EN,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,ENG,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,EY,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,ey,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,FIJ,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,FRI,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,G,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,H,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,HE,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,HI,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,I,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,IC,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,IV,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,K,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,ks,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,L,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,LD,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,LE,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,LL,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,LN,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,m,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,N,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,ND,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,NS,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,ns,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,NSW,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,NT,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,O,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,OA,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,OK,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,ON,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,OOO,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,OR,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,OS,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,OU,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,ou,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,OV,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,P,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,QAU,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,QL,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,QLD,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,QZ,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,QZZ,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,R,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,RA,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,RI,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,RK,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,RL,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,ROM,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,RR,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,RT,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,S,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,s,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,S/,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,SUS,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,T,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,TA,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,TAS,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,TE,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,TI,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,TMP,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,TY,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,UAS,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,UK,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,UR,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,VIA,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,VIC,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,VIS,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,WA,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,WAU,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,WE,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,WN,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,X,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,Y,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,YN,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,YUG,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,ZAR,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,ZNL,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,010,Antarctica,REFERENCE.CORE.COUNTRY,AQ,Antarctica
+,V10,036,Australia,REFERENCE.CORE.COUNTRY,AU,Australia
+,V10,051,Armenia,REFERENCE.CORE.COUNTRY,AM,Armenia
+,V10,064,Bhutan,REFERENCE.CORE.COUNTRY,BT,Bhutan
+,V10,203,Czechia,REFERENCE.CORE.COUNTRY,CZ,Czechia
+,V10,204,Benin,REFERENCE.CORE.COUNTRY,BJ,Benin
+,V10,212,Dominica,REFERENCE.CORE.COUNTRY,DM,Dominica
+,V10,214,Dominican Republic (the),REFERENCE.CORE.COUNTRY,DO,Dominican Republic (the)
+,V10,222,El Salvador,REFERENCE.CORE.COUNTRY,SV,El Salvador
+,V10,226,Equatorial Guinea,REFERENCE.CORE.COUNTRY,GQ,Equatorial Guinea
+,V10,231,Ethiopia,REFERENCE.CORE.COUNTRY,ET,Ethiopia
+,V10,233,Estonia,REFERENCE.CORE.COUNTRY,EE,Estonia
+,V10,234,Faroe Islands (the),REFERENCE.CORE.COUNTRY,FO,Faroe Islands (the)
+,V10,246,Finland,REFERENCE.CORE.COUNTRY,FI,Finland
+,V10,248,Aland Islands,REFERENCE.CORE.COUNTRY,AX,Aland Islands
+,V10,250,France,REFERENCE.CORE.COUNTRY,FR,France
+,V10,254,French Guiana,REFERENCE.CORE.COUNTRY,GF,French Guiana
+,V10,262,Djibouti,REFERENCE.CORE.COUNTRY,DJ,Djibouti
+,V10,266,Gabon,REFERENCE.CORE.COUNTRY,GA,Gabon
+,V10,275,"Palestine, State of",REFERENCE.CORE.COUNTRY,PS,"Palestine, State of"
+,V10,276,Germany,REFERENCE.CORE.COUNTRY,DE,Germany
+,V10,300,Greece,REFERENCE.CORE.COUNTRY,GR,Greece
+,V10,304,Greenland,REFERENCE.CORE.COUNTRY,GL,Greenland
+,V10,308,Grenada,REFERENCE.CORE.COUNTRY,GD,Grenada
+,V10,312,Guadeloupe,REFERENCE.CORE.COUNTRY,GP,Guadeloupe
+,V10,316,Guam,REFERENCE.CORE.COUNTRY,GU,Guam
+,V10,320,Guatemala,REFERENCE.CORE.COUNTRY,GT,Guatemala
+,V10,324,Guinea,REFERENCE.CORE.COUNTRY,GN,Guinea
+,V10,328,Guyana,REFERENCE.CORE.COUNTRY,GY,Guyana
+,V10,364,Iran (Islamic Republic of),REFERENCE.CORE.COUNTRY,IR,Iran (Islamic Republic of)
+,V10,380,Italy,REFERENCE.CORE.COUNTRY,IT,Italy
+,V10,400,Jordan,REFERENCE.CORE.COUNTRY,JO,Jordan
+,V10,410,Korea (the Republic of),REFERENCE.CORE.COUNTRY,KR,Korea (the Republic of)
+,V10,417,Kyrgyzstan,REFERENCE.CORE.COUNTRY,KG,Kyrgyzstan
+,V10,422,Lebanon,REFERENCE.CORE.COUNTRY,LB,Lebanon
+,V10,428,Latvia,REFERENCE.CORE.COUNTRY,LV,Latvia
+,V10,430,Liberia,REFERENCE.CORE.COUNTRY,LR,Liberia
+,V10,450,Madagascar,REFERENCE.CORE.COUNTRY,MG,Madagascar
+,V10,470,Malta,REFERENCE.CORE.COUNTRY,MT,Malta
+,V10,474,Martinique,REFERENCE.CORE.COUNTRY,MQ,Martinique
+,V10,500,Montserrat,REFERENCE.CORE.COUNTRY,MS,Montserrat
+,V10,504,Morocco,REFERENCE.CORE.COUNTRY,MA,Morocco
+,V10,508,Mozambique,REFERENCE.CORE.COUNTRY,MZ,Mozambique
+,V10,512,Oman,REFERENCE.CORE.COUNTRY,OM,Oman
+,V10,516,Namibia,REFERENCE.CORE.COUNTRY,NA,Namibia
+,V10,600,Paraguay,REFERENCE.CORE.COUNTRY,PY,Paraguay
+,V10,616,Poland,REFERENCE.CORE.COUNTRY,PL,Poland
+,V10,620,Portugal,REFERENCE.CORE.COUNTRY,PT,Portugal
+,V10,646,Rwanda,REFERENCE.CORE.COUNTRY,RW,Rwanda
+,V10,705,Slovenia,REFERENCE.CORE.COUNTRY,SI,Slovenia
+,V10,ABW,Aruba,REFERENCE.CORE.COUNTRY,AW,Aruba
+,V10,AFG,Afghanistan,REFERENCE.CORE.COUNTRY,AF,Afghanistan
+,V10,AGO,Angola,REFERENCE.CORE.COUNTRY,AO,Angola
+,V10,AIA,Anguilla,REFERENCE.CORE.COUNTRY,AI,Anguilla
+,V10,ALB,Albania,REFERENCE.CORE.COUNTRY,AL,Albania
+,V10,AND,Andorra,REFERENCE.CORE.COUNTRY,AD,Andorra
+,V10,ARE,United Arab Emirates (the),REFERENCE.CORE.COUNTRY,AE,United Arab Emirates (the)
+,V10,ARG,Argentina,REFERENCE.CORE.COUNTRY,AR,Argentina
+,V10,ARM,Armenia,REFERENCE.CORE.COUNTRY,AM,Armenia
+,V10,ASM,American Samoa,REFERENCE.CORE.COUNTRY,AS,American Samoa
+,V10,ATA,Antarctica,REFERENCE.CORE.COUNTRY,AQ,Antarctica
+,V10,ATF,French Southern Territories (the),REFERENCE.CORE.COUNTRY,TF,French Southern Territories (the)
+,V10,ATG,Antigua and Barbuda,REFERENCE.CORE.COUNTRY,AG,Antigua and Barbuda
+,V10,AUS,Australia,REFERENCE.CORE.COUNTRY,AU,Australia
+,V10,AUT,Austria,REFERENCE.CORE.COUNTRY,AT,Austria
+,V10,AZE,Azerbaijan,REFERENCE.CORE.COUNTRY,AZ,Azerbaijan
+,V10,BDI,Burundi,REFERENCE.CORE.COUNTRY,BI,Burundi
+,V10,BEL,Belgium,REFERENCE.CORE.COUNTRY,BE,Belgium
+,V10,BEN,Benin,REFERENCE.CORE.COUNTRY,BJ,Benin
+,V10,BES,"Bonaire, Sint Eustatius and Saba",REFERENCE.CORE.COUNTRY,BQ,"Bonaire, Sint Eustatius and Saba"
+,V10,BFA,Burkina Faso,REFERENCE.CORE.COUNTRY,BF,Burkina Faso
+,V10,BGD,Bangladesh,REFERENCE.CORE.COUNTRY,BD,Bangladesh
+,V10,BGR,Bulgaria,REFERENCE.CORE.COUNTRY,BG,Bulgaria
+,V10,BHR,Bahrain,REFERENCE.CORE.COUNTRY,BH,Bahrain
+,V10,BHS,Bahamas (the),REFERENCE.CORE.COUNTRY,BS,Bahamas (the)
+,V10,BIH,Bosnia and Herzegovina,REFERENCE.CORE.COUNTRY,BA,Bosnia and Herzegovina
+,V10,BLR,Belarus,REFERENCE.CORE.COUNTRY,BY,Belarus
+,V10,BLZ,Belize,REFERENCE.CORE.COUNTRY,BZ,Belize
+,V10,BMU,Bermuda,REFERENCE.CORE.COUNTRY,BM,Bermuda
+,V10,BOL,Bolivia (Plurinational State of),REFERENCE.CORE.COUNTRY,BO,Bolivia (Plurinational State of)
+,V10,BRA,Brazil,REFERENCE.CORE.COUNTRY,BR,Brazil
+,V10,BRB,Barbados,REFERENCE.CORE.COUNTRY,BB,Barbados
+,V10,BRN,Brunei Darussalam,REFERENCE.CORE.COUNTRY,BN,Brunei Darussalam
+,V10,BTN,Bhutan,REFERENCE.CORE.COUNTRY,BT,Bhutan
+,V10,BWA,Botswana,REFERENCE.CORE.COUNTRY,BW,Botswana
+,V10,CAF,Central African Republic (the),REFERENCE.CORE.COUNTRY,CF,Central African Republic (the)
+,V10,CAN,Canada,REFERENCE.CORE.COUNTRY,CA,Canada
+,V10,CHE,Switzerland,REFERENCE.CORE.COUNTRY,CH,Switzerland
+,V10,CHL,Chile,REFERENCE.CORE.COUNTRY,CL,Chile
+,V10,CHN,China,REFERENCE.CORE.COUNTRY,CN,China
+,V10,CIV,Cote d'Ivoire,REFERENCE.CORE.COUNTRY,CI,Cote d'Ivoire
+,V10,CMR,Cameroon,REFERENCE.CORE.COUNTRY,CM,Cameroon
+,V10,COG,Congo (the),REFERENCE.CORE.COUNTRY,CG,Congo (the)
+,V10,COK,Cook Islands (the),REFERENCE.CORE.COUNTRY,CK,Cook Islands (the)
+,V10,COL,Colombia,REFERENCE.CORE.COUNTRY,CO,Colombia
+,V10,COM,Comoros (the),REFERENCE.CORE.COUNTRY,KM,Comoros (the)
+,V10,CPV,Cabo Verde,REFERENCE.CORE.COUNTRY,CV,Cabo Verde
+,V10,CRI,Costa Rica,REFERENCE.CORE.COUNTRY,CR,Costa Rica
+,V10,CUB,Cuba,REFERENCE.CORE.COUNTRY,CU,Cuba
+,V10,CUW,Curacao,REFERENCE.CORE.COUNTRY,CW,Curacao
+,V10,CXR,Christmas Island,REFERENCE.CORE.COUNTRY,CX,Christmas Island
+,V10,CYM,Cayman Islands (the),REFERENCE.CORE.COUNTRY,KY,Cayman Islands (the)
+,V10,CYP,Cyprus,REFERENCE.CORE.COUNTRY,CY,Cyprus
+,V10,CZE,Czechia,REFERENCE.CORE.COUNTRY,CZ,Czechia
+,V10,DEU,Germany,REFERENCE.CORE.COUNTRY,DE,Germany
+,V10,DJI,Djibouti,REFERENCE.CORE.COUNTRY,DJ,Djibouti
+,V10,DMA,Dominica,REFERENCE.CORE.COUNTRY,DM,Dominica
+,V10,DNK,Denmark,REFERENCE.CORE.COUNTRY,DK,Denmark
+,V10,DOM,Dominican Republic (the),REFERENCE.CORE.COUNTRY,DO,Dominican Republic (the)
+,V10,DZA,Algeria,REFERENCE.CORE.COUNTRY,DZ,Algeria
+,V10,ECU,Ecuador,REFERENCE.CORE.COUNTRY,EC,Ecuador
+,V10,EGY,Egypt,REFERENCE.CORE.COUNTRY,EG,Egypt
+,V10,ESH,Western Sahara,REFERENCE.CORE.COUNTRY,EH,Western Sahara
+,V10,ESP,Spain,REFERENCE.CORE.COUNTRY,ES,Spain
+,V10,EST,Estonia,REFERENCE.CORE.COUNTRY,EE,Estonia
+,V10,ETH,Ethiopia,REFERENCE.CORE.COUNTRY,ET,Ethiopia
+,V10,FIN,Finland,REFERENCE.CORE.COUNTRY,FI,Finland
+,V10,FJI,Fiji,REFERENCE.CORE.COUNTRY,FJ,Fiji
+,V10,FLK,Falkland Islands (the) [Malvinas],REFERENCE.CORE.COUNTRY,FK,Falkland Islands (the) [Malvinas]
+,V10,FRA,France,REFERENCE.CORE.COUNTRY,FR,France
+,V10,FRO,Faroe Islands (the),REFERENCE.CORE.COUNTRY,FO,Faroe Islands (the)
+,V10,FSM,Micronesia (Federated States of),REFERENCE.CORE.COUNTRY,FM,Micronesia (Federated States of)
+,V10,GAB,Gabon,REFERENCE.CORE.COUNTRY,GA,Gabon
+,V10,GBR,United Kingdom of Great Britain and Northern Ireland (the),REFERENCE.CORE.COUNTRY,GB,United Kingdom of Great Britain and Northern Ireland (the)
+,V10,GEO,Georgia,REFERENCE.CORE.COUNTRY,GE,Georgia
+,V10,GGY,Guernsey,REFERENCE.CORE.COUNTRY,GG,Guernsey
+,V10,GHA,Ghana,REFERENCE.CORE.COUNTRY,GH,Ghana
+,V10,GIB,Gibraltar,REFERENCE.CORE.COUNTRY,GI,Gibraltar
+,V10,GIN,Guinea,REFERENCE.CORE.COUNTRY,GN,Guinea
+,V10,GLP,Guadeloupe,REFERENCE.CORE.COUNTRY,GP,Guadeloupe
+,V10,GMB,Gambia (the),REFERENCE.CORE.COUNTRY,GM,Gambia (the)
+,V10,GNB,Guinea-Bissau,REFERENCE.CORE.COUNTRY,GW,Guinea-Bissau
+,V10,GNQ,Equatorial Guinea,REFERENCE.CORE.COUNTRY,GQ,Equatorial Guinea
+,V10,GRC,Greece,REFERENCE.CORE.COUNTRY,GR,Greece
+,V10,GRD,Grenada,REFERENCE.CORE.COUNTRY,GD,Grenada
+,V10,GRL,Greenland,REFERENCE.CORE.COUNTRY,GL,Greenland
+,V10,GTM,Guatemala,REFERENCE.CORE.COUNTRY,GT,Guatemala
+,V10,GUF,French Guiana,REFERENCE.CORE.COUNTRY,GF,French Guiana
+,V10,GUM,Guam,REFERENCE.CORE.COUNTRY,GU,Guam
+,V10,GUY,Guyana,REFERENCE.CORE.COUNTRY,GY,Guyana
+,V10,HKG,Hong Kong,REFERENCE.CORE.COUNTRY,HK,Hong Kong
+,V10,HMD,Heard Island and McDonald Islands,REFERENCE.CORE.COUNTRY,HM,Heard Island and McDonald Islands
+,V10,HND,Honduras,REFERENCE.CORE.COUNTRY,HN,Honduras
+,V10,HRV,Croatia,REFERENCE.CORE.COUNTRY,HR,Croatia
+,V10,HTI,Haiti,REFERENCE.CORE.COUNTRY,HT,Haiti
+,V10,HUN,Hungary,REFERENCE.CORE.COUNTRY,HU,Hungary
+,V10,IDN,Indonesia,REFERENCE.CORE.COUNTRY,ID,Indonesia
+,V10,IMN,Isle of Man,REFERENCE.CORE.COUNTRY,IM,Isle of Man
+,V10,IND,India,REFERENCE.CORE.COUNTRY,IN,India
+,V10,IOT,British Indian Ocean Territory (the),REFERENCE.CORE.COUNTRY,IO,British Indian Ocean Territory (the)
+,V10,IRL,Ireland,REFERENCE.CORE.COUNTRY,IE,Ireland
+,V10,IRN,Iran (Islamic Republic of),REFERENCE.CORE.COUNTRY,IR,Iran (Islamic Republic of)
+,V10,IRQ,Iraq,REFERENCE.CORE.COUNTRY,IQ,Iraq
+,V10,ISL,Iceland,REFERENCE.CORE.COUNTRY,IS,Iceland
+,V10,ISR,Israel,REFERENCE.CORE.COUNTRY,IL,Israel
+,V10,ITA,Italy,REFERENCE.CORE.COUNTRY,IT,Italy
+,V10,JAM,Jamaica,REFERENCE.CORE.COUNTRY,JM,Jamaica
+,V10,JEY,Jersey,REFERENCE.CORE.COUNTRY,JE,Jersey
+,V10,JOR,Jordan,REFERENCE.CORE.COUNTRY,JO,Jordan
+,V10,JPN,Japan,REFERENCE.CORE.COUNTRY,JP,Japan
+,V10,KAZ,Kazakhstan,REFERENCE.CORE.COUNTRY,KZ,Kazakhstan
+,V10,KEN,Kenya,REFERENCE.CORE.COUNTRY,KE,Kenya
+,V10,KGZ,Kyrgyzstan,REFERENCE.CORE.COUNTRY,KG,Kyrgyzstan
+,V10,KHM,Cambodia,REFERENCE.CORE.COUNTRY,KH,Cambodia
+,V10,KIR,Kiribati,REFERENCE.CORE.COUNTRY,KI,Kiribati
+,V10,KNA,Saint Kitts and Nevis,REFERENCE.CORE.COUNTRY,KN,Saint Kitts and Nevis
+,V10,KOR,Korea (the Republic of),REFERENCE.CORE.COUNTRY,KR,Korea (the Republic of)
+,V10,KWT,Kuwait,REFERENCE.CORE.COUNTRY,KW,Kuwait
+,V10,LAO,Lao People's Democratic Republic (the),REFERENCE.CORE.COUNTRY,LA,Lao People's Democratic Republic (the)
+,V10,LBN,Lebanon,REFERENCE.CORE.COUNTRY,LB,Lebanon
+,V10,LBR,Liberia,REFERENCE.CORE.COUNTRY,LR,Liberia
+,V10,LBY,Libya,REFERENCE.CORE.COUNTRY,LY,Libya
+,V10,LCA,Saint Lucia,REFERENCE.CORE.COUNTRY,LC,Saint Lucia
+,V10,LIE,Liechtenstein,REFERENCE.CORE.COUNTRY,LI,Liechtenstein
+,V10,LKA,Sri Lanka,REFERENCE.CORE.COUNTRY,LK,Sri Lanka
+,V10,LSO,Lesotho,REFERENCE.CORE.COUNTRY,LS,Lesotho
+,V10,LTU,Lithuania,REFERENCE.CORE.COUNTRY,LT,Lithuania
+,V10,LUX,Luxembourg,REFERENCE.CORE.COUNTRY,LU,Luxembourg
+,V10,LVA,Latvia,REFERENCE.CORE.COUNTRY,LV,Latvia
+,V10,MAC,Macao,REFERENCE.CORE.COUNTRY,MO,Macao
+,V10,MAR,Morocco,REFERENCE.CORE.COUNTRY,MA,Morocco
+,V10,MCO,Monaco,REFERENCE.CORE.COUNTRY,MC,Monaco
+,V10,MDA,Moldova (the Republic of),REFERENCE.CORE.COUNTRY,MD,Moldova (the Republic of)
+,V10,MDG,Madagascar,REFERENCE.CORE.COUNTRY,MG,Madagascar
+,V10,MDV,Maldives,REFERENCE.CORE.COUNTRY,MV,Maldives
+,V10,MEX,Mexico,REFERENCE.CORE.COUNTRY,MX,Mexico
+,V10,MHL,Marshall Islands (the),REFERENCE.CORE.COUNTRY,MH,Marshall Islands (the)
+,V10,MKD,Republic of North Macedonia,REFERENCE.CORE.COUNTRY,MK,Republic of North Macedonia
+,V10,MLI,Mali,REFERENCE.CORE.COUNTRY,ML,Mali
+,V10,MLT,Malta,REFERENCE.CORE.COUNTRY,MT,Malta
+,V10,MMR,Myanmar,REFERENCE.CORE.COUNTRY,MM,Myanmar
+,V10,MNE,Montenegro,REFERENCE.CORE.COUNTRY,ME,Montenegro
+,V10,MNG,Mongolia,REFERENCE.CORE.COUNTRY,MN,Mongolia
+,V10,MNP,Northern Mariana Islands (the),REFERENCE.CORE.COUNTRY,MP,Northern Mariana Islands (the)
+,V10,MOZ,Mozambique,REFERENCE.CORE.COUNTRY,MZ,Mozambique
+,V10,MRT,Mauritania,REFERENCE.CORE.COUNTRY,MR,Mauritania
+,V10,MSR,Montserrat,REFERENCE.CORE.COUNTRY,MS,Montserrat
+,V10,MTQ,Martinique,REFERENCE.CORE.COUNTRY,MQ,Martinique
+,V10,MUS,Mauritius,REFERENCE.CORE.COUNTRY,MU,Mauritius
+,V10,MWI,Malawi,REFERENCE.CORE.COUNTRY,MW,Malawi
+,V10,MYS,Malaysia,REFERENCE.CORE.COUNTRY,MY,Malaysia
+,V10,MYT,Mayotte,REFERENCE.CORE.COUNTRY,YT,Mayotte
+,V10,NAM,Namibia,REFERENCE.CORE.COUNTRY,NA,Namibia
+,V10,NCL,New Caledonia,REFERENCE.CORE.COUNTRY,NC,New Caledonia
+,V10,NER,Niger (the),REFERENCE.CORE.COUNTRY,NE,Niger (the)
+,V10,NFK,Norfolk Island,REFERENCE.CORE.COUNTRY,NF,Norfolk Island
+,V10,NGA,Nigeria,REFERENCE.CORE.COUNTRY,NG,Nigeria
+,V10,NIC,Nicaragua,REFERENCE.CORE.COUNTRY,NI,Nicaragua
+,V10,NIU,Niue,REFERENCE.CORE.COUNTRY,NU,Niue
+,V10,NLD,Netherlands (the),REFERENCE.CORE.COUNTRY,NL,Netherlands (the)
+,V10,NOR,Norway,REFERENCE.CORE.COUNTRY,NO,Norway
+,V10,NPL,Nepal,REFERENCE.CORE.COUNTRY,NP,Nepal
+,V10,NRU,Nauru,REFERENCE.CORE.COUNTRY,NR,Nauru
+,V10,NZL,New Zealand,REFERENCE.CORE.COUNTRY,NZ,New Zealand
+,V10,OMN,Oman,REFERENCE.CORE.COUNTRY,OM,Oman
+,V10,PAK,Pakistan,REFERENCE.CORE.COUNTRY,PK,Pakistan
+,V10,PAN,Panama,REFERENCE.CORE.COUNTRY,PA,Panama
+,V10,PER,Peru,REFERENCE.CORE.COUNTRY,PE,Peru
+,V10,PHL,Philippines (the),REFERENCE.CORE.COUNTRY,PH,Philippines (the)
+,V10,PLW,Palau,REFERENCE.CORE.COUNTRY,PW,Palau
+,V10,PNG,Papua New Guinea,REFERENCE.CORE.COUNTRY,PG,Papua New Guinea
+,V10,POL,Poland,REFERENCE.CORE.COUNTRY,PL,Poland
+,V10,PRI,Puerto Rico,REFERENCE.CORE.COUNTRY,PR,Puerto Rico
+,V10,PRK,Korea (the Democratic People's Republic of),REFERENCE.CORE.COUNTRY,KP,Korea (the Democratic People's Republic of)
+,V10,PRT,Portugal,REFERENCE.CORE.COUNTRY,PT,Portugal
+,V10,PRY,Paraguay,REFERENCE.CORE.COUNTRY,PY,Paraguay
+,V10,PSE,"Palestine, State of",REFERENCE.CORE.COUNTRY,PS,"Palestine, State of"
+,V10,PYF,French Polynesia,REFERENCE.CORE.COUNTRY,PF,French Polynesia
+,V10,QAT,Qatar,REFERENCE.CORE.COUNTRY,QA,Qatar
+,V10,REU,Reunion,REFERENCE.CORE.COUNTRY,RE,Reunion
+,V10,RUS,Russian Federation (the),REFERENCE.CORE.COUNTRY,RU,Russian Federation (the)
+,V10,RWA,Rwanda,REFERENCE.CORE.COUNTRY,RW,Rwanda
+,V10,SAU,Saudi Arabia,REFERENCE.CORE.COUNTRY,SA,Saudi Arabia
+,V10,SEN,Senegal,REFERENCE.CORE.COUNTRY,SN,Senegal
+,V10,SGP,Singapore,REFERENCE.CORE.COUNTRY,SG,Singapore
+,V10,SHN,"Saint Helena, Ascension and Tristan da Cunha",REFERENCE.CORE.COUNTRY,SH,"Saint Helena, Ascension and Tristan da Cunha"
+,V10,SLB,Solomon Islands,REFERENCE.CORE.COUNTRY,SB,Solomon Islands
+,V10,SLE,Sierra Leone,REFERENCE.CORE.COUNTRY,SL,Sierra Leone
+,V10,SLV,El Salvador,REFERENCE.CORE.COUNTRY,SV,El Salvador
+,V10,SMR,San Marino,REFERENCE.CORE.COUNTRY,SM,San Marino
+,V10,SOM,Somalia,REFERENCE.CORE.COUNTRY,SO,Somalia
+,V10,SPM,Saint Pierre and Miquelon,REFERENCE.CORE.COUNTRY,PM,Saint Pierre and Miquelon
+,V10,SRB,Serbia,REFERENCE.CORE.COUNTRY,RS,Serbia
+,V10,SSD,South Sudan,REFERENCE.CORE.COUNTRY,SS,South Sudan
+,V10,STP,Sao Tome and Principe,REFERENCE.CORE.COUNTRY,ST,Sao Tome and Principe
+,V10,SUR,Suriname,REFERENCE.CORE.COUNTRY,SR,Suriname
+,V10,SVK,Slovakia,REFERENCE.CORE.COUNTRY,SK,Slovakia
+,V10,SVN,Slovenia,REFERENCE.CORE.COUNTRY,SI,Slovenia
+,V10,SWE,Sweden,REFERENCE.CORE.COUNTRY,SE,Sweden
+,V10,SWZ,Eswatini,REFERENCE.CORE.COUNTRY,SZ,Eswatini
+,V10,SXM,Sint Maarten (Dutch part),REFERENCE.CORE.COUNTRY,SX,Sint Maarten (Dutch part)
+,V10,SYC,Seychelles,REFERENCE.CORE.COUNTRY,SC,Seychelles
+,V10,SYR,Syrian Arab Republic,REFERENCE.CORE.COUNTRY,SY,Syrian Arab Republic
+,V10,TCA,Turks and Caicos Islands (the),REFERENCE.CORE.COUNTRY,TC,Turks and Caicos Islands (the)
+,V10,TCD,Chad,REFERENCE.CORE.COUNTRY,TD,Chad
+,V10,TGO,Togo,REFERENCE.CORE.COUNTRY,TG,Togo
+,V10,THA,Thailand,REFERENCE.CORE.COUNTRY,TH,Thailand
+,V10,TJK,Tajikistan,REFERENCE.CORE.COUNTRY,TJ,Tajikistan
+,V10,TKM,Turkmenistan,REFERENCE.CORE.COUNTRY,TM,Turkmenistan
+,V10,TON,Tonga,REFERENCE.CORE.COUNTRY,TO,Tonga
+,V10,TTO,Trinidad and Tobago,REFERENCE.CORE.COUNTRY,TT,Trinidad and Tobago
+,V10,TUN,Tunisia,REFERENCE.CORE.COUNTRY,TN,Tunisia
+,V10,TUR,Turkey,REFERENCE.CORE.COUNTRY,TR,Turkey
+,V10,TWN,Taiwan (Province of China),REFERENCE.CORE.COUNTRY,TW,Taiwan (Province of China)
+,V10,TZA,"Tanzania, United Republic of",REFERENCE.CORE.COUNTRY,TZ,"Tanzania, United Republic of"
+,V10,UGA,Uganda,REFERENCE.CORE.COUNTRY,UG,Uganda
+,V10,UKR,Ukraine,REFERENCE.CORE.COUNTRY,UA,Ukraine
+,V10,UMI,United States Minor Outlying Islands (the),REFERENCE.CORE.COUNTRY,UM,United States Minor Outlying Islands (the)
+,V10,URY,Uruguay,REFERENCE.CORE.COUNTRY,UY,Uruguay
+,V10,USA,United States of America (the),REFERENCE.CORE.COUNTRY,US,United States of America (the)
+,V10,UZB,Uzbekistan,REFERENCE.CORE.COUNTRY,UZ,Uzbekistan
+,V10,VAT,Holy See (the),REFERENCE.CORE.COUNTRY,VA,Holy See (the)
+,V10,VCT,Saint Vincent and the Grenadines,REFERENCE.CORE.COUNTRY,VC,Saint Vincent and the Grenadines
+,V10,VEN,Venezuela (Bolivarian Republic of),REFERENCE.CORE.COUNTRY,VE,Venezuela (Bolivarian Republic of)
+,V10,VGB,Virgin Islands (British),REFERENCE.CORE.COUNTRY,VG,Virgin Islands (British)
+,V10,VIR,Virgin Islands (U.S.),REFERENCE.CORE.COUNTRY,VI,Virgin Islands (U.S.)
+,V10,VNM,Viet Nam,REFERENCE.CORE.COUNTRY,VN,Viet Nam
+,V10,VUT,Vanuatu,REFERENCE.CORE.COUNTRY,VU,Vanuatu
+,V10,WLF,Wallis and Futuna,REFERENCE.CORE.COUNTRY,WF,Wallis and Futuna
+,V10,WSM,Samoa,REFERENCE.CORE.COUNTRY,WS,Samoa
+,V10,YEM,Yemen,REFERENCE.CORE.COUNTRY,YE,Yemen
+,V10,ZAF,South Africa,REFERENCE.CORE.COUNTRY,ZA,South Africa
+,V10,ZMB,Zambia,REFERENCE.CORE.COUNTRY,ZM,Zambia
+,V10,ZWE,Zimbabwe,REFERENCE.CORE.COUNTRY,ZW,Zimbabwe
+,V10,AD,Andorra,REFERENCE.CORE.COUNTRY,AD,Andorra
+,V10,AE,United Arab Emirates (the),REFERENCE.CORE.COUNTRY,AE,United Arab Emirates (the)
+,V10,AF,Afghanistan,REFERENCE.CORE.COUNTRY,AF,Afghanistan
+,V10,AG,Antigua and Barbuda,REFERENCE.CORE.COUNTRY,AG,Antigua and Barbuda
+,V10,AI,Anguilla,REFERENCE.CORE.COUNTRY,AI,Anguilla
+,V10,AL,Albania,REFERENCE.CORE.COUNTRY,AL,Albania
+,V10,AM,Armenia,REFERENCE.CORE.COUNTRY,AM,Armenia
+,V10,AO,Angola,REFERENCE.CORE.COUNTRY,AO,Angola
+,V10,AR,Argentina,REFERENCE.CORE.COUNTRY,AR,Argentina
+,V10,AS,American Samoa,REFERENCE.CORE.COUNTRY,AS,American Samoa
+,V10,AT,Austria,REFERENCE.CORE.COUNTRY,AT,Austria
+,V10,AU,Australia,REFERENCE.CORE.COUNTRY,AU,Australia
+,V10,AW,Aruba,REFERENCE.CORE.COUNTRY,AW,Aruba
+,V10,AZ,Azerbaijan,REFERENCE.CORE.COUNTRY,AZ,Azerbaijan
+,V10,BA,Bosnia and Herzegovina,REFERENCE.CORE.COUNTRY,BA,Bosnia and Herzegovina
+,V10,BB,Barbados,REFERENCE.CORE.COUNTRY,BB,Barbados
+,V10,BD,Bangladesh,REFERENCE.CORE.COUNTRY,BD,Bangladesh
+,V10,BE,Belgium,REFERENCE.CORE.COUNTRY,BE,Belgium
+,V10,BG,Bulgaria,REFERENCE.CORE.COUNTRY,BG,Bulgaria
+,V10,BH,Bahrain,REFERENCE.CORE.COUNTRY,BH,Bahrain
+,V10,BI,Burundi,REFERENCE.CORE.COUNTRY,BI,Burundi
+,V10,BM,Bermuda,REFERENCE.CORE.COUNTRY,BM,Bermuda
+,V10,BN,Brunei Darussalam,REFERENCE.CORE.COUNTRY,BN,Brunei Darussalam
+,V10,BO,Bolivia (Plurinational State of),REFERENCE.CORE.COUNTRY,BO,Bolivia (Plurinational State of)
+,V10,BQ,"Bonaire, Sint Eustatius and Saba",REFERENCE.CORE.COUNTRY,BQ,"Bonaire, Sint Eustatius and Saba"
+,V10,BR,Brazil,REFERENCE.CORE.COUNTRY,BR,Brazil
+,V10,BS,Bahamas (the),REFERENCE.CORE.COUNTRY,BS,Bahamas (the)
+,V10,BT,Bhutan,REFERENCE.CORE.COUNTRY,BT,Bhutan
+,V10,BW,Botswana,REFERENCE.CORE.COUNTRY,BW,Botswana
+,V10,BY,Belarus,REFERENCE.CORE.COUNTRY,BY,Belarus
+,V10,BZ,Belize,REFERENCE.CORE.COUNTRY,BZ,Belize
+,V10,CA,Canada,REFERENCE.CORE.COUNTRY,CA,Canada
+,V10,CD,Congo (the Democratic Republic of the),REFERENCE.CORE.COUNTRY,CD,Congo (the Democratic Republic of the)
+,V10,CF,Central African Republic (the),REFERENCE.CORE.COUNTRY,CF,Central African Republic (the)
+,V10,CG,Congo (the),REFERENCE.CORE.COUNTRY,CG,Congo (the)
+,V10,CH,Switzerland,REFERENCE.CORE.COUNTRY,CH,Switzerland
+,V10,ch,Switzerland,REFERENCE.CORE.COUNTRY,CH,Switzerland
+,V10,CI,Cote d'Ivoire,REFERENCE.CORE.COUNTRY,CI,Cote d'Ivoire
+,V10,CK,Cook Islands (the),REFERENCE.CORE.COUNTRY,CK,Cook Islands (the)
+,V10,CL,Chile,REFERENCE.CORE.COUNTRY,CL,Chile
+,V10,CM,Cameroon,REFERENCE.CORE.COUNTRY,CM,Cameroon
+,V10,CN,China,REFERENCE.CORE.COUNTRY,CN,China
+,V10,CO,Colombia,REFERENCE.CORE.COUNTRY,CO,Colombia
+,V10,CR,Costa Rica,REFERENCE.CORE.COUNTRY,CR,Costa Rica
+,V10,CU,Cuba,REFERENCE.CORE.COUNTRY,CU,Cuba
+,V10,CV,Cabo Verde,REFERENCE.CORE.COUNTRY,CV,Cabo Verde
+,V10,CW,Curacao,REFERENCE.CORE.COUNTRY,CW,Curacao
+,V10,CY,Cyprus,REFERENCE.CORE.COUNTRY,CY,Cyprus
+,V10,CZ,Czechia,REFERENCE.CORE.COUNTRY,CZ,Czechia
+,V10,DE,Germany,REFERENCE.CORE.COUNTRY,DE,Germany
+,V10,DK,Denmark,REFERENCE.CORE.COUNTRY,DK,Denmark
+,V10,DO,Dominican Republic (the),REFERENCE.CORE.COUNTRY,DO,Dominican Republic (the)
+,V10,do,Dominican Republic (the),REFERENCE.CORE.COUNTRY,DO,Dominican Republic (the)
+,V10,DZ,Algeria,REFERENCE.CORE.COUNTRY,DZ,Algeria
+,V10,EC,Ecuador,REFERENCE.CORE.COUNTRY,EC,Ecuador
+,V10,EE,Estonia,REFERENCE.CORE.COUNTRY,EE,Estonia
+,V10,EG,Egypt,REFERENCE.CORE.COUNTRY,EG,Egypt
+,V10,ER,Eritrea,REFERENCE.CORE.COUNTRY,ER,Eritrea
+,V10,ES,Spain,REFERENCE.CORE.COUNTRY,ES,Spain
+,V10,ET,Ethiopia,REFERENCE.CORE.COUNTRY,ET,Ethiopia
+,V10,FI,Finland,REFERENCE.CORE.COUNTRY,FI,Finland
+,V10,FJ,Fiji,REFERENCE.CORE.COUNTRY,FJ,Fiji
+,V10,FO,Faroe Islands (the),REFERENCE.CORE.COUNTRY,FO,Faroe Islands (the)
+,V10,FR,France,REFERENCE.CORE.COUNTRY,FR,France
+,V10,GA,Gabon,REFERENCE.CORE.COUNTRY,GA,Gabon
+,V10,GB,United Kingdom of Great Britain and Northern Ireland (the),REFERENCE.CORE.COUNTRY,GB,United Kingdom of Great Britain and Northern Ireland (the)
+,V10,GD,Grenada,REFERENCE.CORE.COUNTRY,GD,Grenada
+,V10,GE,Georgia,REFERENCE.CORE.COUNTRY,GE,Georgia
+,V10,GF,French Guiana,REFERENCE.CORE.COUNTRY,GF,French Guiana
+,V10,GH,Ghana,REFERENCE.CORE.COUNTRY,GH,Ghana
+,V10,gh,Ghana,REFERENCE.CORE.COUNTRY,GH,Ghana
+,V10,GI,Gibraltar,REFERENCE.CORE.COUNTRY,GI,Gibraltar
+,V10,GN,Guinea,REFERENCE.CORE.COUNTRY,GN,Guinea
+,V10,GP,Guadeloupe,REFERENCE.CORE.COUNTRY,GP,Guadeloupe
+,V10,GR,Greece,REFERENCE.CORE.COUNTRY,GR,Greece
+,V10,GT,Guatemala,REFERENCE.CORE.COUNTRY,GT,Guatemala
+,V10,GU,Guam,REFERENCE.CORE.COUNTRY,GU,Guam
+,V10,GY,Guyana,REFERENCE.CORE.COUNTRY,GY,Guyana
+,V10,HK,Hong Kong,REFERENCE.CORE.COUNTRY,HK,Hong Kong
+,V10,HN,Honduras,REFERENCE.CORE.COUNTRY,HN,Honduras
+,V10,HR,Croatia,REFERENCE.CORE.COUNTRY,HR,Croatia
+,V10,HU,Hungary,REFERENCE.CORE.COUNTRY,HU,Hungary
+,V10,ID,Indonesia,REFERENCE.CORE.COUNTRY,ID,Indonesia
+,V10,IE,Ireland,REFERENCE.CORE.COUNTRY,IE,Ireland
+,V10,IL,Israel,REFERENCE.CORE.COUNTRY,IL,Israel
+,V10,IN,India,REFERENCE.CORE.COUNTRY,IN,India
+,V10,IO,British Indian Ocean Territory (the),REFERENCE.CORE.COUNTRY,IO,British Indian Ocean Territory (the)
+,V10,IQ,Iraq,REFERENCE.CORE.COUNTRY,IQ,Iraq
+,V10,IS,Iceland,REFERENCE.CORE.COUNTRY,IS,Iceland
+,V10,IT,Italy,REFERENCE.CORE.COUNTRY,IT,Italy
+,V10,JM,Jamaica,REFERENCE.CORE.COUNTRY,JM,Jamaica
+,V10,JO,Jordan,REFERENCE.CORE.COUNTRY,JO,Jordan
+,V10,JP,Japan,REFERENCE.CORE.COUNTRY,JP,Japan
+,V10,KE,Kenya,REFERENCE.CORE.COUNTRY,KE,Kenya
+,V10,KG,Kyrgyzstan,REFERENCE.CORE.COUNTRY,KG,Kyrgyzstan
+,V10,KH,Cambodia,REFERENCE.CORE.COUNTRY,KH,Cambodia
+,V10,KI,Kiribati,REFERENCE.CORE.COUNTRY,KI,Kiribati
+,V10,KN,Saint Kitts and Nevis,REFERENCE.CORE.COUNTRY,KN,Saint Kitts and Nevis
+,V10,KR,Korea (the Republic of),REFERENCE.CORE.COUNTRY,KR,Korea (the Republic of)
+,V10,KW,Kuwait,REFERENCE.CORE.COUNTRY,KW,Kuwait
+,V10,KY,Cayman Islands (the),REFERENCE.CORE.COUNTRY,KY,Cayman Islands (the)
+,V10,KZ,Kazakhstan,REFERENCE.CORE.COUNTRY,KZ,Kazakhstan
+,V10,LA,Lao People's Democratic Republic (the),REFERENCE.CORE.COUNTRY,LA,Lao People's Democratic Republic (the)
+,V10,LB,Lebanon,REFERENCE.CORE.COUNTRY,LB,Lebanon
+,V10,LC,Saint Lucia,REFERENCE.CORE.COUNTRY,LC,Saint Lucia
+,V10,LI,Liechtenstein,REFERENCE.CORE.COUNTRY,LI,Liechtenstein
+,V10,LK,Sri Lanka,REFERENCE.CORE.COUNTRY,LK,Sri Lanka
+,V10,LR,Liberia,REFERENCE.CORE.COUNTRY,LR,Liberia
+,V10,LT,Lithuania,REFERENCE.CORE.COUNTRY,LT,Lithuania
+,V10,LU,Luxembourg,REFERENCE.CORE.COUNTRY,LU,Luxembourg
+,V10,LV,Latvia,REFERENCE.CORE.COUNTRY,LV,Latvia
+,V10,LY,Libya,REFERENCE.CORE.COUNTRY,LY,Libya
+,V10,MA,Morocco,REFERENCE.CORE.COUNTRY,MA,Morocco
+,V10,MC,Monaco,REFERENCE.CORE.COUNTRY,MC,Monaco
+,V10,MD,Moldova (the Republic of),REFERENCE.CORE.COUNTRY,MD,Moldova (the Republic of)
+,V10,ME,Montenegro,REFERENCE.CORE.COUNTRY,ME,Montenegro
+,V10,MG,Madagascar,REFERENCE.CORE.COUNTRY,MG,Madagascar
+,V10,MH,Marshall Islands (the),REFERENCE.CORE.COUNTRY,MH,Marshall Islands (the)
+,V10,MK,Republic of North Macedonia,REFERENCE.CORE.COUNTRY,MK,Republic of North Macedonia
+,V10,MM,Myanmar,REFERENCE.CORE.COUNTRY,MM,Myanmar
+,V10,MN,Mongolia,REFERENCE.CORE.COUNTRY,MN,Mongolia
+,V10,MO,Macao,REFERENCE.CORE.COUNTRY,MO,Macao
+,V10,MP,Northern Mariana Islands (the),REFERENCE.CORE.COUNTRY,MP,Northern Mariana Islands (the)
+,V10,MQ,Martinique,REFERENCE.CORE.COUNTRY,MQ,Martinique
+,V10,MT,Malta,REFERENCE.CORE.COUNTRY,MT,Malta
+,V10,MU,Mauritius,REFERENCE.CORE.COUNTRY,MU,Mauritius
+,V10,MV,Maldives,REFERENCE.CORE.COUNTRY,MV,Maldives
+,V10,MW,Malawi,REFERENCE.CORE.COUNTRY,MW,Malawi
+,V10,MX,Mexico,REFERENCE.CORE.COUNTRY,MX,Mexico
+,V10,MY,Malaysia,REFERENCE.CORE.COUNTRY,MY,Malaysia
+,V10,MZ,Mozambique,REFERENCE.CORE.COUNTRY,MZ,Mozambique
+,V10,NA,Namibia,REFERENCE.CORE.COUNTRY,NA,Namibia
+,V10,NC,New Caledonia,REFERENCE.CORE.COUNTRY,NC,New Caledonia
+,V10,NE,Niger (the),REFERENCE.CORE.COUNTRY,NE,Niger (the)
+,V10,NG,Nigeria,REFERENCE.CORE.COUNTRY,NG,Nigeria
+,V10,NI,Nicaragua,REFERENCE.CORE.COUNTRY,NI,Nicaragua
+,V10,NL,Netherlands (the),REFERENCE.CORE.COUNTRY,NL,Netherlands (the)
+,V10,NO,Norway,REFERENCE.CORE.COUNTRY,NO,Norway
+,V10,NP,Nepal,REFERENCE.CORE.COUNTRY,NP,Nepal
+,V10,NU,Niue,REFERENCE.CORE.COUNTRY,NU,Niue
+,V10,NZ,New Zealand,REFERENCE.CORE.COUNTRY,NZ,New Zealand
+,V10,OM,Oman,REFERENCE.CORE.COUNTRY,OM,Oman
+,V10,PA,Panama,REFERENCE.CORE.COUNTRY,PA,Panama
+,V10,PE,Peru,REFERENCE.CORE.COUNTRY,PE,Peru
+,V10,PF,French Polynesia,REFERENCE.CORE.COUNTRY,PF,French Polynesia
+,V10,PG,Papua New Guinea,REFERENCE.CORE.COUNTRY,PG,Papua New Guinea
+,V10,PH,Philippines (the),REFERENCE.CORE.COUNTRY,PH,Philippines (the)
+,V10,PK,Pakistan,REFERENCE.CORE.COUNTRY,PK,Pakistan
+,V10,PL,Poland,REFERENCE.CORE.COUNTRY,PL,Poland
+,V10,PR,Puerto Rico,REFERENCE.CORE.COUNTRY,PR,Puerto Rico
+,V10,PS,"Palestine, State of",REFERENCE.CORE.COUNTRY,PS,"Palestine, State of"
+,V10,PT,Portugal,REFERENCE.CORE.COUNTRY,PT,Portugal
+,V10,PW,Palau,REFERENCE.CORE.COUNTRY,PW,Palau
+,V10,PY,Paraguay,REFERENCE.CORE.COUNTRY,PY,Paraguay
+,V10,QA,Qatar,REFERENCE.CORE.COUNTRY,QA,Qatar
+,V10,RE,Reunion,REFERENCE.CORE.COUNTRY,RE,Reunion
+,V10,RO,Romania,REFERENCE.CORE.COUNTRY,RO,Romania
+,V10,RS,Serbia,REFERENCE.CORE.COUNTRY,RS,Serbia
+,V10,RW,Rwanda,REFERENCE.CORE.COUNTRY,RW,Rwanda
+,V10,SA,Saudi Arabia,REFERENCE.CORE.COUNTRY,SA,Saudi Arabia
+,V10,SB,Solomon Islands,REFERENCE.CORE.COUNTRY,SB,Solomon Islands
+,V10,SC,Seychelles,REFERENCE.CORE.COUNTRY,SC,Seychelles
+,V10,SE,Sweden,REFERENCE.CORE.COUNTRY,SE,Sweden
+,V10,SG,Singapore,REFERENCE.CORE.COUNTRY,SG,Singapore
+,V10,SI,Slovenia,REFERENCE.CORE.COUNTRY,SI,Slovenia
+,V10,SK,Slovakia,REFERENCE.CORE.COUNTRY,SK,Slovakia
+,V10,SL,Sierra Leone,REFERENCE.CORE.COUNTRY,SL,Sierra Leone
+,V10,SM,San Marino,REFERENCE.CORE.COUNTRY,SM,San Marino
+,V10,SN,Senegal,REFERENCE.CORE.COUNTRY,SN,Senegal
+,V10,SO,Somalia,REFERENCE.CORE.COUNTRY,SO,Somalia
+,V10,SR,Suriname,REFERENCE.CORE.COUNTRY,SR,Suriname
+,V10,SS,South Sudan,REFERENCE.CORE.COUNTRY,SS,South Sudan
+,V10,ST,Sao Tome and Principe,REFERENCE.CORE.COUNTRY,ST,Sao Tome and Principe
+,V10,SV,El Salvador,REFERENCE.CORE.COUNTRY,SV,El Salvador
+,V10,SX,Sint Maarten (Dutch part),REFERENCE.CORE.COUNTRY,SX,Sint Maarten (Dutch part)
+,V10,TC,Turks and Caicos Islands (the),REFERENCE.CORE.COUNTRY,TC,Turks and Caicos Islands (the)
+,V10,TG,Togo,REFERENCE.CORE.COUNTRY,TG,Togo
+,V10,TH,Thailand,REFERENCE.CORE.COUNTRY,TH,Thailand
+,V10,TJ,Tajikistan,REFERENCE.CORE.COUNTRY,TJ,Tajikistan
+,V10,TL,Timor-Leste,REFERENCE.CORE.COUNTRY,TL,Timor-Leste
+,V10,TN,Tunisia,REFERENCE.CORE.COUNTRY,TN,Tunisia
+,V10,TO,Tonga,REFERENCE.CORE.COUNTRY,TO,Tonga
+,V10,TR,Turkey,REFERENCE.CORE.COUNTRY,TR,Turkey
+,V10,TT,Trinidad and Tobago,REFERENCE.CORE.COUNTRY,TT,Trinidad and Tobago
+,V10,TW,Taiwan (Province of China),REFERENCE.CORE.COUNTRY,TW,Taiwan (Province of China)
+,V10,TZ,"Tanzania, United Republic of",REFERENCE.CORE.COUNTRY,TZ,"Tanzania, United Republic of"
+,V10,UA,Ukraine,REFERENCE.CORE.COUNTRY,UA,Ukraine
+,V10,UG,Uganda,REFERENCE.CORE.COUNTRY,UG,Uganda
+,V10,UM,United States Minor Outlying Islands (the),REFERENCE.CORE.COUNTRY,UM,United States Minor Outlying Islands (the)
+,V10,US,United States of America (the),REFERENCE.CORE.COUNTRY,US,United States of America (the)
+,V10,UY,Uruguay,REFERENCE.CORE.COUNTRY,UY,Uruguay
+,V10,UZ,Uzbekistan,REFERENCE.CORE.COUNTRY,UZ,Uzbekistan
+,V10,VA,Holy See (the),REFERENCE.CORE.COUNTRY,VA,Holy See (the)
+,V10,Va,Holy See (the),REFERENCE.CORE.COUNTRY,VA,Holy See (the)
+,V10,VE,Venezuela (Bolivarian Republic of),REFERENCE.CORE.COUNTRY,VE,Venezuela (Bolivarian Republic of)
+,V10,VG,Virgin Islands (British),REFERENCE.CORE.COUNTRY,VG,Virgin Islands (British)
+,V10,VI,Virgin Islands (U.S.),REFERENCE.CORE.COUNTRY,VI,Virgin Islands (U.S.)
+,V10,VN,Viet Nam,REFERENCE.CORE.COUNTRY,VN,Viet Nam
+,V10,VU,Vanuatu,REFERENCE.CORE.COUNTRY,VU,Vanuatu
+,V10,WF,Wallis and Futuna,REFERENCE.CORE.COUNTRY,WF,Wallis and Futuna
+,V10,WS,Samoa,REFERENCE.CORE.COUNTRY,WS,Samoa
+,V10,ZA,South Africa,REFERENCE.CORE.COUNTRY,ZA,South Africa
+,V10,ZM,Zambia,REFERENCE.CORE.COUNTRY,ZM,Zambia
+,V10,ZW,Zimbabwe,REFERENCE.CORE.COUNTRY,ZW,Zimbabwe
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.COUNTRY,DQMissing,Source value not provided
+,V10,DQNotApplicable,Source value not required,REFERENCE.CORE.COUNTRY,DQNotApplicable,Source value not required
+,VN,AF,Afghanistan,REFERENCE.CORE.COUNTRY,AF,Afghanistan
+,VN,AL,Albania,REFERENCE.CORE.COUNTRY,AL,Albania
+,VN,DZ,Algeria,REFERENCE.CORE.COUNTRY,DZ,Algeria
+,VN,AS,American Samoa,REFERENCE.CORE.COUNTRY,AS,American Samoa
+,VN,AD,Andorra,REFERENCE.CORE.COUNTRY,AD,Andorra
+,VN,AO,Angola,REFERENCE.CORE.COUNTRY,AO,Angola
+,VN,AI,Anguilla,REFERENCE.CORE.COUNTRY,AI,Anguilla
+,VN,AQ,Antarctica,REFERENCE.CORE.COUNTRY,AQ,Antarctica
+,VN,AG,Antigua and Barbuda,REFERENCE.CORE.COUNTRY,AG,Antigua and Barbuda
+,VN,AR,Argentina,REFERENCE.CORE.COUNTRY,AR,Argentina
+,VN,AM,Armenia,REFERENCE.CORE.COUNTRY,AM,Armenia
+,VN,AW,Aruba,REFERENCE.CORE.COUNTRY,AW,Aruba
+,VN,AU,Australia,REFERENCE.CORE.COUNTRY,AU,Australia
+,VN,AT,Austria,REFERENCE.CORE.COUNTRY,AT,Austria
+,VN,AZ,Azerbaijan,REFERENCE.CORE.COUNTRY,AZ,Azerbaijan
+,VN,BS,Bahamas (the),REFERENCE.CORE.COUNTRY,BS,Bahamas (the)
+,VN,BH,Bahrain,REFERENCE.CORE.COUNTRY,BH,Bahrain
+,VN,BD,Bangladesh,REFERENCE.CORE.COUNTRY,BD,Bangladesh
+,VN,BB,Barbados,REFERENCE.CORE.COUNTRY,BB,Barbados
+,VN,BY,Belarus,REFERENCE.CORE.COUNTRY,BY,Belarus
+,VN,BE,Belgium,REFERENCE.CORE.COUNTRY,BE,Belgium
+,VN,BZ,Belize,REFERENCE.CORE.COUNTRY,BZ,Belize
+,VN,BJ,Benin,REFERENCE.CORE.COUNTRY,BJ,Benin
+,VN,BM,Bermuda,REFERENCE.CORE.COUNTRY,BM,Bermuda
+,VN,BT,Bhutan,REFERENCE.CORE.COUNTRY,BT,Bhutan
+,VN,BO,Bolivia (Plurinational State of),REFERENCE.CORE.COUNTRY,BO,Bolivia (Plurinational State of)
+,VN,BQ,"Bonaire, Sint Eustatius and Saba",REFERENCE.CORE.COUNTRY,BQ,"Bonaire, Sint Eustatius and Saba"
+,VN,BA,Bosnia and Herzegovina,REFERENCE.CORE.COUNTRY,BA,Bosnia and Herzegovina
+,VN,BW,Botswana,REFERENCE.CORE.COUNTRY,BW,Botswana
+,VN,BV,Bouvet Island,REFERENCE.CORE.COUNTRY,BV,Bouvet Island
+,VN,BR,Brazil,REFERENCE.CORE.COUNTRY,BR,Brazil
+,VN,IO,British Indian Ocean Territory (the),REFERENCE.CORE.COUNTRY,IO,British Indian Ocean Territory (the)
+,VN,BN,Brunei Darussalam,REFERENCE.CORE.COUNTRY,BN,Brunei Darussalam
+,VN,BG,Bulgaria,REFERENCE.CORE.COUNTRY,BG,Bulgaria
+,VN,BF,Burkina Faso,REFERENCE.CORE.COUNTRY,BF,Burkina Faso
+,VN,BI,Burundi,REFERENCE.CORE.COUNTRY,BI,Burundi
+,VN,CV,Cabo Verde,REFERENCE.CORE.COUNTRY,CV,Cabo Verde
+,VN,KH,Cambodia,REFERENCE.CORE.COUNTRY,KH,Cambodia
+,VN,CM,Cameroon,REFERENCE.CORE.COUNTRY,CM,Cameroon
+,VN,CA,Canada,REFERENCE.CORE.COUNTRY,CA,Canada
+,VN,KY,Cayman Islands (the),REFERENCE.CORE.COUNTRY,KY,Cayman Islands (the)
+,VN,CF,Central African Republic (the),REFERENCE.CORE.COUNTRY,CF,Central African Republic (the)
+,VN,TD,Chad,REFERENCE.CORE.COUNTRY,TD,Chad
+,VN,CL,Chile,REFERENCE.CORE.COUNTRY,CL,Chile
+,VN,CN,China,REFERENCE.CORE.COUNTRY,CN,China
+,VN,CX,Christmas Island,REFERENCE.CORE.COUNTRY,CX,Christmas Island
+,VN,CC,Cocos (Keeling) Islands (the),REFERENCE.CORE.COUNTRY,CC,Cocos (Keeling) Islands (the)
+,VN,CO,Colombia,REFERENCE.CORE.COUNTRY,CO,Colombia
+,VN,KM,Comoros (the),REFERENCE.CORE.COUNTRY,KM,Comoros (the)
+,VN,CD,Congo (the Democratic Republic of the),REFERENCE.CORE.COUNTRY,CD,Congo (the Democratic Republic of the)
+,VN,CG,Congo (the),REFERENCE.CORE.COUNTRY,CG,Congo (the)
+,VN,CK,Cook Islands (the),REFERENCE.CORE.COUNTRY,CK,Cook Islands (the)
+,VN,CR,Costa Rica,REFERENCE.CORE.COUNTRY,CR,Costa Rica
+,VN,HR,Croatia,REFERENCE.CORE.COUNTRY,HR,Croatia
+,VN,CU,Cuba,REFERENCE.CORE.COUNTRY,CU,Cuba
+,VN,CW,Curacao,REFERENCE.CORE.COUNTRY,CW,Curacao
+,VN,CY,Cyprus,REFERENCE.CORE.COUNTRY,CY,Cyprus
+,VN,CZ,Czechia,REFERENCE.CORE.COUNTRY,CZ,Czechia
+,VN,CI,Cote d'Ivoire,REFERENCE.CORE.COUNTRY,CI,Cote d'Ivoire
+,VN,DK,Denmark,REFERENCE.CORE.COUNTRY,DK,Denmark
+,VN,DJ,Djibouti,REFERENCE.CORE.COUNTRY,DJ,Djibouti
+,VN,DM,Dominica,REFERENCE.CORE.COUNTRY,DM,Dominica
+,VN,DO,Dominican Republic (the),REFERENCE.CORE.COUNTRY,DO,Dominican Republic (the)
+,VN,EC,Ecuador,REFERENCE.CORE.COUNTRY,EC,Ecuador
+,VN,EG,Egypt,REFERENCE.CORE.COUNTRY,EG,Egypt
+,VN,SV,El Salvador,REFERENCE.CORE.COUNTRY,SV,El Salvador
+,VN,GQ,Equatorial Guinea,REFERENCE.CORE.COUNTRY,GQ,Equatorial Guinea
+,VN,ER,Eritrea,REFERENCE.CORE.COUNTRY,ER,Eritrea
+,VN,EE,Estonia,REFERENCE.CORE.COUNTRY,EE,Estonia
+,VN,SZ,Eswatini,REFERENCE.CORE.COUNTRY,SZ,Eswatini
+,VN,ET,Ethiopia,REFERENCE.CORE.COUNTRY,ET,Ethiopia
+,VN,FK,Falkland Islands (the) [Malvinas],REFERENCE.CORE.COUNTRY,FK,Falkland Islands (the) [Malvinas]
+,VN,FO,Faroe Islands (the),REFERENCE.CORE.COUNTRY,FO,Faroe Islands (the)
+,VN,FJ,Fiji,REFERENCE.CORE.COUNTRY,FJ,Fiji
+,VN,FI,Finland,REFERENCE.CORE.COUNTRY,FI,Finland
+,VN,FR,France,REFERENCE.CORE.COUNTRY,FR,France
+,VN,GF,French Guiana,REFERENCE.CORE.COUNTRY,GF,French Guiana
+,VN,PF,French Polynesia,REFERENCE.CORE.COUNTRY,PF,French Polynesia
+,VN,TF,French Southern Territories (the),REFERENCE.CORE.COUNTRY,TF,French Southern Territories (the)
+,VN,GA,Gabon,REFERENCE.CORE.COUNTRY,GA,Gabon
+,VN,GM,Gambia (the),REFERENCE.CORE.COUNTRY,GM,Gambia (the)
+,VN,GE,Georgia,REFERENCE.CORE.COUNTRY,GE,Georgia
+,VN,DE,Germany,REFERENCE.CORE.COUNTRY,DE,Germany
+,VN,GH,Ghana,REFERENCE.CORE.COUNTRY,GH,Ghana
+,VN,GI,Gibraltar,REFERENCE.CORE.COUNTRY,GI,Gibraltar
+,VN,GR,Greece,REFERENCE.CORE.COUNTRY,GR,Greece
+,VN,GL,Greenland,REFERENCE.CORE.COUNTRY,GL,Greenland
+,VN,GD,Grenada,REFERENCE.CORE.COUNTRY,GD,Grenada
+,VN,GP,Guadeloupe,REFERENCE.CORE.COUNTRY,GP,Guadeloupe
+,VN,GU,Guam,REFERENCE.CORE.COUNTRY,GU,Guam
+,VN,GT,Guatemala,REFERENCE.CORE.COUNTRY,GT,Guatemala
+,VN,GG,Guernsey,REFERENCE.CORE.COUNTRY,GG,Guernsey
+,VN,GN,Guinea,REFERENCE.CORE.COUNTRY,GN,Guinea
+,VN,GW,Guinea-Bissau,REFERENCE.CORE.COUNTRY,GW,Guinea-Bissau
+,VN,GY,Guyana,REFERENCE.CORE.COUNTRY,GY,Guyana
+,VN,HT,Haiti,REFERENCE.CORE.COUNTRY,HT,Haiti
+,VN,HM,Heard Island and McDonald Islands,REFERENCE.CORE.COUNTRY,HM,Heard Island and McDonald Islands
+,VN,VA,Holy See (the),REFERENCE.CORE.COUNTRY,VA,Holy See (the)
+,VN,HN,Honduras,REFERENCE.CORE.COUNTRY,HN,Honduras
+,VN,HK,Hong Kong,REFERENCE.CORE.COUNTRY,HK,Hong Kong
+,VN,HU,Hungary,REFERENCE.CORE.COUNTRY,HU,Hungary
+,VN,IS,Iceland,REFERENCE.CORE.COUNTRY,IS,Iceland
+,VN,IN,India,REFERENCE.CORE.COUNTRY,IN,India
+,VN,ID,Indonesia,REFERENCE.CORE.COUNTRY,ID,Indonesia
+,VN,IR,Iran (Islamic Republic of),REFERENCE.CORE.COUNTRY,IR,Iran (Islamic Republic of)
+,VN,IQ,Iraq,REFERENCE.CORE.COUNTRY,IQ,Iraq
+,VN,IE,Ireland,REFERENCE.CORE.COUNTRY,IE,Ireland
+,VN,IM,Isle of Man,REFERENCE.CORE.COUNTRY,IM,Isle of Man
+,VN,IL,Israel,REFERENCE.CORE.COUNTRY,IL,Israel
+,VN,IT,Italy,REFERENCE.CORE.COUNTRY,IT,Italy
+,VN,JM,Jamaica,REFERENCE.CORE.COUNTRY,JM,Jamaica
+,VN,JP,Japan,REFERENCE.CORE.COUNTRY,JP,Japan
+,VN,JE,Jersey,REFERENCE.CORE.COUNTRY,JE,Jersey
+,VN,JO,Jordan,REFERENCE.CORE.COUNTRY,JO,Jordan
+,VN,KZ,Kazakhstan,REFERENCE.CORE.COUNTRY,KZ,Kazakhstan
+,VN,KE,Kenya,REFERENCE.CORE.COUNTRY,KE,Kenya
+,VN,KI,Kiribati,REFERENCE.CORE.COUNTRY,KI,Kiribati
+,VN,KP,Korea (the Democratic People's Republic of),REFERENCE.CORE.COUNTRY,KP,Korea (the Democratic People's Republic of)
+,VN,KR,Korea (the Republic of),REFERENCE.CORE.COUNTRY,KR,Korea (the Republic of)
+,VN,KW,Kuwait,REFERENCE.CORE.COUNTRY,KW,Kuwait
+,VN,KG,Kyrgyzstan,REFERENCE.CORE.COUNTRY,KG,Kyrgyzstan
+,VN,LA,Lao People's Democratic Republic (the),REFERENCE.CORE.COUNTRY,LA,Lao People's Democratic Republic (the)
+,VN,LV,Latvia,REFERENCE.CORE.COUNTRY,LV,Latvia
+,VN,LB,Lebanon,REFERENCE.CORE.COUNTRY,LB,Lebanon
+,VN,LS,Lesotho,REFERENCE.CORE.COUNTRY,LS,Lesotho
+,VN,LR,Liberia,REFERENCE.CORE.COUNTRY,LR,Liberia
+,VN,LY,Libya,REFERENCE.CORE.COUNTRY,LY,Libya
+,VN,LI,Liechtenstein,REFERENCE.CORE.COUNTRY,LI,Liechtenstein
+,VN,LT,Lithuania,REFERENCE.CORE.COUNTRY,LT,Lithuania
+,VN,LU,Luxembourg,REFERENCE.CORE.COUNTRY,LU,Luxembourg
+,VN,MO,Macao,REFERENCE.CORE.COUNTRY,MO,Macao
+,VN,MG,Madagascar,REFERENCE.CORE.COUNTRY,MG,Madagascar
+,VN,MW,Malawi,REFERENCE.CORE.COUNTRY,MW,Malawi
+,VN,MY,Malaysia,REFERENCE.CORE.COUNTRY,MY,Malaysia
+,VN,MV,Maldives,REFERENCE.CORE.COUNTRY,MV,Maldives
+,VN,ML,Mali,REFERENCE.CORE.COUNTRY,ML,Mali
+,VN,MT,Malta,REFERENCE.CORE.COUNTRY,MT,Malta
+,VN,MH,Marshall Islands (the),REFERENCE.CORE.COUNTRY,MH,Marshall Islands (the)
+,VN,MQ,Martinique,REFERENCE.CORE.COUNTRY,MQ,Martinique
+,VN,MR,Mauritania,REFERENCE.CORE.COUNTRY,MR,Mauritania
+,VN,MU,Mauritius,REFERENCE.CORE.COUNTRY,MU,Mauritius
+,VN,YT,Mayotte,REFERENCE.CORE.COUNTRY,YT,Mayotte
+,VN,MX,Mexico,REFERENCE.CORE.COUNTRY,MX,Mexico
+,VN,FM,Micronesia (Federated States of),REFERENCE.CORE.COUNTRY,FM,Micronesia (Federated States of)
+,VN,MD,Moldova (the Republic of),REFERENCE.CORE.COUNTRY,MD,Moldova (the Republic of)
+,VN,MC,Monaco,REFERENCE.CORE.COUNTRY,MC,Monaco
+,VN,MN,Mongolia,REFERENCE.CORE.COUNTRY,MN,Mongolia
+,VN,ME,Montenegro,REFERENCE.CORE.COUNTRY,ME,Montenegro
+,VN,MS,Montserrat,REFERENCE.CORE.COUNTRY,MS,Montserrat
+,VN,MA,Morocco,REFERENCE.CORE.COUNTRY,MA,Morocco
+,VN,MZ,Mozambique,REFERENCE.CORE.COUNTRY,MZ,Mozambique
+,VN,MM,Myanmar,REFERENCE.CORE.COUNTRY,MM,Myanmar
+,VN,NA,Namibia,REFERENCE.CORE.COUNTRY,NA,Namibia
+,VN,NR,Nauru,REFERENCE.CORE.COUNTRY,NR,Nauru
+,VN,NP,Nepal,REFERENCE.CORE.COUNTRY,NP,Nepal
+,VN,NL,Netherlands (the),REFERENCE.CORE.COUNTRY,NL,Netherlands (the)
+,VN,NC,New Caledonia,REFERENCE.CORE.COUNTRY,NC,New Caledonia
+,VN,NZ,New Zealand,REFERENCE.CORE.COUNTRY,NZ,New Zealand
+,VN,NI,Nicaragua,REFERENCE.CORE.COUNTRY,NI,Nicaragua
+,VN,NE,Niger (the),REFERENCE.CORE.COUNTRY,NE,Niger (the)
+,VN,NG,Nigeria,REFERENCE.CORE.COUNTRY,NG,Nigeria
+,VN,NU,Niue,REFERENCE.CORE.COUNTRY,NU,Niue
+,VN,NF,Norfolk Island,REFERENCE.CORE.COUNTRY,NF,Norfolk Island
+,VN,MP,Northern Mariana Islands (the),REFERENCE.CORE.COUNTRY,MP,Northern Mariana Islands (the)
+,VN,NO,Norway,REFERENCE.CORE.COUNTRY,NO,Norway
+,VN,OM,Oman,REFERENCE.CORE.COUNTRY,OM,Oman
+,VN,PK,Pakistan,REFERENCE.CORE.COUNTRY,PK,Pakistan
+,VN,PW,Palau,REFERENCE.CORE.COUNTRY,PW,Palau
+,VN,PS,"Palestine, State of",REFERENCE.CORE.COUNTRY,PS,"Palestine, State of"
+,VN,PA,Panama,REFERENCE.CORE.COUNTRY,PA,Panama
+,VN,PG,Papua New Guinea,REFERENCE.CORE.COUNTRY,PG,Papua New Guinea
+,VN,PY,Paraguay,REFERENCE.CORE.COUNTRY,PY,Paraguay
+,VN,PE,Peru,REFERENCE.CORE.COUNTRY,PE,Peru
+,VN,PH,Philippines (the),REFERENCE.CORE.COUNTRY,PH,Philippines (the)
+,VN,PN,Pitcairn,REFERENCE.CORE.COUNTRY,PN,Pitcairn
+,VN,PL,Poland,REFERENCE.CORE.COUNTRY,PL,Poland
+,VN,PT,Portugal,REFERENCE.CORE.COUNTRY,PT,Portugal
+,VN,PR,Puerto Rico,REFERENCE.CORE.COUNTRY,PR,Puerto Rico
+,VN,QA,Qatar,REFERENCE.CORE.COUNTRY,QA,Qatar
+,VN,MK,Republic of North Macedonia,REFERENCE.CORE.COUNTRY,MK,Republic of North Macedonia
+,VN,RO,Romania,REFERENCE.CORE.COUNTRY,RO,Romania
+,VN,RU,Russian Federation (the),REFERENCE.CORE.COUNTRY,RU,Russian Federation (the)
+,VN,RW,Rwanda,REFERENCE.CORE.COUNTRY,RW,Rwanda
+,VN,RE,Reunion,REFERENCE.CORE.COUNTRY,RE,Reunion
+,VN,BL,Saint Barthelemy,REFERENCE.CORE.COUNTRY,BL,Saint Barthelemy
+,VN,SH,"Saint Helena, Ascension and Tristan da Cunha",REFERENCE.CORE.COUNTRY,SH,"Saint Helena, Ascension and Tristan da Cunha"
+,VN,KN,Saint Kitts and Nevis,REFERENCE.CORE.COUNTRY,KN,Saint Kitts and Nevis
+,VN,LC,Saint Lucia,REFERENCE.CORE.COUNTRY,LC,Saint Lucia
+,VN,MF,Saint Martin (French part),REFERENCE.CORE.COUNTRY,MF,Saint Martin (French part)
+,VN,PM,Saint Pierre and Miquelon,REFERENCE.CORE.COUNTRY,PM,Saint Pierre and Miquelon
+,VN,VC,Saint Vincent and the Grenadines,REFERENCE.CORE.COUNTRY,VC,Saint Vincent and the Grenadines
+,VN,WS,Samoa,REFERENCE.CORE.COUNTRY,WS,Samoa
+,VN,SM,San Marino,REFERENCE.CORE.COUNTRY,SM,San Marino
+,VN,ST,Sao Tome and Principe,REFERENCE.CORE.COUNTRY,ST,Sao Tome and Principe
+,VN,SA,Saudi Arabia,REFERENCE.CORE.COUNTRY,SA,Saudi Arabia
+,VN,SN,Senegal,REFERENCE.CORE.COUNTRY,SN,Senegal
+,VN,RS,Serbia,REFERENCE.CORE.COUNTRY,RS,Serbia
+,VN,SC,Seychelles,REFERENCE.CORE.COUNTRY,SC,Seychelles
+,VN,SL,Sierra Leone,REFERENCE.CORE.COUNTRY,SL,Sierra Leone
+,VN,SG,Singapore,REFERENCE.CORE.COUNTRY,SG,Singapore
+,VN,SX,Sint Maarten (Dutch part),REFERENCE.CORE.COUNTRY,SX,Sint Maarten (Dutch part)
+,VN,SK,Slovakia,REFERENCE.CORE.COUNTRY,SK,Slovakia
+,VN,SI,Slovenia,REFERENCE.CORE.COUNTRY,SI,Slovenia
+,VN,SB,Solomon Islands,REFERENCE.CORE.COUNTRY,SB,Solomon Islands
+,VN,SO,Somalia,REFERENCE.CORE.COUNTRY,SO,Somalia
+,VN,ZA,South Africa,REFERENCE.CORE.COUNTRY,ZA,South Africa
+,VN,GS,South Georgia and the South Sandwich Islands,REFERENCE.CORE.COUNTRY,GS,South Georgia and the South Sandwich Islands
+,VN,SS,South Sudan,REFERENCE.CORE.COUNTRY,SS,South Sudan
+,VN,ES,Spain,REFERENCE.CORE.COUNTRY,ES,Spain
+,VN,LK,Sri Lanka,REFERENCE.CORE.COUNTRY,LK,Sri Lanka
+,VN,SD,Sudan (the),REFERENCE.CORE.COUNTRY,SD,Sudan (the)
+,VN,SR,Suriname,REFERENCE.CORE.COUNTRY,SR,Suriname
+,VN,SJ,Svalbard and Jan Mayen,REFERENCE.CORE.COUNTRY,SJ,Svalbard and Jan Mayen
+,VN,SE,Sweden,REFERENCE.CORE.COUNTRY,SE,Sweden
+,VN,CH,Switzerland,REFERENCE.CORE.COUNTRY,CH,Switzerland
+,VN,SY,Syrian Arab Republic,REFERENCE.CORE.COUNTRY,SY,Syrian Arab Republic
+,VN,TW,Taiwan (Province of China),REFERENCE.CORE.COUNTRY,TW,Taiwan (Province of China)
+,VN,TJ,Tajikistan,REFERENCE.CORE.COUNTRY,TJ,Tajikistan
+,VN,TZ,"Tanzania, United Republic of",REFERENCE.CORE.COUNTRY,TZ,"Tanzania, United Republic of"
+,VN,TH,Thailand,REFERENCE.CORE.COUNTRY,TH,Thailand
+,VN,TL,Timor-Leste,REFERENCE.CORE.COUNTRY,TL,Timor-Leste
+,VN,TG,Togo,REFERENCE.CORE.COUNTRY,TG,Togo
+,VN,TK,Tokelau,REFERENCE.CORE.COUNTRY,TK,Tokelau
+,VN,TO,Tonga,REFERENCE.CORE.COUNTRY,TO,Tonga
+,VN,TT,Trinidad and Tobago,REFERENCE.CORE.COUNTRY,TT,Trinidad and Tobago
+,VN,TN,Tunisia,REFERENCE.CORE.COUNTRY,TN,Tunisia
+,VN,TR,Turkey,REFERENCE.CORE.COUNTRY,TR,Turkey
+,VN,TM,Turkmenistan,REFERENCE.CORE.COUNTRY,TM,Turkmenistan
+,VN,TC,Turks and Caicos Islands (the),REFERENCE.CORE.COUNTRY,TC,Turks and Caicos Islands (the)
+,VN,TV,Tuvalu,REFERENCE.CORE.COUNTRY,TV,Tuvalu
+,VN,UG,Uganda,REFERENCE.CORE.COUNTRY,UG,Uganda
+,VN,UA,Ukraine,REFERENCE.CORE.COUNTRY,UA,Ukraine
+,VN,AE,United Arab Emirates (the),REFERENCE.CORE.COUNTRY,AE,United Arab Emirates (the)
+,VN,GB,United Kingdom of Great Britain and Northern Ireland (the),REFERENCE.CORE.COUNTRY,GB,United Kingdom of Great Britain and Northern Ireland (the)
+,VN,UM,United States Minor Outlying Islands (the),REFERENCE.CORE.COUNTRY,UM,United States Minor Outlying Islands (the)
+,VN,US,United States of America (the),REFERENCE.CORE.COUNTRY,US,United States of America (the)
+,VN,UY,Uruguay,REFERENCE.CORE.COUNTRY,UY,Uruguay
+,VN,UZ,Uzbekistan,REFERENCE.CORE.COUNTRY,UZ,Uzbekistan
+,VN,VU,Vanuatu,REFERENCE.CORE.COUNTRY,VU,Vanuatu
+,VN,VE,Venezuela (Bolivarian Republic of),REFERENCE.CORE.COUNTRY,VE,Venezuela (Bolivarian Republic of)
+,VN,VN,Viet Nam,REFERENCE.CORE.COUNTRY,VN,Viet Nam
+,VN,VG,Virgin Islands (British),REFERENCE.CORE.COUNTRY,VG,Virgin Islands (British)
+,VN,VI,Virgin Islands (U.S.),REFERENCE.CORE.COUNTRY,VI,Virgin Islands (U.S.)
+,VN,WF,Wallis and Futuna,REFERENCE.CORE.COUNTRY,WF,Wallis and Futuna
+,VN,EH,Western Sahara,REFERENCE.CORE.COUNTRY,EH,Western Sahara
+,VN,YE,Yemen,REFERENCE.CORE.COUNTRY,YE,Yemen
+,VN,ZM,Zambia,REFERENCE.CORE.COUNTRY,ZM,Zambia
+,VN,ZW,Zimbabwe,REFERENCE.CORE.COUNTRY,ZW,Zimbabwe
+,VN,AX,Aland Islands,REFERENCE.CORE.COUNTRY,AX,Aland Islands
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.COUNTRY,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.COUNTRY,DQMissing,Source value not provided
+,VN,DQNotApplicable,Source value not required,REFERENCE.CORE.COUNTRY,DQNotApplicable,Source value not required

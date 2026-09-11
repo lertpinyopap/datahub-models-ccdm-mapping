@@ -1,0 +1,41 @@
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,VN,MGST,Magnetic stripe only,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,MGST,Magnetic stripe only
+,VN,CTCP,Contact chip (smart card),REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,CTCP,Contact chip (smart card)
+,VN,CLMS,Contactless with magnetic stripe,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,CLMS,Contactless with magnetic stripe
+,VN,CLCP,Contactless chip,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,CLCP,Contactless chip
+,VN,MCLM,Mobile contactless with magnetic stripe,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,MCLM,Mobile contactless with magnetic stripe
+,VN,MCLC,Mobile contactless chip,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,MCLC,Mobile contactless chip
+,VN,NPHY,No physical card technology,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,NPHY,No physical card technology
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,DQMissing,Source value not provided
+,VN,DQNotApplicable,Source value not required,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,DQNotApplicable,Source value not required
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.DIGITAL_CARD_TYPE,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.DIGITAL_CARD_TYPE,DQMissing,Source value not provided
+,V10,DQNotApplicable,Source value not required,REFERENCE.CORE.DIGITAL_CARD_TYPE,DQNotApplicable,Source value not required
+,V10,3,Contactless chip,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,CLCP,Contactless chip
+,V10,0,Magnetic stripe only,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,MGST,Magnetic stripe only
+,V10,1,Contact chip (smart card),REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,CTCP,Contact chip (smart card)
+,V10,2,Contactless with magnetic stripe,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,CLMS,Contactless with magnetic stripe
+,V10,4,Mobile contactless with magnetic stripe,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,MCLM,Mobile contactless with magnetic stripe
+,V10,5,Mobile contactless chip,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,MCLC,Mobile contactless chip
+,V10,NPHY,No physical card technology,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,NPHY,No physical card technology
+,V8,DQMapping,Source value cannot be mapped,REFERENCE.CORE.DIGITAL_CARD_TYPE,DQMapping,Source value cannot be mapped
+,V8,DQMissing,Source value not provided,REFERENCE.CORE.DIGITAL_CARD_TYPE,DQMissing,Source value not provided
+,V8,DQNotApplicable,Source value not required,REFERENCE.CORE.DIGITAL_CARD_TYPE,DQNotApplicable,Source value not required
+,V8,3,Contactless chip,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,CLCP,Contactless chip
+,V8,0,Magnetic stripe only,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,MGST,Magnetic stripe only
+,V8,1,Contact chip (smart card),REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,CTCP,Contact chip (smart card)
+,V8,2,Contactless with magnetic stripe,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,CLMS,Contactless with magnetic stripe
+,V8,4,Mobile contactless with magnetic stripe,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,MCLM,Mobile contactless with magnetic stripe
+,V8,5,Mobile contactless chip,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,MCLC,Mobile contactless chip
+,V8,NPHY,No physical card technology,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,NPHY,No physical card technology
+,V2,DQMapping,Source value cannot be mapped,REFERENCE.CORE.DIGITAL_CARD_TYPE,DQMapping,Source value cannot be mapped
+,V2,DQMissing,Source value not provided,REFERENCE.CORE.DIGITAL_CARD_TYPE,DQMissing,Source value not provided
+,V2,DQNotApplicable,Source value not required,REFERENCE.CORE.DIGITAL_CARD_TYPE,DQNotApplicable,Source value not required
+,V2,3,Contactless chip,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,CLCP,Contactless chip
+,V2,0,Magnetic stripe only,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,MGST,Magnetic stripe only
+,V2,1,Contact chip (smart card),REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,CTCP,Contact chip (smart card)
+,V2,2,Contactless with magnetic stripe,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,CLMS,Contactless with magnetic stripe
+,V2,4,Mobile contactless with magnetic stripe,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,MCLM,Mobile contactless with magnetic stripe
+,V2,5,Mobile contactless chip,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,MCLC,Mobile contactless chip
+,V2,NPHY,No physical card technology,REFERENCE.CORE.PHYSICAL_CARD_TECHNOLOGY_TYPE,NPHY,No physical card technology

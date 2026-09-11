@@ -1,0 +1,19 @@
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,V10,99|S,"ADD_STATUS=99, STATUS=S",REFERENCE.CORE.CARD_STATUS,DISA,Card Disabled
+,V10,2|P,"ADD_STATUS=2, STATUS=P",REFERENCE.CORE.CARD_STATUS,FORM,Invalid status default from AMPS mapping rule
+,V10,2|0,"ADD_STATUS=2, STATUS=0",REFERENCE.CORE.CARD_STATUS,FORM,Invalid status default from AMPS mapping rule
+,V10,99|1,"ADD_STATUS=99, STATUS=1",REFERENCE.CORE.CARD_STATUS,ENAB,Card Enabled
+,V10,0|0,"ADD_STATUS=0, STATUS=0",REFERENCE.CORE.CARD_STATUS,FORM,Invalid status default from AMPS mapping rule
+,V10,0|P,"ADD_STATUS=0, STATUS=P",REFERENCE.CORE.CARD_STATUS,FORM,Invalid status default from AMPS mapping rule
+,V10,99|0,"ADD_STATUS=99, STATUS=0",REFERENCE.CORE.CARD_STATUS,ENAB,Card Enabled
+,V10,99|P,"ADD_STATUS=99, STATUS=P",REFERENCE.CORE.CARD_STATUS,DELE,Card Deleted
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_STATUS,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_STATUS,DQMissing,Source value not provided
+,V10,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_STATUS,DQNotApplicable,Source value not required
+,VN,ENAB,Card Enabled,REFERENCE.CORE.CARD_STATUS,ENAB,Card Enabled
+,VN,FORM,Invalid status default from AMPS mapping rule,REFERENCE.CORE.CARD_STATUS,FORM,Invalid status default from AMPS mapping rule
+,VN,DELE,Card Deleted,REFERENCE.CORE.CARD_STATUS,DELE,Card Deleted
+,VN,DISA,Card Disabled,REFERENCE.CORE.CARD_STATUS,DISA,Card Disabled
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_STATUS,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_STATUS,DQMissing,Source value not provided
+,VN,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_STATUS,DQNotApplicable,Source value not required

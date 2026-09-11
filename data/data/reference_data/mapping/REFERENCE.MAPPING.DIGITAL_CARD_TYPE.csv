@@ -1,0 +1,16 @@
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,VN,NDIG,NonDigital card,REFERENCE.CORE.DIGITAL_CARD_TYPE,NDIG,NonDigital card
+,VN,FTRM,FullTerm card,REFERENCE.CORE.DIGITAL_CARD_TYPE,FTRM,FullTerm card
+,VN,TRAN,Transient card,REFERENCE.CORE.DIGITAL_CARD_TYPE,TRAN,Transient card
+,VN,STRM,ShortTerm card,REFERENCE.CORE.DIGITAL_CARD_TYPE,STRM,ShortTerm card
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.DIGITAL_CARD_TYPE,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.DIGITAL_CARD_TYPE,DQMissing,Source value not provided
+,VN,DQNotApplicable,Source value not provided,REFERENCE.CORE.DIGITAL_CARD_TYPE,DQNotApplicable,Source value not provided
+,V10,D,Digital,REFERENCE.CORE.DIGITAL_CARD_TYPE,FTRM,FullTerm card
+,V10,T,Digital only temporary,REFERENCE.CORE.DIGITAL_CARD_TYPE,TRAN,Transient card
+,V10,E,Early copy,REFERENCE.CORE.DIGITAL_CARD_TYPE,STRM,ShortTerm card
+,V10,V,Virtual,REFERENCE.CORE.DIGITAL_CARD_TYPE,VIRT,Virtual card
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.DIGITAL_CARD_TYPE,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.DIGITAL_CARD_TYPE,DQMissing,Source value not provided
+,V10,DQNotApplicable,Source value not provided,REFERENCE.CORE.DIGITAL_CARD_TYPE,DQNotApplicable,Source value not provided
+,V10,' ',Normal (non-digital),REFERENCE.CORE.DIGITAL_CARD_TYPE,NDIG,NonDigital card

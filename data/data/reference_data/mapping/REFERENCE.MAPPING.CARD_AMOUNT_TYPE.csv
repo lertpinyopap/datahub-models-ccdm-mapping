@@ -1,0 +1,24 @@
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,VN,CSBK,Cashback details for purchase with cashback transaction,REFERENCE.CORE.CARD_AMOUNT_TYPE,CSBK,Cashback details for purchase with cashback transaction
+,VN,FEES,Fees,REFERENCE.CORE.CARD_AMOUNT_TYPE,FEES,Fees
+,VN,SURF,Surcharge or rebate fees,REFERENCE.CORE.CARD_AMOUNT_TYPE,SURF,Surcharge or rebate fees
+,VN,ACTL,Actual amount,REFERENCE.CORE.CARD_AMOUNT_TYPE,ACTL,Actual amount
+,VN,DFLT,Default amount,REFERENCE.CORE.CARD_AMOUNT_TYPE,DFLT,Default amount
+,VN,DPST,Deposit amount,REFERENCE.CORE.CARD_AMOUNT_TYPE,DPST,Deposit amount
+,VN,ESTM,Estimated amount,REFERENCE.CORE.CARD_AMOUNT_TYPE,ESTM,Estimated amount
+,VN,MAXI,Maximum amount,REFERENCE.CORE.CARD_AMOUNT_TYPE,MAXI,Maximum amount
+,VN,PRXY,Substitute for an amount to be authorised,REFERENCE.CORE.CARD_AMOUNT_TYPE,PRXY,Substitute for an amount to be authorised
+,VN,RESD,Reserved or updated reserved amount for reservation,REFERENCE.CORE.CARD_AMOUNT_TYPE,RESD,Reserved or updated reserved amount for reservation
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMissing,Source value not provided
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMissing,Source value not provided
+,V8,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMapping,Source value cannot be mapped
+,V8,DQMissing,Source value not provided,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMissing,Source value not provided
+,V2,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMapping,Source value cannot be mapped
+,V2,DQMissing,Source value not provided,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMissing,Source value not provided
+,V10,CSBK,Cashback details for purchase with cashback transaction,REFERENCE.CORE.CARD_AMOUNT_TYPE,CSBK,Cashback details for purchase with cashback transaction
+,V10,FEES,Fees,REFERENCE.CORE.CARD_AMOUNT_TYPE,FEES,Fees
+,V10,SURF,Surcharge or rebate fees,REFERENCE.CORE.CARD_AMOUNT_TYPE,SURF,Surcharge or rebate fees
+,V10,ACTL,Actual amount,REFERENCE.CORE.CARD_AMOUNT_TYPE,ACTL,Actual amount
+,V10,DFLT,Default amount,REFERENCE.CORE.CARD_AMOUNT_TYPE,DFLT,Default amount

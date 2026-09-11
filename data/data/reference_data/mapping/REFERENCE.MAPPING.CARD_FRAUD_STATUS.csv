@@ -1,0 +1,17 @@
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,VN,SFRD,Fraud is suspected but not confirmed,REFERENCE.CORE.CARD_FRAUD_STATUS,ENAB,Fraud is suspected but not confirmed
+,VN,CFRD,Fraud has been confirmed,REFERENCE.CORE.CARD_FRAUD_STATUS,FORM,Fraud has been confirmed
+,VN,NONE,No fraud indicator present,REFERENCE.CORE.CARD_FRAUD_STATUS,DELE,No fraud indicator present
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_FRAUD_STATUS,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_FRAUD_STATUS,DQMissing,Source value not provided
+,VN,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_FRAUD_STATUS,DQNotApplicable,Source value not required
+,V10,P,Purged,REFERENCE.CORE.CARD_FRAUD_STATUS,NONE,No fraud indicator present
+,V10,1,Permanent,REFERENCE.CORE.CARD_FRAUD_STATUS,NONE,No fraud indicator present
+,V10,S,CNS transfer,REFERENCE.CORE.CARD_FRAUD_STATUS,NONE,No fraud indicator present
+,V10,0,Active,REFERENCE.CORE.CARD_FRAUD_STATUS,NONE,No fraud indicator present
+,V10,F,Fraud,REFERENCE.CORE.CARD_FRAUD_STATUS,CFRD,Fraud has been confirmed
+,V10,T,Temporary,REFERENCE.CORE.CARD_FRAUD_STATUS,NONE,No fraud indicator present
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_FRAUD_STATUS,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_FRAUD_STATUS,DQMissing,Source value not provided
+,V10,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_FRAUD_STATUS,DQNotApplicable,Source value not required
+,V10,' ',chip exceeded,REFERENCE.CORE.CARD_FRAUD_STATUS,NONE,No fraud indicator present

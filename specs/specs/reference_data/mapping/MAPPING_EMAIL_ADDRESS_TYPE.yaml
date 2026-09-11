@@ -1,0 +1,11 @@
+id: reference_mapping_email_address_type
+extends: REFERENCE_MAPPING_SCD2_AUTO
+description: Maps reference email address type mapping CSV data into the EMAIL_ADDRESS_TYPE mapping table.
+source:
+  seed:
+    file: data/reference_data/mapping/REFERENCE.MAPPING.EMAIL_ADDRESS_TYPE.csv
+    name: reference_mapping_email_address_type_seed
+target:
+  id: EMAIL_ADDRESS_TYPE
+  schema: MAPPING
+  table_name: EMAIL_ADDRESS_TYPE

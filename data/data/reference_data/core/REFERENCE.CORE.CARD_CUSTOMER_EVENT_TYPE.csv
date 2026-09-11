@@ -1,0 +1,12 @@
+CARD_CUSTOMER_EVENT_TYPE_CODE,CARD_CUSTOMER_EVENT_TYPE_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
+NEW_CUSTOMER,New customer record is created,Y,N,1900-01-01,9999-12-31
+CUSTOMER_UPDATED,Existing customer record is modified,Y,N,1900-01-01,9999-12-31
+ADDR,Customer address is updated,Y,N,1900-01-01,9999-12-31
+CONT,Customer contact details are updated,Y,N,1900-01-01,9999-12-31
+LETR,System-generated letter is sent to customer,Y,N,1900-01-01,9999-12-31
+B2FM,Customer record is migrated from legacy system to V10 platform,Y,N,1900-01-01,9999-12-31
+NADD,New (Additional) address is added to customer profile,Y,N,1900-01-01,9999-12-31
+ANEX,Historical non-monetary note is migrated from legacy AMEX system,Y,N,1900-01-01,9999-12-31
+DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
+DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
+DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31

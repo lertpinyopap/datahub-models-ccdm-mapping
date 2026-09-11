@@ -1,0 +1,14 @@
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,VN,PHYS,Physical card,REFERENCE.CORE.PAYMENT_INSTRUMENT_TYPE,PHYS,Physical card
+,VN,DIGI,Digital card,REFERENCE.CORE.PAYMENT_INSTRUMENT_TYPE,DIGI,Digital card
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.PAYMENT_INSTRUMENT_TYPE,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.PAYMENT_INSTRUMENT_TYPE,DQMissing,Source value not provided
+,VN,DQNotApplicable,Source value not provided,REFERENCE.CORE.PAYMENT_INSTRUMENT_TYPE,DQNotApplicable,Source value not provided
+,V10,D,Digital,REFERENCE.CORE.PAYMENT_INSTRUMENT_TYPE,DIGI,Digital card
+,V10,T,Digital only temporary,REFERENCE.CORE.PAYMENT_INSTRUMENT_TYPE,DIGI,Digital card
+,V10,E,Early copy,REFERENCE.CORE.PAYMENT_INSTRUMENT_TYPE,DIGI,Digital card
+,V10,V,Virtual,REFERENCE.CORE.PAYMENT_INSTRUMENT_TYPE,DIGI,Digital card
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.PAYMENT_INSTRUMENT_TYPE,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.PAYMENT_INSTRUMENT_TYPE,DQMissing,Source value not provided
+,V10,DQNotApplicable,Source value not provided,REFERENCE.CORE.PAYMENT_INSTRUMENT_TYPE,DQNotApplicable,Source value not provided
+,V10,' ',Normal (non-digital),REFERENCE.CORE.PAYMENT_INSTRUMENT_TYPE,PHYS,Physical card

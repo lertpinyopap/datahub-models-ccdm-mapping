@@ -1,0 +1,33 @@
+id: reference_core_card_blocked_reason
+extends: REFERENCE_CORE_SCD2_MANUAL
+description: Maps reference card blocked reason CSV data into a manual SCD2 card blocked reason table.
+control_data:
+  business_key:
+    fields:
+      - CARD_BLOCKED_REASON_CODE
+source:
+  seed:
+    file: data/reference_data/core/REFERENCE.CORE.CARD_BLOCKED_REASON.csv
+    name: reference_core_card_blocked_reason_seed
+    schema: INTERMEDIATE
+target:
+  id: CARD_BLOCKED_REASON
+  schema: CORE
+  table_name: CARD_BLOCKED_REASON
+  fields:
+    - id: CARD_BLOCKED_REASON_CODE
+      source:
+        pos: 0
+        column: CARD_BLOCKED_REASON_CODE
+      data_type: varchar(20)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: CARD_BLOCKED_REASON_DESCRIPTION
+      source:
+        pos: 1
+        column: CARD_BLOCKED_REASON_DESCRIPTION
+      data_type: varchar(16777216)
+      transforms:
+        - type: trim
+      nullable: false

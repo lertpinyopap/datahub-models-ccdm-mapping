@@ -1,0 +1,57 @@
+id: reference_core_product
+extends: REFERENCE_CORE_SCD2_MANUAL
+description: Maps reference product CSV data into a manual SCD2 product table.
+control_data:
+  business_key:
+    fields:
+      - PRODUCT_CODE
+source:
+  seed:
+    file: data/reference_data/core/REFERENCE.CORE.PRODUCT.csv
+    name: reference_core_product_seed
+    schema: INTERMEDIATE
+target:
+  id: PRODUCT
+  schema: CORE
+  table_name: PRODUCT
+  fields:
+    - id: PRODUCT_CODE
+      source:
+        pos: 0
+        column: PRODUCT_CODE
+      data_type: varchar(16777216)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: PRODUCT_NAME
+      source:
+        pos: 1
+        column: PRODUCT_NAME
+      data_type: varchar(16777216)
+      transforms:
+        - type: trim
+      nullable: false
+    - id: BRAND_KEY
+      source:
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        pos: 2
+        column: BRAND_CODE
+        args:
+          reference_type: BRAND
+          source_code_column: BRAND_CODE
+          value_column: BRAND_KEY
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: BRAND_BUSINESS_KEY
+      source:
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        pos: 2
+        column: BRAND_CODE
+        args:
+          reference_type: BRAND
+          source_code_column: BRAND_CODE
+          value_column: BRAND_BUSINESS_KEY
+          required: true
+      data_type: varchar(64)
+      nullable: false

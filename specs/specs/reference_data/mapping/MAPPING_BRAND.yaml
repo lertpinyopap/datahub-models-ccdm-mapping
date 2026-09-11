@@ -1,0 +1,11 @@
+id: reference_mapping_brand
+extends: REFERENCE_MAPPING_SCD2_AUTO
+description: Maps reference brand mapping CSV data into the BRAND mapping table.
+source:
+  seed:
+    file: data/reference_data/mapping/REFERENCE.MAPPING.BRAND.csv
+    name: reference_mapping_brand_seed
+target:
+  id: BRAND
+  schema: MAPPING
+  table_name: BRAND

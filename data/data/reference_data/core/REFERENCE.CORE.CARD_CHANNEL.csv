@@ -1,0 +1,32 @@
+CARD_CHANNEL_CODE,CARD_CHANNEL_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_FLAG,VALID_FROM_DATETIME,VALID_TO_DATETIME
+AFFAPP,Partner Affiliates Application,Y,N,1900-01-01,9999-12-31
+APPACH,Additional Cardholder via Apply Online,Y,N,1900-01-01,9999-12-31
+ASTAPP,Partner Hub Assisted Application,Y,N,1900-01-01,9999-12-31
+BLKTFR,Bulk Account Transfer,Y,N,1900-01-01,9999-12-31
+INSCLI,Credit Limit Increase In-Store,Y,N,1900-01-01,9999-12-31
+IVRCLI,Credit Limit Increase via OTP/IVR,Y,N,1900-01-01,9999-12-31
+LOCAPP,Latitude Checkout Online,Y,N,1900-01-01,9999-12-31
+LSCACH,Additional Cardholder via LSC,Y,N,1900-01-01,9999-12-31
+LSCCLI,Credit Limit Increase via LSC,Y,N,1900-01-01,9999-12-31
+LSCCLS,Credit Limit Split via LSC,Y,N,1900-01-01,9999-12-31
+MIGRAT,Account Migration,Y,N,1900-01-01,9999-12-31
+MOBACH,Additional Cardholder via Mobile App,Y,N,1900-01-01,9999-12-31
+MOBCLI,Credit Limit Increase via Mobile App,Y,N,1900-01-01,9999-12-31
+MOBCLS,Credit Limit Split via Mobile App,Y,N,1900-01-01,9999-12-31
+ONLAPP,Direct Online Application,Y,N,1900-01-01,9999-12-31
+PONAPP,Partner Online Application,Y,N,1900-01-01,9999-12-31
+QRIAPP,In-Store Application via QR Code,Y,N,1900-01-01,9999-12-31
+QROAPP,Online Application via QR Code,Y,N,1900-01-01,9999-12-31
+SMSAPP,Application via SMS Link,Y,N,1900-01-01,9999-12-31
+MIGRATXSLACT,XSell Active (AU),Y,N,1900-01-01,9999-12-31
+MIGRATTRDPTY,3rd Party (AU),Y,N,1900-01-01,9999-12-31
+MIGRATEAPLEG,E-Apps (AU) / eApps Online Scheme (NZ),Y,N,1900-01-01,9999-12-31
+MIGRATMLXFAX,Mail/Fax (AU) / Mail (NZ),Y,N,1900-01-01,9999-12-31
+MIGRATTKEONE,Take One (AU),Y,N,1900-01-01,9999-12-31
+MIGRATPSTFAC,Partner Staff Account (NZ),Y,N,1900-01-01,9999-12-31
+MIGRATEAPSTF,Eapps-Staff (AU) / GE Staff Account (NZ),Y,N,1900-01-01,9999-12-31
+MIGRATEAPOFF,Eapps-Staff Offline (AU),Y,N,1900-01-01,9999-12-31
+MIGRATMOBEAP,Mobile E-apps (AU),Y,N,1900-01-01,9999-12-31
+DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
+DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
+DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31

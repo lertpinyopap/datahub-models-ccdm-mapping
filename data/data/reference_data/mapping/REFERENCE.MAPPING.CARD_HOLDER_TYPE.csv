@@ -1,0 +1,47 @@
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,VN,ADNL,Additional,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,VN,PRIM,Primary,REFERENCE.CORE.CARD_HOLDER_TYPE,PRIM,Primary
+,VN,TEMP,Temporary shopping card holder,REFERENCE.CORE.CARD_HOLDER_TYPE,TEMP,Temporary shopping card holder
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_HOLDER_TYPE,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_HOLDER_TYPE,DQMissing,Source value not provided
+,VN,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_HOLDER_TYPE,DQNotApplicable,Source value not required
+,V10,0,Additional cardholder,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V10,1,Primary cardholder,REFERENCE.CORE.CARD_HOLDER_TYPE,PRIM,Primary
+,V10,2,Temporary shopping card holder,REFERENCE.CORE.CARD_HOLDER_TYPE,TEMP,Temporary shopping card holder
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_HOLDER_TYPE,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_HOLDER_TYPE,DQMissing,Source value not provided
+,V10,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_HOLDER_TYPE,DQNotApplicable,Source value not required
+,V8,,Blank/space,REFERENCE.CORE.CARD_HOLDER_TYPE,PRIM,Primary
+,V8,0,Additional cardholder,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V8,1,Primary cardholder,REFERENCE.CORE.CARD_HOLDER_TYPE,PRIM,Primary
+,V8,2,Temporary shopping card holder,REFERENCE.CORE.CARD_HOLDER_TYPE,TEMP,Temporary shopping card holder
+,V8,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_HOLDER_TYPE,DQMapping,Source value cannot be mapped
+,V8,DQMissing,Source value not provided,REFERENCE.CORE.CARD_HOLDER_TYPE,DQMissing,Source value not provided
+,V8,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_HOLDER_TYPE,DQNotApplicable,Source value not required
+,V2,',Has relation to primary: ',REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,.,Has relation to primary: .,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,0,Has relation to primary: 0,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,1,Has relation to primary: 1,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,3,Has relation to primary: 3,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,5,Has relation to primary: 5,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,A,Has relation to primary: A,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,C,Has relation to primary: C,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,D,Has relation to primary: D,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,F,Has relation to primary: F,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,H,Has relation to primary: H,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,M,Has relation to primary: M,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,N,Has relation to primary: N,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,O,Has relation to primary: O,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,P,Has relation to primary: P,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,R,Has relation to primary: R,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,S,Has relation to primary: S,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,T,Has relation to primary: T,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,W,Has relation to primary: W,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,X,Has relation to primary: X,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,Y,Has relation to primary: Y,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,\,Has relation to primary: \,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,`,Has relation to primary: `,REFERENCE.CORE.CARD_HOLDER_TYPE,ADNL,Additional
+,V2,,No relation (is the primary),REFERENCE.CORE.CARD_HOLDER_TYPE,PRIM,Primary
+,V2,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_HOLDER_TYPE,DQMapping,Source value cannot be mapped
+,V2,DQMissing,Source value not provided,REFERENCE.CORE.CARD_HOLDER_TYPE,DQMissing,Source value not provided
+,V2,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_HOLDER_TYPE,DQNotApplicable,Source value not required
