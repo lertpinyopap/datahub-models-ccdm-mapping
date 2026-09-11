@@ -1,0 +1,569 @@
+{
+  "conn_id": "snowflake_connection",
+  "profile_args": {
+    "database": "NONPROD_REFERENCE",
+    "schema": "INTERMEDIATE",
+    "warehouse": "WH_NONPROD_SVC_DATA_AIRFLOW_LOAD_LIGHT",
+    "client_session_keep_alive": true,
+    "query_tag": "PAY",
+    "threads": 4
+  },
+  "vars": {
+    "ENV_PREFIX": "NONPROD_",
+    "DATAOPS_ENV_SUFFIX": "_NONPROD",
+    "tms_job_schema": "INTERMEDIATE"
+  },
+  "jobs": [
+    {
+      "dag_id": "datahub-models-ccdm-mapping-reference_loader",
+      "target": "test",
+      "vars": {
+        "database": "NONPROD_REFERENCE"
+      },
+      "tags": [
+        "reference-data",
+        "tms"
+      ],
+      "schedule": "manual",
+      "task_groups": [
+        {
+          "group_id": "reference_address_type",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_ADDRESS_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_ADDRESS_TYPE.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_brand",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true, "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_BRAND.yaml",
+              "depends_on": [
+                "reference_financial_institution.load_core"
+              ]
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_BRAND.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_card_action_type",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CARD_ACTION_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_ACTION_TYPE.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_card_channel",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CARD_CHANNEL.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_CHANNEL.yaml",
+              "full_refresh": true,
+              "depends_on": ["load_core"]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_card_activation_status",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CARD_ACTIVATION_STATUS.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_ACTIVATION_STATUS.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_card_additional_service_type",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CARD_ADDITIONAL_SERVICE_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_ADDITIONAL_SERVICE_TYPE.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_card_amount_type",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CARD_AMOUNT_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_AMOUNT_TYPE.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_card_authorisation_request_status",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CARD_AUTHORISATION_REQUEST_STATUS.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_AUTHORISATION_REQUEST_STATUS.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_card_customer_event_type",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CARD_CUSTOMER_EVENT_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_CUSTOMER_EVENT_TYPE.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_card_event_type",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CARD_EVENT_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_EVENT_TYPE.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_card_fraud_status",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CARD_FRAUD_STATUS.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_FRAUD_STATUS.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_country",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_COUNTRY.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_COUNTRY.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_currency",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CURRENCY.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CURRENCY.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_customer_business_status",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CUSTOMER_BUSINESS_STATUS.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CUSTOMER_BUSINESS_STATUS.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_customer_business_status_scope",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CUSTOMER_BUSINESS_STATUS_SCOPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CUSTOMER_BUSINESS_STATUS_SCOPE.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_customer_contact_preference_type",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CUSTOMER_CONTACT_PREFERENCE_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CUSTOMER_CONTACT_PREFERENCE_TYPE.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_customer_status",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CUSTOMER_STATUS.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CUSTOMER_STATUS.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_financial_institution",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_FINANCIAL_INSTITUTION.yaml",
+              "depends_on": [
+                "reference_country.load_core"
+              ]
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_FINANCIAL_INSTITUTION.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_merchant_category",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_MERCHANT_CATEGORY.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_MERCHANT_CATEGORY.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_phone_number_type",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_PHONE_NUMBER_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_PHONE_NUMBER_TYPE.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_product",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_PRODUCT.yaml",
+              "depends_on": [
+                "reference_brand.load_core"
+              ]
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_PRODUCT.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_card_blocked_reason",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CARD_BLOCKED_REASON.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_BLOCKED_REASON.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_card_fee_waiver_type",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CARD_FEE_WAIVER_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_FEE_WAIVER_TYPE.yaml",
+              "full_refresh": true,
+              "depends_on": ["load_core"]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_card_holder_type",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CARD_HOLDER_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_HOLDER_TYPE.yaml",
+              "full_refresh": true,
+              "depends_on": ["load_core"]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_card_status",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_CARD_STATUS.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_STATUS.yaml",
+              "full_refresh": true,
+              "depends_on": ["load_core"]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_digital_card_type",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_DIGITAL_CARD_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_DIGITAL_CARD_TYPE.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_email_address_type",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_EMAIL_ADDRESS_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_EMAIL_ADDRESS_TYPE.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_payment_instrument_type",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_PAYMENT_INSTRUMENT_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_PAYMENT_INSTRUMENT_TYPE.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_physical_card_technology_type",
+          "tasks": [
+            {
+              "task_id": "load_core", "full_refresh": true,
+              "spec": "specs/reference_data/core/CORE_PHYSICAL_CARD_TECHNOLOGY_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_PHYSICAL_CARD_TECHNOLOGY_TYPE.yaml",
+              "full_refresh": true,
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dag_id": "datahub-models-ccdm-mapping-card-customer-historical_loader",
+      "target": "test",
+      "tags": ["ccdm", "card-customer", "historical", "tms"],
+      "schedule": "manual",
+      "vars": {
+        "database": "NONPROD_PAY",
+        "schema": "CORE"
+      },
+      "task_groups": [
+        {
+          "group_id": "card_customer_historical",
+          "tasks": [
+            {
+              "task_id": "load_card_customer_historical",
+              "spec": "specs/ccdm/v10/card_customer/CARD_CUSTOMER_HISTORICAL_INITIAL_LOAD.yaml",
+              "full_refresh": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dag_id": "datahub-models-ccdm-mapping-card-customer-incremental_loader",
+      "target": "test",
+      "tags": ["ccdm", "card-customer", "incremental", "tms"],
+      "schedule": "manual",
+      "vars": {
+        "database": "NONPROD_PAY",
+        "schema": "CORE"
+      },
+      "task_groups": [
+        {
+          "group_id": "card_customer_incremental",
+          "tasks": [
+            {
+              "task_id": "load_card_customer_incremental",
+              "spec": "specs/ccdm/v10/card_customer/CARD_CUSTOMER_INCREMENTAL.yaml"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
