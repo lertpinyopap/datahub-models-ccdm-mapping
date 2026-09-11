@@ -49,3 +49,41 @@ Traceback (most recent call last):
   File "/usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/runtime/tms-python/type_materialisation/dbt_hooks.py", line 9, in <module>
     from .schema import require_yaml
 ImportError: attempted relative import with no known parent package
+
+
+
+
+
+
+MS generated project dir: /tmp/tms-generated/specs/reference_data/mapping/MAPPING_CUSTOMER_BUSINAESS_STATUS/run_reference_customer_business_status.load_mapping_20260911T032153377183Z: chan="stdout": source="task"
+[2026-09-11, 13:21:53] ERROR - parse failed: chan="stderr": source="task"
+[2026-09-11, 13:21:53] ERROR - : chan="stderr": source="task"
+[2026-09-11, 13:21:53] ERROR -   Location: chan="stderr": source="task"
+[2026-09-11, 13:21:53] ERROR -  ──────────────────────────────────────────────────────────────────────────────: chan="stderr": source="task"
+[2026-09-11, 13:21:53] ERROR -   /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/specs/reference_da…: chan="stderr": source="task"
+[2026-09-11, 13:21:53] ERROR - : chan="stderr": source="task"
+[2026-09-11, 13:21:53] INFO - TMS cleaned generated project dir: /tmp/tms-generated/specs/reference_data/mapping/MAPPING_CUSTOMER_BUSINAESS_STATUS/run_reference_customer_business_status.load_mapping_20260911T032153377183Z: chan="stdout": source="task"
+[2026-09-11, 13:21:53] ERROR - Task failed with exception: source="task"
+RuntimeError: Command failed with exit code 1: bash /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/runtime/bin/tms parse --spec /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/specs/reference_data/mapping/MAPPING_CUSTOMER_BUSINAESS_STATUS.yaml --spec-path /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/specs --spec-path /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/specs/abstract --spec-path /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/specs/ccdm --spec-path /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/specs/ccdm/v10 --spec-path /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/specs/ccdm/v10/card_account --spec-path /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/specs/ccdm/v10/card_customer --spec-path /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/specs/ccdm/v10/card_customer_address --spec-path /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/specs/ccdm/v10/card_customer_email_address --spec-path /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/specs/ccdm/v10/card_customer_event --spec-path /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/specs/ccdm/v10/card_customer_phone --spec-path /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/specs/reference_data --spec-path /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/specs/reference_data/core --spec-path /usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/specs/reference_data/mapping --vars {"ENV_PREFIX": "NONPROD_", "DATAOPS_ENV_SUFFIX": "_NONPROD", "tms_job_schema": "INTERMEDIATE", "database": "NONPROD_REFERENCE", "conn_id": "snowflake_connection", "profile_args": {"database": "NONPROD_REFERENCE", "schema": "INTERMEDIATE", "warehouse": "WH_NONPROD_SVC_DATA_AIRFLOW_LOAD_LIGHT", "client_session_keep_alive": true, "query_tag": "PAY", "threads": 4}, "schema": "INTERMEDIATE", "warehouse": "WH_NONPROD_SVC_DATA_AIRFLOW_LOAD_LIGHT", "client_session_keep_alive": true, "query_tag": "PAY", "threads": 4, "insert_time": "2026-09-11T03:21:53.377613+00:00"}
+File "/usr/local/airflow/.local/lib/python3.12/site-packages/airflow/sdk/execution_time/task_runner.py", line 920 in run
+
+File "/usr/local/airflow/.local/lib/python3.12/site-packages/airflow/sdk/execution_time/task_runner.py", line 1215 in _execute_task
+
+File "/usr/local/airflow/.local/lib/python3.12/site-packages/airflow/sdk/bases/operator.py", line 397 in wrapper
+
+File "/usr/local/airflow/.local/lib/python3.12/site-packages/airflow/providers/standard/operators/python.py", line 216 in execute
+
+File "/usr/local/airflow/.local/lib/python3.12/site-packages/airflow/providers/standard/operators/python.py", line 239 in execute_callable
+
+File "/usr/local/airflow/.local/lib/python3.12/site-packages/airflow/sdk/execution_time/callback_runner.py", line 81 in run
+
+File "/usr/local/airflow/dags/datahub-models-ccdm-mapping/dags_tms_entrypoint.py", line 60 in run_loader
+
+File "/usr/local/airflow/dags/datahub-models-ccdm-mapping/tms_loader.py", line 85 in run_tms_load
+
+File "/usr/local/airflow/dags/datahub-models-ccdm-mapping/tms_loader.py", line 528 in run
+
+
+
+
+
