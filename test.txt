@@ -136,3 +136,44 @@ TMS generated project dir: /tmp/tms-generated/specs/reference_data/core/CORE_CAR
 
 
 
+
+2026-09-11, 17:47:49] INFO - [0m07:47:49  Running with dbt=1.12.3: chan="stdout": source="task"
+[2026-09-11, 17:47:50] INFO - [0m07:47:50  Registered adapter: snowflake=1.11.6: chan="stdout": source="task"
+[2026-09-11, 17:47:50] INFO - [0m07:47:50  Unable to do partial parsing because saved manifest not found. Starting full parse.: chan="stdout": source="task"
+[2026-09-11, 17:47:52] INFO - [0m07:47:52  Found 3 models, 9 operations, 554 macros: chan="stdout": source="task"
+[2026-09-11, 17:47:52] INFO - [0m07:47:52: chan="stdout": source="task"
+[2026-09-11, 17:47:52] INFO - [0m07:47:52  Concurrency: 4 threads (target='prod'): chan="stdout": source="task"
+[2026-09-11, 17:47:52] INFO - [0m07:47:52: chan="stdout": source="task"
+[2026-09-11, 17:47:54] INFO - [0m07:47:54  1 of 4 START hook: type_materialisation_generated.on-run-start.0 ............... [RUN]: chan="stdout": source="task"
+[2026-09-11, 17:47:55] INFO - [0m07:47:55  1 of 4 OK hook: type_materialisation_generated.on-run-start.0 .................. [[32mOK[0m in 0.68s]: chan="stdout": source="task"
+[2026-09-11, 17:47:55] INFO - [0m07:47:55  2 of 4 START hook: type_materialisation_generated.on-run-start.1 ............... [RUN]: chan="stdout": source="task"
+[2026-09-11, 17:47:55] INFO - [0m07:47:55  2 of 4 OK hook: type_materialisation_generated.on-run-start.1 .................. [[32mOK[0m in 0.10s]: chan="stdout": source="task"
+[2026-09-11, 17:47:55] INFO - [0m07:47:55  3 of 4 START hook: type_materialisation_generated.on-run-start.2 ............... [RUN]: chan="stdout": source="task"
+[2026-09-11, 17:47:55] INFO - [0m07:47:55  3 of 4 OK hook: type_materialisation_generated.on-run-start.2 .................. [[32mOK[0m in 0.20s]: chan="stdout": source="task"
+[2026-09-11, 17:47:55] INFO - [0m07:47:55  4 of 4 START hook: type_materialisation_generated.on-run-start.3 ............... [RUN]: chan="stdout": source="task"
+[2026-09-11, 17:47:55] INFO - [0m07:47:55  4 of 4 ERROR hook: type_materialisation_generated.on-run-start.3 ............... [[31mERROR[0m in 0.06s]: chan="stdout": source="task"
+[2026-09-11, 17:47:55] INFO - [0m07:47:55: chan="stdout": source="task"
+[2026-09-11, 17:47:55] INFO - [0m07:47:55  1 of 3 SKIP relation CORE.CARD_CUSTOMER ........................................ [[33mSKIP[0m]: chan="stdout": source="task"
+[2026-09-11, 17:47:55] INFO - [0m07:47:55  2 of 3 SKIP relation INTERMEDIATE.CARD_CUSTOMER__validation_guard .............. [[33mSKIP[0m]: chan="stdout": source="task"
+[2026-09-11, 17:47:55] INFO - [0m07:47:55  3 of 3 SKIP relation INTERMEDIATE.CARD_CUSTOMER__source ........................ [[33mSKIP[0m]: chan="stdout": source="task"
+[2026-09-11, 17:47:55] INFO - [0m07:47:55: chan="stdout": source="task"
+[2026-09-11, 17:47:55] INFO - [0m07:47:55  1 of 5 START hook: type_materialisation_generated.on-run-end.0 ................. [RUN]: chan="stdout": source="task"
+[2026-09-11, 17:47:56] INFO - [0m07:47:56  1 of 5 OK hook: type_materialisation_generated.on-run-end.0 .................... [[32mOK[0m in 0.49s]: chan="stdout": source="task"
+[2026-09-11, 17:47:56] INFO - [0m07:47:56  2 of 5 START hook: type_materialisation_generated.on-run-end.1 ................. [RUN]: chan="stdout": source="task"
+[2026-09-11, 17:47:56] INFO - [0m07:47:56  2 of 5 OK hook: type_materialisation_generated.on-run-end.1 .................... [[32mOK[0m in 0.09s]: chan="stdout": source="task"
+[2026-09-11, 17:47:56] INFO - [0m07:47:56  3 of 5 START hook: type_materialisation_generated.on-run-end.2 ................. [RUN]: chan="stdout": source="task"
+[2026-09-11, 17:47:58] INFO - [0m07:47:58  3 of 5 OK hook: type_materialisation_generated.on-run-end.2 .................... [[32mOK[0m in 1.60s]: chan="stdout": source="task"
+[2026-09-11, 17:47:58] INFO - [0m07:47:58  4 of 5 START hook: type_materialisation_generated.on-run-end.3 ................. [RUN]: chan="stdout": source="task"
+[2026-09-11, 17:47:58] INFO - [0m07:47:58  4 of 5 OK hook: type_materialisation_generated.on-run-end.3 .................... [[32mOK[0m in 0.07s]: chan="stdout": source="task"
+[2026-09-11, 17:47:58] INFO - [0m07:47:58  5 of 5 START hook: type_materialisation_generated.on-run-end.4 ................. [RUN]: chan="stdout": source="task"
+[2026-09-11, 17:47:58] INFO - [0m07:47:58  5 of 5 ERROR hook: type_materialisation_generated.on-run-end.4 ................. [[31mERROR[0m in 0.08s]: chan="stdout": source="task"
+[2026-09-11, 17:47:58] INFO - [0m07:47:58: chan="stdout": source="task"
+[2026-09-11, 17:47:58] INFO - [0m07:47:58  Finished running 1 incremental model, 9 project hooks, 1 table model, 1 view model in 0 hours 0 minutes and 6.00 seconds (6.00s).: chan="stdout": source="task"
+[2026-09-11, 17:47:58] INFO - [0m07:47:58: chan="stdout": source="task"
+[2026-09-11, 17:47:58] INFO - [0m07:47:58  [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m: chan="stdout": source="task"
+[2026-09-11, 17:47:58] INFO - [0m07:47:58: chan="stdout": source="task"
+[2026-09-11, 17:47:58] INFO - [0m07:47:58  [[31mERROR[0m]: in operation type_materialisation_generated-on-run-start-3 (./dbt_project.yml): chan="stdout": source="task"
+
+
+
+
