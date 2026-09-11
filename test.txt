@@ -39,3 +39,13 @@ Traceback (most recent call last):
     raise RuntimeError(f"Command failed with exit code {completed.returncode}: {' '.join(command)}")
 RuntimeError: Command failed with exit code 1: /Users/700009706/Documents/LFS/DataHub/datahub-models-ccdm-mapping/libs/tms-env/bin/tms dbt-build --spec /Users/700009706/Documents/LFS/DataHub/datahub-models-ccdm-mapping/specs/reference_data/core/CORE_PRODUCT.yaml --project-dir /Users/700009706/Documents/LFS/DataHub/datahub-models-ccdm-mapping/tmp/generated/specs/reference_data/core/CORE_PRODUCT/run_CORE_PRODUCT_20260911T014513598658Z --target dev --vars {"ENV_PREFIX": "", "tms_job_schema": "INTERMEDIATE", "insert_time": "2026-09-11T01:45:13.599030+00:00"} --full-refresh
 zsh: command not found: --dbt-vars
+
+
+
+
+
+Traceback (most recent call last):
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/usr/local/airflow/dags/datahub-models-ccdm-mapping/dbt/runtime/tms-python/type_materialisation/dbt_hooks.py", line 9, in <module>
+    from .schema import require_yaml
+ImportError: attempted relative import with no known parent package
