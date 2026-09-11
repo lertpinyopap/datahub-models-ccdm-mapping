@@ -5,3 +5,37 @@
 [2026-09-11, 11:25:33] INFO - [0m01:25:33  Done. PASS=4 WARN=0 ERROR=1 SKIP=3 NO-OP=0 REUSED=0 TOTAL=8: chan="stdout": source="task"
 [2026-09-11, 11:25:35] INFO - TMS cleaned generated project dir: /tmp/tms-generated/specs/reference_data/mapping/MAPPING_PRODUCT/run_reference_product.load_mapping_20260911T012518772433Z: chan="stdout": source="task"
 [2026-09-11, 11:25:35] ERROR - Task failed with exception: source="task"
+
+
+  python datahub-tms-pipeline/dags/local_run_tms_loader.py \
+  --spec specs/reference_data/core/CORE_PRODUCT.yaml \
+  --target dev --full-refresh \
+  --keep-generated-project                  
+  --dbt-vars '{"database":"SAS_MIGRATION_WORKSPACE","ENV_PREFIX":"NONPROD_", "tms_job_schema":"INTERMEDIATE"}'
+TMS generated project dir: /Users/700009706/Documents/LFS/DataHub/datahub-models-ccdm-mapping/tmp/generated/specs/reference_data/core/CORE_PRODUCT/run_CORE_PRODUCT_20260911T014513598658Z
+OK parse passed
+
+
+
+  [ERROR]: in model PRODUCT__source (models/generated/PRODUCT__source.sql)
+01:45:35    Database Error in model PRODUCT__source (models/generated/PRODUCT__source.sql)
+  002003 (02000): SQL compilation error:
+  Database 'REFERENCE' does not exist or not authorized.
+  compiled code at target/run/type_materialisation_generated/models/generated/PRODUCT__source.sql
+01:45:35  
+01:45:35    compiled code at target/compiled/type_materialisation_generated/models/generated/PRODUCT__source.sql
+01:45:35  
+01:45:35  Done. PASS=5 WARN=0 ERROR=1 SKIP=2 NO-OP=0 REUSED=0 TOTAL=8
+TMS keeping generated project dir for debugging: /Users/700009706/Documents/LFS/DataHub/datahub-models-ccdm-mapping/tmp/generated/specs/reference_data/core/CORE_PRODUCT/run_CORE_PRODUCT_20260911T014513598658Z
+Traceback (most recent call last):
+  File "/Users/700009706/Documents/LFS/DataHub/datahub-models-ccdm-mapping/datahub-tms-pipeline/dags/local_run_tms_loader.py", line 120, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/700009706/Documents/LFS/DataHub/datahub-models-ccdm-mapping/datahub-tms-pipeline/dags/local_run_tms_loader.py", line 44, in main
+    run_tms_load(
+  File "/Users/700009706/Documents/LFS/DataHub/datahub-models-ccdm-mapping/datahub-tms-pipeline/dags/tms_loader.py", line 134, in run_tms_load
+    run(dbt_build_command, cwd=repo_root, env=env)
+  File "/Users/700009706/Documents/LFS/DataHub/datahub-models-ccdm-mapping/datahub-tms-pipeline/dags/tms_loader.py", line 528, in run
+    raise RuntimeError(f"Command failed with exit code {completed.returncode}: {' '.join(command)}")
+RuntimeError: Command failed with exit code 1: /Users/700009706/Documents/LFS/DataHub/datahub-models-ccdm-mapping/libs/tms-env/bin/tms dbt-build --spec /Users/700009706/Documents/LFS/DataHub/datahub-models-ccdm-mapping/specs/reference_data/core/CORE_PRODUCT.yaml --project-dir /Users/700009706/Documents/LFS/DataHub/datahub-models-ccdm-mapping/tmp/generated/specs/reference_data/core/CORE_PRODUCT/run_CORE_PRODUCT_20260911T014513598658Z --target dev --vars {"ENV_PREFIX": "", "tms_job_schema": "INTERMEDIATE", "insert_time": "2026-09-11T01:45:13.599030+00:00"} --full-refresh
+zsh: command not found: --dbt-vars
