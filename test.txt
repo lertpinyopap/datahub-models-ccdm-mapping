@@ -98,4 +98,41 @@ TMS generated project dir: /tmp/tms-generated/specs/reference_data/core/CORE_CAR
 
 
 
+ [0m04:59:28  1 of 2 START hook: type_materialisation_generated.on-run-start.0 ............... [RUN]: chan="stdout": source="task"
+[2026-09-11, 14:59:29] INFO - [0m04:59:29  1 of 2 OK hook: type_materialisation_generated.on-run-start.0 .................. [[32mOK[0m in 0.73s]: chan="stdout": source="task"
+[2026-09-11, 14:59:29] INFO - [0m04:59:29  2 of 2 START hook: type_materialisation_generated.on-run-start.1 ............... [RUN]: chan="stdout": source="task"
+[2026-09-11, 14:59:29] INFO - [0m04:59:29  2 of 2 OK hook: type_materialisation_generated.on-run-start.1 .................. [[32mOK[0m in 0.32s]: chan="stdout": source="task"
+[2026-09-11, 14:59:29] INFO - [0m04:59:29: chan="stdout": source="task"
+[2026-09-11, 14:59:29] INFO - [0m04:59:29  1 of 4 START seed file INTERMEDIATE.REFERENCE_MAPPING_ADDRESS_TYPE_SEED ........ [RUN]: chan="stdout": source="task"
+[2026-09-11, 14:59:32] INFO - [0m04:59:32  1 of 4 OK loaded seed file INTERMEDIATE.REFERENCE_MAPPING_ADDRESS_TYPE_SEED .... [[32mCREATE 28[0m in 2.06s]: chan="stdout": source="task"
+[2026-09-11, 14:59:32] INFO - [0m04:59:32  2 of 4 START sql view model INTERMEDIATE.ADDRESS_TYPE__SOURCE .................. [RUN]: chan="stdout": source="task"
+[2026-09-11, 14:59:32] INFO - [0m04:59:32  2 of 4 OK created sql view model INTERMEDIATE.ADDRESS_TYPE__SOURCE ............. [[32mSUCCESS 1[0m in 0.76s]: chan="stdout": source="task"
+[2026-09-11, 14:59:32] INFO - [0m04:59:32  3 of 4 START sql table model INTERMEDIATE.ADDRESS_TYPE__VALIDATION_GUARD ....... [RUN]: chan="stdout": source="task"
+[2026-09-11, 14:59:34] INFO - [0m04:59:34  3 of 4 OK created sql table model INTERMEDIATE.ADDRESS_TYPE__VALIDATION_GUARD .. [[32mSUCCESS 1[0m in 1.41s]: chan="stdout": source="task"
+[2026-09-11, 14:59:34] INFO - [0m04:59:34  4 of 4 START sql incremental model MAPPING.ADDRESS_TYPE ........................ [RUN]: chan="stdout": source="task"
+[2026-09-11, 14:59:35] INFO - [0m04:59:35  4 of 4 ERROR creating sql incremental model MAPPING.ADDRESS_TYPE ............... [[31mERROR[0m in 1.01s]: chan="stdout": source="task"
+[2026-09-11, 14:59:35] INFO - [0m04:59:35: chan="stdout": source="task"
+[2026-09-11, 14:59:35] INFO - [0m04:59:35  1 of 2 START hook: type_materialisation_generated.on-run-end.0 ................. [RUN]: chan="stdout": source="task"
+[2026-09-11, 14:59:35] INFO - [0m04:59:35  1 of 2 OK hook: type_materialisation_generated.on-run-end.0 .................... [[32mOK[0m in 0.69s]: chan="stdout": source="task"
+[2026-09-11, 14:59:35] INFO - [0m04:59:35  2 of 2 START hook: type_materialisation_generated.on-run-end.1 ................. [RUN]: chan="stdout": source="task"
+[2026-09-11, 14:59:36] INFO - [0m04:59:36  2 of 2 OK hook: type_materialisation_generated.on-run-end.1 .................... [[32mOK[0m in 0.39s]: chan="stdout": source="task"
+[2026-09-11, 14:59:36] INFO - [0m04:59:36: chan="stdout": source="task"
+[2026-09-11, 14:59:36] INFO - [0m04:59:36  Finished running 1 incremental model, 4 project hooks, 1 seed, 1 table model, 1 view model in 0 hours 0 minutes and 10.58 seconds (10.58s).: chan="stdout": source="task"
+[2026-09-11, 14:59:36] INFO - [0m04:59:36: chan="stdout": source="task"
+[2026-09-11, 14:59:36] INFO - [0m04:59:36  [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m: chan="stdout": source="task"
+[2026-09-11, 14:59:36] INFO - [0m04:59:36: chan="stdout": source="task"
+[2026-09-11, 14:59:36] INFO - [0m04:59:36  [[31mERROR[0m]: in model ADDRESS_TYPE (models/generated/ADDRESS_TYPE.sql): chan="stdout": source="task"
+[2026-09-11, 14:59:36] INFO - [0m04:59:36    Database Error in model ADDRESS_TYPE (models/generated/ADDRESS_TYPE.sql): chan="stdout": source="task"
+[2026-09-11, 14:59:36] INFO -   001790 (42601): SQL compilation error:: chan="stdout": source="task"
+[2026-09-11, 14:59:36] INFO -   inconsistent data type for result columns for set operator input branches, expected TIMESTAMP_TZ(9), got TIMESTAMP_LTZ(9): chan="stdout": source="task"
+[2026-09-11, 14:59:36] INFO -   compiled code at target/run/type_materialisation_generated/models/generated/ADDRESS_TYPE.sql: chan="stdout": source="task"
+[2026-09-11, 14:59:36] INFO - [0m04:59:36: chan="stdout": source="task"
+[2026-09-11, 14:59:36] INFO - [0m04:59:36    compiled code at target/compiled/type_materialisation_generated/models/generated/ADDRESS_TYPE.sql: chan="stdout": source="task"
+[2026-09-11, 14:59:36] INFO - [0m04:59:36: chan="stdout": source="task"
+[2026-09-11, 14:59:36] INFO - [0m04:59:36  Done. PASS=7 WARN=0 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=8: chan="stdout": source="task"
+[2026-09-11, 14:59:38] INFO - TMS cleaned generated project dir: /tmp/tms-generated/specs/reference_data/mapping/MAPPING_ADDRESS_TYPE/run_reference_address_type.load_mapping_20260911T045917006874Z: chan="stdout": source="task"
+[2026-09-11, 14:59:38] ERROR - Task failed with exception: source="task"
+
+
+
 
