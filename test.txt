@@ -1,0 +1,7 @@
+[0m01:25:33    Database Error in seed reference_mapping_product_seed (seeds/reference_mapping_product_seed.csv): chan="stdout": source="task"
+[2026-09-11, 11:25:33] INFO -   000904 (42000): SQL compilation error: error line 1 at position 75: chan="stdout": source="task"
+[2026-09-11, 11:25:33] INFO -   invalid identifier 'CHANGE_CONTROL': chan="stdout": source="task"
+[2026-09-11, 11:25:33] INFO - [0m01:25:33: chan="stdout": source="task"
+[2026-09-11, 11:25:33] INFO - [0m01:25:33  Done. PASS=4 WARN=0 ERROR=1 SKIP=3 NO-OP=0 REUSED=0 TOTAL=8: chan="stdout": source="task"
+[2026-09-11, 11:25:35] INFO - TMS cleaned generated project dir: /tmp/tms-generated/specs/reference_data/mapping/MAPPING_PRODUCT/run_reference_product.load_mapping_20260911T012518772433Z: chan="stdout": source="task"
+[2026-09-11, 11:25:35] ERROR - Task failed with exception: source="task"
