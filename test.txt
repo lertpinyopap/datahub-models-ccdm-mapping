@@ -86,4 +86,16 @@ File "/usr/local/airflow/dags/datahub-models-ccdm-mapping/tms_loader.py", line 5
 
 
 
+TMS generated project dir: /tmp/tms-generated/specs/reference_data/core/CORE_CARD_ACTION_TYPE/run_reference_card_action_type.load_core_20260911T044450484694Z: chan="stdout": source="task"
+[2026-09-11, 14:44:51] ERROR - parse failed: chan="stderr": source="task"
+[2026-09-11, 14:44:51] ERROR - : chan="stderr": source="task"
+[2026-09-11, 14:44:51] ERROR -   Location                       Message: chan="stderr": source="task"
+[2026-09-11, 14:44:51] ERROR -  ──────────────────────────────────────────────────────────────────────────────: chan="stderr": source="task"
+[2026-09-11, 14:44:51] ERROR -   $.target.fields[2].data_type   `valid_from_datetime` must use a timestamp: chan="stderr": source="task"
+[2026-09-11, 14:44:51] ERROR -                                  data type for `scd2_manual`: chan="stderr": source="task"
+[2026-09-11, 14:44:51] ERROR -   $.target.fields[3].data_type   `valid_to_datetime` must use a timestamp data: chan="stderr": source="task"
+[2026-09-11, 14:44:51] ERROR -                                  type for `scd2_manual`: chan="stderr": source="task"
+
+
+
 
