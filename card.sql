@@ -89,3 +89,39 @@ where (A.AMBS_CURR_CODE is null
   and product.PRODUCT_KEY is null
 group by 1, 2, 3
 order by account_count desc, missing_source_code;
+
+
+select
+    mapping.SOURCE_SYSTEM,
+    mapping.SOURCE_CODE,
+    mapping.TARGET_CODE,
+    mapping.IS_CURRENT_FLAG as mapping_is_current,
+    mapping.IS_DELETED_FLAG as mapping_is_deleted,
+    mapping.VALID_FROM_DATETIME as mapping_valid_from,
+    mapping.VALID_TO_DATETIME as mapping_valid_to,
+
+    product.PRODUCT_KEY,
+    product.PRODUCT_BUSINESS_KEY,
+    product.PRODUCT_CODE,
+    product.IS_CURRENT_FLAG as product_is_current,
+    product.IS_DELETED_FLAG as product_is_deleted,
+    product.VALID_FROM_DATETIME as product_valid_from,
+    product.VALID_TO_DATETIME as product_valid_to,
+
+    case
+        when mapping.SOURCE_CODE is null then 'MAPPING_ROW_NOT_FOUND'
+        when coalesce(trim(mapping.IS_DELETED_FLAG), 'N') = 'Y' then 'MAPPING_DELETED'
+        when mapping.VALID_FROM_DATETIME > current_timestamp() then 'MAPPING_NOT_YET_VALID'
+        when mapping.VALID_TO_DATETIME < current_timestamp() then 'MAPPING_EXPIRED'
+        when product.PRODUCT_KEY is null then 'TARGET_PRODUCT_NOT_FOUND'
+        when coalesce(trim(product.IS_DELETED_FLAG), 'N') = 'Y' then 'TARGET_PRODUCT_DELETED'
+        when product.VALID_FROM_DATETIME > current_timestamp() then 'TARGET_PRODUCT_NOT_YET_VALID'
+        when product.VALID_TO_DATETIME < current_timestamp() then 'TARGET_PRODUCT_EXPIRED'
+        else 'LOOKUP_SHOULD_SUCCEED'
+    end as lookup_status
+from NONPROD_REFERENCE.MAPPING.PRODUCT as mapping
+left join NONPROD_REFERENCE.CORE.PRODUCT as product
+    on product.PRODUCT_CODE = mapping.TARGET_CODE
+where mapping.SOURCE_SYSTEM = 'V10'
+  and mapping.SOURCE_CODE in ('226201', '227201', '228201')
+order by mapping.SOURCE_CODE;
