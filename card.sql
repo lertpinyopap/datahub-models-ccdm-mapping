@@ -63,3 +63,29 @@ where (A.AMBS_CURR_CODE is null
        or lpad(cast(A.AMBS_CURR_CODE as varchar), 3, '0') <> '000')
   and product.PRODUCT_KEY is null
 order by source_code, agreement_id;
+
+
+
+
+select
+    cast(A.AMBS_ORG as varchar) as product_org,
+    cast(A.AMBS_LOGO as varchar) as product_logo,
+    cast(A.AMBS_ORG as varchar)
+        || cast(A.AMBS_LOGO as varchar) as missing_source_code,
+    count(*) as account_count,
+    count(distinct A.AMBS_ACCT) as agreement_count,
+    min(A.AMBS_ACCT) as example_agreement_id
+from DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.ACCOUNT_BASE_SEGMENT as A
+left join NONPROD_REFERENCE.MAPPING.PRODUCT as mapping
+    on mapping.SOURCE_SYSTEM = 'V10'
+   and mapping.SOURCE_CODE =
+       cast(A.AMBS_ORG as varchar) || cast(A.AMBS_LOGO as varchar)
+   and coalesce(trim(mapping.IS_DELETED_FLAG), 'N') <> 'Y'
+left join NONPROD_REFERENCE.CORE.PRODUCT as product
+    on product.PRODUCT_CODE = mapping.TARGET_CODE
+   and coalesce(trim(product.IS_DELETED_FLAG), 'N') <> 'Y'
+where (A.AMBS_CURR_CODE is null
+       or lpad(cast(A.AMBS_CURR_CODE as varchar), 3, '0') <> '000')
+  and product.PRODUCT_KEY is null
+group by 1, 2, 3
+order by account_count desc, missing_source_code;
