@@ -46,6 +46,16 @@ source:
         where A.AMBS_CURR_CODE is null
            or lpad(cast(A.AMBS_CURR_CODE as varchar), 3, '0') <> '000'
     ), 
+    deduplicated_account_history as (
+        select *
+        from account_history
+        -- Retained snapshots can repeat a business-effective date. Keep the
+        -- latest ingestion snapshot as the deterministic correction for that date.
+        qualify row_number() over (
+            partition by CUSTOMER_ID, AGREEMENT_ID, SOURCE_EFFECTIVE_FROM_DATETIME
+            order by SOURCE_SNAPSHOT_DATETIME desc nulls last
+        ) = 1
+    ),
     card_customer_lookup as (
         select CUSTOMER_ID, CARD_CUSTOMER_KEY, CARD_CUSTOMER_BUSINESS_KEY
         from {{ var("database") }}.CORE.{{ var("card_customer_table", "CARD_CUSTOMER") }}
@@ -67,8 +77,7 @@ source:
         A.CLOSURE_REQUEST_DATE,
         A.CLOSING_DATETIME,
         A.IS_ACTIVE_IN_SOURCE_FLAG,
-        A.SOURCE_SNAPSHOT_DATETIME,
         A.SOURCE_EFFECTIVE_FROM_DATETIME
-    from account_history as A
+    from deduplicated_account_history as A
     inner join card_customer_lookup as C
         on C.CUSTOMER_ID = A.CUSTOMER_ID

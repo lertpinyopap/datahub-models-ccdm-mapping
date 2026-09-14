@@ -44,8 +44,7 @@ source:
             coalesce(
                 cast(nullif(A.AMBS_DATE_OPENED, to_date('1901-01-01')) as timestamp_ntz),
                 cast('1901-01-01' as timestamp_ntz)
-            ) as SOURCE_EFFECTIVE_FROM_DATETIME,
-            A.AIRFLOW_DAG_TIME as SOURCE_SNAPSHOT_DATETIME
+            ) as SOURCE_EFFECTIVE_FROM_DATETIME
         from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.ACCOUNT_BASE_SEGMENT as A
         where A.AMBS_CURR_CODE is null
            or lpad(cast(A.AMBS_CURR_CODE as varchar), 3, '0') <> '000'
@@ -71,7 +70,6 @@ source:
         A.CLOSURE_REQUEST_DATE,
         A.CLOSING_DATETIME,
         A.IS_ACTIVE_IN_SOURCE_FLAG,
-        A.SOURCE_SNAPSHOT_DATETIME,
         A.SOURCE_EFFECTIVE_FROM_DATETIME
     from account_rows as A
     inner join card_customer_lookup as C

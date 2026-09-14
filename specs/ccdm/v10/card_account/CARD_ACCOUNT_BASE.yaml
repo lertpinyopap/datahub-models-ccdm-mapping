@@ -43,12 +43,6 @@ control_data:
         - column: IS_ACTIVE_IN_SOURCE_FLAG
           direction: desc
           nulls: last
-        # When two retained source snapshots have the same account and
-        # business-effective date, choose the latest snapshot deterministically.
-        # This is only a deduplication tie-breaker; it does not set VALID_FROM_DATETIME.
-        - column: SOURCE_SNAPSHOT_DATETIME
-          direction: desc
-          nulls: last
 target:
   id: CARD_ACCOUNT
   schema: CORE
@@ -183,14 +177,6 @@ target:
       source:
         column: IS_ACTIVE_IN_SOURCE_FLAG
       data_type: varchar(1)
-      nullable: true
-    - id: SOURCE_SNAPSHOT_DATETIME
-      # Source ingestion timestamp retained for SCD2 deduplication lineage.
-      # It resolves duplicate business-effective dates without changing their
-      # business-effective validity window.
-      source:
-        column: SOURCE_SNAPSHOT_DATETIME
-      data_type: timestamp_ntz
       nullable: true
     - id: VALID_FROM_DATETIME
       source:
