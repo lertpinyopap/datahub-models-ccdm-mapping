@@ -1,0 +1,183 @@
+id: card_account_base
+extends: SOURCE_TO_TARGET_SCD2_DERIVED
+description: Shared CARD_ACCOUNT target mapping used by the initial and incremental loads.
+control_data:
+  business_key:
+    fields:
+      - CARD_CUSTOMER_BUSINESS_KEY
+      - AGREEMENT_ID
+  business_data_hash:
+    business_data_hash_mode: include
+    fields:
+      - PRODUCT_BUSINESS_KEY
+      - BILLING_CYCLE_DATE
+      - CREDIT_LIMIT_AMOUNT
+      - CREDIT_LIMIT_CURRENCY_KEY
+      - BALANCE_TRANSFER_LIMIT_AMOUNT
+      - BALANCE_TRANSFER_LIMIT_CURRENCY_KEY
+      - CASH_LIMIT_AMOUNT
+      - CASH_LIMIT_CURRENCY_KEY
+      - MONEY_TRANSFER_LIMIT_AMOUNT
+      - MONEY_TRANSFER_LIMIT_CURRENCY_KEY
+      - CLOSURE_REQUEST_DATE
+      - CLOSING_DATETIME
+      - IS_ACTIVE_IN_SOURCE_FLAG
+  scd:
+    derivation_scope: affected_keys
+    validation_scope: affected_window
+    window_strategy: previous_and_next
+    current_flag:
+      mode: latest_per_business_key
+    deleted_flag:
+      mode: fixed
+      value: "N"
+    deduplicate:
+      partition_by:
+        - CARD_CUSTOMER_BUSINESS_KEY
+        - AGREEMENT_ID
+        - VALID_FROM_DATETIME
+      order_by:
+        - column: SOURCE_EFFECTIVE_FROM_DATETIME
+          direction: desc
+          nulls: last
+        - column: IS_ACTIVE_IN_SOURCE_FLAG
+          direction: desc
+          nulls: last
+target:
+  id: CARD_ACCOUNT
+  schema: CORE
+  fields:
+    - id: CARD_CHANNEL_KEY
+      source:
+        fixed_value: null
+      data_type: varchar(64)
+      nullable: true
+    - id: CARD_CHANNEL_BUSINESS_KEY
+      source:
+        fixed_value: null
+      data_type: varchar(64)
+      nullable: true
+    - id: CARD_CUSTOMER_KEY
+      source:
+        column: CARD_CUSTOMER_KEY
+        default_value: DQMissing
+      data_type: varchar(64)
+      nullable: false
+    - id: CARD_CUSTOMER_BUSINESS_KEY
+      source:
+        column: CARD_CUSTOMER_BUSINESS_KEY
+        default_value: DQMissing
+      data_type: varchar(64)
+      nullable: false
+    - id: PRODUCT_KEY
+      source:
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
+        args:
+          reference_type: PRODUCT
+          source_system: V10
+          source_code_expression: |
+            cast(source_query.PRODUCT_ORG as varchar)
+            || cast(source_query.PRODUCT_LOGO as varchar)
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: PRODUCT_BUSINESS_KEY
+      source:
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
+        args:
+          reference_type: PRODUCT
+          source_system: V10
+          source_code_expression: |
+            cast(source_query.PRODUCT_ORG as varchar)
+            || cast(source_query.PRODUCT_LOGO as varchar)
+          key_column: PRODUCT_BUSINESS_KEY
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: AGREEMENT_ID
+      source:
+        column: AGREEMENT_ID
+      data_type: varchar(16777216)
+      nullable: false
+    - id: BILLING_CYCLE_DATE
+      source:
+        column: BILLING_CYCLE_DATE
+      data_type: number(2)
+      nullable: true
+    - id: CREDIT_LIMIT_AMOUNT
+      source:
+        column: CREDIT_LIMIT_AMOUNT
+      data_type: number(38,7)
+      nullable: false
+    - id: CREDIT_LIMIT_CURRENCY_KEY
+      source:
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
+        args:
+          reference_type: CURRENCY
+          source_system: V10
+          source_code_expression: |
+            lpad(cast(source_query.CURRENCY_SOURCE_CODE as varchar), 3, '0')
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: BALANCE_TRANSFER_LIMIT_AMOUNT
+      source:
+        column: BALANCE_TRANSFER_LIMIT_AMOUNT
+      data_type: number(38,7)
+      nullable: true
+    - id: BALANCE_TRANSFER_LIMIT_CURRENCY_KEY
+      source:
+        fixed_value: null
+      data_type: varchar(64)
+      nullable: true
+    - id: CASH_LIMIT_AMOUNT
+      source:
+        column: CASH_LIMIT_AMOUNT
+      data_type: number(38,7)
+      nullable: false
+    - id: CASH_LIMIT_CURRENCY_KEY
+      source:
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
+        args:
+          reference_type: CURRENCY
+          source_system: V10
+          source_code_expression: |
+            lpad(cast(source_query.CURRENCY_SOURCE_CODE as varchar), 3, '0')
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: MONEY_TRANSFER_LIMIT_AMOUNT
+      source:
+        column: MONEY_TRANSFER_LIMIT_AMOUNT
+      data_type: number(38,7)
+      nullable: true
+    - id: MONEY_TRANSFER_LIMIT_CURRENCY_KEY
+      source:
+        fixed_value: null
+      data_type: varchar(64)
+      nullable: true
+    - id: CLOSURE_REQUEST_DATE
+      source:
+        column: CLOSURE_REQUEST_DATE
+      data_type: date
+      nullable: true
+    - id: CLOSING_DATETIME
+      source:
+        column: CLOSING_DATETIME
+      data_type: timestamp_tz
+      nullable: true
+    - id: MESSAGE_TRACE_ID
+      source:
+        fixed_value: null
+      data_type: varchar(16777216)
+      nullable: true
+    - id: IS_ACTIVE_IN_SOURCE_FLAG
+      source:
+        column: IS_ACTIVE_IN_SOURCE_FLAG
+      data_type: varchar(1)
+      nullable: true
+    - id: VALID_FROM_DATETIME
+      source:
+        column: SOURCE_EFFECTIVE_FROM_DATETIME
+      data_type: timestamp_ntz
+      nullable: false
