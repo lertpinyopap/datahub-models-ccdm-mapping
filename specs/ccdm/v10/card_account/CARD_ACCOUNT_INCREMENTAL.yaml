@@ -16,9 +16,7 @@ source:
             A.AMBS_BILLING_CYCLE as BILLING_CYCLE_DATE,
             A.AMBS_CRLIM as CREDIT_LIMIT_AMOUNT,
             A.AMBS_CURR_CODE as CURRENCY_SOURCE_CODE,
-            cast(null as number(38, 7)) as BALANCE_TRANSFER_LIMIT_AMOUNT,
             A.AMBS_CASH_CRLIM as CASH_LIMIT_AMOUNT,
-            cast(null as number(38, 7)) as MONEY_TRANSFER_LIMIT_AMOUNT,
             case
                 when A.AMBS_DATE_CLOSED is not null
                  and cast(A.AMBS_DATE_CLOSED as varchar) not like '%1901%'
@@ -28,7 +26,7 @@ source:
             case
                 when A.AMBS_DATE_CLOSED is not null
                  and cast(A.AMBS_DATE_CLOSED as varchar) not like '%1901%'
-                    then cast(A.AMBS_DATE_CLOSED as timestamp_tz)
+                    then cast(A.AMBS_DATE_CLOSED as timestamp_ntz)
                 else null
             end as CLOSING_DATETIME,
             case
@@ -64,9 +62,7 @@ source:
         A.BILLING_CYCLE_DATE,
         A.CREDIT_LIMIT_AMOUNT,
         A.CURRENCY_SOURCE_CODE,
-        A.BALANCE_TRANSFER_LIMIT_AMOUNT,
         A.CASH_LIMIT_AMOUNT,
-        A.MONEY_TRANSFER_LIMIT_AMOUNT,
         A.CLOSURE_REQUEST_DATE,
         A.CLOSING_DATETIME,
         A.IS_ACTIVE_IN_SOURCE_FLAG,
