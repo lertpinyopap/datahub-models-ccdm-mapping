@@ -321,6 +321,12 @@ python datahub-tms-pipeline/dags/local_run_tms_loader.py \
   --target dev \
   --keep-generated-project
   --dbt-vars '{"database":"SAS_MIGRATION_WORKSPACE", "ENV_PREFIX":"NONPROD_"}'
+  
+  python datahub-tms-pipeline/dags/local_run_tms_loader.py \
+  --spec specs/ccdm/v10/card_customer/CARD_CUSTOMER_HISTORICAL_INITIAL_LOAD.yaml \
+  --target dev \
+  --keep-generated-project --full-refresh \
+  --dbt-vars '{"database":"SAS_MIGRATION_WORKSPACE", "ENV_PREFIX":"NONPROD_"}'
 ```
 
 ## Airflow

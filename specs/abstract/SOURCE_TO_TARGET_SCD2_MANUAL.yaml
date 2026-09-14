@@ -45,13 +45,13 @@ target:
     - id: VALID_FROM_DATETIME
       source:
         column: VALID_FROM_DATETIME
-      data_type: timestamp_tz
+      data_type: timestamp_ltz
       nullable: false
 
     - id: VALID_TO_DATETIME
       source:
         column: VALID_TO_DATETIME
-      data_type: timestamp_tz
+      data_type: timestamp_ltz
       nullable: false
 
 

@@ -1,12 +1,12 @@
-SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
-VN,PERM,Permanent fee waiver.,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,PERM,Permanent fee waiver.
-VN,ONCE,One-time fee waiver.,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,ONCE,One-time fee waiver.
-VN,NONE,No fee waiver applied.,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,NONE,No fee waiver applied.
-VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,DQMapping,Source value cannot be mapped
-VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,DQMissing,Source value not provided
-VN,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,DQNotApplicable,Source value not required
-V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,DQMapping,Source value cannot be mapped
-V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,DQMissing,Source value not provided
-V10,DQNotApplicable,Source value not provided,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,DQNotApplicable,Source value not provided
-V10,1,One-time fee waiver.,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,ONCE,One-time fee waiver.
-V10,0,Source value not provided,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,DQNotApplicable,Source value not provided
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,VN,PERM,Permanent fee waiver.,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,PERM,Permanent fee waiver.
+,VN,ONCE,One-time fee waiver.,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,ONCE,One-time fee waiver.
+,VN,NONE,No fee waiver applied.,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,NONE,No fee waiver applied.
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,DQMissing,Source value not provided
+,VN,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,DQNotApplicable,Source value not required
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,DQMissing,Source value not provided
+,V10,DQNotApplicable,Source value not provided,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,DQNotApplicable,Source value not provided
+,V10,1,One-time fee waiver.,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,ONCE,One-time fee waiver.
+,V10,0,Source value not provided,REFERENCE.CORE.CARD_FEE_WAIVER_TYPE,DQNotApplicable,Source value not provided

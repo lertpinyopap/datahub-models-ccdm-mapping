@@ -1,24 +1,19 @@
-SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
-VN,CSBK,Cashback details for purchase with cashback transaction,REFERENCE.CORE.CARD_AMOUNT_TYPE,CSBK,Cashback details for purchase with cashback transaction
-VN,FEES,Fees,REFERENCE.CORE.CARD_AMOUNT_TYPE,FEES,Fees
-VN,SURF,Surcharge or rebate fees,REFERENCE.CORE.CARD_AMOUNT_TYPE,SURF,Surcharge or rebate fees
-VN,ACTL,Actual amount,REFERENCE.CORE.CARD_AMOUNT_TYPE,ACTL,Actual amount
-VN,DFLT,Default amount,REFERENCE.CORE.CARD_AMOUNT_TYPE,DFLT,Default amount
-VN,DPST,Deposit amount,REFERENCE.CORE.CARD_AMOUNT_TYPE,DPST,Deposit amount
-VN,ESTM,Estimated amount,REFERENCE.CORE.CARD_AMOUNT_TYPE,ESTM,Estimated amount
-VN,MAXI,Maximum amount,REFERENCE.CORE.CARD_AMOUNT_TYPE,MAXI,Maximum amount
-VN,PRXY,Substitute for an amount to be authorised,REFERENCE.CORE.CARD_AMOUNT_TYPE,PRXY,Substitute for an amount to be authorised
-VN,RESD,Reserved or updated reserved amount for reservation,REFERENCE.CORE.CARD_AMOUNT_TYPE,RESD,Reserved or updated reserved amount for reservation
-VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMapping,Source value cannot be mapped
-VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMissing,Source value not provided
-V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMapping,Source value cannot be mapped
-V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMissing,Source value not provided
-V8,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMapping,Source value cannot be mapped
-V8,DQMissing,Source value not provided,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMissing,Source value not provided
-V2,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMapping,Source value cannot be mapped
-V2,DQMissing,Source value not provided,REFERENCE.CORE.CARD_AMOUNT_TYPE,DQMissing,Source value not provided
-V10,CSBK,Cashback details for purchase with cashback transaction,REFERENCE.CORE.CARD_AMOUNT_TYPE,CSBK,Cashback details for purchase with cashback transaction
-V10,FEES,Fees,REFERENCE.CORE.CARD_AMOUNT_TYPE,FEES,Fees
-V10,SURF,Surcharge or rebate fees,REFERENCE.CORE.CARD_AMOUNT_TYPE,SURF,Surcharge or rebate fees
-V10,ACTL,Actual amount,REFERENCE.CORE.CARD_AMOUNT_TYPE,ACTL,Actual amount
-V10,DFLT,Default amount,REFERENCE.CORE.CARD_AMOUNT_TYPE,DFLT,Default amount
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,V10,99|S,"ADD_STATUS=99, STATUS=S",REFERENCE.CORE.CARD_STATUS,DISA,Card Disabled
+,V10,2|P,"ADD_STATUS=2, STATUS=P",REFERENCE.CORE.CARD_STATUS,FORM,Invalid status default from AMPS mapping rule
+,V10,2|0,"ADD_STATUS=2, STATUS=0",REFERENCE.CORE.CARD_STATUS,FORM,Invalid status default from AMPS mapping rule
+,V10,99|1,"ADD_STATUS=99, STATUS=1",REFERENCE.CORE.CARD_STATUS,ENAB,Card Enabled
+,V10,0|0,"ADD_STATUS=0, STATUS=0",REFERENCE.CORE.CARD_STATUS,FORM,Invalid status default from AMPS mapping rule
+,V10,0|P,"ADD_STATUS=0, STATUS=P",REFERENCE.CORE.CARD_STATUS,FORM,Invalid status default from AMPS mapping rule
+,V10,99|0,"ADD_STATUS=99, STATUS=0",REFERENCE.CORE.CARD_STATUS,ENAB,Card Enabled
+,V10,99|P,"ADD_STATUS=99, STATUS=P",REFERENCE.CORE.CARD_STATUS,DELE,Card Deleted
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_STATUS,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_STATUS,DQMissing,Source value not provided
+,V10,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_STATUS,DQNotApplicable,Source value not required
+,VN,ENAB,Card Enabled,REFERENCE.CORE.CARD_STATUS,ENAB,Card Enabled
+,VN,FORM,Invalid status default from AMPS mapping rule,REFERENCE.CORE.CARD_STATUS,FORM,Invalid status default from AMPS mapping rule
+,VN,DELE,Card Deleted,REFERENCE.CORE.CARD_STATUS,DELE,Card Deleted
+,VN,DISA,Card Disabled,REFERENCE.CORE.CARD_STATUS,DISA,Card Disabled
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_STATUS,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_STATUS,DQMissing,Source value not provided
+,VN,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_STATUS,DQNotApplicable,Source value not required

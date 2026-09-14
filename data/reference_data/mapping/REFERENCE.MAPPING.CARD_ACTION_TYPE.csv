@@ -1,56 +1,56 @@
-SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
-VN,NEWC,New card issued,REFERENCE.CORE.CARD_ACTION_TYPE,NEWC,New card issued
-VN,ADNL,Additional card issued,REFERENCE.CORE.CARD_ACTION_TYPE,ADNL,Additional card requested or issued
-VN,REPL,Card replaced,REFERENCE.CORE.CARD_ACTION_TYPE,REPL,Card replaced
-VN,REIS,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
-VN,LOST,Card lost,REFERENCE.CORE.CARD_ACTION_TYPE,LOST,Card reported lost
-VN,STLN,Card stolen,REFERENCE.CORE.CARD_ACTION_TYPE,STLN,Card reported stolen
-VN,ACTV,Card activated,REFERENCE.CORE.CARD_ACTION_TYPE,ACTV,Card activated
-VN,CHNG,Card PIN changed,REFERENCE.CORE.CARD_ACTION_TYPE,CHNG,Card PIN changed
-VN,BLCK,Card Blocked,REFERENCE.CORE.CARD_ACTION_TYPE,BLCK,Card Blocked
-VN,UPDT,Card updated,REFERENCE.CORE.CARD_ACTION_TYPE,UPDT,Card details updated
-VN,IPTR,Card PIN is Invalid and reset was attempted,REFERENCE.CORE.CARD_ACTION_TYPE,IPTR,Invalid PIN attempt recorded and PIN reset attempted
-VN,CNTO,Contactless opt out,REFERENCE.CORE.CARD_ACTION_TYPE,CNTO,Contactless opt-out recorded
-VN,PTCR,Card PIN try counter is reset,REFERENCE.CORE.CARD_ACTION_TYPE,PTCR,Card PIN retry counter reset
-VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ACTION_TYPE,DQMapping,Source value cannot be mapped
-VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ACTION_TYPE,DQMissing,Source value not provided
-V10,3,Card replaced,REFERENCE.CORE.CARD_ACTION_TYPE,REPL,Card replaced
-V10,0,No action recorded on the card,REFERENCE.CORE.CARD_ACTION_TYPE,NONE,No action recorded on the card
-V10,7,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
-V10,2,Additional card requested or issued,REFERENCE.CORE.CARD_ACTION_TYPE,ADNL,Additional card requested or issued
-V10,6,Card replaced,REFERENCE.CORE.CARD_ACTION_TYPE,REPL,Card replaced
-V10,1,New card issued,REFERENCE.CORE.CARD_ACTION_TYPE,NEWC,New card issued
-V10,5,PIN requested,REFERENCE.CORE.CARD_ACTION_TYPE,PINR,Card PIN requested
-V10,9,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
-V10,4,Card returned,REFERENCE.CORE.CARD_ACTION_TYPE,RETN,Card returned
-V10,8,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
-V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ACTION_TYPE,DQMapping,Source value cannot be mapped
-V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ACTION_TYPE,DQMissing,Source value not provided
-VN,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_ACTION_TYPE,DQNotApplicable,Source value not required
-V10,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_ACTION_TYPE,DQNotApplicable,Source value not required
-V8,3,Card replaced,REFERENCE.CORE.CARD_ACTION_TYPE,REPL,Card replaced
-V8,0,No action recorded on the card,REFERENCE.CORE.CARD_ACTION_TYPE,NONE,No action recorded on the card
-V8,7,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
-V8,2,Additional card requested or issued,REFERENCE.CORE.CARD_ACTION_TYPE,ADNL,Additional card requested or issued
-V8,6,Card replaced,REFERENCE.CORE.CARD_ACTION_TYPE,REPL,Card replaced
-V8,1,New card issued,REFERENCE.CORE.CARD_ACTION_TYPE,NEWC,New card issued
-V8,5,PIN requested,REFERENCE.CORE.CARD_ACTION_TYPE,PINR,Card PIN requested
-V8,9,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
-V8,4,Card returned,REFERENCE.CORE.CARD_ACTION_TYPE,RETN,Card returned
-V8,8,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
-V8,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ACTION_TYPE,DQMapping,Source value cannot be mapped
-V8,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ACTION_TYPE,DQMissing,Source value not provided
-V8,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_ACTION_TYPE,DQNotApplicable,Source value not required
-V2,3,Card replaced,REFERENCE.CORE.CARD_ACTION_TYPE,REPL,Card replaced
-V2,0,No action recorded on the card,REFERENCE.CORE.CARD_ACTION_TYPE,NONE,No action recorded on the card
-V2,7,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
-V2,2,Additional card requested or issued,REFERENCE.CORE.CARD_ACTION_TYPE,ADNL,Additional card requested or issued
-V2,6,Card replaced,REFERENCE.CORE.CARD_ACTION_TYPE,REPL,Card replaced
-V2,1,New card issued,REFERENCE.CORE.CARD_ACTION_TYPE,NEWC,New card issued
-V2,5,PIN requested,REFERENCE.CORE.CARD_ACTION_TYPE,PINR,Card PIN requested
-V2,9,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
-V2,4,Card returned,REFERENCE.CORE.CARD_ACTION_TYPE,RETN,Card returned
-V2,8,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
-V2,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ACTION_TYPE,DQMapping,Source value cannot be mapped
-V2,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ACTION_TYPE,DQMissing,Source value not provided
-V2,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_ACTION_TYPE,DQNotApplicable,Source value not required
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,VN,NEWC,New card issued,REFERENCE.CORE.CARD_ACTION_TYPE,NEWC,New card issued
+,VN,ADNL,Additional card issued,REFERENCE.CORE.CARD_ACTION_TYPE,ADNL,Additional card requested or issued
+,VN,REPL,Card replaced,REFERENCE.CORE.CARD_ACTION_TYPE,REPL,Card replaced
+,VN,REIS,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
+,VN,LOST,Card lost,REFERENCE.CORE.CARD_ACTION_TYPE,LOST,Card reported lost
+,VN,STLN,Card stolen,REFERENCE.CORE.CARD_ACTION_TYPE,STLN,Card reported stolen
+,VN,ACTV,Card activated,REFERENCE.CORE.CARD_ACTION_TYPE,ACTV,Card activated
+,VN,CHNG,Card PIN changed,REFERENCE.CORE.CARD_ACTION_TYPE,CHNG,Card PIN changed
+,VN,BLCK,Card Blocked,REFERENCE.CORE.CARD_ACTION_TYPE,BLCK,Card Blocked
+,VN,UPDT,Card updated,REFERENCE.CORE.CARD_ACTION_TYPE,UPDT,Card details updated
+,VN,IPTR,Card PIN is Invalid and reset was attempted,REFERENCE.CORE.CARD_ACTION_TYPE,IPTR,Invalid PIN attempt recorded and PIN reset attempted
+,VN,CNTO,Contactless opt out,REFERENCE.CORE.CARD_ACTION_TYPE,CNTO,Contactless opt-out recorded
+,VN,PTCR,Card PIN try counter is reset,REFERENCE.CORE.CARD_ACTION_TYPE,PTCR,Card PIN retry counter reset
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ACTION_TYPE,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ACTION_TYPE,DQMissing,Source value not provided
+,V10,3,Card replaced,REFERENCE.CORE.CARD_ACTION_TYPE,REPL,Card replaced
+,V10,0,No action recorded on the card,REFERENCE.CORE.CARD_ACTION_TYPE,NONE,No action recorded on the card
+,V10,7,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
+,V10,2,Additional card requested or issued,REFERENCE.CORE.CARD_ACTION_TYPE,ADNL,Additional card requested or issued
+,V10,6,Card replaced,REFERENCE.CORE.CARD_ACTION_TYPE,REPL,Card replaced
+,V10,1,New card issued,REFERENCE.CORE.CARD_ACTION_TYPE,NEWC,New card issued
+,V10,5,PIN requested,REFERENCE.CORE.CARD_ACTION_TYPE,PINR,Card PIN requested
+,V10,9,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
+,V10,4,Card returned,REFERENCE.CORE.CARD_ACTION_TYPE,RETN,Card returned
+,V10,8,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ACTION_TYPE,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ACTION_TYPE,DQMissing,Source value not provided
+,VN,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_ACTION_TYPE,DQNotApplicable,Source value not required
+,V10,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_ACTION_TYPE,DQNotApplicable,Source value not required
+,V8,3,Card replaced,REFERENCE.CORE.CARD_ACTION_TYPE,REPL,Card replaced
+,V8,0,No action recorded on the card,REFERENCE.CORE.CARD_ACTION_TYPE,NONE,No action recorded on the card
+,V8,7,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
+,V8,2,Additional card requested or issued,REFERENCE.CORE.CARD_ACTION_TYPE,ADNL,Additional card requested or issued
+,V8,6,Card replaced,REFERENCE.CORE.CARD_ACTION_TYPE,REPL,Card replaced
+,V8,1,New card issued,REFERENCE.CORE.CARD_ACTION_TYPE,NEWC,New card issued
+,V8,5,PIN requested,REFERENCE.CORE.CARD_ACTION_TYPE,PINR,Card PIN requested
+,V8,9,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
+,V8,4,Card returned,REFERENCE.CORE.CARD_ACTION_TYPE,RETN,Card returned
+,V8,8,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
+,V8,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ACTION_TYPE,DQMapping,Source value cannot be mapped
+,V8,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ACTION_TYPE,DQMissing,Source value not provided
+,V8,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_ACTION_TYPE,DQNotApplicable,Source value not required
+,V2,3,Card replaced,REFERENCE.CORE.CARD_ACTION_TYPE,REPL,Card replaced
+,V2,0,No action recorded on the card,REFERENCE.CORE.CARD_ACTION_TYPE,NONE,No action recorded on the card
+,V2,7,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
+,V2,2,Additional card requested or issued,REFERENCE.CORE.CARD_ACTION_TYPE,ADNL,Additional card requested or issued
+,V2,6,Card replaced,REFERENCE.CORE.CARD_ACTION_TYPE,REPL,Card replaced
+,V2,1,New card issued,REFERENCE.CORE.CARD_ACTION_TYPE,NEWC,New card issued
+,V2,5,PIN requested,REFERENCE.CORE.CARD_ACTION_TYPE,PINR,Card PIN requested
+,V2,9,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
+,V2,4,Card returned,REFERENCE.CORE.CARD_ACTION_TYPE,RETN,Card returned
+,V2,8,Card reissued,REFERENCE.CORE.CARD_ACTION_TYPE,REIS,Card reissued
+,V2,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ACTION_TYPE,DQMapping,Source value cannot be mapped
+,V2,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ACTION_TYPE,DQMissing,Source value not provided
+,V2,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_ACTION_TYPE,DQNotApplicable,Source value not required

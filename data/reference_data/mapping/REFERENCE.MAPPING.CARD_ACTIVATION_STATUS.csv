@@ -1,9 +1,10 @@
-SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
-VN,ACMP,Activation complete,REFERENCE.CORE.CARD_ACTIVATION_STATUS,ACMP,Activation complete
-VN,ANED,Activation needed,REFERENCE.CORE.CARD_ACTIVATION_STATUS,ANED,Activation needed
-V10,Y,Activation complete,REFERENCE.CORE.CARD_ACTIVATION_STATUS,ACMP,Activation complete
-V10,N,Activation needed,REFERENCE.CORE.CARD_ACTIVATION_STATUS,ANED,Activation needed
-V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ACTIVATION_STATUS,DQMapping,Source value cannot be mapped
-V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ACTIVATION_STATUS,DQMissing,Source value not provided
-VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ACTIVATION_STATUS,DQMapping,Source value cannot be mapped
-VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ACTIVATION_STATUS,DQMissing,Source value not provided
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,VN,ACMP,Activation complete,REFERENCE.CORE.CARD_ACTIVATION_STATUS,ACMP,Activation complete
+,VN,ANED,Activation needed,REFERENCE.CORE.CARD_ACTIVATION_STATUS,ANED,Activation needed
+,V10,Y,Activation complete,REFERENCE.CORE.CARD_ACTIVATION_STATUS,ACMP,Activation complete
+,V10,N,Activation needed,REFERENCE.CORE.CARD_ACTIVATION_STATUS,ANED,Activation needed
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ACTIVATION_STATUS,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ACTIVATION_STATUS,DQMissing,Source value not provided
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ACTIVATION_STATUS,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ACTIVATION_STATUS,DQMissing,Source value not provided
+,V10,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_ACTIVATION_STATUS,DQNotApplicable,Source value not required

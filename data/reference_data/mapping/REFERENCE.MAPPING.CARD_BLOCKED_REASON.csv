@@ -1,11 +1,11 @@
 CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
-,V10,F,Fraudulent,REFERENCE.CORE.CARD_BLOCKED_REASON,F,Fraudulent
+,V10,F,Fraudulent,REFERENCE.CORE.CARD_BLOCKED_REASON,F,Stolen
 ,V10,V,VIP customer,REFERENCE.CORE.CARD_BLOCKED_REASON,V,VIP customer
 ,V10,E,AU: Refundable credit balance (not used) / NZ: Not used,REFERENCE.CORE.CARD_BLOCKED_REASON,E,AU: Refundable credit balance (not used) / NZ: Not used
 ,V10,D,Deceased,REFERENCE.CORE.CARD_BLOCKED_REASON,D,Deceased
 ,V10,T,Trace,REFERENCE.CORE.CARD_BLOCKED_REASON,T,Trace
 ,V10,H,AU: Insurance claim / NZ: Not used (insurance claim),REFERENCE.CORE.CARD_BLOCKED_REASON,H,AU: Insurance claim / NZ: Not used (insurance claim)
-,V10,,,REFERENCE.CORE.CARD_BLOCKED_REASON,DQNotApplicable,Source value not required
+,V10,,Blank,REFERENCE.CORE.CARD_BLOCKED_REASON,DQNotApplicable,Source value not required
 ,V10,W,AU: No re-issue card migration / NZ: Dormant account over 1 year / Card: Suppress reissue,REFERENCE.CORE.CARD_BLOCKED_REASON,W,AU: No re-issue card migration / NZ: Dormant account over 1 year / Card: Suppress reissue
 ,V10,Y,Transferred - temp block during product transfer,REFERENCE.CORE.CARD_BLOCKED_REASON,Y,Transferred - temp block during product transfer
 ,V10,S,Stolen or lost card,REFERENCE.CORE.CARD_BLOCKED_REASON,S,Stolen or lost card
@@ -40,7 +40,7 @@ CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET
 ,VN,H,AU: Insurance claim / NZ: Not used (insurance claim),REFERENCE.CORE.CARD_BLOCKED_REASON,H,AU: Insurance claim / NZ: Not used (insurance claim)
 ,VN,G,AU: Cancel deferments / NZ: Governed credit limit increase,REFERENCE.CORE.CARD_BLOCKED_REASON,G,AU: Cancel deferments / NZ: Governed credit limit increase
 ,VN,U,Dishonour cheque or direct debit,REFERENCE.CORE.CARD_BLOCKED_REASON,U,Dishonour cheque or direct debit
-,VN,F,Fraudulent,REFERENCE.CORE.CARD_BLOCKED_REASON,F,Fraudulent
+,VN,F,Fraudulent,REFERENCE.CORE.CARD_BLOCKED_REASON,F,Stolen
 ,VN,E,AU: Refundable credit balance (not used) / NZ: Not used,REFERENCE.CORE.CARD_BLOCKED_REASON,E,AU: Refundable credit balance (not used) / NZ: Not used
 ,VN,V,VIP customer,REFERENCE.CORE.CARD_BLOCKED_REASON,V,VIP customer
 ,VN,W,AU: No re-issue card migration / NZ: Dormant account over 1 year / Card: Suppress reissue,REFERENCE.CORE.CARD_BLOCKED_REASON,W,AU: No re-issue card migration / NZ: Dormant account over 1 year / Card: Suppress reissue
@@ -57,3 +57,4 @@ CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET
 ,V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_BLOCKED_REASON,DQMissing,Source value not provided
 ,V10,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_BLOCKED_REASON,DQNotApplicable,Source value not required
 ,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_BLOCKED_REASON,DQMapping,Source value cannot be mapped
+,V10,NBLCK,Card not blocked,REFERENCE.CORE.CARD_BLOCKED_REASON,NBLCK,Card not blocked

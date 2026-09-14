@@ -1,19 +1,19 @@
-SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
-VN,CACT,Card activation,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,CACT,Card activation
-VN,CSHB,Purchase of goods or services with cashback,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,CSHB,Purchase of goods or services with cashback
-VN,DCCV,Dynamic Currency Conversion (DCC),REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DCCV,Dynamic Currency Conversion (DCC)
-VN,INTP,Instant payment from a cardholder account to an acceptor account,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,INTP,Instant payment from cardholder to acceptor
-VN,INTT,Instant transfer of funds from a payer account to a payee account,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,INTT,Instant transfer of funds payer to payee
-VN,LOYT,Loyalty services,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,LOYT,Loyalty services
-VN,OTHN,Other type of additional service at national level,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,OTHN,Other at national level
-VN,OTHP,Other type of additional service at private level,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,OTHP,Other at private level
-VN,PRST,Withdrawal transaction pre-authorised by another channel,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,PRST,Withdrawal pre-authorised by another channel
-VN,BALC,Return the account balance with the transaction,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,BALC,Return account balance with transaction
-V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMapping,Source value cannot be mapped
-V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMissing,Source value not provided
-V8,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMapping,Source value cannot be mapped
-V8,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMissing,Source value not provided
-V2,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMapping,Source value cannot be mapped
-V2,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMissing,Source value not provided
-VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMapping,Source value cannot be mapped
-VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMissing,Source value not provided
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,VN,CACT,Card activation,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,CACT,Card activation
+,VN,CSHB,Purchase of goods or services with cashback,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,CSHB,Purchase of goods or services with cashback
+,VN,DCCV,Dynamic Currency Conversion (DCC),REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DCCV,Dynamic Currency Conversion (DCC)
+,VN,INTP,Instant payment from a cardholder account to an acceptor account,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,INTP,Instant payment from cardholder to acceptor
+,VN,INTT,Instant transfer of funds from a payer account to a payee account,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,INTT,Instant transfer of funds payer to payee
+,VN,LOYT,Loyalty services,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,LOYT,Loyalty services
+,VN,OTHN,Other type of additional service at national level,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,OTHN,Other at national level
+,VN,OTHP,Other type of additional service at private level,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,OTHP,Other at private level
+,VN,PRST,Withdrawal transaction pre-authorised by another channel,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,PRST,Withdrawal pre-authorised by another channel
+,VN,BALC,Return the account balance with the transaction,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,BALC,Return account balance with transaction
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMissing,Source value not provided
+,V8,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMapping,Source value cannot be mapped
+,V8,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMissing,Source value not provided
+,V2,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMapping,Source value cannot be mapped
+,V2,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMissing,Source value not provided
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_ADDITIONAL_SERVICE_TYPE,DQMissing,Source value not provided

@@ -2,7 +2,8 @@ DIGITAL_CARD_TYPE_CODE,DIGITAL_CARD_TYPE_DESCRIPTION,IS_CURRENT_FLAG,IS_DELETED_
 NDIG,NonDigital card,Y,N,1900-01-01,9999-12-31
 FTRM,FullTerm card,Y,N,1900-01-01,9999-12-31
 TRAN,Transient card,Y,N,1900-01-01,9999-12-31
-STRM,ShortTerm,Y,N,1900-01-01,9999-12-31
+STRM,ShortTerm card,Y,N,1900-01-01,9999-12-31
+VIRT,Virtual card,Y,N,1900-01-01,9999-12-31
 DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
 DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
 DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31

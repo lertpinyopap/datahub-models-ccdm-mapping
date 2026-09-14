@@ -1,0 +1,218 @@
+id: card_customer_historical_initial_load
+extends: SOURCE_TO_TARGET_SCD2_DERIVED
+description: >
+  One-off CARD_CUSTOMER historical SCD2 backfill. It derives versions from
+  distinct dated RAW.CUSTOMER states and must be run with --full-refresh
+  before the historical incremental load is scheduled.
+control_data:
+  incremental_bookmark:
+    pipeline_name: CARD_CUSTOMER_INCREMENTAL
+    #bookmark_relation: "{{ var('ENV_PREFIX', '') }}GOVERNANCE.METADATA.TMS_BOOKMARK"
+    #bookmark_relation: "SAS_MIGRATION_WORKSPACE.STG.TMS_BOOKMARK" -- Nonprod
+    bookmark_relation: "SAS_MIGRATION_WORKSPACE.METADATA.TMS_BOOKMARK_2"
+    source_relation: "DATAOPS_HUB_SHARE_VISION{{ var('DATAOPS_ENV_SUFFIX', '_NONPROD') }}.RAW.CUSTOMER"
+    source_timestamp_column: AIRFLOW_DAG_TIME
+  business_key:
+    fields:
+      - CUSTOMER_ID
+  business_data_hash:
+    business_data_hash_mode: include
+    fields:
+      - CUSTOMER_STATUS_KEY
+      - CLV_ID
+      - TITLE
+      - FIRST_NAME
+      - MIDDLE_NAME
+      - SURNAME
+      - DATE_OF_BIRTH
+      - EXTERNAL_ID
+      - EXTERNAL_IDENTIFICATION_TYPE
+      - UPDATED_DATETIME
+      - IS_ACTIVE_IN_SOURCE_FLAG
+      # CREATED_DATETIME is Type 0 and must not create a new SCD2 version.
+  scd:
+    derivation_scope: affected_keys
+    validation_scope: affected_window
+    window_strategy: previous_and_next
+    current_flag:
+      mode: latest_per_business_key
+    deleted_flag:
+      mode: fixed
+      value: "N"
+    deduplicate:
+      partition_by:
+        - CUSTOMER_ID
+        - VALID_FROM_DATETIME
+      order_by:
+        - column: UPDATED_DATETIME
+          direction: desc
+          nulls: last
+        - column: CREATED_DATETIME
+          direction: asc
+          nulls: last
+        - column: IS_ACTIVE_IN_SOURCE_FLAG
+          direction: desc
+          nulls: last
+        - column: CUSTOMER_STATUS_KEY
+          direction: desc
+          nulls: last
+        - column: TITLE
+          direction: desc
+          nulls: last
+        - column: FIRST_NAME
+          direction: desc
+          nulls: last
+        - column: MIDDLE_NAME
+          direction: desc
+          nulls: last
+        - column: SURNAME
+          direction: desc
+          nulls: last
+        - column: DATE_OF_BIRTH
+          direction: desc
+          nulls: last
+source:
+  format: table
+  query: |
+    with ambs_acct as (
+        select
+            AMBS_CUST_NBR,
+            min(AMBS_DATE_OPENED) as AMBS_DATE_OPENED
+        from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.ACCOUNT_BASE_SEGMENT
+        group by AMBS_CUST_NBR
+    )
+    select distinct
+        C.AMNA_ADD_STATUS,
+        C.AMNA_STATUS,
+        case
+            when C.AMNA_ADD_STATUS = 99
+             and C.AMNA_STATUS = 0 then 'Y'
+            else 'N'
+        end as IS_ACTIVE_IN_SOURCE_FLAG,
+        C.AMNA_ACCT as CUSTOMER_ID,
+        C.AMNA_TITLE_01 as TITLE,
+        C.AMNA_FIRST_NAME_01 as FIRST_NAME,
+        C.AMNA_MIDDLE_NAME_01 as MIDDLE_NAME,
+        C.AMNA_LAST_NAME_01 as SURNAME,
+        C.AMNA_DOB_01 as DATE_OF_BIRTH,
+        C.AMNA_DATE_LAST_MAINT as UPDATED_DATETIME,
+        A.AMBS_DATE_OPENED as CREATED_DATETIME,
+        case
+            when C.AMNA_DATE_LAST_MAINT is null
+              or C.AMNA_DATE_LAST_MAINT < A.AMBS_DATE_OPENED
+                then A.AMBS_DATE_OPENED
+            else C.AMNA_DATE_LAST_MAINT
+        end as SOURCE_EFFECTIVE_FROM_DATETIME
+    from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.CUSTOMER as C
+    inner join ambs_acct as A
+        on C.AMNA_ACCT = A.AMBS_CUST_NBR
+    where C.AMNA_EMAIL_01 not like '%TEST%'
+    
+    -- remove this in prod
+    -- and C.AIRFLOW_DAG_TIME < (
+    --     select max(AIRFLOW_DAG_TIME)
+    --         from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.CUSTOMER 
+    --         where AMNA_EMAIL_01 not like '%TEST%'
+    --       )
+target:
+  id: CARD_CUSTOMER
+  schema: CORE
+  #tag_application: alter_table
+  tag_application: apply_governance
+  apply_governance_procedure: '{{ var("ENV_PREFIX", "") }}GOVERNANCE.OVERRIDES.APPLY_GOVERNANCE'
+  governance_contract:
+    table: '{{ var("ENV_PREFIX", "") }}GOVERNANCE.METADATA.CONTRACT_COLUMNS'
+    source: dbt:card_customer
+    version: "1"
+  fields:
+    - id: CUSTOMER_STATUS_KEY
+      source:
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
+        args:
+          reference_type: CUSTOMER_STATUS
+          source_system: V10
+          source_code_expression: |
+            case
+            when source_query.AMNA_ADD_STATUS != 99 then '9999'
+            when source_query.AMNA_STATUS = 0 then '0'
+            when source_query.AMNA_STATUS = 1 then '1'
+            when source_query.AMNA_STATUS = 2 then '2'
+            else 'DQMapping'
+            end
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: CUSTOMER_ID
+      source:
+        column: CUSTOMER_ID
+      data_type: varchar(20)
+      nullable: false
+    - id: CLV_ID
+      source:
+        default_from_field: CUSTOMER_ID
+      data_type: varchar(20)
+      nullable: false
+    - id: TITLE
+      source:
+        column: TITLE
+      data_type: varchar(50)
+      nullable: true
+    - id: FIRST_NAME
+      source:
+        column: FIRST_NAME
+      data_type: varchar(50)
+      nullable: true
+      description: Customer firstname
+      tags:
+        '{{ var("ENV_PREFIX", "") }}GOVERNANCE.TAGS.PII_CATEGORY': IDENTIFIER
+    - id: MIDDLE_NAME
+      source:
+        column: MIDDLE_NAME
+      data_type: varchar(50)
+      nullable: true
+    - id: SURNAME
+      source:
+        column: SURNAME
+      data_type: varchar(255)
+      nullable: true
+      description: Customer surname
+      tags:
+        '{{ var("ENV_PREFIX", "") }}GOVERNANCE.TAGS.PII_CATEGORY': IDENTIFIER
+    - id: DATE_OF_BIRTH
+      source:
+        column: DATE_OF_BIRTH
+      data_type: date
+      nullable: true
+      description: Customer date of birth
+      tags:
+        '{{ var("ENV_PREFIX", "") }}GOVERNANCE.TAGS.PII_CATEGORY': QUASI_IDENTIFIER
+    - id: EXTERNAL_ID
+      source:
+        fixed_value: null
+      data_type: varchar(255)
+      nullable: true
+    - id: EXTERNAL_IDENTIFICATION_TYPE
+      source:
+        default_value: "AMID"
+      data_type: varchar(255)
+      nullable: true
+    - id: CREATED_DATETIME
+      source:
+        column: CREATED_DATETIME
+      data_type: timestamp_tz
+      nullable: false
+    - id: UPDATED_DATETIME
+      source:
+        column: UPDATED_DATETIME
+      data_type: timestamp_tz
+      nullable: true
+    - id: IS_ACTIVE_IN_SOURCE_FLAG
+      source:
+        column: IS_ACTIVE_IN_SOURCE_FLAG
+      data_type: varchar(1)
+      nullable: true
+    - id: VALID_FROM_DATETIME
+      source:
+        column: SOURCE_EFFECTIVE_FROM_DATETIME
+      data_type: timestamp_ltz
+      nullable: false

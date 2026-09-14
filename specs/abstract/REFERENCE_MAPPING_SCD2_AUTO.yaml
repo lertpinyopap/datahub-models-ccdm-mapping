@@ -29,19 +29,23 @@ target:
   fields:
     - id: SOURCE_SYSTEM
       source:
+        pos: 1
         column: SOURCE_SYSTEM
       data_type: varchar(50)
     - id: SOURCE_CODE
       source:
+        pos: 2
         column: SOURCE_CODE
       data_type: varchar(50)
     - id: SOURCE_DESCRIPTION
       source:
+        pos: 3
         column: SOURCE_DESCRIPTION
       data_type: varchar(255)
       nullable: true
     - id: TARGET_SYSTEM
       source:
+        pos: 4
         column: TARGET_SYSTEM
       data_type: varchar(255)
       transforms:
@@ -49,10 +53,12 @@ target:
           macro: reference_lookup_mapping_macros.prefix_target_system
     - id: TARGET_CODE
       source:
+        pos: 5
         column: TARGET_CODE
       data_type: varchar(50)
     - id: TARGET_DESCRIPTION
       source:
+        pos: 6
         column: TARGET_DESCRIPTION
       data_type: varchar(255)
       nullable: true

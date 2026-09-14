@@ -18,15 +18,15 @@ PONAPP,Partner Online Application,Y,N,1900-01-01,9999-12-31
 QRIAPP,In-Store Application via QR Code,Y,N,1900-01-01,9999-12-31
 QROAPP,Online Application via QR Code,Y,N,1900-01-01,9999-12-31
 SMSAPP,Application via SMS Link,Y,N,1900-01-01,9999-12-31
-XSLACT,XSell Active (AU),Y,N,1900-01-01,9999-12-31
-TRDPTY,3rd Party (AU),Y,N,1900-01-01,9999-12-31
-EAPLEG,E-Apps (AU) / eApps Online Scheme (NZ),Y,N,1900-01-01,9999-12-31
-MLXFAX,Mail/Fax (AU) / Mail (NZ),Y,N,1900-01-01,9999-12-31
-TKEONE,Take One (AU),Y,N,1900-01-01,9999-12-31
-PSTFAC,Partner Staff Account (NZ),Y,N,1900-01-01,9999-12-31
-EAPSTF,Eapps-Staff (AU) / GE Staff Account (NZ),Y,N,1900-01-01,9999-12-31
-EAPOFF,Eapps-Staff Offline (AU),Y,N,1900-01-01,9999-12-31
-MOBEAP,Mobile E-apps (AU),Y,N,1900-01-01,9999-12-31
+MIGRATXSLACT,XSell Active (AU),Y,N,1900-01-01,9999-12-31
+MIGRATTRDPTY,3rd Party (AU),Y,N,1900-01-01,9999-12-31
+MIGRATEAPLEG,E-Apps (AU) / eApps Online Scheme (NZ),Y,N,1900-01-01,9999-12-31
+MIGRATMLXFAX,Mail/Fax (AU) / Mail (NZ),Y,N,1900-01-01,9999-12-31
+MIGRATTKEONE,Take One (AU),Y,N,1900-01-01,9999-12-31
+MIGRATPSTFAC,Partner Staff Account (NZ),Y,N,1900-01-01,9999-12-31
+MIGRATEAPSTF,Eapps-Staff (AU) / GE Staff Account (NZ),Y,N,1900-01-01,9999-12-31
+MIGRATEAPOFF,Eapps-Staff Offline (AU),Y,N,1900-01-01,9999-12-31
+MIGRATMOBEAP,Mobile E-apps (AU),Y,N,1900-01-01,9999-12-31
 DQMapping,Source value cannot be mapped,Y,N,1900-01-01,9999-12-31
 DQMissing,Source value not provided,Y,N,1900-01-01,9999-12-31
 DQNotApplicable,Source value not required,Y,N,1900-01-01,9999-12-31

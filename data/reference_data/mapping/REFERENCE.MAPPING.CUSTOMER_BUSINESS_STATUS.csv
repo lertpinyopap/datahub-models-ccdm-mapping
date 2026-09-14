@@ -1,0 +1,38 @@
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,VN,BKRP,Bankrupt,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,BKRP,Bankrupt
+,VN,DCSD,Deceased,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,DCSD,Deceased
+,VN,JBLS,Jobless,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,JBLS,Jobless
+,VN,SCND,Sanctioned,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,SCND,Sanctioned
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,DQMissing,Source value not provided
+,VN,DQNotApplicable,Source value not provided,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,DQNotApplicable,Source value not provided
+,V10,B,Bankrupt,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,BKRP,Bankrupt
+,V10,D,Deceased,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,DCSD,Deceased
+,V10,,No block code / not blocked,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,A,Hardship arrangement,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,C,Charged off,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,E,Refundable credit balance / Not used,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,F,Fraudulent,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,G,Cancel deferments / Governed CL increase,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,H,Insurance claim,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,I,No interest - blocked or suppressed,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,J,David Jones DDO / Creditors proposal,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,K,Section 88 issued / 6-month temp block,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,L,Permanent block 90+ DPD / Lost,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,M,Moratorium on payments,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,N,Hardship or fraud block / No shopping,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,O,Administrator or guardian / Pioneer insurance,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,P,FTRA block legacy / Not used,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,Q,Query - multipurpose,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,R,Refer to fraud,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,S,Stolen or lost card,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,T,Trace,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,U,Dishonour cheque or direct debit,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,V,VIP customer,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,W,No re-issue / Dormant / Suppress reissue,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,X,Account closed,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,Y,Transferred - product transfer,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,Z,New account retail no reissue,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,CLEAN,Clean business status
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,DQMissing,Source value not provided
+,V10,DQNotApplicable,Source value not provided,REFERENCE.CORE.CUSTOMER_BUSINESS_STATUS,DQNotApplicable,Source value not provided

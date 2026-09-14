@@ -12,6 +12,8 @@ CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET
 ,VN,CRCNFR,Card confirmed fraud,REFERENCE.CORE.CARD_EVENT_TYPE,CRCNFR,Card confirmed fraud
 ,VN,CRRMFR,Card fraud status removed,REFERENCE.CORE.CARD_EVENT_TYPE,CRRMFR,Card fraud status removed
 ,VN,CRPTRK,Card personalisation tracking,REFERENCE.CORE.CARD_EVENT_TYPE,CRPTRK,Card personalisation tracking
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_EVENT_TYPE,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.CARD_EVENT_TYPE,DQMissing,Source value not provided
 ,V10,ACTV,CARD ACTIVATION,REFERENCE.CORE.CARD_EVENT_TYPE,CRACTV,Card activated
 ,V10,AFRC,AMEX FRAUD CREDIT,REFERENCE.CORE.CARD_EVENT_TYPE,CRCNFR,Card confirmed fraud
 ,V10,BNMI,ACC BLOCK CODE,REFERENCE.CORE.CARD_EVENT_TYPE,CRBLCK,Card blocked
@@ -40,3 +42,4 @@ CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET
 ,V10,TKNE,TOKEN ACTIVATED,REFERENCE.CORE.CARD_EVENT_TYPE,CRRDYU,Digital card ready to use
 ,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CARD_EVENT_TYPE,DQMapping,Source value cannot be mapped
 ,V10,DQMissing,Source value not provided,REFERENCE.CORE.CARD_EVENT_TYPE,DQMissing,Source value not provided
+,V10,DQNotApplicable,Source value not required,REFERENCE.CORE.CARD_EVENT_TYPE,DQNotApplicable,Source value not required

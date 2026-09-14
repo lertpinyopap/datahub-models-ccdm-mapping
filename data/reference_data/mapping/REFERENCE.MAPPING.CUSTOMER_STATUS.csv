@@ -1,18 +1,18 @@
-SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
-V10,0,Customer record is active and valid for business processing.,REFERENCE.CORE.CUSTOMER_STATUS,ENAB,ENABLED
-V10,1,Customer record is temporarily inactive and excluded from business processing.,REFERENCE.CORE.CUSTOMER_STATUS,DISA,DISABLED
-V10,2,Customer record has been logically deleted and should not be used for new business activity.,REFERENCE.CORE.CUSTOMER_STATUS,DELE,DELETED
-V10,9,Customer record has been permanently purged from the source system following retention policies.,REFERENCE.CORE.CUSTOMER_STATUS,PURG,PURGE
-V8,0,Customer record is active and valid for business processing.,REFERENCE.CORE.CUSTOMER_STATUS,ENAB,ENABLED
-V8,1,Customer record is temporarily inactive and excluded from business processing.,REFERENCE.CORE.CUSTOMER_STATUS,DISA,DISABLED
-V8,2,Customer record has been logically deleted and should not be used for new business activity.,REFERENCE.CORE.CUSTOMER_STATUS,DELE,DELETED
-V10,9999,Customer record is created but not fully activated or finalized yet.,REFERENCE.CORE.CUSTOMER_STATUS,PROF,
-V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CUSTOMER_STATUS,DQMapping,Source value cannot be mapped
-V10,DQMissing,Source value not provided,REFERENCE.CORE.CUSTOMER_STATUS,DQMissing,Source value not provided
-VN,ENAB,Customer record is active and valid for business processing.,REFERENCE.CORE.CUSTOMER_STATUS,ENAB,Customer record is active and valid for business processing.
-VN,DISA,Customer record is temporarily inactive and excluded from business processing.,REFERENCE.CORE.CUSTOMER_STATUS,DISA,Customer record is temporarily inactive and excluded from business processing.
-VN,DELE,Customer record has been logically deleted and should not be used for new business activity.,REFERENCE.CORE.CUSTOMER_STATUS,DELE,Customer record has been logically deleted and should not be used for new business activity.
-VN,PURG,Customer record has been permanently purged from the source system following retention policies.,REFERENCE.CORE.CUSTOMER_STATUS,PURG,Customer record has been permanently purged from the source system following retention policies.
-VN,PROF,Customer record is created but not fully activated or finalized yet.,REFERENCE.CORE.CUSTOMER_STATUS,PROF,Customer record is created but not fully activated or finalized yet.
-VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CUSTOMER_STATUS,DQMapping,Source value cannot be mapped
-VN,DQMissing,Source value not provided,REFERENCE.CORE.CUSTOMER_STATUS,DQMissing,Source value not provided
+CHANGE_CONTROL,SOURCE_SYSTEM,SOURCE_CODE,SOURCE_DESCRIPTION,TARGET_SYSTEM,TARGET_CODE,TARGET_DESCRIPTION
+,V10,0,Customer record is active and valid for business processing.,REFERENCE.CORE.CUSTOMER_STATUS,ENAB,ENABLED
+,V10,1,Customer record is temporarily inactive and excluded from business processing.,REFERENCE.CORE.CUSTOMER_STATUS,DISA,DISABLED
+,V10,2,Customer record has been logically deleted and should not be used for new business activity.,REFERENCE.CORE.CUSTOMER_STATUS,DELE,DELETED
+,V10,9,Customer record has been permanently purged from the source system following retention policies.,REFERENCE.CORE.CUSTOMER_STATUS,PURG,PURGE
+,V8,0,Customer record is active and valid for business processing.,REFERENCE.CORE.CUSTOMER_STATUS,ENAB,ENABLED
+,V8,1,Customer record is temporarily inactive and excluded from business processing.,REFERENCE.CORE.CUSTOMER_STATUS,DISA,DISABLED
+,V8,2,Customer record has been logically deleted and should not be used for new business activity.,REFERENCE.CORE.CUSTOMER_STATUS,DELE,DELETED
+,V10,9999,Customer record is created but not fully activated or finalized yet.,REFERENCE.CORE.CUSTOMER_STATUS,PROF,
+,V10,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CUSTOMER_STATUS,DQMapping,Source value cannot be mapped
+,V10,DQMissing,Source value not provided,REFERENCE.CORE.CUSTOMER_STATUS,DQMissing,Source value not provided
+,VN,ENAB,Customer record is active and valid for business processing.,REFERENCE.CORE.CUSTOMER_STATUS,ENAB,Customer record is active and valid for business processing.
+,VN,DISA,Customer record is temporarily inactive and excluded from business processing.,REFERENCE.CORE.CUSTOMER_STATUS,DISA,Customer record is temporarily inactive and excluded from business processing.
+,VN,DELE,Customer record has been logically deleted and should not be used for new business activity.,REFERENCE.CORE.CUSTOMER_STATUS,DELE,Customer record has been logically deleted and should not be used for new business activity.
+,VN,PURG,Customer record has been permanently purged from the source system following retention policies.,REFERENCE.CORE.CUSTOMER_STATUS,PURG,Customer record has been permanently purged from the source system following retention policies.
+,VN,PROF,Customer record is created but not fully activated or finalized yet.,REFERENCE.CORE.CUSTOMER_STATUS,PROF,Customer record is created but not fully activated or finalized yet.
+,VN,DQMapping,Source value cannot be mapped,REFERENCE.CORE.CUSTOMER_STATUS,DQMapping,Source value cannot be mapped
+,VN,DQMissing,Source value not provided,REFERENCE.CORE.CUSTOMER_STATUS,DQMissing,Source value not provided
