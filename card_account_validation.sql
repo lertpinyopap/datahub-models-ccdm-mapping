@@ -144,3 +144,79 @@ order by validation_status, s.airflow_dag_time, s.agreement_id;
 ```
 
 After the incremental run, confirm the bookmark advanced to the source watermark with the bookmark query above.
+
+
+
+
+
+
+
+
+
+Use this to validate each account’s historical SCD2 timeline after the historical load. Replace `YOUR_DATABASE`.
+
+```sql
+with history as (
+    select
+        CARD_CUSTOMER_BUSINESS_KEY,
+        AGREEMENT_ID,
+        CARD_ACCOUNT_KEY,
+        VALID_FROM_DATETIME,
+        VALID_TO_DATETIME,
+        IS_CURRENT_FLAG,
+        lag(VALID_TO_DATETIME) over (
+            partition by CARD_CUSTOMER_BUSINESS_KEY, AGREEMENT_ID
+            order by VALID_FROM_DATETIME
+        ) as PREVIOUS_VALID_TO_DATETIME,
+        lead(VALID_FROM_DATETIME) over (
+            partition by CARD_CUSTOMER_BUSINESS_KEY, AGREEMENT_ID
+            order by VALID_FROM_DATETIME
+        ) as NEXT_VALID_FROM_DATETIME
+    from YOUR_DATABASE.CORE.CARD_ACCOUNT
+)
+select
+    CARD_CUSTOMER_BUSINESS_KEY,
+    AGREEMENT_ID,
+    CARD_ACCOUNT_KEY,
+    VALID_FROM_DATETIME,
+    VALID_TO_DATETIME,
+    IS_CURRENT_FLAG,
+    case
+        when VALID_TO_DATETIME < VALID_FROM_DATETIME
+            then 'INVALID_RANGE'
+        when PREVIOUS_VALID_TO_DATETIME > VALID_FROM_DATETIME
+            then 'OVERLAPPING_VERSION'
+        when IS_CURRENT_FLAG = 'Y' and VALID_TO_DATETIME is not null
+            then 'CURRENT_ROW_HAS_END_DATE'
+        when IS_CURRENT_FLAG = 'N' and VALID_TO_DATETIME is null
+            then 'HISTORICAL_ROW_HAS_NO_END_DATE'
+    end as ISSUE
+from history
+where VALID_TO_DATETIME < VALID_FROM_DATETIME
+   or PREVIOUS_VALID_TO_DATETIME > VALID_FROM_DATETIME
+   or (IS_CURRENT_FLAG = 'Y' and VALID_TO_DATETIME is not null)
+   or (IS_CURRENT_FLAG = 'N' and VALID_TO_DATETIME is null)
+order by CARD_CUSTOMER_BUSINESS_KEY, AGREEMENT_ID, VALID_FROM_DATETIME;
+```
+
+A successful result should return zero rows.
+
+To inspect the version history for one account:
+
+```sql
+select
+    CARD_CUSTOMER_BUSINESS_KEY,
+    AGREEMENT_ID,
+    CARD_ACCOUNT_KEY,
+    VALID_FROM_DATETIME,
+    VALID_TO_DATETIME,
+    IS_CURRENT_FLAG,
+    PRODUCT_KEY,
+    CREDIT_LIMIT_AMOUNT,
+    CASH_LIMIT_AMOUNT,
+    CLOSURE_REQUEST_DATE,
+    IS_ACTIVE_IN_SOURCE_FLAG
+from YOUR_DATABASE.CORE.CARD_ACCOUNT
+where AGREEMENT_ID = '<ACCOUNT_NUMBER>'
+order by VALID_FROM_DATETIME;
+```
