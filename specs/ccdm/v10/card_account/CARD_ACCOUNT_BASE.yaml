@@ -43,6 +43,9 @@ control_data:
         - column: IS_ACTIVE_IN_SOURCE_FLAG
           direction: desc
           nulls: last
+        - column: SOURCE_SNAPSHOT_DATETIME
+          direction: desc
+          nulls: last
 target:
   id: CARD_ACCOUNT
   schema: CORE
@@ -177,6 +180,11 @@ target:
       source:
         column: IS_ACTIVE_IN_SOURCE_FLAG
       data_type: varchar(1)
+      nullable: true
+    - id: SOURCE_SNAPSHOT_DATETIME
+      source:
+        column: SOURCE_SNAPSHOT_DATETIME
+      data_type: timestamp_ntz
       nullable: true
     - id: VALID_FROM_DATETIME
       source:
