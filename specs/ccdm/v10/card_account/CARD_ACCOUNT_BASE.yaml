@@ -49,9 +49,10 @@ target:
   fields:
     - id: CARD_CHANNEL_KEY
       source:
-        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
         args:
           reference_type: CARD_CHANNEL
+          source_system: V10
           source_code_expression: |
             case
               when source_query.AMBS_LFS_SOL_CODE is null
@@ -64,9 +65,10 @@ target:
       nullable: false
     - id: CARD_CHANNEL_BUSINESS_KEY
       source:
-        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
         args:
           reference_type: CARD_CHANNEL
+          source_system: V10
           value_column: CARD_CHANNEL_BUSINESS_KEY
           source_code_expression: |
             case
