@@ -8,7 +8,23 @@ control_data:
     update_mode: upsert
     update_key:
       fields:
-        - VALID_FROM_DATETIME
+        - VALID_FROM_DATE
+    validity:
+      data_type: date
+      valid_from:
+        column: VALID_FROM_DATE
+        source:
+          column: VALID_FROM_DATETIME
+        transforms:
+          - type: parse_date
+            format: "%Y-%m-%d"
+      valid_to:
+        column: VALID_TO_DATE
+        source:
+          column: VALID_TO_DATETIME
+        transforms:
+          - type: parse_date
+            format: "%Y-%m-%d"
   failure_mode: fail_load
 source:
   format: csv
@@ -46,26 +62,6 @@ target:
           values:
             - "Y"
             - "N"
-    - id: VALID_FROM_DATETIME
-      source:
-        column: VALID_FROM_DATETIME
-      data_type: timestamp_ltz
-      transforms:
-        - type: parse_timestamp
-          format: "%Y-%m-%d"
-          timezone_if_missing: UTC
-          time_if_missing: start_of_day
-      nullable: false
-    - id: VALID_TO_DATETIME
-      source:
-        column: VALID_TO_DATETIME
-      data_type: timestamp_ltz
-      transforms:
-        - type: parse_timestamp
-          format: "%Y-%m-%d"
-          timezone_if_missing: UTC
-          time_if_missing: end_of_day
-      nullable: false
     - id: AUDIT_CREATED_SOURCE
       source:
         fixed_value: DBT

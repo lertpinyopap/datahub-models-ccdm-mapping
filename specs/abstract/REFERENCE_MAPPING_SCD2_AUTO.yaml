@@ -12,6 +12,12 @@ control_data:
       - SOURCE_CODE
   scd:
     insert_time: '{{ var("insert_time") }}'
+    validity:
+      data_type: date
+      valid_from:
+        column: VALID_FROM_DATE
+      valid_to:
+        column: VALID_TO_DATE
     scd2_auto_from_sot: true
     scd2_validation_enabled: true
     scd2_validation: continuous
