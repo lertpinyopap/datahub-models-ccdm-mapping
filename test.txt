@@ -4,3 +4,18 @@ FO - Compilation Error: chan="stdout": source="task"
 [2026-09-15, 16:48:36] INFO -       {{ log('TMS hook: ensuring incremental bookmark table exists: {{ var('ENV_PREFIX', '') }}PAY.INTERMEDIATE.TMS_BOOKMARK', info=true) }}: chan="stdout": source="task"
 [2026-09-15, 16:48:37] INFO - TMS cleaned generated project dir: /tmp/tms-generated/specs/ccdm/v10/card_customer/CARD_CUSTOMER_HISTORICAL_INITIAL_LOAD/run_card_customer_historical.load_card_customer_historical_20260915T064831600243Z: chan="stdout": source="task"
 [2026-09-15, 16:48:37] ERROR - Task failed with exception: source="task"
+
+07:24:01  Registered adapter: snowflake=1.11.6
+07:24:02  Unable to do partial parsing because saved manifest not found. Starting full parse.
+07:24:02  [WARNING][UnexpectedJinjaBlockDeprecation]: Deprecated functionality
+Found unexpected 'set' block tag. in file
+`macros/generated/incremental_bookmark_hooks.sql`
+07:24:02  [ERROR]: Encountered an error:
+Compilation Error in model CARD_ACCOUNT__source (models/generated/CARD_ACCOUNT__source.sql)
+  macro 'dbt_macro__reference_lookup_mapping_bridge' takes no keyword argument 'value_column'
+07:24:02  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- UnexpectedJinjaBlockDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
