@@ -185,7 +185,17 @@ TMS generated project dir: /tmp/tms-generated/specs/reference_data/core/CORE_CAR
                                                                                                                                                                     04:56:34  1 of 2 OK hook: type_materialisation_generated.on-run-end.0 .................... [OK in 1.21s]
                                                                                                                                                                     04:56:34  TMS hook: recording JOB_END event
                                                                                                                                                                     04:56:34  2 of 2 START hook: type_materialisation_generated.on-run-end.1 ................. [RUN]
-                                                                                                                                                                    04:56:34  2 of 2 OK hook: type_materialisation_generated.on-run-end.1 .................... [OK in 0.50s]
+ Finished running 1 incremental model, 4 project hooks, 1 seed, 1 table model, 1 view model in 0 hours 0 minutes and 21.80 seconds (21.80s).
+05:04:59
+05:04:59  Completed with 1 error, 0 partial successes, and 0 warnings:
+05:04:59
+05:04:59  [ERROR]: in model ADDRESS_TYPE__validation_guard (models/generated/ADDRESS_TYPE__validation_guard.sql)
+05:04:59    Database Error in model ADDRESS_TYPE__validation_guard (models/generated/ADDRESS_TYPE__validation_guard.sql)
+  000904 (42000): SQL compilation error: error line 51 at position 8
+  invalid identifier 'EXISTING_TARGET.VALID_FROM_DATE'
+  compiled code at target/run/type_materialisation_generated/models/generated/ADDRESS_TYPE__validation_guard.sql
+05:04:59
+05:04:59    compiled code at target/compiled/type_materialisation_generated/models/generated/ADDRESS_TYPE__validation_guard.sql                                                                                                                                                  04:56:34  2 of 2 OK hook: type_materialisation_generated.on-run-end.1 .................... [OK in 0.50s]
                                                                                                                                                                     04:56:35
                                                                                                                                                                     04:56:35  Finished running 1 incremental model, 4 project hooks, 1 seed, 1 table model, 1 view model in 0 hours 0 minutes and 20.11 seconds (20.11s).
                                                                                                                                                                     04:56:35
