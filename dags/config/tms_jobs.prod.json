@@ -31,6 +31,7 @@
           "tasks": [
             {
               "task_id": "load_core",
+              "full_refresh": true,
               "spec": "specs/reference_data/core/CORE_ADDRESS_TYPE.yaml"
             },
             {

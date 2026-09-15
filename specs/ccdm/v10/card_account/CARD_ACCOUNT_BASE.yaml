@@ -49,16 +49,35 @@ target:
   fields:
     - id: CARD_CHANNEL_KEY
       source:
-        # TODO: map once the approved V10 source field for the Card Channel/SOL code is confirmed.
-        fixed_value: null
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        args:
+          reference_type: CARD_CHANNEL
+          source_code_expression: |
+            case
+              when source_query.AMBS_LFS_SOL_CODE is null
+                or trim(source_query.AMBS_LFS_SOL_CODE) = '' then 'DQMissing'
+              when length(trim(source_query.AMBS_LFS_SOL_CODE)) < 2 then 'DQMissing'
+              else substr(trim(source_query.AMBS_LFS_SOL_CODE), 2, 1)
+            end
+          required: true
       data_type: varchar(64)
-      nullable: true
+      nullable: false
     - id: CARD_CHANNEL_BUSINESS_KEY
       source:
-        # TODO: use the same approved V10 Card Channel/SOL source field as CARD_CHANNEL_KEY.
-        fixed_value: null
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        args:
+          reference_type: CARD_CHANNEL
+          value_column: CARD_CHANNEL_BUSINESS_KEY
+          source_code_expression: |
+            case
+              when source_query.AMBS_LFS_SOL_CODE is null
+                or trim(source_query.AMBS_LFS_SOL_CODE) = '' then 'DQMissing'
+              when length(trim(source_query.AMBS_LFS_SOL_CODE)) < 2 then 'DQMissing'
+              else substr(trim(source_query.AMBS_LFS_SOL_CODE), 2, 1)
+            end
+          required: true
       data_type: varchar(64)
-      nullable: true
+      nullable: false
     - id: CARD_CUSTOMER_KEY
       source:
         column: CARD_CUSTOMER_KEY
