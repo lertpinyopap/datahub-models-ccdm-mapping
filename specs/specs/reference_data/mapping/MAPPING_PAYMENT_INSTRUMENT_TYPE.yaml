@@ -1,0 +1,11 @@
+id: reference_mapping_country
+extends: REFERENCE_MAPPING_SCD2_AUTO
+description: Maps reference country mapping CSV data into the PAYMENT_INSTRUMENT_TYPE mapping table.
+source:
+  seed:
+    file: data/reference_data/mapping/REFERENCE.MAPPING.DIGITAL_CARD_TYPE.csv
+    name: reference_mapping_country_seed
+target:
+  id: PAYMENT_INSTRUMENT_TYPE
+  schema: MAPPING
+  table_name: PAYMENT_INSTRUMENT_TYPE

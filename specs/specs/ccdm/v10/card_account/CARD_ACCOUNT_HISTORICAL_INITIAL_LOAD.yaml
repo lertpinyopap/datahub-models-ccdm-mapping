@@ -1,0 +1,83 @@
+id: card_account_historical_initial_load
+extends: card_account_initial_load
+description: >
+  One-off CARD_ACCOUNT historical SCD2 backfill. It uses every retained V10
+  ACCOUNT_BASE_SEGMENT version, deriving each version start from
+  AMBS_DATE_LAST_MAINT and falling back to AMBS_DATE_OPENED. Run with
+  --full-refresh before CARD_ACCOUNT_INCREMENTAL.
+source:
+  format: table
+  query: |
+    with account_history as (
+        select
+            A.AMBS_CUST_NBR as CUSTOMER_ID,
+            A.AMBS_ACCT as AGREEMENT_ID,
+            A.AMBS_ORG as PRODUCT_ORG,
+            A.AMBS_LOGO as PRODUCT_LOGO,
+            A.AMBS_BILLING_CYCLE as BILLING_CYCLE_DATE,
+            A.AMBS_CRLIM as CREDIT_LIMIT_AMOUNT,
+            A.AMBS_CURR_CODE as CURRENCY_SOURCE_CODE,
+            A.AMBS_CASH_CRLIM as CASH_LIMIT_AMOUNT,
+            case
+                when A.AMBS_DATE_CLOSED is not null
+                 and cast(A.AMBS_DATE_CLOSED as varchar) not like '%1901%'
+                    then cast(A.AMBS_DATE_CLOSED as date)
+                else null
+            end as CLOSURE_REQUEST_DATE,
+            case
+                when A.AMBS_DATE_CLOSED is not null
+                 and cast(A.AMBS_DATE_CLOSED as varchar) not like '%1901%'
+                    then cast(A.AMBS_DATE_CLOSED as timestamp_ntz)
+                else null
+            end as CLOSING_DATETIME,
+            case
+                when A.AMBS_DATE_CLOSED is null
+                  or cast(A.AMBS_DATE_CLOSED as varchar) like '%1901%'
+                    then 'Y'
+                else 'N'
+            end as IS_ACTIVE_IN_SOURCE_FLAG,
+            coalesce(
+                cast(nullif(A.AMBS_DATE_LAST_MAINT, to_date('1901-01-01')) as timestamp_ntz),
+                cast(nullif(A.AMBS_DATE_OPENED, to_date('1901-01-01')) as timestamp_ntz),
+                cast('1901-01-01' as timestamp_ntz)
+            ) as SOURCE_EFFECTIVE_FROM_DATETIME,
+            A.AIRFLOW_DAG_TIME as SOURCE_SNAPSHOT_DATETIME
+        from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.ACCOUNT_BASE_SEGMENT as A
+        where A.AMBS_CURR_CODE is null
+           or lpad(cast(A.AMBS_CURR_CODE as varchar), 3, '0') <> '000'
+    ), 
+    deduplicated_account_history as (
+        select *
+        from account_history
+        -- Retained snapshots can repeat a business-effective date. Keep the
+        -- latest ingestion snapshot as the deterministic correction for that date.
+        qualify row_number() over (
+            partition by CUSTOMER_ID, AGREEMENT_ID, SOURCE_EFFECTIVE_FROM_DATETIME
+            order by SOURCE_SNAPSHOT_DATETIME desc nulls last
+        ) = 1
+    ),
+    card_customer_lookup as (
+        select CUSTOMER_ID, CARD_CUSTOMER_KEY, CARD_CUSTOMER_BUSINESS_KEY
+        from {{ var("database") }}.CORE.{{ var("card_customer_table", "CARD_CUSTOMER") }}
+        qualify row_number() over (
+            partition by CUSTOMER_ID
+            order by AUDIT_LAST_CHANGED_DATETIME desc nulls last, AUDIT_CREATED_DATETIME desc nulls last
+        ) = 1
+    )
+    select
+        C.CARD_CUSTOMER_KEY,
+        C.CARD_CUSTOMER_BUSINESS_KEY,
+        A.AGREEMENT_ID,
+        A.PRODUCT_ORG,
+        A.PRODUCT_LOGO,
+        A.BILLING_CYCLE_DATE,
+        A.CREDIT_LIMIT_AMOUNT,
+        A.CURRENCY_SOURCE_CODE,
+        A.CASH_LIMIT_AMOUNT,
+        A.CLOSURE_REQUEST_DATE,
+        A.CLOSING_DATETIME,
+        A.IS_ACTIVE_IN_SOURCE_FLAG,
+        A.SOURCE_EFFECTIVE_FROM_DATETIME
+    from deduplicated_account_history as A
+    inner join card_customer_lookup as C
+        on C.CUSTOMER_ID = A.CUSTOMER_ID
