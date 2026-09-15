@@ -195,7 +195,32 @@ TMS generated project dir: /tmp/tms-generated/specs/reference_data/core/CORE_CAR
   invalid identifier 'EXISTING_TARGET.VALID_FROM_DATE'
   compiled code at target/run/type_materialisation_generated/models/generated/ADDRESS_TYPE__validation_guard.sql
 05:04:59
-05:04:59    compiled code at target/compiled/type_materialisation_generated/models/generated/ADDRESS_TYPE__validation_guard.sql                                                                                                                                                  04:56:34  2 of 2 OK hook: type_materialisation_generated.on-run-end.1 .................... [OK in 0.50s]
+05:04:59    compiled code at target/compiled/type_materialisation_generated/models/generated/ADDRESS_TYPE__validation_guard.sql
+
+
+
+                                                                                                                                                  05:14:04  TMS hook: ensuring job-event table exists
+                                                                                                                                                  05:14:04  1 of 2 START hook: type_materialisation_generated.on-run-start.0 ............... [RUN]
+                                                                                                                                                  05:14:06  1 of 2 OK hook: type_materialisation_generated.on-run-start.0 .................. [OK in 1.41s]
+                                                                                                                                                  05:14:06  TMS hook: recording JOB_START event
+                                                                                                                                                  05:14:06  2 of 2 START hook: type_materialisation_generated.on-run-start.1 ............... [RUN]
+                                                                                                                                                  05:14:06  2 of 2 OK hook: type_materialisation_generated.on-run-start.1 .................. [OK in 0.51s]
+                                                                                                                                                  05:14:06
+                                                                                                                                                  05:14:06  1 of 4 START seed file INTERMEDIATE.REFERENCE_CORE_ADDRESS_TYPE_SEED ........... [RUN]
+                                                                                                                                                  05:14:09  1 of 4 OK loaded seed file INTERMEDIATE.REFERENCE_CORE_ADDRESS_TYPE_SEED ....... [CREATE 13 in 2.49s]
+                                                                                                                                                  05:14:09  2 of 4 START sql view model INTERMEDIATE.ADDRESS_TYPE__SOURCE .................. [RUN]
+                                                                                                                                                  05:14:10  2 of 4 OK created sql view model INTERMEDIATE.ADDRESS_TYPE__SOURCE ............. [SUCCESS 1 in 1.67s]
+                                                                                                                                                  05:14:10  3 of 4 START sql table model INTERMEDIATE.ADDRESS_TYPE__VALIDATION_GUARD ....... [RUN]
+                                                                                                                                                  05:14:13  3 of 4 OK created sql table model INTERMEDIATE.ADDRESS_TYPE__VALIDATION_GUARD .. [SUCCESS 1 in 2.99s]
+                                                                                                                                                  05:14:13  4 of 4 START sql incremental model CORE.ADDRESS_TYPE ........................... [RUN]
+                                                                                                                                                  05:14:17  4 of 4 OK created sql incremental model CORE.ADDRESS_TYPE ...................... [SUCCESS 13 in 3.59s]
+                                                                                                                                                  05:14:17
+                                                                                                                                                  05:14:17  TMS hook: ensuring job-event table exists
+                                                                                                                                                  05:14:17  1 of 2 START hook: type_materialisation_generated.on-run-end.0 ................. [RUN]
+                                                                                                                                                  05:14:19  1 of 2 OK hook: type_materialisation_generated.on-run-end.0 .................... [OK in 1.56s]
+                                                                                                                                                  05:14:19  TMS hook: recording JOB_END event
+                                                                                                                                                  05:14:19  2 of 2 START hook: type_materialisation_generated.on-run-end.1 ................. [RUN]
+                                                                                                                                                  05:14:19  2 of 2 OK hook: type_materialisation_generated.on-run-end.1 .................... [OK in 0.52s]04:56:34  2 of 2 OK hook: type_materialisation_generated.on-run-end.1 .................... [OK in 0.50s]
                                                                                                                                                                     04:56:35
                                                                                                                                                                     04:56:35  Finished running 1 incremental model, 4 project hooks, 1 seed, 1 table model, 1 view model in 0 hours 0 minutes and 20.11 seconds (20.11s).
                                                                                                                                                                     04:56:35
