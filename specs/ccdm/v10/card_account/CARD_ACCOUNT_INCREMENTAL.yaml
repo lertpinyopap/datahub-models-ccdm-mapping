@@ -1,5 +1,5 @@
 id: card_account_incremental
-extends: card_account_initial_load
+extends: card_account_historical_initial_load
 description: >
   Incremental CARD_ACCOUNT SCD2 load. It processes only V10 account rows
   delivered after the CARD_ACCOUNT_INCREMENTAL bookmark and derives each

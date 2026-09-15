@@ -1,5 +1,5 @@
 id: card_account_historical_initial_load
-extends: card_account_initial_load
+extends: card_account_base
 description: >
   One-off CARD_ACCOUNT historical SCD2 backfill. It uses every retained V10
   ACCOUNT_BASE_SEGMENT version, deriving each version start from
