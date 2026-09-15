@@ -14,8 +14,9 @@ control_data:
 source:
   format: table
   query: |
-    -- Retained raw snapshots provide the historical account states.
-    with account_history as (
+    with
+      -- Retained raw snapshots provide the historical account states.
+      account_history as (
         select
             A.AMBS_CUST_NBR as CUSTOMER_ID,
             A.AMBS_ACCT as AGREEMENT_ID,

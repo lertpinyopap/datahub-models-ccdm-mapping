@@ -6,9 +6,10 @@ description: >
 source:
   format: table
   query: |    
-    -- Join each new embossed-card snapshot to its V10 account context. The bookmark
-    -- predicate limits processing to source deliveries not yet recorded by TMS.
-    with payment_instrument_rows as (
+    with 
+      -- Join each new embossed-card snapshot to its V10 account context. The bookmark
+      -- predicate limits processing to source deliveries not yet recorded by TMS.
+      payment_instrument_rows as (
         select
             E.*,
             A.AMBS_APS_ACCT as APPLICATION_NUMBER,

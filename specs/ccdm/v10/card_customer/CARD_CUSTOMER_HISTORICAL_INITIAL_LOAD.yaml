@@ -13,8 +13,9 @@ control_data:
 source:
   format: table
   query: |
-    -- Derive each customer's earliest account-opened date for Type 0 creation time.
-    with ambs_acct as (
+    with
+      -- Derive each customer's earliest account-opened date for Type 0 creation time.
+      ambs_acct as (
         select
             AMBS_CUST_NBR,
             min(AMBS_DATE_OPENED) as AMBS_DATE_OPENED

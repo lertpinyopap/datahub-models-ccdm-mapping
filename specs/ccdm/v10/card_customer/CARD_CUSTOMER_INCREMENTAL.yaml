@@ -7,8 +7,9 @@ description: >
 source:
   format: table
   query: |
-    -- Read only customer snapshots delivered after the TMS bookmark.
-    with latest_customer_rows as (
+    with 
+      -- Read only customer snapshots delivered after the TMS bookmark.
+      latest_customer_rows as (
         select
             C.AMNA_ADD_STATUS,
             C.AMNA_STATUS,

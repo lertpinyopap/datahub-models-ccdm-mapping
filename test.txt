@@ -19,3 +19,15 @@ Summary of encountered deprecations:
 To see all deprecation instances instead of just the first occurrence of each,
 run command again with the `--show-all-deprecations` flag. You may also need to
 run with `--no-partial-parse` as some deprecations are only encountered during
+
+
+
+Completed with 1 error, 0 partial successes, and 0 warnings:
+23:52:34
+23:52:34  [ERROR]: in model CARD_PAYMENT_INSTRUMENT__source (models/generated/CARD_PAYMENT_INSTRUMENT__source.sql)
+23:52:34    Database Error in model CARD_PAYMENT_INSTRUMENT__source (models/generated/CARD_PAYMENT_INSTRUMENT__source.sql)
+  000904 (42000): SQL compilation error: error line 134 at position 4
+  invalid identifier 'LOOKUP_CARD_HOLDER_ADDRESS_COUNTRY_KEY.CARD_HOLDER_ADDRESS_COUNTRY_KEY'
+  compiled code at target/run/type_materialisation_generated/models/generated/CARD_PAYMENT_INSTRUMENT__source.sql
+23:52:34
+23:52:34    compiled code at target/compiled/type_materialisation_generated/models/generated/CARD_PAYMENT_INSTRUMENT__source.sql

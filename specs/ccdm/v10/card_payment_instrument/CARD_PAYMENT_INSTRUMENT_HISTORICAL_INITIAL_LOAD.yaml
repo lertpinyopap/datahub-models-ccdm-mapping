@@ -7,15 +7,17 @@ description: >
 control_data:
   incremental_bookmark:
     pipeline_name: CARD_PAYMENT_INSTRUMENT_INCREMENTAL
-    bookmark_relation: "{{ var('ENV_PREFIX', '') }}PAY.INTERMEDIATE.TMS_BOOKMARK"
+    bookmark_relation: "SAS_MIGRATION_WORKSPACE.METADATA.TMS_BOOKMARK"
+    #bookmark_relation: "{{ var('ENV_PREFIX', '') }}PAY.INTERMEDIATE.TMS_BOOKMARK"
     source_relation: "DATAOPS_HUB_SHARE_VISION{{ var('DATAOPS_ENV_SUFFIX', '_NONPROD') }}.RAW.EMBOSSER_RECORD"
     source_timestamp_column: AIRFLOW_DAG_TIME
 source:
   format: table
   query: |
-    -- Join each embossed card to its V10 account context. This supplies the
-    -- owning customer and application, while excluding unusable blank card numbers.
-    with payment_instrument_rows as (
+    with 
+      -- Join each embossed card to its V10 account context. This supplies the
+      -- owning customer and application, while excluding unusable blank card numbers.
+      payment_instrument_rows as (
         select
             E.*,
             A.AMBS_APS_ACCT as APPLICATION_NUMBER,

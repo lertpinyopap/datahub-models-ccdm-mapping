@@ -7,8 +7,9 @@ description: >
 source:
   format: table
   query: |
-    -- Read only account snapshots delivered after the TMS bookmark.
-    with latest_account_rows as (
+    with
+      -- Read only account snapshots delivered after the TMS bookmark.
+      latest_account_rows as (
         select
             A.AMBS_CUST_NBR as CUSTOMER_ID,
             A.AMBS_ACCT as AGREEMENT_ID,
