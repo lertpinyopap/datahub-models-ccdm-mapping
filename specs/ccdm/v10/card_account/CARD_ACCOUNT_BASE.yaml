@@ -69,7 +69,7 @@ target:
         args:
           reference_type: CARD_CHANNEL
           source_system: V10
-          value_column: CARD_CHANNEL_BUSINESS_KEY
+          key_column: CARD_CHANNEL_BUSINESS_KEY
           source_code_expression: |
             case
               when source_query.AMBS_LFS_SOL_CODE is null
