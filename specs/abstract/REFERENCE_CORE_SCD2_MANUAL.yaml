@@ -14,14 +14,14 @@ control_data:
       valid_from:
         column: VALID_FROM_DATE
         source:
-          column: VALID_FROM_DATETIME
+          column: VALID_FROM_DATE
         transforms:
           - type: parse_date
             format: "%Y-%m-%d"
       valid_to:
         column: VALID_TO_DATE
         source:
-          column: VALID_TO_DATETIME
+          column: VALID_TO_DATE
         transforms:
           - type: parse_date
             format: "%Y-%m-%d"
