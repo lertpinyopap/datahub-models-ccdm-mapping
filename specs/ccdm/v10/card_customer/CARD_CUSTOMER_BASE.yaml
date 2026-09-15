@@ -1,17 +1,7 @@
-id: card_customer_historical_initial_load
+id: card_customer_base
 extends: SOURCE_TO_TARGET_SCD2_DERIVED
-description: >
-  One-off CARD_CUSTOMER historical SCD2 backfill. It derives versions from
-  distinct dated RAW.CUSTOMER states and must be run with --full-refresh
-  before the historical incremental load is scheduled.
+description: Shared CARD_CUSTOMER target mapping used by the historical initial and incremental loads.
 control_data:
-  incremental_bookmark:
-    pipeline_name: CARD_CUSTOMER_INCREMENTAL
-    #bookmark_relation: "{{ var('ENV_PREFIX', '') }}GOVERNANCE.METADATA.TMS_BOOKMARK"
-    #bookmark_relation: "SAS_MIGRATION_WORKSPACE.STG.TMS_BOOKMARK" -- Nonprod
-    bookmark_relation: "SAS_MIGRATION_WORKSPACE.METADATA.TMS_BOOKMARK_2"
-    source_relation: "DATAOPS_HUB_SHARE_VISION{{ var('DATAOPS_ENV_SUFFIX', '_NONPROD') }}.RAW.CUSTOMER"
-    source_timestamp_column: AIRFLOW_DAG_TIME
   business_key:
     fields:
       - CUSTOMER_ID
@@ -71,74 +61,9 @@ control_data:
         - column: DATE_OF_BIRTH
           direction: desc
           nulls: last
-source:
-  format: table
-  query: |
-    with ambs_acct as (
-        select
-            AMBS_CUST_NBR,
-            min(AMBS_DATE_OPENED) as AMBS_DATE_OPENED
-        from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.ACCOUNT_BASE_SEGMENT
-        group by AMBS_CUST_NBR
-    )
-    customer_history as (
-        select distinct
-            C.AMNA_ADD_STATUS,
-            C.AMNA_STATUS,
-            case
-                when C.AMNA_ADD_STATUS = 99
-                 and C.AMNA_STATUS = 0 then 'Y'
-                else 'N'
-            end as IS_ACTIVE_IN_SOURCE_FLAG,
-            C.AMNA_ACCT as CUSTOMER_ID,
-            C.AMNA_TITLE_01 as TITLE,
-            C.AMNA_FIRST_NAME_01 as FIRST_NAME,
-            C.AMNA_MIDDLE_NAME_01 as MIDDLE_NAME,
-            C.AMNA_LAST_NAME_01 as SURNAME,
-            C.AMNA_DOB_01 as DATE_OF_BIRTH,
-            C.AMNA_DATE_LAST_MAINT as UPDATED_DATETIME,
-            A.AMBS_DATE_OPENED as CREATED_DATETIME,
-            case
-                when C.AMNA_DATE_LAST_MAINT is null
-                  or C.AMNA_DATE_LAST_MAINT < A.AMBS_DATE_OPENED
-                    then A.AMBS_DATE_OPENED
-                else C.AMNA_DATE_LAST_MAINT
-            end as SOURCE_EFFECTIVE_FROM_DATETIME,
-            C.AIRFLOW_DAG_TIME as SOURCE_SNAPSHOT_DATETIME
-        from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.CUSTOMER as C
-        inner join ambs_acct as A
-            on C.AMNA_ACCT = A.AMBS_CUST_NBR
-        where C.AMNA_EMAIL_01 not like '%TEST%'
-    ),
-    deduplicated_customer_history as (
-        select *
-        from customer_history
-        -- Retained snapshots can repeat a business-effective date. Keep the
-        -- latest ingestion snapshot as the deterministic correction for that date.
-        qualify row_number() over (
-            partition by CUSTOMER_ID, SOURCE_EFFECTIVE_FROM_DATETIME
-            order by SOURCE_SNAPSHOT_DATETIME desc nulls last
-        ) = 1
-    )
-    select
-        AMNA_ADD_STATUS,
-        AMNA_STATUS,
-        IS_ACTIVE_IN_SOURCE_FLAG,
-        CUSTOMER_ID,
-        TITLE,
-        FIRST_NAME,
-        MIDDLE_NAME,
-        SURNAME,
-        DATE_OF_BIRTH,
-        UPDATED_DATETIME,
-        CREATED_DATETIME,
-        SOURCE_EFFECTIVE_FROM_DATETIME
-    from deduplicated_customer_history
-
 target:
   id: CARD_CUSTOMER
   schema: CORE
-  #tag_application: alter_table
   tag_application: apply_governance
   apply_governance_procedure: '{{ var("ENV_PREFIX", "") }}GOVERNANCE.OVERRIDES.APPLY_GOVERNANCE'
   governance_contract:
@@ -176,7 +101,7 @@ target:
     - id: TITLE
       source:
         column: TITLE
-      data_type: varchar(50)
+      data_type: varchar(20)
       nullable: true
     - id: FIRST_NAME
       source:

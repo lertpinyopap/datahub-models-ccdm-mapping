@@ -1,0 +1,274 @@
+id: card_payment_instrument_base
+extends: SOURCE_TO_TARGET_SCD2_DERIVED
+description: Shared CARD_PAYMENT_INSTRUMENT target mapping used by the historical initial and incremental loads.
+control_data:
+  business_key:
+    fields:
+      - PAYMENT_INSTRUMENT_ID
+  business_data_hash:
+    business_data_hash_mode: include
+    fields:
+      - PAYMENT_INSTRUMENT_TYPE_KEY
+      - CARD_CUSTOMER_BUSINESS_KEY
+      - CARD_ACCOUNT_BUSINESS_KEY
+      - APPLICATION_NUMBER
+      - PRIMARY_ACCOUNT_NUMBER
+      - OLD_PAYMENT_INSTRUMENT_ID
+      - DIGITAL_CARD_TYPE_KEY
+      - PHYSICAL_CARD_TECHNOLOGY_TYPE_KEY
+      - IS_DELAYED_REPLACEMENT_FLAG
+      - CARD_ACTIVATION_STATUS_KEY
+      - ACTIVATION_DATE
+      - CARD_CREATED_DATETIME
+      - IS_DIGITAL_FLAG
+      - EXPIRATION_DATE
+      - CARD_STATUS_KEY
+      - IS_CANCELLED_FLAG
+      - IS_BLOCKED_FLAG
+      - CARD_BLOCKED_REASON_KEY
+      - CARD_HOLDER_TYPE_KEY
+      - CARD_HOLDER_FIRST_NAME
+      - CARD_HOLDER_LAST_NAME
+      - CARD_HOLDER_ADDRESS_COUNTRY_KEY
+      - CHIP_SEQUENCE
+      - CARD_FRAUD_STATUS_KEY
+      - IS_ACTIVE_IN_SOURCE_FLAG
+  scd:
+    derivation_scope: affected_keys
+    validation_scope: affected_window
+    window_strategy: previous_and_next
+    current_flag:
+      mode: latest_per_business_key
+    deleted_flag:
+      mode: fixed
+      value: N
+    deduplicate:
+      partition_by:
+        - PAYMENT_INSTRUMENT_ID
+        - VALID_FROM_DATETIME
+      order_by:
+        - column: SOURCE_EFFECTIVE_FROM_DATETIME
+          direction: desc
+          nulls: last
+        - column: CARD_CREATED_DATETIME
+          direction: desc
+          nulls: last
+        - column: IS_ACTIVE_IN_SOURCE_FLAG
+          direction: desc
+          nulls: last
+target:
+  id: CARD_PAYMENT_INSTRUMENT
+  schema: CORE
+  fields:
+    - id: PAYMENT_INSTRUMENT_TYPE_KEY
+      source:
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        args:
+          reference_type: PAYMENT_INSTRUMENT_TYPE
+          source_code_expression: |
+            case
+              when trim(source_query.AMED_DIGITAL_CARD_TYPE) in ('D', 'T', 'E', 'V')
+                then trim(source_query.AMED_DIGITAL_CARD_TYPE)
+              else 'PHYS'
+            end
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: CARD_CUSTOMER_KEY
+      source:
+        column: CARD_CUSTOMER_KEY
+      data_type: varchar(64)
+      nullable: false
+    - id: CARD_ACCOUNT_KEY
+      source:
+        column: CARD_ACCOUNT_KEY
+      data_type: varchar(64)
+      nullable: false
+    - id: APPLICATION_NUMBER
+      source:
+        column: APPLICATION_NUMBER
+      data_type: varchar(13)
+      nullable: false
+    - id: PRIMARY_ACCOUNT_NUMBER
+      source:
+        column: PRIMARY_ACCOUNT_NUMBER
+      data_type: varchar(16777216)
+      nullable: true
+      tags:
+        '{{ var("ENV_PREFIX", "") }}GOVERNANCE.TAGS.PCI_CATEGORY': PCI
+    - id: PAYMENT_INSTRUMENT_ID
+      source:
+        column: PAYMENT_INSTRUMENT_ID
+      data_type: varchar(16777216)
+      nullable: false
+    - id: OLD_PAYMENT_INSTRUMENT_ID
+      source:
+        column: OLD_PAYMENT_INSTRUMENT_ID
+      data_type: varchar(16777216)
+      nullable: true
+    - id: DIGITAL_CARD_TYPE_KEY
+      source:
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        args:
+          reference_type: DIGITAL_CARD_TYPE
+          source_code_expression: |
+            case
+              when trim(source_query.AMED_DIGITAL_CARD_TYPE) in ('D', 'T', 'E', 'V')
+                then trim(source_query.AMED_DIGITAL_CARD_TYPE)
+              else 'NDIG'
+            end
+      data_type: varchar(64)
+      nullable: true
+    - id: PHYSICAL_CARD_TECHNOLOGY_TYPE_KEY
+      source:
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        args:
+          reference_type: PHYSICAL_CARD_TECHNOLOGY_TYPE
+          source_code_expression: |
+            case
+              when cast(source_query.AMED_CARD_TECHNOLOGY as varchar) in ('0', '1', '2', '3', '4', '5')
+                then cast(source_query.AMED_CARD_TECHNOLOGY as varchar)
+              else 'NPHY'
+            end
+      data_type: varchar(64)
+      nullable: true
+    - id: IS_DELAYED_REPLACEMENT_FLAG
+      source:
+        fixed_value: null
+      data_type: varchar(1)
+      nullable: true
+    - id: CARD_ACTIVATION_STATUS_KEY
+      source:
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        args:
+          reference_type: CARD_ACTIVATION_STATUS
+          source_code_column: AMED_CURR_FIRST_USAGE_FLAG
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: ACTIVATION_DATE
+      source:
+        column: ACTIVATION_DATE
+      data_type: date
+      nullable: true
+    - id: CARD_CREATED_DATETIME
+      source:
+        column: CARD_CREATED_DATETIME
+      data_type: timestamp_ntz
+      nullable: true
+    - id: IS_DIGITAL_FLAG
+      source:
+        column: IS_DIGITAL_FLAG
+      data_type: varchar(1)
+      nullable: true
+    - id: EXPIRATION_DATE
+      source:
+        column: EXPIRATION_DATE
+      data_type: date
+      nullable: true
+    - id: CARD_STATUS_KEY
+      source:
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        args:
+          reference_type: CARD_STATUS
+          source_code_expression: |
+            cast(source_query.AMED_ADD_STATUS as varchar)
+            || '|' || coalesce(source_query.AMED_STATUS, '')
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: IS_CANCELLED_FLAG
+      source:
+        column: IS_CANCELLED_FLAG
+      data_type: varchar(1)
+      nullable: true
+    - id: IS_BLOCKED_FLAG
+      source:
+        column: IS_BLOCKED_FLAG
+      data_type: varchar(1)
+      nullable: true
+    - id: CARD_BLOCKED_REASON_KEY
+      source:
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        args:
+          reference_type: CARD_BLOCKED_REASON
+          source_code_expression: |
+            case
+              when source_query.AMED_BLOCK_CODE is null
+                or trim(source_query.AMED_BLOCK_CODE) = '' then 'NBLCK'
+              else trim(source_query.AMED_BLOCK_CODE)
+            end
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: CARD_HOLDER_TYPE_KEY
+      source:
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        args:
+          reference_type: CARD_HOLDER_TYPE
+          source_code_expression: "coalesce(cast(source_query.AMED_CARDHOLDER_TYPE as varchar), 'PRIM')"
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: CARD_HOLDER_FIRST_NAME
+      source:
+        column: CARD_HOLDER_FIRST_NAME
+      data_type: varchar(50)
+      nullable: true
+      tags:
+        '{{ var("ENV_PREFIX", "") }}GOVERNANCE.TAGS.PII_CATEGORY': IDENTIFIER
+    - id: CARD_HOLDER_LAST_NAME
+      source:
+        column: CARD_HOLDER_LAST_NAME
+      data_type: varchar(50)
+      nullable: true
+      tags:
+        '{{ var("ENV_PREFIX", "") }}GOVERNANCE.TAGS.PII_CATEGORY': IDENTIFIER
+    - id: CARD_HOLDER_ADDRESS_COUNTRY_KEY
+      source:
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        args:
+          reference_type: COUNTRY
+          source_code_column: COUNTRY_CODE
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: CHIP_SEQUENCE
+      source:
+        column: CHIP_SEQUENCE
+      data_type: varchar(16777216)
+      nullable: true
+    - id: CARD_FRAUD_STATUS_KEY
+      source:
+        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        args:
+          reference_type: CARD_FRAUD_STATUS
+          source_code_expression: "coalesce(source_query.AMED_STATUS, '0')"
+          required: true
+      data_type: varchar(64)
+      nullable: false
+    - id: IS_ACTIVE_IN_SOURCE_FLAG
+      source:
+        column: IS_ACTIVE_IN_SOURCE_FLAG
+      data_type: varchar(1)
+      nullable: true
+    - id: MESSAGE_TRACE_ID
+      source:
+        fixed_value: null
+      data_type: varchar(16777216)
+      nullable: true
+    - id: CARD_ACCOUNT_BUSINESS_KEY
+      source:
+        column: CARD_ACCOUNT_BUSINESS_KEY
+      data_type: varchar(64)
+      nullable: false
+    - id: CARD_CUSTOMER_BUSINESS_KEY
+      source:
+        column: CARD_CUSTOMER_BUSINESS_KEY
+      data_type: varchar(64)
+      nullable: false
+    - id: VALID_FROM_DATETIME
+      source:
+        column: SOURCE_EFFECTIVE_FROM_DATETIME
+      data_type: timestamp_ntz
+      nullable: false

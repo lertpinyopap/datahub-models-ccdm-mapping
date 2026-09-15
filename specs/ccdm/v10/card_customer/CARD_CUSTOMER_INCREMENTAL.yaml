@@ -7,6 +7,7 @@ description: >
 source:
   format: table
   query: |
+    -- Read only customer snapshots delivered after the TMS bookmark.
     with latest_customer_rows as (
         select
             C.AMNA_ADD_STATUS,
@@ -27,10 +28,12 @@ source:
               )
           }}
     ),
+    -- Limit account and target lookups to customers in this delivery.
     incoming_customer_ids as (
         select distinct CUSTOMER_ID
         from latest_customer_rows
     ),
+    -- Derive earliest account-opened dates only for affected customers.
     ambs_acct as (
         select
             A.AMBS_CUST_NBR,
@@ -40,6 +43,7 @@ source:
             on A.AMBS_CUST_NBR = I.CUSTOMER_ID
         group by A.AMBS_CUST_NBR
     ),
+    -- Reuse the current creation date so it remains a Type 0 attribute.
     current_card_customer as (
         select
             T.CUSTOMER_ID,

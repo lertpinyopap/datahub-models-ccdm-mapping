@@ -1,0 +1,111 @@
+id: card_payment_instrument_historical_initial_load
+extends: card_payment_instrument_base
+description: >
+  One-off CARD_PAYMENT_INSTRUMENT historical SCD2 backfill. It retains the
+  latest ingestion snapshot for each payment instrument and activation date.
+  Run with --full-refresh before CARD_PAYMENT_INSTRUMENT_INCREMENTAL.
+control_data:
+  incremental_bookmark:
+    pipeline_name: CARD_PAYMENT_INSTRUMENT_INCREMENTAL
+    bookmark_relation: "{{ var('ENV_PREFIX', '') }}PAY.INTERMEDIATE.TMS_BOOKMARK"
+    source_relation: "DATAOPS_HUB_SHARE_VISION{{ var('DATAOPS_ENV_SUFFIX', '_NONPROD') }}.RAW.EMBOSSER_RECORD"
+    source_timestamp_column: AIRFLOW_DAG_TIME
+source:
+  format: table
+  query: |
+    -- Join each embossed card to its V10 account context. This supplies the
+    -- owning customer and application, while excluding unusable blank card numbers.
+    with payment_instrument_rows as (
+        select
+            E.*,
+            A.AMBS_APS_ACCT as APPLICATION_NUMBER,
+            A.AMBS_CUST_NBR as CUSTOMER_ID,
+            A.AMBS_ACCT as ACCOUNT_NUMBER,
+            coalesce(
+                cast(E.AMED_CARD_ACTIVATED_DATE as timestamp_ntz),
+                cast('1900-01-01' as timestamp_ntz)
+            ) as SOURCE_EFFECTIVE_FROM_DATETIME,
+            E.AIRFLOW_DAG_TIME as SOURCE_SNAPSHOT_DATETIME
+        from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.EMBOSSER_RECORD as E
+        inner join (
+            select distinct
+                AMBS_ACCT,
+                AMBS_ORG,
+                AMBS_CUST_NBR,
+                AMBS_APS_ACCT
+            from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.ACCOUNT_BASE_SEGMENT
+        ) as A
+            on E.AMED_POST_TO_ACCT = A.AMBS_ACCT
+           and E.AMED_ORG = A.AMBS_ORG
+        where E.AMED_CARD_NBR is not null
+          and trim(E.AMED_CARD_NBR) <> ''
+    ),
+    -- RAW retains ingestion snapshots. For the same card and business-effective
+    -- activation date, retain the latest delivered snapshot as the correction.
+    deduplicated_payment_instrument_rows as (
+        select *
+        from payment_instrument_rows
+        qualify row_number() over (
+            partition by AMED_CARD_NBR, SOURCE_EFFECTIVE_FROM_DATETIME
+            order by SOURCE_SNAPSHOT_DATETIME desc nulls last
+        ) = 1
+    ),
+    -- Resolve one current CARD_CUSTOMER key pair per source customer, preventing
+    -- historical parent versions from multiplying child payment-instrument rows.
+    card_customer_lookup as (
+        select CUSTOMER_ID, CARD_CUSTOMER_KEY, CARD_CUSTOMER_BUSINESS_KEY
+        from {{ var("database") }}.CORE.{{ var("card_customer_table", "CARD_CUSTOMER") }}
+        where IS_CURRENT_FLAG = 'Y'
+          and coalesce(IS_DELETED_FLAG, 'N') <> 'Y'
+        qualify row_number() over (
+            partition by CUSTOMER_ID
+            order by VALID_FROM_DATETIME desc, AUDIT_LAST_CHANGED_DATETIME desc
+        ) = 1
+    ),
+    -- Resolve one current CARD_ACCOUNT key pair per V10 account. AGREEMENT_ID is
+    -- the current implementation's CARD_ACCOUNT_NUMBER equivalent for AMBS_ACCT.
+    card_account_lookup as (
+        select AGREEMENT_ID as ACCOUNT_NUMBER, CARD_ACCOUNT_KEY, CARD_ACCOUNT_BUSINESS_KEY
+        from {{ var("database") }}.CORE.{{ var("card_account_table", "CARD_ACCOUNT") }}
+        where IS_CURRENT_FLAG = 'Y'
+          and coalesce(IS_DELETED_FLAG, 'N') <> 'Y'
+        qualify row_number() over (
+            partition by AGREEMENT_ID
+            order by VALID_FROM_DATETIME desc, AUDIT_LAST_CHANGED_DATETIME desc
+        ) = 1
+    )
+    -- Inner joins enforce the mandatory customer and account foreign keys before
+    -- SCD2 processing and exclude unresolved parent records as orphan rows.
+    select
+        C.CARD_CUSTOMER_KEY,
+        C.CARD_CUSTOMER_BUSINESS_KEY,
+        A.CARD_ACCOUNT_KEY,
+        A.CARD_ACCOUNT_BUSINESS_KEY,
+        P.AMED_CARD_NBR as PRIMARY_ACCOUNT_NUMBER,
+        P.AMED_CARD_NBR as PAYMENT_INSTRUMENT_ID,
+        P.AMED_XFR_CARD_NBR as OLD_PAYMENT_INSTRUMENT_ID,
+        P.AMED_DIGITAL_CARD_TYPE,
+        P.AMED_CARD_TECHNOLOGY,
+        P.AMED_CURR_FIRST_USAGE_FLAG,
+        P.AMED_CARD_ACTIVATED_DATE as ACTIVATION_DATE,
+        cast(P.AMED_DATE_OPENED as timestamp_ntz) as CARD_CREATED_DATETIME,
+        P.AMED_DATE_EXPIRE as EXPIRATION_DATE,
+        P.AMED_ADD_STATUS,
+        P.AMED_STATUS,
+        P.AMED_BLOCK_CODE,
+        P.AMED_CARDHOLDER_TYPE,
+        P.DATAOPS_VISION_REGION as COUNTRY_CODE,
+        P.AMED_CURR_CHIP_SEQ as CHIP_SEQUENCE,
+        P.APPLICATION_NUMBER,
+        case when trim(P.AMED_DIGITAL_CARD_TYPE) in ('D', 'T', 'E', 'V') then 'Y' else 'N' end as IS_DIGITAL_FLAG,
+        case when P.AMED_CARD_ACTION = 4 then 'Y' else 'N' end as IS_CANCELLED_FLAG,
+        case when P.AMED_BLOCK_CODE is null or trim(P.AMED_BLOCK_CODE) = '' then 'N' else 'Y' end as IS_BLOCKED_FLAG,
+        trim(regexp_replace(split_part(P.AMED_EMBOSSED_NAME_1, '/', 1), '^(MR|MRS|MS|MISS|DR|PROF|REV)\\s+', '')) as CARD_HOLDER_FIRST_NAME,
+        trim(split_part(P.AMED_EMBOSSED_NAME_1, '/', 2)) as CARD_HOLDER_LAST_NAME,
+        case when cast(P.AMED_ADD_STATUS as varchar) = '99' and P.AMED_STATUS = '0' then 'Y' else 'N' end as IS_ACTIVE_IN_SOURCE_FLAG,
+        P.SOURCE_EFFECTIVE_FROM_DATETIME
+    from deduplicated_payment_instrument_rows as P
+    inner join card_customer_lookup as C
+        on P.CUSTOMER_ID = C.CUSTOMER_ID
+    inner join card_account_lookup as A
+        on P.ACCOUNT_NUMBER = A.ACCOUNT_NUMBER

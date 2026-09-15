@@ -14,6 +14,7 @@ control_data:
 source:
   format: table
   query: |
+    -- Retained raw snapshots provide the historical account states.
     with account_history as (
         select
             A.AMBS_CUST_NBR as CUSTOMER_ID,
@@ -53,6 +54,7 @@ source:
         where A.AMBS_CURR_CODE is null
            or lpad(cast(A.AMBS_CURR_CODE as varchar), 3, '0') <> '000'
     ), 
+    -- Keep the latest ingestion correction for each account and effective date.
     deduplicated_account_history as (
         select *
         from account_history
@@ -63,6 +65,7 @@ source:
             order by SOURCE_SNAPSHOT_DATETIME desc nulls last
         ) = 1
     ),
+    -- Select one current customer key pair to avoid multiplying account rows.
     card_customer_lookup as (
         select CUSTOMER_ID, CARD_CUSTOMER_KEY, CARD_CUSTOMER_BUSINESS_KEY
         from {{ var("database") }}.CORE.{{ var("card_customer_table", "CARD_CUSTOMER") }}
