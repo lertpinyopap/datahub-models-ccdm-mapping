@@ -564,6 +564,59 @@
           ]
         }
       ]
+    },
+    {
+      "dag_id": "datahub-models-ccdm-mapping-card-account-historical_loader",
+      "target": "test",
+      "tags": [
+        "ccdm",
+        "card-account",
+        "historical",
+        "tms"
+      ],
+      "schedule": "manual",
+      "vars": {
+        "database": "NONPROD_PAY",
+        "schema": "CORE"
+      },
+      "task_groups": [
+        {
+          "group_id": "card_account_historical",
+          "tasks": [
+            {
+              "task_id": "load_card_account_historical",
+              "spec": "specs/ccdm/v10/card_account/CARD_ACCOUNT_HISTORICAL_INITIAL_LOAD.yaml",
+              "full_refresh": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dag_id": "datahub-models-ccdm-mapping-card-account-incremental_loader",
+      "target": "test",
+      "tags": [
+        "ccdm",
+        "card-account",
+        "incremental",
+        "tms"
+      ],
+      "schedule": "manual",
+      "vars": {
+        "database": "NONPROD_PAY",
+        "schema": "CORE"
+      },
+      "task_groups": [
+        {
+          "group_id": "card_account_incremental",
+          "tasks": [
+            {
+              "task_id": "load_card_account_incremental",
+              "spec": "specs/ccdm/v10/card_account/CARD_ACCOUNT_INCREMENTAL.yaml"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -44,22 +44,22 @@ source:
         C.AMNA_ADDR_2_01 as ADDRESS_LINE2, C.AMNA_ADDR_3_01 as ADDRESS_LINE3,
         C.AMNA_ADDR_4_01 as ADDRESS_LINE4, C.AMNA_CITY_STATE_01 as TOWN_NAME,
         C.AMNA_STATE_01 as REGION, C.AMNA_PSTL_CD_01 as POSTAL_CODE,
-        cast(C.AMNA_DATE_LAST_MAINT as timestamp_ltz) as SOURCE_EFFECTIVE_FROM_DATETIME
+        cast(C.AMNA_DATE_LAST_MAINT as timestamp_ntz) as SOURCE_EFFECTIVE_FROM_DATETIME
       from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.CUSTOMER as C
       union all
       select C.AMNA_ACCT, 'HOME', C.AMNA_CNTRY_CD_02, 'PREFERRED', C.AMNA_HOUSE_NUMBER_02, C.AMNA_HOUSE_NAME_02,
         cast(null as varchar), C.AMNA_ADDR_1_02, C.AMNA_ADDR_2_02, C.AMNA_ADDR_3_02, C.AMNA_ADDR_4_02,
-        C.AMNA_CITY_STATE_02, C.AMNA_STATE_02, C.AMNA_PSTL_CD_02, cast(C.AMNA_DATE_LAST_MAINT as timestamp_ltz)
+        C.AMNA_CITY_STATE_02, C.AMNA_STATE_02, C.AMNA_PSTL_CD_02, cast(C.AMNA_DATE_LAST_MAINT as timestamp_ntz)
       from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.CUSTOMER as C
       union all
       select C.AMNA_ACCT, 'BIZZ', 'DQNotApplicable', 'NOCTCT', cast(null as varchar), cast(null as varchar),
         cast(null as varchar), C.AMNA_EMPLOYER_ADDR_1_01, C.AMNA_EMPLOYER_ADDR_2_01, cast(null as varchar),
-        cast(null as varchar), cast(null as varchar), cast(null as varchar), cast(null as varchar), cast(C.AMNA_DATE_LAST_MAINT as timestamp_ltz)
+        cast(null as varchar), cast(null as varchar), cast(null as varchar), cast(null as varchar), cast(C.AMNA_DATE_LAST_MAINT as timestamp_ntz)
       from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.CUSTOMER as C
       union all
       select C.AMNA_ACCT, 'BIZZ', 'DQNotApplicable', 'NOCTCT', cast(null as varchar), cast(null as varchar),
         cast(null as varchar), C.AMNA_EMPLOYER_ADDR_1_02, C.AMNA_EMPLOYER_ADDR_2_02, cast(null as varchar),
-        cast(null as varchar), cast(null as varchar), cast(null as varchar), cast(null as varchar), cast(C.AMNA_DATE_LAST_MAINT as timestamp_ltz)
+        cast(null as varchar), cast(null as varchar), cast(null as varchar), cast(null as varchar), cast(C.AMNA_DATE_LAST_MAINT as timestamp_ntz)
       from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.CUSTOMER as C
     ), card_customer as (
       select CUSTOMER_ID, CARD_CUSTOMER_KEY, CARD_CUSTOMER_BUSINESS_KEY
@@ -168,5 +168,5 @@ target:
     - id: VALID_FROM_DATETIME
       source:
         column: SOURCE_EFFECTIVE_FROM_DATETIME
-      data_type: timestamp_ltz
+      data_type: timestamp_ntz
       nullable: false

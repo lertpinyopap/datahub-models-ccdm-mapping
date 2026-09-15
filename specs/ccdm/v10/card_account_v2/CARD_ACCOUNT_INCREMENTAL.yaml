@@ -1,20 +1,13 @@
-id: card_account_historical_initial_load
+id: card_account_incremental
 extends: card_account_initial_load
 description: >
-  One-off CARD_ACCOUNT historical SCD2 backfill. It uses every retained V10
-  ACCOUNT_BASE_SEGMENT version, deriving each version start from
-  AMBS_DATE_LAST_MAINT and falling back to AMBS_DATE_OPENED. Run with
-  --full-refresh before CARD_ACCOUNT_INCREMENTAL.
-control_data:
-  incremental_bookmark:
-    pipeline_name: CARD_ACCOUNT_INCREMENTAL
-    bookmark_relation: "{{ var('ENV_PREFIX', '') }}PAY.INTERMEDIATE.TMS_BOOKMARK"
-    source_relation: "DATAOPS_HUB_SHARE_VISION{{ var('DATAOPS_ENV_SUFFIX', '_NONPROD') }}.RAW.ACCOUNT_BASE_SEGMENT"
-    source_timestamp_column: AIRFLOW_DAG_TIME
+  Incremental CARD_ACCOUNT SCD2 load. It processes only V10 account rows
+  delivered after the CARD_ACCOUNT_INCREMENTAL bookmark and derives each
+  incoming version from the source last-maintenance date.
 source:
   format: table
   query: |
-    with account_history as (
+    with latest_account_rows as (
         select
             A.AMBS_CUST_NBR as CUSTOMER_ID,
             A.AMBS_ACCT as AGREEMENT_ID,
@@ -46,21 +39,11 @@ source:
                 cast(nullif(A.AMBS_DATE_LAST_MAINT, to_date('1901-01-01')) as timestamp_ntz),
                 cast(nullif(A.AMBS_DATE_OPENED, to_date('1901-01-01')) as timestamp_ntz),
                 cast('1901-01-01' as timestamp_ntz)
-            ) as SOURCE_EFFECTIVE_FROM_DATETIME,
-            A.AIRFLOW_DAG_TIME as SOURCE_SNAPSHOT_DATETIME
+            ) as SOURCE_EFFECTIVE_FROM_DATETIME
         from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.ACCOUNT_BASE_SEGMENT as A
-        where A.AMBS_CURR_CODE is null
-           or lpad(cast(A.AMBS_CURR_CODE as varchar), 3, '0') <> '000'
-    ), 
-    deduplicated_account_history as (
-        select *
-        from account_history
-        -- Retained snapshots can repeat a business-effective date. Keep the
-        -- latest ingestion snapshot as the deterministic correction for that date.
-        qualify row_number() over (
-            partition by CUSTOMER_ID, AGREEMENT_ID, SOURCE_EFFECTIVE_FROM_DATETIME
-            order by SOURCE_SNAPSHOT_DATETIME desc nulls last
-        ) = 1
+        where (A.AMBS_CURR_CODE is null
+            or lpad(cast(A.AMBS_CURR_CODE as varchar), 3, '0') <> '000')
+          and {{ tms_incremental_bookmark_predicate('A.AIRFLOW_DAG_TIME') }}
     ),
     card_customer_lookup as (
         select CUSTOMER_ID, CARD_CUSTOMER_KEY, CARD_CUSTOMER_BUSINESS_KEY
@@ -84,6 +67,6 @@ source:
         A.CLOSING_DATETIME,
         A.IS_ACTIVE_IN_SOURCE_FLAG,
         A.SOURCE_EFFECTIVE_FROM_DATETIME
-    from deduplicated_account_history as A
+    from latest_account_rows as A
     inner join card_customer_lookup as C
         on C.CUSTOMER_ID = A.CUSTOMER_ID

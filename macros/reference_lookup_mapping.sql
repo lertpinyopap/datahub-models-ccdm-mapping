@@ -72,30 +72,30 @@
         where coalesce(trim(mapping.IS_DELETED_FLAG), 'N') <> 'Y'
           and coalesce(trim(code.IS_DELETED_FLAG), 'N') <> 'Y'
           and (
-                mapping.VALID_FROM_DATETIME is null
-                or cast(mapping.VALID_FROM_DATETIME as timestamp_ntz) <= cast({{ resolved_as_of_date_expr }} as timestamp_ntz)
+                mapping.VALID_FROM_DATE is null
+                or cast(mapping.VALID_FROM_DATE as timestamp_ntz) <= cast({{ resolved_as_of_date_expr }} as timestamp_ntz)
           )
           and (
-                mapping.VALID_TO_DATETIME is null
-                or cast(mapping.VALID_TO_DATETIME as timestamp_ntz) >= cast({{ resolved_as_of_date_expr }} as timestamp_ntz)
+                mapping.VALID_TO_DATE is null
+                or cast(mapping.VALID_TO_DATE as timestamp_ntz) >= cast({{ resolved_as_of_date_expr }} as timestamp_ntz)
           )
           and (
-                code.VALID_FROM_DATETIME is null
-                or cast(code.VALID_FROM_DATETIME as timestamp_ntz) <= cast({{ resolved_as_of_date_expr }} as timestamp_ntz)
+                code.VALID_FROM_DATE is null
+                or cast(code.VALID_FROM_DATE as timestamp_ntz) <= cast({{ resolved_as_of_date_expr }} as timestamp_ntz)
           )
           and (
-                code.VALID_TO_DATETIME is null
-                or cast(code.VALID_TO_DATETIME as timestamp_ntz) >= cast({{ resolved_as_of_date_expr }} as timestamp_ntz)
+                code.VALID_TO_DATE is null
+                or cast(code.VALID_TO_DATE as timestamp_ntz) >= cast({{ resolved_as_of_date_expr }} as timestamp_ntz)
           )
         qualify row_number() over (
             partition by mapping.SOURCE_SYSTEM, mapping.SOURCE_CODE
             order by
                 case when upper(coalesce(trim(mapping.IS_CURRENT_FLAG), 'N')) = 'Y' then 0 else 1 end,
                 case when upper(coalesce(trim(code.IS_CURRENT_FLAG), 'N')) = 'Y' then 0 else 1 end,
-                cast(mapping.VALID_TO_DATETIME as timestamp_ntz) desc nulls last,
-                cast(mapping.VALID_FROM_DATETIME as timestamp_ntz) desc nulls last,
-                cast(code.VALID_TO_DATETIME as timestamp_ntz) desc nulls last,
-                cast(code.VALID_FROM_DATETIME as timestamp_ntz) desc nulls last
+                cast(mapping.VALID_TO_DATE as timestamp_ntz) desc nulls last,
+                cast(mapping.VALID_FROM_DATE as timestamp_ntz) desc nulls last,
+                cast(code.VALID_TO_DATE as timestamp_ntz) desc nulls last,
+                cast(code.VALID_FROM_DATE as timestamp_ntz) desc nulls last
         ) = 1
     ) as {{ ref_alias }}
       on {{ _reference_lookup_mapping_equals(

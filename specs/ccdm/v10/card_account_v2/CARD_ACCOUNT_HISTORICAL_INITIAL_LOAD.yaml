@@ -5,12 +5,6 @@ description: >
   ACCOUNT_BASE_SEGMENT version, deriving each version start from
   AMBS_DATE_LAST_MAINT and falling back to AMBS_DATE_OPENED. Run with
   --full-refresh before CARD_ACCOUNT_INCREMENTAL.
-control_data:
-  incremental_bookmark:
-    pipeline_name: CARD_ACCOUNT_INCREMENTAL
-    bookmark_relation: "{{ var('ENV_PREFIX', '') }}PAY.INTERMEDIATE.TMS_BOOKMARK"
-    source_relation: "DATAOPS_HUB_SHARE_VISION{{ var('DATAOPS_ENV_SUFFIX', '_NONPROD') }}.RAW.ACCOUNT_BASE_SEGMENT"
-    source_timestamp_column: AIRFLOW_DAG_TIME
 source:
   format: table
   query: |

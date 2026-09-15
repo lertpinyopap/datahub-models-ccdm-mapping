@@ -87,7 +87,9 @@
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CARD_CHANNEL.yaml",
-              "depends_on": ["load_core"]
+              "depends_on": [
+                "load_core"
+              ]
             }
           ]
         },
@@ -236,6 +238,38 @@
           ]
         },
         {
+          "group_id": "reference_customer_business_status",
+          "tasks": [
+            {
+              "task_id": "load_core",
+              "spec": "specs/reference_data/core/CORE_CUSTOMER_BUSINESS_STATUS.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CUSTOMER_BUSINESS_STATUS.yaml",
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_customer_business_status_scope",
+          "tasks": [
+            {
+              "task_id": "load_core",
+              "spec": "specs/reference_data/core/CORE_CUSTOMER_BUSINESS_STATUS_SCOPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CUSTOMER_BUSINESS_STATUS_SCOPE.yaml",
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
           "group_id": "reference_customer_contact_preference_type",
           "tasks": [
             {
@@ -248,15 +282,6 @@
               "depends_on": [
                 "load_core"
               ]
-            }
-          ]
-        },
-        {
-          "group_id": "reference_customer_contact_preference",
-          "tasks": [
-            {
-              "task_id": "load_core",
-              "spec": "specs/reference_data/core/CORE_CUSTOMER_CONTACT_PREFERENCE.yaml"
             }
           ]
         },
@@ -372,7 +397,9 @@
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CARD_FEE_WAIVER_TYPE.yaml",
-              "depends_on": ["load_core"]
+              "depends_on": [
+                "load_core"
+              ]
             }
           ]
         },
@@ -386,7 +413,25 @@
             {
               "task_id": "load_mapping",
               "spec": "specs/reference_data/mapping/MAPPING_CARD_HOLDER_TYPE.yaml",
-              "depends_on": ["load_core"]
+              "depends_on": [
+                "load_core"
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "reference_card_status",
+          "tasks": [
+            {
+              "task_id": "load_core",
+              "spec": "specs/reference_data/core/CORE_CARD_STATUS.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_CARD_STATUS.yaml",
+              "depends_on": [
+                "load_core"
+              ]
             }
           ]
         },
@@ -396,6 +441,13 @@
             {
               "task_id": "load_core",
               "spec": "specs/reference_data/core/CORE_DIGITAL_CARD_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_DIGITAL_CARD_TYPE.yaml",
+              "depends_on": [
+                "load_core"
+              ]
             }
           ]
         },
@@ -421,6 +473,13 @@
             {
               "task_id": "load_core",
               "spec": "specs/reference_data/core/CORE_PAYMENT_INSTRUMENT_TYPE.yaml"
+            },
+            {
+              "task_id": "load_mapping",
+              "spec": "specs/reference_data/mapping/MAPPING_PAYMENT_INSTRUMENT_TYPE.yaml",
+              "depends_on": [
+                "load_core"
+              ]
             }
           ]
         },
@@ -445,13 +504,16 @@
     {
       "dag_id": "datahub-models-ccdm-mapping-card-customer-historical_loader",
       "target": "test",
-      "tags": ["ccdm", "card-customer", "historical", "tms"],
+      "tags": [
+        "ccdm",
+        "card-customer",
+        "historical",
+        "tms"
+      ],
       "schedule": "manual",
       "vars": {
-        "ENV_PREFIX": "NONPROD_",
-        "database": "PAY",
-        "schema": "CORE",
-        "tms_job_schema": "INTERMEDIATE"
+        "database": "NONPROD_PAY",
+        "schema": "CORE"
       },
       "task_groups": [
         {
@@ -459,8 +521,8 @@
           "tasks": [
             {
               "task_id": "load_card_customer_historical",
-              "spec": "specs/ccdm/card_customer/CARD_CUSTOMER_HISTORICAL_INITIAL_LOAD.yaml",
-              "full_refresh": false
+              "spec": "specs/ccdm/v10/card_customer/CARD_CUSTOMER_HISTORICAL_INITIAL_LOAD.yaml",
+              "full_refresh": true
             }
           ]
         }
@@ -469,13 +531,16 @@
     {
       "dag_id": "datahub-models-ccdm-mapping-card-customer-incremental_loader",
       "target": "test",
-      "tags": ["ccdm", "card-customer", "incremental", "tms"],
+      "tags": [
+        "ccdm",
+        "card-customer",
+        "incremental",
+        "tms"
+      ],
       "schedule": "manual",
       "vars": {
-        "ENV_PREFIX": "NONPROD_",
-        "database": "PAY",
-        "schema": "CORE",
-        "tms_job_schema": "INTERMEDIATE"
+        "database": "NONPROD_PAY",
+        "schema": "CORE"
       },
       "task_groups": [
         {
@@ -483,7 +548,60 @@
           "tasks": [
             {
               "task_id": "load_card_customer_incremental",
-              "spec": "specs/ccdm/card_customer/CARD_CUSTOMER_INCREMENTAL.yaml"
+              "spec": "specs/ccdm/v10/card_customer/CARD_CUSTOMER_INCREMENTAL.yaml"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dag_id": "datahub-models-ccdm-mapping-card-account-historical_loader",
+      "target": "test",
+      "tags": [
+        "ccdm",
+        "card-account",
+        "historical",
+        "tms"
+      ],
+      "schedule": "manual",
+      "vars": {
+        "database": "NONPROD_PAY",
+        "schema": "CORE"
+      },
+      "task_groups": [
+        {
+          "group_id": "card_account_historical",
+          "tasks": [
+            {
+              "task_id": "load_card_account_historical",
+              "spec": "specs/ccdm/v10/card_account/CARD_ACCOUNT_HISTORICAL_INITIAL_LOAD.yaml",
+              "full_refresh": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dag_id": "datahub-models-ccdm-mapping-card-account-incremental_loader",
+      "target": "test",
+      "tags": [
+        "ccdm",
+        "card-account",
+        "incremental",
+        "tms"
+      ],
+      "schedule": "manual",
+      "vars": {
+        "database": "NONPROD_PAY",
+        "schema": "CORE"
+      },
+      "task_groups": [
+        {
+          "group_id": "card_account_incremental",
+          "tasks": [
+            {
+              "task_id": "load_card_account_incremental",
+              "spec": "specs/ccdm/v10/card_account/CARD_ACCOUNT_INCREMENTAL.yaml"
             }
           ]
         }

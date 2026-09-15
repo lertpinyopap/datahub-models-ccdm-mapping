@@ -28,11 +28,11 @@ source:
   query: |
     with email_rows as (
       select AMNA_ACCT as CUSTOMER_ID, 'PERS' as EMAIL_TYPE_CODE, AMNA_EMAIL_FLAG_01 as PREFERENCE_FLAG,
-        lower(trim(AMNA_EMAIL_01)) as EMAIL_ADDRESS, cast(AMNA_DATE_LAST_MAINT as timestamp_ltz) as SOURCE_EFFECTIVE_FROM_DATETIME
+        lower(trim(AMNA_EMAIL_01)) as EMAIL_ADDRESS, cast(AMNA_DATE_LAST_MAINT as timestamp_ntz) as SOURCE_EFFECTIVE_FROM_DATETIME
       from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.CUSTOMER
       where nullif(trim(AMNA_EMAIL_01), '') is not null
       union all
-      select AMNA_ACCT, 'PERS', AMNA_EMAIL_FLAG_02, lower(trim(AMNA_EMAIL_02)), cast(AMNA_DATE_LAST_MAINT as timestamp_ltz)
+      select AMNA_ACCT, 'PERS', AMNA_EMAIL_FLAG_02, lower(trim(AMNA_EMAIL_02)), cast(AMNA_DATE_LAST_MAINT as timestamp_ntz)
       from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.CUSTOMER
       where nullif(trim(AMNA_EMAIL_02), '') is not null
     ), deduplicated_email_rows as (
@@ -104,5 +104,5 @@ target:
     - id: VALID_FROM_DATETIME
       source:
         column: SOURCE_EFFECTIVE_FROM_DATETIME
-      data_type: timestamp_ltz
+      data_type: timestamp_ntz
       nullable: false
