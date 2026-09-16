@@ -1,39 +1,64 @@
-  fields:
-    - id: PAYMENT_INSTRUMENT_TYPE_KEY
-      source:
-        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
-        args:
-          reference_type: PAYMENT_INSTRUMENT_TYPE
-          source_system: V10
-          source_code_expression: |
-            case
-              when trim(source_query.AMED_DIGITAL_CARD_TYPE) in ('D', 'T', 'E', 'V')
-                then trim(source_query.AMED_DIGITAL_CARD_TYPE)
-              else 'PHSY'
-            end
-          required: true
-      data_type: varchar(64)
-      nullable: false
+That points to non-deterministic source selection, not SCD2 itself.
 
+`CARD_PAYMENT_INSTRUMENT_HISTORICAL_INITIAL_LOAD` deduplicates by:
 
+```sql
+partition by AMED_CARD_NBR, SOURCE_EFFECTIVE_FROM_DATETIME
+order by SOURCE_SNAPSHOT_DATETIME desc
+```
 
-      02:26:41  TMS hook: advancing incremental bookmark: SAS_MIGRATION_WORKSPACE.METADATA.TMS_BOOKMARK
-      02:26:41  1 of 2 START hook: type_materialisation_generated.on-run-end.0 ................. [RUN]
-      02:26:42  1 of 2 OK hook: type_materialisation_generated.on-run-end.0 .................... [OK in 0.91s]
-      02:26:42  TMS hook: recording JOB_END event: SAS_MIGRATION_WORKSPACE.INTERMEDIATE.TYPE_MATERIALISATION_JOBS
-      02:26:42  2 of 2 START hook: type_materialisation_generated.on-run-end.1 ................. [RUN]
-      02:26:43  2 of 2 OK hook: type_materialisation_generated.on-run-end.1 .................... [OK in 0.52s]
-      02:26:43
-      02:26:43  Finished running 1 incremental model, 5 project hooks, 1 table model, 1 view model in 0 hours 0 minutes and 20.38 seconds (20.38s).
-      02:26:43
-      02:26:43  Completed with 1 error, 0 partial successes, and 0 warnings:
-      02:26:43
-      02:26:43  [ERROR]: in model CARD_PAYMENT_INSTRUMENT (models/generated/CARD_PAYMENT_INSTRUMENT.sql)
-      02:26:43    Compilation Error in model CARD_PAYMENT_INSTRUMENT (models/generated/CARD_PAYMENT_INSTRUMENT.sql)
-        TYPE_MATERIALISATION_VALIDATION_FAILED: 15074 validation row(s) failed. First failure: field `PAYMENT_INSTRUMENT_TYPE_KEY` is null but not nullable
-      02:26:43
-      02:26:43  Done. PASS=7 WARN=0 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=8
-      TMS keeping generated project dir for debugging: /Users/700009706/Documents/LFS/DataHub/datahub-models-ccdm-mapping/tmp/generated/specs/ccdm/v10/card_payment_instrument/CARD_PAYMENT_INSTRUMENT_HISTORICAL_INITIAL_LOAD/run_CARD_PAYMENT_INSTRUMENT_HISTORICAL_INITIAL_LOAD_20260916T022620494788Z
+If two candidate rows share the same card, effective date, and `AIRFLOW_DAG_TIME`, Snowflake can choose either row. Also, `ACCOUNT_BASE_SEGMENT` can multiply an Embosser row when an account/org has multiple customer/application contexts.
 
+Check for tied source candidates:
 
+```sql
+with candidates as (
+  select
+    e.amed_card_nbr as payment_instrument_id,
+    coalesce(
+      cast(e.amed_card_activated_date as timestamp_ntz),
+      cast('1900-01-01' as timestamp_ntz)
+    ) as valid_from_datetime,
+    e.airflow_dag_time as source_snapshot_datetime,
+    a.ambs_cust_nbr as customer_id,
+    a.ambs_aps_acct as application_number
+  from DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.EMBOSSER_RECORD e
+  inner join (
+    select distinct
+      ambs_acct,
+      ambs_org,
+      ambs_cust_nbr,
+      ambs_aps_acct
+    from DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.ACCOUNT_BASE_SEGMENT
+  ) a
+    on e.amed_post_to_acct = a.ambs_acct
+   and e.amed_org = a.ambs_org
+  where e.amed_card_nbr is not null
+    and trim(e.amed_card_nbr) <> ''
+)
+select
+  payment_instrument_id,
+  valid_from_datetime,
+  source_snapshot_datetime,
+  count(*) as candidate_rows,
+  count(distinct customer_id || '|' || application_number) as account_contexts
+from candidates
+group by 1, 2, 3
+having count(*) > 1
+order by candidate_rows desc, payment_instrument_id, valid_from_datetime;
+```
 
+Check whether the account source itself is ambiguous:
+
+```sql
+select
+  ambs_acct,
+  ambs_org,
+  count(distinct ambs_cust_nbr || '|' || ambs_aps_acct) as account_contexts
+from DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.ACCOUNT_BASE_SEGMENT
+group by 1, 2
+having count(distinct ambs_cust_nbr || '|' || ambs_aps_acct) > 1
+order by account_contexts desc, ambs_acct, ambs_org;
+```
+
+If either query returns rows, the spec needs a defined account-snapshot selection rule before joining—not merely another arbitrary tie-breaker. Otherwise different parent/account attributes can be selected each run, changing the business hash and therefore the SCD2 row count.
