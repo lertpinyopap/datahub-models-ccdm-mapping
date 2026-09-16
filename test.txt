@@ -1,15 +1,3 @@
- [ERROR]: in model CARD_PAYMENT_INSTRUMENT (models/generated/CARD_PAYMENT_INSTRUMENT.sql)
-00:51:13    Compilation Error in model CARD_PAYMENT_INSTRUMENT (models/generated/CARD_PAYMENT_INSTRUMENT.sql)
-  TYPE_MATERIALISATION_VALIDATION_FAILED: 15800 validation row(s) failed. First failure: field `CARD_FRAUD_STATUS_KEY` is null but not nullable
-
-
-
-  select distinct(AMED_STATUS) from DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.EMBOSSER_RECORD;
-0
-P
-
-
-
   fields:
     - id: PAYMENT_INSTRUMENT_TYPE_KEY
       source:
@@ -21,34 +9,31 @@ P
             case
               when trim(source_query.AMED_DIGITAL_CARD_TYPE) in ('D', 'T', 'E', 'V')
                 then trim(source_query.AMED_DIGITAL_CARD_TYPE)
-              else ' '
+              else 'PHSY'
             end
           required: true
       data_type: varchar(64)
-      # TODO: should be nullable: false
       nullable: false
 
 
-      SELECT
-          AMED_DIGITAL_CARD_TYPE,
-          COUNT(*) AS RECORD_COUNT
-      FROM DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.EMBOSSER_RECORD
-      GROUP BY AMED_DIGITAL_CARD_TYPE;
 
-      	1387006
-      D	4
+      02:26:41  TMS hook: advancing incremental bookmark: SAS_MIGRATION_WORKSPACE.METADATA.TMS_BOOKMARK
+      02:26:41  1 of 2 START hook: type_materialisation_generated.on-run-end.0 ................. [RUN]
+      02:26:42  1 of 2 OK hook: type_materialisation_generated.on-run-end.0 .................... [OK in 0.91s]
+      02:26:42  TMS hook: recording JOB_END event: SAS_MIGRATION_WORKSPACE.INTERMEDIATE.TYPE_MATERIALISATION_JOBS
+      02:26:42  2 of 2 START hook: type_materialisation_generated.on-run-end.1 ................. [RUN]
+      02:26:43  2 of 2 OK hook: type_materialisation_generated.on-run-end.1 .................... [OK in 0.52s]
+      02:26:43
+      02:26:43  Finished running 1 incremental model, 5 project hooks, 1 table model, 1 view model in 0 hours 0 minutes and 20.38 seconds (20.38s).
+      02:26:43
+      02:26:43  Completed with 1 error, 0 partial successes, and 0 warnings:
+      02:26:43
+      02:26:43  [ERROR]: in model CARD_PAYMENT_INSTRUMENT (models/generated/CARD_PAYMENT_INSTRUMENT.sql)
+      02:26:43    Compilation Error in model CARD_PAYMENT_INSTRUMENT (models/generated/CARD_PAYMENT_INSTRUMENT.sql)
+        TYPE_MATERIALISATION_VALIDATION_FAILED: 15074 validation row(s) failed. First failure: field `PAYMENT_INSTRUMENT_TYPE_KEY` is null but not nullable
+      02:26:43
+      02:26:43  Done. PASS=7 WARN=0 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=8
+      TMS keeping generated project dir for debugging: /Users/700009706/Documents/LFS/DataHub/datahub-models-ccdm-mapping/tmp/generated/specs/ccdm/v10/card_payment_instrument/CARD_PAYMENT_INSTRUMENT_HISTORICAL_INITIAL_LOAD/run_CARD_PAYMENT_INSTRUMENT_HISTORICAL_INITIAL_LOAD_20260916T022620494788Z
 
 
 
-      with digital_card_type as (
-      SELECT
-          CASE
-              WHEN TRIM(source_query.AMED_DIGITAL_CARD_TYPE) IN ('D', 'T', 'E', 'V')
-                  THEN TRIM(source_query.AMED_DIGITAL_CARD_TYPE)
-              ELSE ' '
-          END AS digital_card_type_clean
-      FROM DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.EMBOSSER_RECORD AS source_query
-      )
-      select distinct(digital_card_type_clean) from digital_card_type;
-
-      D
