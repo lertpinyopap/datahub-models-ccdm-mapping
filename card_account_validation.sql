@@ -324,3 +324,28 @@ The load_status tells exactly why TMS excluded it.
       on s.customer_id = c.customer_id
     left join account_lookup a
       on s.account_number = a.account_number;
+
+
+
+
+      That confirms the Payment Instrument row is excluded intentionally by this mandatory join:
+      inner join card_account_lookup A
+        on P.ACCOUNT_NUMBER = A.ACCOUNT_NUMBER
+      The ASOF account context resolved, but its AMBS_ACCT has no matching current CARD_ACCOUNT.AGREEMENT_ID.
+      Check whether it exists in Card Account at all:
+      select
+        agreement_id,
+        card_account_key,
+        card_account_business_key,
+        valid_from_datetime,
+        valid_to_datetime,
+        is_current_flag,
+        is_deleted_flag
+      from SAS_MIGRATION_WORKSPACE.CORE.CARD_ACCOUNT
+      where trim(cast(agreement_id as varchar)) = trim(cast('<ACCOUNT_NUMBER>' as varchar))
+      order by valid_from_datetime;
+      Use the ACCOUNT_NUMBER returned by the prior diagnostic.
+      Interpretation:
+      - No rows: Card Account did not load that source account. Fix/load Card Account first.
+      - Rows, but none current: the Card Account SCD2 chain is invalid or marked deleted.
+      - Rows exist but only after trimming/casting: the Payment Instrument join needs a confirmed format normalization; do not add one until you see the actual values.
