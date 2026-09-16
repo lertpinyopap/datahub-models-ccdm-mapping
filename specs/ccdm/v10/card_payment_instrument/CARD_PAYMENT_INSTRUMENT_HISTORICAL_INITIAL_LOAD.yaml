@@ -15,8 +15,9 @@ source:
   format: table
   query: |
     with 
-      -- Join each embossed card to its V10 account context. This supplies the
-      -- owning customer and application, while excluding unusable blank card numbers.
+      -- Join each embossed card to the latest account context available at its
+      -- ingestion time. An ordinary join fans one card out across every retained
+      -- account snapshot and makes historical SCD2 output non-deterministic.
       payment_instrument_rows as (
         select
             E.*,
@@ -29,18 +30,21 @@ source:
             ) as SOURCE_EFFECTIVE_FROM_DATETIME,
             E.AIRFLOW_DAG_TIME as SOURCE_SNAPSHOT_DATETIME
         from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.EMBOSSER_RECORD as E
-        inner join (
+        asof join (
             select distinct
                 AMBS_ACCT,
                 AMBS_ORG,
                 AMBS_CUST_NBR,
-                AMBS_APS_ACCT
+                AMBS_APS_ACCT,
+                AIRFLOW_DAG_TIME
             from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.ACCOUNT_BASE_SEGMENT
         ) as A
+            match_condition (E.AIRFLOW_DAG_TIME >= A.AIRFLOW_DAG_TIME)
             on E.AMED_POST_TO_ACCT = A.AMBS_ACCT
            and E.AMED_ORG = A.AMBS_ORG
         where E.AMED_CARD_NBR is not null
           and trim(E.AMED_CARD_NBR) <> ''
+          and A.AMBS_ACCT is not null
     ),
     -- RAW retains ingestion snapshots. For the same card and business-effective
     -- activation date, retain the latest delivered snapshot as the correction.

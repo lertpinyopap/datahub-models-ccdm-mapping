@@ -7,8 +7,9 @@ source:
   format: table
   query: |    
     with 
-      -- Join each new embossed-card snapshot to its V10 account context. The bookmark
-      -- predicate limits processing to source deliveries not yet recorded by TMS.
+      -- Join each new embossed-card snapshot to the latest account context available
+      -- at its ingestion time. This prevents retained account snapshots from fanning
+      -- one card out to multiple customer/application contexts.
       payment_instrument_rows as (
         select
             E.*,
@@ -21,18 +22,21 @@ source:
             ) as SOURCE_EFFECTIVE_FROM_DATETIME,
             E.AIRFLOW_DAG_TIME as SOURCE_SNAPSHOT_DATETIME
         from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.EMBOSSER_RECORD as E
-        inner join (
+        asof join (
             select distinct
                 AMBS_ACCT,
                 AMBS_ORG,
                 AMBS_CUST_NBR,
-                AMBS_APS_ACCT
+                AMBS_APS_ACCT,
+                AIRFLOW_DAG_TIME
             from DATAOPS_HUB_SHARE_VISION{{ var("DATAOPS_ENV_SUFFIX", "_NONPROD") }}.RAW.ACCOUNT_BASE_SEGMENT
         ) as A
+            match_condition (E.AIRFLOW_DAG_TIME >= A.AIRFLOW_DAG_TIME)
             on E.AMED_POST_TO_ACCT = A.AMBS_ACCT
            and E.AMED_ORG = A.AMBS_ORG
         where E.AMED_CARD_NBR is not null
           and trim(E.AMED_CARD_NBR) <> ''
+          and A.AMBS_ACCT is not null
           and {{ tms_incremental_bookmark_predicate('E.AIRFLOW_DAG_TIME') }}
     ),
     -- A delivery can contain repeated snapshots for the same card and activation
