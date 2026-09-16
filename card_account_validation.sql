@@ -239,3 +239,88 @@ where AMBS_CUST_NBR = '<CUSTOMER_ID>'
 order by
     AMBS_DATE_LAST_MAINT,
     AIRFLOW_DAG_TIME;
+
+
+
+
+That record is probably excluded by one of the mandatory joins after source deduplication:
+1. No account snapshot exists at or before the Embosser snapshot.
+2. The resolved customer has no current CARD_CUSTOMER record.
+3. The resolved account has no current CARD_ACCOUNT record.
+Run this for that card ID:
+The load_status tells exactly why TMS excluded it.
+
+    with embosser_account_context as (
+      select
+        e.amed_card_nbr as payment_instrument_id,
+        e.airflow_dag_time as embosser_snapshot_datetime,
+        a.airflow_dag_time as account_snapshot_datetime,
+        a.ambs_cust_nbr as customer_id,
+        a.ambs_acct as account_number,
+        a.ambs_aps_acct as application_number,
+        coalesce(
+          cast(e.amed_card_activated_date as timestamp_ntz),
+          cast('1900-01-01' as timestamp_ntz)
+        ) as valid_from_datetime
+      from DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.EMBOSSER_RECORD e
+      asof join (
+        select distinct
+          ambs_acct,
+          ambs_org,
+          ambs_cust_nbr,
+          ambs_aps_acct,
+          airflow_dag_time
+        from DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.ACCOUNT_BASE_SEGMENT
+      ) a
+        match_condition(e.airflow_dag_time >= a.airflow_dag_time)
+        on e.amed_post_to_acct = a.ambs_acct
+       and e.amed_org = a.ambs_org
+      where e.amed_card_nbr = '<PAYMENT_INSTRUMENT_ID>'
+    ),
+
+    source_version as (
+      select *
+      from embosser_account_context
+      qualify row_number() over (
+        partition by payment_instrument_id, valid_from_datetime
+        order by embosser_snapshot_datetime desc nulls last
+      ) = 1
+    ),
+
+    customer_lookup as (
+      select customer_id, card_customer_key
+      from SAS_MIGRATION_WORKSPACE.CORE.CARD_CUSTOMER
+      where is_current_flag = 'Y'
+        and coalesce(is_deleted_flag, 'N') <> 'Y'
+      qualify row_number() over (
+        partition by customer_id
+        order by valid_from_datetime desc, audit_last_changed_datetime desc
+      ) = 1
+    ),
+
+    account_lookup as (
+      select agreement_id as account_number, card_account_key
+      from SAS_MIGRATION_WORKSPACE.CORE.CARD_ACCOUNT
+      where is_current_flag = 'Y'
+        and coalesce(is_deleted_flag, 'N') <> 'Y'
+      qualify row_number() over (
+        partition by agreement_id
+        order by valid_from_datetime desc, audit_last_changed_datetime desc
+      ) = 1
+    )
+
+    select
+      s.*,
+      c.card_customer_key,
+      a.card_account_key,
+      case
+        when s.account_number is null then 'NO_ACCOUNT_ASOF_MATCH'
+        when c.card_customer_key is null then 'NO_CURRENT_CARD_CUSTOMER'
+        when a.card_account_key is null then 'NO_CURRENT_CARD_ACCOUNT'
+        else 'ELIGIBLE_FOR_PAYMENT_INSTRUMENT'
+      end as load_status
+    from source_version s
+    left join customer_lookup c
+      on s.customer_id = c.customer_id
+    left join account_lookup a
+      on s.account_number = a.account_number;
