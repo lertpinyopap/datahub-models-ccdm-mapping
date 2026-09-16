@@ -7,3 +7,48 @@
   select distinct(AMED_STATUS) from DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.EMBOSSER_RECORD;
 0
 P
+
+
+
+  fields:
+    - id: PAYMENT_INSTRUMENT_TYPE_KEY
+      source:
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
+        args:
+          reference_type: PAYMENT_INSTRUMENT_TYPE
+          source_system: V10
+          source_code_expression: |
+            case
+              when trim(source_query.AMED_DIGITAL_CARD_TYPE) in ('D', 'T', 'E', 'V')
+                then trim(source_query.AMED_DIGITAL_CARD_TYPE)
+              else ' '
+            end
+          required: true
+      data_type: varchar(64)
+      # TODO: should be nullable: false
+      nullable: false
+
+
+      SELECT
+          AMED_DIGITAL_CARD_TYPE,
+          COUNT(*) AS RECORD_COUNT
+      FROM DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.EMBOSSER_RECORD
+      GROUP BY AMED_DIGITAL_CARD_TYPE;
+
+      	1387006
+      D	4
+
+
+
+      with digital_card_type as (
+      SELECT
+          CASE
+              WHEN TRIM(source_query.AMED_DIGITAL_CARD_TYPE) IN ('D', 'T', 'E', 'V')
+                  THEN TRIM(source_query.AMED_DIGITAL_CARD_TYPE)
+              ELSE ' '
+          END AS digital_card_type_clean
+      FROM DATAOPS_HUB_SHARE_VISION_NONPROD.RAW.EMBOSSER_RECORD AS source_query
+      )
+      select distinct(digital_card_type_clean) from digital_card_type;
+
+      D
