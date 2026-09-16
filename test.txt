@@ -31,3 +31,9 @@ Completed with 1 error, 0 partial successes, and 0 warnings:
   compiled code at target/run/type_materialisation_generated/models/generated/CARD_PAYMENT_INSTRUMENT__source.sql
 23:52:34
 23:52:34    compiled code at target/compiled/type_materialisation_generated/models/generated/CARD_PAYMENT_INSTRUMENT__source.sql
+
+
+
+ERROR]: in model CARD_PAYMENT_INSTRUMENT (models/generated/CARD_PAYMENT_INSTRUMENT.sql)
+00:04:44    Database Error in model CARD_PAYMENT_INSTRUMENT (models/generated/CARD_PAYMENT_INSTRUMENT.sql)
+  391842 (23001): SQL execution error: Column SAS_MIGRATION_WORKSPACE.INTERMEDIATE.CARD_PAYMENT_INSTRUMENT__VALIDATION_GUARD.VALIDATION_FAILURE_DETAILS is mapped to multiple masking policies by tags.Please contact your local administrator to fix the issue.
