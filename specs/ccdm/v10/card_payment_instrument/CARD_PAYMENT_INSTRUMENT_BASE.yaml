@@ -62,9 +62,10 @@ target:
   fields:
     - id: PAYMENT_INSTRUMENT_TYPE_KEY
       source:
-        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
         args:
           reference_type: PAYMENT_INSTRUMENT_TYPE
+          source_system: V10
           source_code_expression: |
             case
               when trim(source_query.AMED_DIGITAL_CARD_TYPE) in ('D', 'T', 'E', 'V')
@@ -108,9 +109,10 @@ target:
       nullable: true
     - id: DIGITAL_CARD_TYPE_KEY
       source:
-        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
         args:
           reference_type: DIGITAL_CARD_TYPE
+          source_system: V10
           source_code_expression: |
             case
               when trim(source_query.AMED_DIGITAL_CARD_TYPE) in ('D', 'T', 'E', 'V')
@@ -121,9 +123,10 @@ target:
       nullable: true
     - id: PHYSICAL_CARD_TECHNOLOGY_TYPE_KEY
       source:
-        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
         args:
           reference_type: PHYSICAL_CARD_TECHNOLOGY_TYPE
+          source_system: V10
           source_code_expression: |
             case
               when cast(source_query.AMED_CARD_TECHNOLOGY as varchar) in ('0', '1', '2', '3', '4', '5')
@@ -139,9 +142,10 @@ target:
       nullable: true
     - id: CARD_ACTIVATION_STATUS_KEY
       source:
-        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
         args:
           reference_type: CARD_ACTIVATION_STATUS
+          source_system: V10
           source_code_column: AMED_CURR_FIRST_USAGE_FLAG
           required: true
       data_type: varchar(64)
@@ -168,9 +172,10 @@ target:
       nullable: true
     - id: CARD_STATUS_KEY
       source:
-        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
         args:
           reference_type: CARD_STATUS
+          source_system: V10
           source_code_expression: |
             cast(source_query.AMED_ADD_STATUS as varchar)
             || '|' || coalesce(source_query.AMED_STATUS, '')
@@ -189,9 +194,10 @@ target:
       nullable: true
     - id: CARD_BLOCKED_REASON_KEY
       source:
-        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
         args:
           reference_type: CARD_BLOCKED_REASON
+          source_system: V10
           source_code_expression: |
             case
               when source_query.AMED_BLOCK_CODE is null
@@ -203,9 +209,10 @@ target:
       nullable: false
     - id: CARD_HOLDER_TYPE_KEY
       source:
-        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
         args:
           reference_type: CARD_HOLDER_TYPE
+          source_system: V10
           source_code_expression: "coalesce(cast(source_query.AMED_CARDHOLDER_TYPE as varchar), 'PRIM')"
           required: true
       data_type: varchar(64)
@@ -226,10 +233,12 @@ target:
         '{{ var("ENV_PREFIX", "") }}GOVERNANCE.TAGS.PII_CATEGORY': IDENTIFIER
     - id: CARD_HOLDER_ADDRESS_COUNTRY_KEY
       source:
-        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
         args:
           reference_type: COUNTRY
+          source_system: V10
           source_code_column: COUNTRY_CODE
+          key_column: COUNTRY_KEY
           required: true
       data_type: varchar(64)
       nullable: false
@@ -240,9 +249,10 @@ target:
       nullable: true
     - id: CARD_FRAUD_STATUS_KEY
       source:
-        macro: reference_lookup_core_macros.reference_lookup_core_bridge
+        macro: reference_lookup_mapping_macros.reference_lookup_mapping_bridge
         args:
           reference_type: CARD_FRAUD_STATUS
+          source_system: V10
           source_code_expression: "coalesce(source_query.AMED_STATUS, '0')"
           required: true
       data_type: varchar(64)
