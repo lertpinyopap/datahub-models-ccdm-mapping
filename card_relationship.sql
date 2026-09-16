@@ -88,3 +88,23 @@ where c.customer_id = '<CARD_CUSTOMER_NUMBER>'
   and coalesce(c.is_deleted_flag, 'N') <> 'Y'
 group by c.customer_id;
 ```
+
+
+-- sql to list customer id and count current card account and count current payment instrutment
+select
+  c.customer_id,
+  count(distinct a.card_account_key) as current_card_account_count,
+  count(distinct p.card_payment_instrument_key) as current_payment_instrument_count
+from SAS_MIGRATION_WORKSPACE.CORE.CARD_CUSTOMER c
+left join SAS_MIGRATION_WORKSPACE.CORE.CARD_ACCOUNT a
+  on a.card_customer_key = c.card_customer_key
+ and a.is_current_flag = 'Y'
+ and coalesce(a.is_deleted_flag, 'N') <> 'Y'
+left join SAS_MIGRATION_WORKSPACE.CORE.CARD_PAYMENT_INSTRUMENT p
+  on p.card_account_key = a.card_account_key
+ and p.is_current_flag = 'Y'
+ and coalesce(p.is_deleted_flag, 'N') <> 'Y'
+where c.is_current_flag = 'Y'
+  and coalesce(c.is_deleted_flag, 'N') <> 'Y'
+group by c.customer_id
+order by current_payment_instrument_count desc, current_card_account_count desc, c.customer_id;
